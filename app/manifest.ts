@@ -1,0 +1,45 @@
+import { MetadataRoute } from 'next';
+
+export default function manifest(): MetadataRoute.Manifest {
+  return {
+    name: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
+    short_name: 'OMNIRA',
+    description: 'شركة سعودية رائدة في خدمات الفاليه باركينج وإدارة المواقف الذكية',
+    start_url: '/',
+    display: 'standalone',
+    background_color: '#0A0A0A',
+    theme_color: '#D4AF37',
+    orientation: 'portrait',
+    icons: [
+      {
+        src: '/icon-192.png',
+        sizes: '192x192',
+        type: 'image/png',
+        purpose: 'any maskable',
+      },
+      {
+        src: '/icon-512.png',
+        sizes: '512x512',
+        type: 'image/png',
+        purpose: 'any maskable',
+      },
+    ],
+    lang: 'ar',
+    dir: 'rtl',
+    categories: ['business', 'lifestyle', 'utilities'],
+    screenshots: [
+      {
+        src: '/screenshot-mobile.png',
+        sizes: '540x720',
+        type: 'image/png',
+        form_factor: 'narrow',
+      },
+      {
+        src: '/screenshot-desktop.png',
+        sizes: '1280x720',
+        type: 'image/png',
+        form_factor: 'wide',
+      },
+    ],
+  };
+}

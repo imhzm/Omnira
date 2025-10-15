@@ -1,0 +1,45 @@
+# robots.txt for OMNIRA - October 2025
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://omnira.sa/sitemap.xml
+Sitemap: https://omnira.sa/sitemap-services.xml
+Sitemap: https://omnira.sa/sitemap-locations.xml
+
+# Disallow admin and private areas (if any in future)
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow specific crawlers with special rules
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Host
+Host: https://omnira.sa
