@@ -119,7 +119,7 @@ const TestimonialCard = ({ testimonial, index, isInView }: TestimonialCardProps)
 
         {/* Comment */}
         <p className="text-gray-300 leading-relaxed mb-6 relative z-10">
-          "{testimonial.comment}"
+          &ldquo;{testimonial.comment}&rdquo;
         </p>
 
         {/* Author */}
