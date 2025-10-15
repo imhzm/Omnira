@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Tajawal, Cairo, Inter } from "next/font/google";
+import { IBM_Plex_Sans_Arabic, Almarai, Inter } from "next/font/google";
 import "./globals.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
 
-const tajawal = Tajawal({
-  weight: ['200', '300', '400', '500', '700', '800', '900'],
+const ibmPlexArabic = IBM_Plex_Sans_Arabic({
+  weight: ['200', '300', '400', '500', '600', '700'],
   subsets: ['arabic'],
-  variable: '--font-tajawal',
+  variable: '--font-ibm-plex',
   display: 'swap',
 });
 
-const cairo = Cairo({
-  weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
+const almarai = Almarai({
+  weight: ['300', '400', '700', '800'],
   subsets: ['arabic'],
-  variable: '--font-cairo',
+  variable: '--font-almarai',
   display: 'swap',
 });
 
@@ -96,7 +96,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${tajawal.variable} ${cairo.variable} ${inter.variable} antialiased`}>
+      <body className={`${ibmPlexArabic.variable} ${almarai.variable} ${inter.variable} antialiased`}>
         {children}
       </body>
     </html>
