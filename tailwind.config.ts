@@ -84,8 +84,29 @@ const config: Config = {
         'gradient-shimmer': 'linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.3) 50%, transparent 100%)',
       },
       fontFamily: {
-        arabic: ['var(--font-ibm-plex)', 'var(--font-almarai)', 'sans-serif'],
-        english: ['var(--font-inter)', 'sans-serif'],
+        arabic: [
+          'var(--font-ibm-plex)', 
+          'var(--font-almarai)', 
+          'IBM Plex Sans Arabic',
+          'Almarai',
+          'Tajawal',
+          'Cairo',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Arial',
+          'sans-serif'
+        ],
+        english: [
+          'var(--font-inter)', 
+          'Inter',
+          '-apple-system',
+          'BlinkMacSystemFont',
+          'Segoe UI',
+          'Roboto',
+          'Arial',
+          'sans-serif'
+        ],
       },
       borderRadius: {
         lg: "var(--radius)",
