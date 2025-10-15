@@ -62,18 +62,11 @@ export const metadata: Metadata = {
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
     siteName: 'OMNIRA',
-    images: [{
-      url: '/og-image.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'OMNIRA Valet Parking Services',
-    }],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
-    images: ['/og-image.jpg'],
   },
   verification: {
     google: 'your-google-verification-code',
