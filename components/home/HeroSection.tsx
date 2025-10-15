@@ -82,8 +82,8 @@ const HeroSection = () => {
             transition={{ delay: 0.3, duration: 0.8 }}
             className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-[1.1]"
           >
-            <span className="heading-gradient block">فاليه باركينج</span>
-            <span className="text-white block mt-3">فاخر يليق بك</span>
+            <span className="heading-gradient block">أومنيرا</span>
+            <span className="text-white block mt-3">التميّز في خدماتنا</span>
           </motion.h1>
 
           {/* Subtitle - عنوان فرعي فاخر */}
@@ -97,7 +97,7 @@ const HeroSection = () => {
               خدمة فاخرة • راحة استثنائية • احترافية عالية
             </p>
             <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              نوفر لك ولضيوفك تجربة فاليه باركينج مميزة تجمع بين الأمان والفخامة. 
+              نوفر لك ولضيوفك تجربة مميزة تجمع بين الأمان والفخامة في خدمات صف السيارات وإدارة المواقف. 
               <span className="text-gold-primary font-semibold">حلول ذكية</span> للفنادق، المطاعم، والفعاليات في جميع أنحاء المملكة.
             </p>
           </motion.div>

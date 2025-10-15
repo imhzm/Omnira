@@ -1,7 +1,7 @@
 {
   "name": "omnira-website",
   "version": "1.0.0",
-  "description": "OMNIRA Valet Parking Services Website",
+  "description": "OMNIRA - موقع شركة أومنيرا لخدمات صف السيارات وإدارة المواقف",
   "private": true,
   "scripts": {
     "dev": "next dev",

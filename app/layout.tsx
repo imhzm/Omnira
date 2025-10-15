@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { IBM_Plex_Sans_Arabic, Almarai, Inter } from "next/font/google";
 import "./globals.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
+import WhatsAppButton from "@/components/layout/WhatsAppButton";
 
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
   weight: ['200', '300', '400', '500', '600', '700'],
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     default: "OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية في السعودية",
     template: "%s | OMNIRA - أومنيرا"
   },
-  description: "أومنيرا - شركة سعودية رائدة في خدمات صف السيارات الاحترافية (Valet Parking). حلول ذكية للفنادق، المطاعم، الفعاليات والمنشآت التجارية في الرياض، جدة والدمام.",
+  description: "أومنيرا - شركة سعودية رائدة في خدمات صف السيارات الاحترافية وإدارة المواقف الذكية. حلول متطورة للفنادق، المطاعم، الفعاليات والمنشآت التجارية في الرياض، جدة والدمام.",
   keywords: [
     "صف السيارات",
     "خدمات فاليه",
@@ -98,6 +99,7 @@ export default function RootLayout({
       </head>
       <body className={`${ibmPlexArabic.variable} ${almarai.variable} ${inter.variable} antialiased`}>
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );
