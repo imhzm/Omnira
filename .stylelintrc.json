@@ -1,0 +1,26 @@
+{
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen",
+          "layer"
+        ]
+      }
+    ],
+    "property-no-unknown": [
+      true,
+      {
+        "ignoreProperties": [
+          "-webkit-mask",
+          "mask"
+        ]
+      }
+    ]
+  }
+}

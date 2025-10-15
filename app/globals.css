@@ -702,17 +702,6 @@ ul.luxury-list li::before {
    UI/UX Enhancements - تحسينات UI/UX
    ==================================== */
 
-/* Custom Cursor */
-html {
-  cursor: none;
-}
-
-@media (max-width: 1024px) {
-  html {
-    cursor: auto;
-  }
-}
-
 /* Smooth Transitions */
 * {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;

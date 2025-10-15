@@ -4,7 +4,6 @@ import "./globals.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import CustomCursor from "@/components/ui/CustomCursor";
 import FloatingElements from "@/components/ui/FloatingElements";
 
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
@@ -113,7 +112,6 @@ export default function RootLayout({
       </head>
       <body className={`${ibmPlexArabic.variable} ${almarai.variable} ${inter.variable} antialiased`}>
         <ScrollProgress />
-        <CustomCursor />
         <FloatingElements />
         {children}
         <WhatsAppButton />
