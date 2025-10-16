@@ -38,19 +38,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 space-x-reverse mb-6">
-              <div className="relative w-14 h-14">
+            <div className="mb-6">
+              <div className="relative w-32 h-20">
                 <Image
                   src="/logo.png"
                   alt="OMNIRA - أومنيرا"
-                  width={56}
-                  height={56}
+                  width={128}
+                  height={80}
                   className="object-contain"
                 />
-              </div>
-              <div>
-                <h3 className="text-2xl font-black bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">OMNIRA</h3>
-                <p className="text-xs text-brown-medium font-medium">أومنيرا</p>
               </div>
             </div>
             <p className="text-brown-text text-sm mb-6 leading-relaxed">
