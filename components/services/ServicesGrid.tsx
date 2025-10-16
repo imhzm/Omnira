@@ -90,8 +90,8 @@ const ServicesGrid = () => {
         transition={{ duration: 0.2, delay: 0 }}
       >
         <Link href={`/services/${service.slug}`}>
-          <div className="service-card h-full group cursor-pointer">
-            <div className="relative h-56 mb-6 rounded-xl overflow-hidden">
+          <div className="h-full group cursor-pointer bg-white rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
+            <div className="relative h-56 overflow-hidden">
               <Image
                 src={imgError ? FALLBACK_IMG : service.image}
                 alt={service.title}
@@ -100,38 +100,38 @@ const ServicesGrid = () => {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 onError={() => setImgError(true)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/40 to-transparent"></div>
-            </div>
-
-            <div className="relative w-16 h-16 mb-4 -mt-16 z-10">
-              <div className="absolute inset-0 bg-gradient-luxury rounded-xl"></div>
-              <div className="absolute inset-0.5 bg-white rounded-xl flex items-center justify-center group-hover:bg-beige-primary transition-colors">
+              <div className="absolute inset-0 bg-gradient-to-t from-sage-primary/60 to-transparent"></div>
+              
+              {/* Floating Icon */}
+              <div className="absolute bottom-4 right-4 w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                 <Icon className="w-8 h-8 text-sage-primary" />
               </div>
             </div>
 
-            <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-dark transition-colors">
-              {service.title}
-            </h3>
-            
-            <p className="text-brown-text mb-4 leading-relaxed">
-              {service.shortDesc}
-            </p>
+            <div className="p-6">
+              <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
+                {service.title}
+              </h3>
+              
+              <p className="text-brown-text mb-4 leading-relaxed">
+                {service.shortDesc}
+              </p>
 
-            <div className="flex flex-wrap gap-2 mb-4">
-              {service.features.map((feature: string, i: number) => (
-                <span
-                  key={i}
-                  className="text-xs px-3 py-1 bg-sage-primary/10 text-sage-primary rounded-full border border-sage-primary/20"
-                >
-                  {feature}
-                </span>
-              ))}
-            </div>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {service.features.map((feature: string, i: number) => (
+                  <span
+                    key={i}
+                    className="text-xs px-3 py-1.5 bg-sage-primary/10 text-sage-primary rounded-full border border-sage-primary/20 font-medium"
+                  >
+                    {feature}
+                  </span>
+                ))}
+              </div>
 
-            <div className="flex items-center text-sage-primary group-hover:translate-x-2 transition-transform">
-              <span className="text-sm font-medium">اعرف المزيد</span>
-              <ArrowLeft className="w-4 h-4 mr-2" />
+              <div className="flex items-center text-sage-primary group-hover:gap-3 gap-2 transition-all font-bold">
+                <span className="text-sm">اعرف المزيد</span>
+                <ArrowLeft className="w-4 h-4 group-hover:-translate-x-2 transition-transform" />
+              </div>
             </div>
           </div>
         </Link>

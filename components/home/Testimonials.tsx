@@ -56,8 +56,14 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white">
-      <div className="container-custom">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
+      {/* Animated Blobs */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute top-20 -left-20 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-accents-sky/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -65,11 +71,20 @@ const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="heading-gradient">ماذا يقول عملاؤنا</span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+          >
+            <Star className="w-5 h-5 text-sunset-golden fill-sunset-golden" />
+            <span className="text-sage-primary font-bold text-sm">آراء عملائنا</span>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+            <span className="gold-shine-effect">ماذا يقول عملاؤنا</span>
           </h2>
-          <p className="text-brown-text text-lg max-w-2xl mx-auto">
-            ثقة عملائنا ورضاهم هي أكبر إنجازاتنا
+          <p className="text-brown-dark text-lg md:text-xl max-w-3xl mx-auto font-medium">
+            <span className="text-sage-primary font-bold">ثقة عملائنا</span> و<span className="text-sunset-golden font-bold">رضاهم</span> هي أكبر إنجازاتنا
           </p>
         </motion.div>
 
@@ -81,15 +96,17 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="luxury-card relative"
+              className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 relative"
             >
               {/* Quote Icon */}
-              <Quote className="absolute top-6 left-6 w-12 h-12 text-gold-primary/20" />
+              <div className="absolute top-6 left-6 w-14 h-14 rounded-2xl bg-sage-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all">
+                <Quote className="w-7 h-7 text-sage-primary/40" />
+              </div>
 
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-gold-primary text-gold-primary" />
+                  <Star key={i} className="w-5 h-5 fill-sunset-golden text-sunset-golden" />
                 ))}
               </div>
 
@@ -125,12 +142,12 @@ const Testimonials = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-16"
         >
-          <p className="text-gray-400 text-lg mb-6">
-            انضم إلى أكثر من 200 عميل راضٍ عن خدماتنا
+          <p className="text-brown-dark text-lg mb-6 font-medium">
+            انضم إلى <span className="text-sage-primary font-bold">أكثر من 200 عميل</span> راضٍ عن خدماتنا
           </p>
-          <a href="/contact" className="btn-gold px-10 py-5 text-lg inline-flex items-center gap-2">
+          <a href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-10 py-5 text-lg font-black rounded-2xl hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105 transition-all">
             <span>احجز استشارة مجانية</span>
-            <span>←</span>
+            <span className="group-hover:-translate-x-2 transition-transform">←</span>
           </a>
         </motion.div>
       </div>

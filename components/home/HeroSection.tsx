@@ -9,20 +9,28 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background - HTML5 */}
+        {/* Vimeo Video Background */}
         <div className="absolute inset-0 overflow-hidden">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover"
-            poster="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=2187&auto=format&fit=crop"
-          >
-            <source src="https://cdn.coverr.co/videos/coverr-luxury-valet-parking-service-1905/1080p.mp4" type="video/mp4" />
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-parking-a-car-in-a-parking-lot-50637-large.mp4" type="video/mp4" />
-            {/* Fallback to static image */}
-          </video>
+          <div style={{ padding: '56.67% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
+            <iframe
+              src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+              referrerPolicy="strict-origin-when-cross-origin"
+              style={{
+                position: 'absolute',
+                top: '50%',
+                left: '50%',
+                width: '100vw',
+                height: '100vh',
+                minWidth: '100%',
+                minHeight: '100%',
+                transform: 'translate(-50%, -50%)',
+                objectFit: 'cover',
+              }}
+              title="OMNIRA Valet Parking KSA"
+            />
+          </div>
         </div>
         {/* Enhanced Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>

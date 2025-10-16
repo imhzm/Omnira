@@ -50,9 +50,12 @@ const FeaturesSection = () => {
 
   return (
     <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
-      {/* Background Decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl"></div>
+      {/* Animated Blobs */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-accents-violet/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+      </div>
 
       <div className="container-custom relative z-10">
         {/* Section Header */}
@@ -62,11 +65,19 @@ const FeaturesSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+          >
+            <span className="text-sage-primary font-bold text-sm">مزايانا</span>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
             <span className="gold-shine-effect">لماذا نحن الخيار الأفضل؟</span>
           </h2>
-          <p className="text-brown-text text-lg max-w-2xl mx-auto">
-            نجمع بين الخبرة والتكنولوجيا لتقديم خدمة استثنائية تفوق توقعاتك
+          <p className="text-brown-dark text-lg md:text-xl max-w-3xl mx-auto font-medium">
+            نجمع بين <span className="text-sage-primary font-bold">الخبرة</span> و<span className="text-accents-sky font-bold">التكنولوجيا</span> لتقديم خدمة <span className="text-sunset-golden font-bold">استثنائية</span>
           </p>
         </motion.div>
 
@@ -107,11 +118,11 @@ const FeatureCard = ({ feature, index, isInView }: FeatureCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative p-8 rounded-2xl bg-white border-2 border-beige-medium hover:border-sage-primary transition-all duration-300 h-full shadow-sm hover:shadow-xl">
+      <div className="relative p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary transition-all duration-300 h-full hover:shadow-2xl hover:scale-105">
         {/* Icon */}
         <div className="relative w-16 h-16 mb-6">
-          <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-xl opacity-20 group-hover:opacity-30 transition-opacity`}></div>
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-10 group-hover:opacity-20 transition-opacity absolute inset-0`}></div>
+          <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all relative">
             <Icon className="w-8 h-8 text-sage-primary" />
           </div>
         </div>
@@ -126,7 +137,7 @@ const FeatureCard = ({ feature, index, isInView }: FeatureCardProps) => {
         </p>
 
         {/* Hover Effect Line */}
-        <div className="absolute bottom-0 right-0 left-0 h-1 bg-gradient-luxury transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-2xl"></div>
+        <div className="absolute bottom-0 right-0 left-0 h-1.5 bg-gradient-to-r from-sage-primary to-sunset-golden transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-b-3xl"></div>
       </div>
     </motion.div>
   );

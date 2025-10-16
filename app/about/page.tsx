@@ -87,7 +87,7 @@ export default function AboutPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <main className="min-h-screen bg-black-primary">
+      <main className="min-h-screen bg-white">
         <Header />
         <AboutHero />
         <AboutContent />

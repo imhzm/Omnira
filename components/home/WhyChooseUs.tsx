@@ -43,8 +43,14 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding section-gradient">
-      <div className="container-custom">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-sage-50 via-white to-sage-50 relative overflow-hidden">
+      {/* Animated Blobs */}
+      <div className="absolute inset-0 z-0 opacity-10">
+        <div className="absolute top-20 -left-20 w-96 h-96 bg-accents-emerald/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute top-40 -right-20 w-96 h-96 bg-accents-sky/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="container-custom relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -52,11 +58,19 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="heading-gradient">لماذا تختار أومنيرا؟</span>
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={isInView ? { opacity: 1, scale: 1 } : {}}
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+          >
+            <span className="text-sage-primary font-bold text-sm">لماذا نحن؟</span>
+          </motion.div>
+
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+            <span className="gold-shine-effect">لماذا تختار أومنيرا؟</span>
           </h2>
-          <p className="text-brown-text text-lg max-w-2xl mx-auto">
-            نجمع بين الخبرة الواسعة، التقنية المتقدمة، والالتزام بأعلى معايير الجودة
+          <p className="text-brown-dark text-lg md:text-xl max-w-3xl mx-auto font-medium">
+            نجمع بين <span className="text-sage-primary font-bold">الخبرة الواسعة</span>، <span className="text-accents-sky font-bold">التقنية المتقدمة</span>، والالتزام بأعلى معايير الجودة
           </p>
         </motion.div>
 
@@ -70,10 +84,10 @@ const WhyChooseUs = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="luxury-card group"
+                className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 {/* Icon Container */}
-                <div className="icon-container mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
                   <Icon className="w-8 h-8 text-sage-primary" />
                 </div>
 
@@ -94,24 +108,24 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 pt-16 border-t border-sage-primary/20"
+          className="mt-16"
         >
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            <div>
-              <div className="stat-number mb-2">99.9%</div>
-              <div className="text-brown-medium">معدل رضا العملاء</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="glass-effect p-8 rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+              <div className="text-5xl font-black mb-2 bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">99.9%</div>
+              <div className="text-brown-text font-medium">معدل رضا العملاء</div>
             </div>
-            <div>
-              <div className="stat-number mb-2">5,000+</div>
-              <div className="text-brown-medium">سيارة مخدومة شهرياً</div>
+            <div className="glass-effect p-8 rounded-3xl border-2 border-accents-emerald/20 hover:border-accents-emerald hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+              <div className="text-5xl font-black mb-2 bg-gradient-to-r from-accents-emerald to-sage-primary bg-clip-text text-transparent">5,000+</div>
+              <div className="text-brown-text font-medium">سيارة مخدومة شهرياً</div>
             </div>
-            <div>
-              <div className="stat-number mb-2">200+</div>
-              <div className="text-brown-medium">عميل راضٍ</div>
+            <div className="glass-effect p-8 rounded-3xl border-2 border-accents-sky/20 hover:border-accents-sky hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+              <div className="text-5xl font-black mb-2 bg-gradient-to-r from-accents-sky to-sage-primary bg-clip-text text-transparent">200+</div>
+              <div className="text-brown-text font-medium">عميل راضٍ</div>
             </div>
-            <div>
-              <div className="stat-number mb-2">24/7</div>
-              <div className="text-brown-medium">خدمة متواصلة</div>
+            <div className="glass-effect p-8 rounded-3xl border-2 border-sunset-golden/20 hover:border-sunset-golden hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+              <div className="text-5xl font-black mb-2 bg-gradient-to-r from-sunset-golden to-sage-primary bg-clip-text text-transparent">24/7</div>
+              <div className="text-brown-text font-medium">خدمة متواصلة</div>
             </div>
           </div>
         </motion.div>
