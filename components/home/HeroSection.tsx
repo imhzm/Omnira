@@ -81,6 +81,9 @@ const HeroSection = () => {
                 currentSlide === index ? 'opacity-100' : 'opacity-0'
               }`}
             >
+              {/* Gradient Placeholder - يظهر أثناء التحميل */}
+              <div className="absolute inset-0 bg-gradient-to-br from-sage-primary/40 via-brown-dark/60 to-sage-medium/40 animate-pulse" />
+              
               {!imageErrors.has(index) ? (
                 <Image
                   src={image.url}
@@ -94,15 +97,17 @@ const HeroSection = () => {
                     setImageErrors(prev => new Set(prev).add(index));
                   }}
                   loading={index === 0 ? 'eager' : 'lazy'}
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiM3RkEwOEUiLz48L3N2Zz4="
                   unoptimized
                 />
               ) : (
-                // صورة احتياطية بلون متدرج
-                <div className="w-full h-full bg-gradient-to-br from-sage-primary/30 via-gold-primary/20 to-sage-medium/30 flex items-center justify-center">
-                  <div className="text-center text-white/80">
-                    <div className="text-6xl mb-4">🚗</div>
-                    <p className="text-xl font-bold">خدمات صف السيارات الفاخرة</p>
-                    <p className="text-sm">OMNIRA - أومنيرا</p>
+                // صورة احتياطية فاخرة
+                <div className="w-full h-full bg-gradient-to-br from-sage-primary/50 via-brown-dark/70 to-gold-primary/40 flex items-center justify-center">
+                  <div className="text-center text-white backdrop-blur-sm bg-black/30 p-12 rounded-3xl">
+                    <div className="text-8xl mb-6 animate-bounce">🚗</div>
+                    <p className="text-3xl font-black mb-2">خدمات صف السيارات الفاخرة</p>
+                    <p className="text-xl font-bold text-gold-primary">OMNIRA - أومنيرا</p>
                   </div>
                 </div>
               )}
@@ -191,11 +196,25 @@ const HeroSection = () => {
       <div className="container-custom relative z-20 text-center">
         <div>
           {/* Premium Badge - شارة فاخرة */}
-          <div className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-8 py-4 rounded-full border border-gold-primary/40 mb-10 relative overflow-hidden group">
-            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/5 via-gold-primary/10 to-gold-primary/5 group-hover:from-gold-primary/10 group-hover:via-gold-primary/20 group-hover:to-gold-primary/10 transition-all duration-500"></div>
+          <div className="inline-flex items-center space-x-3 space-x-reverse bg-gradient-to-r from-brown-dark/95 via-brown-dark/90 to-brown-dark/95 backdrop-blur-xl px-10 py-5 rounded-2xl border-2 border-gold-primary/60 mb-10 relative overflow-hidden group shadow-2xl shadow-gold-primary/30">
+            {/* Animated Background */}
+            <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/20 via-sunset-golden/20 to-gold-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-gradient"></div>
             <div className="absolute inset-0 bg-gradient-shimmer animate-shimmer"></div>
-            <span className="w-2.5 h-2.5 bg-gold-primary rounded-full animate-pulse relative z-10 shadow-lg shadow-gold-primary/50"></span>
-            <span className="text-gold-primary text-sm font-semibold relative z-10 tracking-wide">السجل التجاري: 7051975600</span>
+            
+            {/* Icon */}
+            <div className="relative z-10 flex items-center justify-center">
+              <div className="absolute w-6 h-6 bg-gold-primary/30 rounded-full blur-md animate-pulse"></div>
+              <span className="w-3 h-3 bg-gradient-to-r from-gold-primary to-sunset-golden rounded-full animate-pulse shadow-lg shadow-gold-primary/50"></span>
+            </div>
+            
+            {/* Text */}
+            <div className="relative z-10 flex items-center space-x-2 space-x-reverse">
+              <span className="text-white/80 text-base font-bold">السجل التجاري:</span>
+              <span className="text-2xl font-black bg-gradient-to-r from-gold-primary via-sunset-golden to-gold-primary bg-clip-text text-transparent tracking-wider animate-logo-shine">7051975600</span>
+            </div>
+            
+            {/* Border Glow */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-gold-primary/0 group-hover:border-gold-primary/80 transition-all duration-500"></div>
           </div>
 
           {/* Main Heading - عنوان فاخر */}
