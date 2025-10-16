@@ -36,16 +36,16 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-24 flex-row-reverse">
+        <div className="flex items-center justify-between h-24">
           {/* Logo */}
-          <Link href="/" className="group">
-            <div className="relative w-40 h-16 group-hover:scale-105 transition-transform duration-300">
+          <Link href="/" className="group flex items-center">
+            <div className="relative w-40 h-12 group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="/logo.png"
                 alt="OMNIRA - أومنيرا"
                 width={160}
-                height={64}
-                className="object-contain"
+                height={48}
+                className="object-contain object-left"
                 priority
               />
             </div>
