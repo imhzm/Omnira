@@ -12,10 +12,10 @@ const HeroSection = () => {
   const videoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Delay video loading slightly to prioritize critical content
+    // Load video immediately for faster experience
     const timer = setTimeout(() => {
       setShouldLoadVideo(true);
-    }, 500);
+    }, 100);
 
     return () => clearTimeout(timer);
   }, []);
@@ -25,7 +25,7 @@ const HeroSection = () => {
       {/* Background Video */}
       <div className="absolute inset-0 z-0" ref={videoRef}>
         {/* Placeholder Image - loads instantly */}
-        <div className={`absolute inset-0 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
+        <div className={`absolute inset-0 transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
           <Image
             src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070"
             alt="OMNIRA Valet Parking"
@@ -43,11 +43,11 @@ const HeroSection = () => {
           <div className="absolute inset-0 overflow-hidden">
             <div style={{ padding: '56.67% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
               <iframe
-                src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0&quality=540p"
+                src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0&quality=auto&speed=1"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 referrerPolicy="strict-origin-when-cross-origin"
-                loading="lazy"
+                loading="eager"
                 style={{
                   position: 'absolute',
                   top: '50%',
