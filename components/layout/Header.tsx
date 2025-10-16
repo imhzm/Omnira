@@ -2,16 +2,27 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showServicesMenu, setShowServicesMenu] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      // Calculate scroll progress
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setScrollProgress(Math.min(progress, 100));
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -19,12 +30,19 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: 'الرئيسية', href: '/' },
-    { name: 'من نحن', href: '/about' },
-    { name: 'خدماتنا', href: '/services' },
-    { name: 'المدن', href: '/locations' },
-    { name: 'الأسعار', href: '/pricing' },
-    { name: 'اتصل بنا', href: '/contact' },
+    { name: 'الرئيسية', href: '/', icon: null },
+    { name: 'من نحن', href: '/about', icon: null },
+    { name: 'خدماتنا', href: '/services', icon: ChevronDown, hasSubmenu: true },
+    { name: 'المدن', href: '/locations', icon: null },
+    { name: 'الأسعار', href: '/pricing', icon: null },
+    { name: 'اتصل بنا', href: '/contact', icon: null },
+  ];
+
+  const servicesMenu = [
+    { name: 'فاليه باركينج', href: '/services/valet-parking', emoji: '🚗' },
+    { name: 'إدارة المواقف', href: '/services/parking-management', emoji: '🅿️' },
+    { name: 'تقنيات متقدمة', href: '/services/advanced-technology', emoji: '🤖' },
+    { name: 'خدمات VIP', href: '/services/vip', emoji: '⭐' },
   ];
 
   return (
@@ -47,29 +65,70 @@ const Header = () => {
               <Image
                 src="/logo.png"
                 alt="OMNIRA - أومنيرا"
-                width={180}
-                height={50}
+                width={126}
+                height={35}
                 className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-110 transition-all duration-500 animate-float"
                 priority
               />
             </div>
           </Link>
 
-          {/* Desktop Navigation المطور */}
+          {/* Desktop Navigation - احترافي جداً */}
           <nav className="hidden lg:flex items-center space-x-1 space-x-reverse">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="relative px-4 py-2 text-brown-dark font-semibold hover:text-sage-primary transition-all duration-300 group"
-              >
-                <span className="relative z-10">{item.name}</span>
-                {/* Hover Background */}
-                <div className="absolute inset-0 bg-sage-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {/* Bottom Border */}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-gradient-to-r from-sage-primary to-sunset-golden group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              const Icon = item.icon;
+              
+              return (
+                <div
+                  key={item.name}
+                  className="relative"
+                  onMouseEnter={() => item.hasSubmenu && setShowServicesMenu(true)}
+                  onMouseLeave={() => item.hasSubmenu && setShowServicesMenu(false)}
+                >
+                  <Link
+                    href={item.href}
+                    className={`relative px-5 py-3 font-bold transition-all duration-300 group flex items-center space-x-1 space-x-reverse rounded-xl ${
+                      isActive 
+                        ? 'text-sage-primary bg-sage-primary/10' 
+                        : 'text-brown-dark hover:text-sage-primary'
+                    }`}
+                  >
+                    {isActive && (
+                      <Sparkles className="w-4 h-4 text-gold-primary animate-pulse absolute -top-1 -right-1" />
+                    )}
+                    <span className="relative z-10">{item.name}</span>
+                    {Icon && <Icon className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />}
+                    
+                    {/* Hover Background with animation */}
+                    <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/10 via-sage-primary/5 to-sage-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-gradient"></div>
+                    
+                    {/* Active & Hover indicator */}
+                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-gradient-to-r from-sage-primary via-gold-primary to-sunset-golden rounded-full transition-all duration-300 ${
+                      isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4'
+                    }`}></span>
+                  </Link>
+                  
+                  {/* Mega Menu للخدمات */}
+                  {item.hasSubmenu && showServicesMenu && (
+                    <div className="absolute top-full right-0 mt-2 w-72 bg-white/98 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-sage-primary/20 p-4 animate-slideDown">
+                      <div className="absolute -top-2 right-8 w-4 h-4 bg-white rotate-45 border-t-2 border-r-2 border-sage-primary/20"></div>
+                      {servicesMenu.map((service) => (
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          className="flex items-center space-x-3 space-x-reverse p-3 rounded-xl hover:bg-sage-primary/10 transition-all duration-300 group"
+                          onClick={() => setShowServicesMenu(false)}
+                        >
+                          <span className="text-2xl group-hover:scale-125 transition-transform duration-300">{service.emoji}</span>
+                          <span className="font-semibold text-brown-dark group-hover:text-sage-primary transition-colors duration-300">{service.name}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </nav>
 
           {/* CTA Button المطور */}
@@ -130,6 +189,14 @@ const Header = () => {
           </nav>
         </div>
       )}
+      
+      {/* Scroll Progress Bar */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-sage-primary/20 to-transparent">
+        <div 
+          className="h-full bg-gradient-to-r from-sage-primary via-gold-primary to-sunset-golden transition-all duration-300 shadow-lg shadow-gold-primary/50"
+          style={{ width: `${scrollProgress}%` }}
+        />
+      </div>
     </header>
   );
 };

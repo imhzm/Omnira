@@ -10,40 +10,52 @@ const HeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
   const videoRef = useRef<HTMLDivElement>(null);
 
   // صور السلايدر - باركينج وخدمات السيارات الفاخرة
   const sliderImages = [
     {
-      url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070',
+      url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2070&q=80',
       alt: 'خدمات صف السيارات الفاخرة'
     },
     {
-      url: 'https://images.unsplash.com/photo-1486006920555-c77dcf18193e?q=80&w=2070',
+      url: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=2070&q=80',
       alt: 'موقف سيارات فندق فاخر'
     },
     {
-      url: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070',
-      alt: 'سيارة فاخرة في الموقف'
+      url: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=2070&q=80',
+      alt: 'سيارة فاخرة في خدمة الفاليه'
     },
     {
-      url: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2070',
-      alt: 'سيارة رياضية في موقف فاخر'
+      url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2070&q=80',
+      alt: 'سيارات فاخرة في موقف احترافي'
     },
     {
-      url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=2070',
+      url: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=2070&q=80',
       alt: 'خدمات فاليه باركينج احترافية'
     }
   ];
 
   useEffect(() => {
     // تأخير تحميل الفيديو ليظهر السلايدر أولاً
-    const timer = setTimeout(() => {
+    const videoLoadTimer = setTimeout(() => {
       setShouldLoadVideo(true);
     }, 8000); // 8 ثواني - يعرض السلايدر أولاً
 
-    return () => clearTimeout(timer);
+    return () => clearTimeout(videoLoadTimer);
   }, []);
+
+  // تحديث حالة تحميل الفيديو بعد فترة من بدء التحميل
+  useEffect(() => {
+    if (shouldLoadVideo) {
+      const videoReadyTimer = setTimeout(() => {
+        setIsVideoLoaded(true);
+      }, 3000); // 3 ثواني لتحميل وتشغيل الفيديو
+
+      return () => clearTimeout(videoReadyTimer);
+    }
+  }, [shouldLoadVideo]);
 
   // سلايدر تلقائي
   useEffect(() => {
@@ -69,15 +81,31 @@ const HeroSection = () => {
                 currentSlide === index ? 'opacity-100' : 'opacity-0'
               }`}
             >
-              <Image
-                src={image.url}
-                alt={image.alt}
-                fill
-                sizes="100vw"
-                className="object-cover"
-                priority={index === 0}
-                quality={85}
-              />
+              {!imageErrors.has(index) ? (
+                <Image
+                  src={image.url}
+                  alt={image.alt}
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                  priority={index === 0}
+                  quality={85}
+                  onError={() => {
+                    setImageErrors(prev => new Set(prev).add(index));
+                  }}
+                  loading={index === 0 ? 'eager' : 'lazy'}
+                  unoptimized
+                />
+              ) : (
+                // صورة احتياطية بلون متدرج
+                <div className="w-full h-full bg-gradient-to-br from-sage-primary/30 via-gold-primary/20 to-sage-medium/30 flex items-center justify-center">
+                  <div className="text-center text-white/80">
+                    <div className="text-6xl mb-4">🚗</div>
+                    <p className="text-xl font-bold">خدمات صف السيارات الفاخرة</p>
+                    <p className="text-sm">OMNIRA - أومنيرا</p>
+                  </div>
+                </div>
+              )}
             </div>
           ))}
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
@@ -121,7 +149,6 @@ const HeroSection = () => {
                   objectFit: 'cover',
                 }}
                 title="OMNIRA Valet Parking KSA"
-                onLoad={() => setIsVideoLoaded(true)}
               />
             </div>
           </div>
