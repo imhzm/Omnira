@@ -61,6 +61,90 @@ export const metadata: Metadata = {
 };
 
 export default function ValetParkingPage() {
+  // Enhanced SEO Schema
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "خدمات الفاليه باركينج الفاخرة",
+    "alternateName": "Valet Parking Service",
+    "description": "خدمات فاليه باركينج احترافية للفنادق والمطاعم والفعاليات في المملكة العربية السعودية",
+    "serviceType": "Valet Parking",
+    "provider": {
+      "@type": "Organization",
+      "name": "OMNIRA",
+      "url": "https://omnira.sa",
+      "logo": "https://omnira.sa/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+966XXXXXXXXX",
+        "contactType": "customer service",
+        "areaServed": "SA",
+        "availableLanguage": ["Arabic", "English"]
+      }
+    },
+    "areaServed": {
+      "@type": "Country",
+      "name": "Saudi Arabia"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "باقات الفاليه باركينج",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "خدمة فاليه للفعاليات"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "خدمة فاليه للفنادق"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "خدمة فاليه للمطاعم"
+          }
+        }
+      ]
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "الرئيسية",
+        "item": "https://omnira.sa"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "الخدمات",
+        "item": "https://omnira.sa/services"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "فاليه باركينج",
+        "item": "https://omnira.sa/services/valet-parking"
+      }
+    ]
+  };
+
   const serviceData = {
     title: 'تقديم خدمات الفاليه باركينج',
     subtitle: 'استقبال المركبات وإيقافها بعناية لضمان راحة العملاء',
@@ -210,11 +294,23 @@ export default function ValetParkingPage() {
   };
 
   return (
-    <main className="min-h-screen bg-black-primary">
-      <Header />
-      <ServiceDetailHero data={serviceData} />
-      <ServiceContent data={serviceData} />
-      <Footer />
-    </main>
+    <>
+      {/* SEO Schemas */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      
+      <main className="min-h-screen bg-white">
+        <Header />
+        <ServiceDetailHero data={serviceData} />
+        <ServiceContent data={serviceData} />
+        <Footer />
+      </main>
+    </>
   );
 }

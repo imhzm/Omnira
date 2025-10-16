@@ -13,40 +13,45 @@ const PricingPlans = () => {
   const plans = [
     {
       name: 'باقة الفعاليات',
-      price: '500',
-      period: '',
-      description: 'مثالية للمناسبات والفعاليات الخاصة',
+      price: '2,500',
+      period: 'للفعالية',
+      description: 'مثالية للمناسبات والفعاليات الخاصة والمؤتمرات',
       popular: false,
       features: [
-        'فريق مكون من 6 أشخاص',
-        'خدمة 8 ساعات',
-        'نظام تذاكر إلكتروني',
-        'تأمين شامل',
-        'مشرف موقع',
-        'زي موحد احترافي',
+        '👥 فريق من 8 سائقين محترفين',
+        '⏰ خدمة لمدة 8 ساعات كاملة',
+        '🎫 نظام تذاكر إلكتروني متقدم',
+        '🛡️ تأمين شامل على جميع السيارات',
+        '👔 زي موحد احترافي فاخر',
+        '📊 مشرف موقع متخصص',
+        '📱 تطبيق تتبع فوري',
       ],
       extras: [
-        '+ 30 ريال لكل ساعة إضافية (أوفرتايم)',
-        '+ 20 ريال للدقيقة',
+        '🕑 300 ريال لكل ساعة إضافية',
+        '❌ 200 ريال رسوم إلغاء (إن وجدت)',
       ],
+      badge: '🎉 فعاليات',
     },
     {
-      name: 'باقة المطاعم والفنادق',
-      price: '3,000',
+      name: 'باقة المنشآت الشهرية',
+      price: '6,000',
       period: 'شهرياً',
-      description: 'للمطاعم والفنادق والمنشآت التجارية',
+      description: 'للمطاعم، الفنادق، المراكز التجارية والمستشفيات',
       popular: true,
       features: [
-        'فريق دائم',
-        'خدمة مستمرة شهرياً',
-        'نظام إدارة كامل',
-        'تقارير شهرية',
-        'تأمين شامل',
-        'زي موحد برعايتكم',
-        'مشرف ميداني',
-        'دعم فني مستمر',
+        '👥 فريق دائم مخصص لمنشأتك',
+        '⏰ خدمة مستمرة طوال الشهر',
+        '📊 نظام إدارة متكامل وذكي',
+        '📈 تقارير شهرية تفصيلية',
+        '🛡️ تأمين شامل ممتد',
+        '👔 زي موحد بهوية منشأتك',
+        '👨‍💼 مشرف ميداني متفرغ',
+        '📞 دعم فني 24/7',
+        '📱 تطبيق خاص للإدارة',
+        '📝 عقد مرن قابل للتجديد',
       ],
       extras: [],
+      badge: '⭐ الأكثر طلباً',
     },
   ];
 
@@ -70,68 +75,83 @@ const PricingPlans = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.2, delay: 0 }}
-              className={`relative p-8 rounded-2xl ${
+              className={`relative p-8 md:p-10 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                 plan.popular
-                  ? 'bg-gradient-luxury border-2 border-gold-primary'
-                  : 'bg-gradient-dark border border-gold-primary/20'
+                  ? 'bg-gradient-to-br from-white via-sage-50 to-white border-2 border-sage-primary shadow-xl shadow-sage-primary/20'
+                  : 'bg-white/90 backdrop-blur-md border-2 border-sage-primary/30 hover:border-sage-primary'
               }`}
             >
-              {plan.popular && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gold-primary text-black-primary px-6 py-2 rounded-full font-bold flex items-center space-x-2 space-x-reverse">
-                    <Star className="w-4 h-4 fill-current" />
-                    <span>الأكثر طلباً</span>
+              {plan.badge && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
+                  <div className={`px-6 py-2 rounded-full font-bold text-sm shadow-lg ${
+                    plan.popular
+                      ? 'bg-gradient-to-r from-accent-amber to-sunset-golden text-white animate-pulseSoft'
+                      : 'bg-gradient-to-r from-sage-primary to-sage-medium text-white'
+                  }`}>
+                    <span>{plan.badge}</span>
                   </div>
                 </div>
               )}
 
               <div className="text-center mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-brown-dark' : 'text-sage-primary'}`}>
+                <h3 className={`text-3xl font-black mb-3 ${
+                  plan.popular ? 'gold-shine-effect' : 'text-sage-primary'
+                }`}>
                   {plan.name}
                 </h3>
-                <p className={`text-sm mb-4 ${plan.popular ? 'text-brown-medium' : 'text-brown-text'}`}>
+                <p className="text-brown-text mb-6 leading-relaxed">
                   {plan.description}
                 </p>
                 <div className="mb-2">
-                  <span className={`text-5xl font-bold text-brown-dark`}>
+                  <span className="text-6xl font-black bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">
                     {plan.price}
                   </span>
                   {plan.price !== 'حسب الطلب' && (
-                    <span className={`text-xl text-brown-medium`}> ريال</span>
+                    <span className="text-2xl text-brown-dark font-bold"> ريال</span>
                   )}
                 </div>
                 {plan.period && (
-                  <p className={`text-sm text-brown-medium`}>{plan.period}</p>
+                  <p className="text-base text-brown-text font-medium bg-sage-50 px-4 py-2 rounded-full inline-block">{plan.period}</p>
                 )}
               </div>
 
-              <div className="space-y-4 mb-8">
+              <div className="space-y-3 mb-8">
                 {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start space-x-3 space-x-reverse">
-                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-sage-primary' : 'text-sage-primary'}`} />
-                    <span className={plan.popular ? 'text-brown-dark' : 'text-brown-text'}>{feature}</span>
+                  <div key={i} className="flex items-start space-x-3 space-x-reverse p-3 rounded-xl hover:bg-sage-50 transition-colors group">
+                    <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-sage-primary group-hover:scale-125 transition-transform" />
+                    <span className="text-brown-dark font-medium text-base">{feature}</span>
                   </div>
                 ))}
               </div>
 
               {plan.extras.length > 0 && (
-                <div className="border-t border-beige-medium pt-6 mb-6">
-                  <p className={`text-sm font-bold mb-3 ${plan.popular ? 'text-sage-primary' : 'text-sage-primary'}`}>
-                    إضافات:
+                <div className="border-t-2 border-sage-primary/20 pt-6 mb-6">
+                  <p className="text-base font-black mb-4 text-sage-primary flex items-center space-x-2 space-x-reverse">
+                    <span>✨</span>
+                    <span>إضافات متاحة:</span>
                   </p>
-                  {plan.extras.map((extra, i) => (
-                    <p key={i} className={`text-sm mb-2 text-brown-medium`}>
-                      {extra}
-                    </p>
-                  ))}
+                  <div className="space-y-2">
+                    {plan.extras.map((extra, i) => (
+                      <p key={i} className="text-sm text-brown-dark bg-amber-50 px-4 py-2 rounded-lg border border-accent-amber/20">
+                        {extra}
+                      </p>
+                    ))}
+                  </div>
                 </div>
               )}
 
               <Link
                 href="/contact"
-                className={`block w-full py-4 rounded-lg text-center font-bold transition-all bg-sage-primary text-white hover:bg-sage-dark`}
+                className={`block w-full py-5 rounded-2xl text-center font-black text-lg transition-all shadow-lg group ${
+                  plan.popular
+                    ? 'bg-gradient-to-r from-sage-primary to-sage-medium text-white hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105'
+                    : 'bg-sage-primary text-white hover:bg-sage-600 hover:shadow-xl'
+                }`}
               >
-                {plan.price === 'حسب الطلب' ? 'اطلب عرض سعر' : 'احجز الآن'}
+                <span className="inline-flex items-center space-x-2 space-x-reverse">
+                  <span>{plan.price === 'حسب الطلب' ? 'اطلب عرض سعر' : 'احجز الآن'}</span>
+                  <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+                </span>
               </Link>
             </motion.div>
           ))}

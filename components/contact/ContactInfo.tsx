@@ -42,9 +42,9 @@ const ContactInfo = () => {
       transition={{ duration: 0.8 }}
       className="space-y-6"
     >
-      <div>
-        <h2 className="text-3xl font-bold mb-6 text-gold-primary">معلومات التواصل</h2>
-        <p className="text-gray-400 mb-8">
+      <div className="mb-8">
+        <h2 className="text-4xl font-black mb-4 gold-shine-effect">معلومات التواصل</h2>
+        <p className="text-brown-dark text-lg leading-relaxed">
           يسعدنا تواصلك معنا عبر أي من القنوات التالية. فريقنا جاهز لخدمتك على مدار الساعة.
         </p>
       </div>
@@ -58,29 +58,29 @@ const ContactInfo = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-6 rounded-xl bg-gradient-dark border border-gold-primary/20 hover:border-gold-primary transition-all"
+              className="p-6 rounded-2xl bg-white/90 backdrop-blur-md border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all duration-300 group"
             >
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 rounded-lg bg-gold-primary/10 flex items-center justify-center">
-                    <Icon className="w-6 h-6 text-gold-primary" />
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-sage-primary/30">
+                    <Icon className="w-7 h-7 text-sage-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 text-brown-dark">{item.title}</h3>
                   {item.link ? (
                     <a
                       href={item.link}
                       target={item.link.startsWith('http') ? '_blank' : undefined}
                       rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-gray-300 hover:text-gold-primary transition-colors"
+                      className="text-brown-dark hover:text-sage-primary transition-colors font-medium"
                     >
                       {item.details.map((detail, i) => (
                         <div key={i}>{detail}</div>
                       ))}
                     </a>
                   ) : (
-                    <div className="text-gray-300">
+                    <div className="text-brown-dark font-medium">
                       {item.details.map((detail, i) => (
                         <div key={i}>{detail}</div>
                       ))}
@@ -98,10 +98,14 @@ const ContactInfo = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="rounded-xl overflow-hidden border border-gold-primary/20"
+        className="rounded-2xl overflow-hidden border-2 border-sage-primary/20 shadow-xl"
       >
-        <div className="relative h-64 bg-gradient-dark flex items-center justify-center">
-          <p className="text-gray-400">خريطة الموقع - Google Maps</p>
+        <div className="relative h-80 bg-gradient-to-br from-sage-primary/5 to-beige-light flex items-center justify-center">
+          <div className="text-center">
+            <MapPin className="w-16 h-16 text-sage-primary mx-auto mb-4" />
+            <p className="text-brown-dark font-bold text-lg">خريطة الموقع</p>
+            <p className="text-brown-text text-sm mt-2">الرياض 12311، حي الروضة</p>
+          </div>
         </div>
       </motion.div>
     </motion.div>

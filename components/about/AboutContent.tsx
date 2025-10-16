@@ -88,7 +88,7 @@ const VisionMissionSection = () => {
               <Target className="w-8 h-8 text-gold-primary" />
             </div>
             <h3 className="text-3xl font-bold mb-4 text-gold-primary">رؤيتنا</h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-brown-dark text-lg leading-relaxed">
               أن نكون الخيار الأول لخدمات صف السيارات في المملكة والمنطقة، ونضع معايير 
               جديدة للاحترافية والجودة في هذا القطاع. نسعى للمساهمة في تحقيق أهداف 
               <span className="text-gold-primary font-semibold">رؤية المملكة 2030</span> من خلال تقديم خدمات متطورة تدعم قطاع الضيافة والسياحة.
@@ -105,7 +105,7 @@ const VisionMissionSection = () => {
               <Award className="w-8 h-8 text-gold-primary" />
             </div>
             <h3 className="text-3xl font-bold mb-4 text-gold-primary">رسالتنا</h3>
-            <p className="text-gray-300 text-lg leading-relaxed">
+            <p className="text-brown-dark text-lg leading-relaxed">
               تقديم خدمات صف سيارات استثنائية تجمع بين التكنولوجيا المتقدمة، الفريق المحترف، 
               والاهتمام بأدق التفاصيل لضمان تجربة مميزة لعملائنا وضيوفهم.
             </p>
@@ -177,8 +177,8 @@ const ValuesSection = () => {
                 className="p-6 rounded-xl bg-gradient-dark border border-gold-primary/20 hover:border-gold-primary transition-all"
               >
                 <Icon className="w-12 h-12 text-gold-primary mb-4" />
-                <h3 className="text-xl font-bold mb-2 text-white">{value.title}</h3>
-                <p className="text-gray-400">{value.description}</p>
+                <h3 className="text-xl font-bold mb-2 text-brown-dark">{value.title}</h3>
+                <p className="text-gray-700 leading-relaxed">{value.description}</p>
               </motion.div>
             );
           })}

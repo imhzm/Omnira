@@ -55,13 +55,13 @@ const PricingFAQ = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border border-gold-primary/20 rounded-xl overflow-hidden hover:border-gold-primary transition-colors"
+              className="border-2 border-sage-primary/30 rounded-xl overflow-hidden hover:border-sage-primary transition-colors bg-white/80 backdrop-blur-sm"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full p-6 text-right flex items-center justify-between hover:bg-gold-primary/5 transition-colors"
+                className="w-full p-6 text-right flex items-center justify-between hover:bg-sage-primary/10 transition-colors"
               >
-                <span className="text-lg font-bold text-white">{faq.question}</span>
+                <span className="text-lg font-bold text-brown-dark">{faq.question}</span>
                 <ChevronDown
                   className={`w-5 h-5 text-gold-primary transition-transform ${
                     openIndex === index ? 'rotate-180' : ''
@@ -69,8 +69,8 @@ const PricingFAQ = () => {
                 />
               </button>
               {openIndex === index && (
-                <div className="px-6 pb-6">
-                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
+                <div className="px-6 pb-6 bg-sage-primary/5">
+                  <p className="text-brown-text leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </motion.div>
@@ -83,7 +83,7 @@ const PricingFAQ = () => {
           transition={{ delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <p className="text-gray-400 mb-6">لديك استفسارات أخرى؟</p>
+          <p className="text-brown-dark mb-6">لديك استفسارات أخرى؟</p>
           <a
             href="/contact"
             className="btn-gold px-8 py-4 inline-flex items-center space-x-2 space-x-reverse"

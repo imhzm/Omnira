@@ -3,38 +3,32 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import Image from 'next/image';
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {/* Video Background */}
+        {/* Vimeo Video Background */}
         <div className="absolute inset-0">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            poster="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=2187&auto=format&fit=crop"
-            className="absolute inset-0 w-full h-full object-cover"
-          >
-            <source src="https://cdn.pixabay.com/vimeo/437654423/parking-41764.mp4?width=1280&hash=bd6cf9f7f40fe05a6b4d3e38b5094f6a7fb4c2e3" type="video/mp4" />
-            {/* Fallback image */}
-            <Image
-              src="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=2187&auto=format&fit=crop"
-              alt="فاليه باركينج"
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
-          </video>
+          <iframe
+            src="https://player.vimeo.com/video/1127926871?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&quality=1080p"
+            className="absolute inset-0 w-full h-full pointer-events-none"
+            style={{
+              width: '100vw',
+              height: '100vh',
+              objectFit: 'cover',
+              transform: 'scale(1.5)',
+            }}
+            frameBorder="0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            title="OMNIRA Background Video"
+          />
         </div>
-        {/* Gradient Overlays - طبقات فاخرة */}
-        <div className="absolute inset-0 bg-gradient-to-b from-beige-primary/80 via-beige-primary/60 to-beige-primary/80"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-beige-primary/70 via-transparent to-beige-primary/70"></div>
+        {/* Gradient Overlays - طبقات فاخرة محسّنة */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-beige-primary/60 via-transparent to-beige-primary/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/70 via-transparent to-transparent"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
