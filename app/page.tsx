@@ -105,7 +105,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
-      <main className="min-h-screen bg-beige-primary">
+      <main className="min-h-screen bg-white">
         <Header />
         <HeroSection />
         <ServicesSection />

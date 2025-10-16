@@ -9,26 +9,25 @@ const HeroSection = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        {/* Vimeo Video Background */}
-        <div className="absolute inset-0">
-          <iframe
-            src="https://player.vimeo.com/video/1127926871?background=1&autoplay=1&loop=1&muted=1&autopause=0&controls=0&quality=1080p"
-            className="absolute inset-0 w-full h-full pointer-events-none"
-            style={{
-              width: '100vw',
-              height: '100vh',
-              objectFit: 'cover',
-              transform: 'scale(1.5)',
-            }}
-            frameBorder="0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            title="OMNIRA Background Video"
-          />
+        {/* Video Background - HTML5 */}
+        <div className="absolute inset-0 overflow-hidden">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute top-1/2 left-1/2 min-w-full min-h-full w-auto h-auto transform -translate-x-1/2 -translate-y-1/2 object-cover"
+            poster="https://images.unsplash.com/photo-1514316454349-750a7fd3da3a?q=80&w=2187&auto=format&fit=crop"
+          >
+            <source src="https://cdn.coverr.co/videos/coverr-luxury-valet-parking-service-1905/1080p.mp4" type="video/mp4" />
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-man-parking-a-car-in-a-parking-lot-50637-large.mp4" type="video/mp4" />
+            {/* Fallback to static image */}
+          </video>
         </div>
-        {/* Gradient Overlays - طبقات فاخرة محسّنة */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/50"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-beige-primary/60 via-transparent to-beige-primary/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/70 via-transparent to-transparent"></div>
+        {/* Enhanced Gradient Overlays */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/20 via-transparent to-sage-primary/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/60 via-transparent to-transparent"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -86,7 +85,7 @@ const HeroSection = () => {
             transition={{ delay: 0, duration: 0.2 }}
             className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-[1.1]"
           >
-            <span className="text-brown-dark block">التميّز في خدماتنا</span>
+            <span className="text-white drop-shadow-2xl block">التميّز في خدماتنا</span>
           </motion.h1>
 
           {/* Subtitle - عنوان فرعي فاخر */}
@@ -96,12 +95,12 @@ const HeroSection = () => {
             transition={{ delay: 0, duration: 0.2 }}
             className="max-w-4xl mx-auto mb-12 space-y-4"
           >
-            <p className="text-2xl md:text-3xl text-sage-dark font-semibold leading-relaxed">
+            <p className="text-2xl md:text-3xl text-white drop-shadow-lg font-bold leading-relaxed">
               خدمة فاخرة • راحة استثنائية • احترافية عالية
             </p>
-            <p className="text-lg md:text-xl text-brown-text leading-relaxed max-w-3xl mx-auto">
+            <p className="text-lg md:text-xl text-white/90 drop-shadow-lg leading-relaxed max-w-3xl mx-auto">
               نوفر لك ولضيوفك تجربة مميزة تجمع بين الأمان والفخامة في خدمات صف السيارات وإدارة المواقف. 
-              <span className="text-gold-primary font-semibold">حلول ذكية</span> للفنادق، المطاعم، والفعاليات في جميع أنحاء المملكة.
+              <span className="text-sunset-golden font-bold drop-shadow-md">حلول ذكية</span> للفنادق، المطاعم، والفعاليات في جميع أنحاء المملكة.
             </p>
           </motion.div>
 
@@ -128,23 +127,23 @@ const HeroSection = () => {
             transition={{ delay: 0, duration: 0.2 }}
             className="mt-16 flex flex-wrap items-center justify-center gap-8"
           >
-            <div className="flex items-center space-x-2 space-x-reverse text-brown-medium">
-              <svg className="w-5 h-5 text-gold-primary" fill="currentColor" viewBox="0 0 20 20">
+            <div className="glass-effect px-4 py-3 rounded-xl flex items-center space-x-2 space-x-reverse border border-white/20">
+              <svg className="w-5 h-5 text-sunset-golden" fill="currentColor" viewBox="0 0 20 20">
                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
               </svg>
-              <span className="text-sm">99.9% رضا العملاء</span>
+              <span className="text-sm font-bold text-white">99.9% رضا العملاء</span>
             </div>
-            <div className="flex items-center space-x-2 space-x-reverse text-brown-medium">
-              <svg className="w-5 h-5 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="glass-effect px-4 py-3 rounded-xl flex items-center space-x-2 space-x-reverse border border-white/20">
+              <svg className="w-5 h-5 text-accents-emerald" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
-              <span className="text-sm">تأمين شامل</span>
+              <span className="text-sm font-bold text-white">تأمين شامل</span>
             </div>
-            <div className="flex items-center space-x-2 space-x-reverse text-brown-medium">
-              <svg className="w-5 h-5 text-gold-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div className="glass-effect px-4 py-3 rounded-xl flex items-center space-x-2 space-x-reverse border border-white/20">
+              <svg className="w-5 h-5 text-accents-sky" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
-              <span className="text-sm">خدمة 24/7</span>
+              <span className="text-sm font-bold text-white">خدمة 24/7</span>
             </div>
           </motion.div>
         </motion.div>
