@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer';
 import AboutHero from '@/components/about/AboutHero';
 import AboutContent from '@/components/about/AboutContent';
 import { generateArticleSchema } from '@/lib/seo-config';
+import { getOGImage } from '@/lib/og-images';
 
 export const metadata: Metadata = {
   title: 'من نحن - قصة أومنيرا | OMNIRA - شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
@@ -41,14 +42,7 @@ export const metadata: Metadata = {
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. نساهم في تحقيق رؤية 2030. تعرف على قصتنا، رؤيتنا، قيمنا، وفريقنا المحترف.',
     url: 'https://omnira.sa/about',
     siteName: 'OMNIRA',
-    images: [
-      {
-        url: 'https://omnira.sa/og-about.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'فريق عمل أومنيرا المحترف',
-      },
-    ],
+    images: [getOGImage('about')],
     locale: 'ar_SA',
     type: 'website',
   },
@@ -56,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'من نحن - أومنيرا | شركة سعودية رائدة في صف السيارات',
     description: 'قصة نجاح سعودية في خدمات الفاليه باركينج وإدارة المواقف',
-    images: ['https://omnira.sa/og-about.jpg'],
+    images: [getOGImage('about').url],
     creator: '@omnira_sa',
   },
   robots: {

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Facebook, Twitter, Instagram, Linkedin, MessageCircle, Mail, MapPin } from 'lucide-react';
 
 const Footer = () => {
@@ -39,10 +40,13 @@ const Footer = () => {
           <div>
             <div className="flex items-center space-x-3 space-x-reverse mb-6">
               <div className="relative w-14 h-14">
-                <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sunset-golden rounded-2xl blur-md opacity-50"></div>
-                <div className="relative w-full h-full bg-gradient-to-br from-sage-primary to-sage-medium rounded-2xl shadow-xl flex items-center justify-center">
-                  <span className="text-3xl font-black text-white">O</span>
-                </div>
+                <Image
+                  src="/logo.png"
+                  alt="OMNIRA - أومنيرا"
+                  width={56}
+                  height={56}
+                  className="object-contain"
+                />
               </div>
               <div>
                 <h3 className="text-2xl font-black bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">OMNIRA</h3>

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { siteConfig } from './seo-config';
+import { ogImages } from './og-images';
 
 interface PageSEOProps {
   title: string;
@@ -7,6 +8,7 @@ interface PageSEOProps {
   keywords?: string[];
   path: string;
   image?: string;
+  ogImageKey?: keyof typeof ogImages; // مفتاح الصورة من og-images
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
@@ -19,13 +21,18 @@ export function generateMetadata({
   keywords = [],
   path,
   image,
+  ogImageKey,
   type = 'website',
   publishedTime,
   modifiedTime,
   noindex = false,
 }: PageSEOProps): Metadata {
   const url = `${siteConfig.url}${path}`;
-  const ogImage = image || siteConfig.ogImage;
+  
+  // استخدام الصورة المخصصة إذا كانت متاحة
+  const ogImageData = ogImageKey && ogImages[ogImageKey];
+  const ogImage = ogImageData?.url || image || siteConfig.ogImage;
+  const ogImageAlt = ogImageData?.alt || title;
 
   // Default keywords for all pages
   const defaultKeywords = [
@@ -71,7 +78,8 @@ export function generateMetadata({
           url: ogImage,
           width: 1200,
           height: 630,
-          alt: title,
+          alt: ogImageAlt,
+          type: 'image/jpeg',
         },
       ],
       locale: 'ar_SA',
@@ -123,6 +131,7 @@ export const pageSEO = {
     title: 'خدمات صف السيارات الاحترافية والإدارة الذكية للمواقف',
     description:
       'شركة سعودية رائدة في خدمات الفاليه باركينج (Valet Parking) والإدارة الذكية لمواقف السيارات. نساهم في تحقيق رؤية المملكة 2030 من خلال حلول متطورة لقطاع الضيافة والسياحة. نخدم الفنادق، المطاعم، المراكز التجارية، والفعاليات في جميع مدن المملكة.',
+    ogImageKey: 'home' as keyof typeof ogImages,
     keywords: [
       'فاليه باركينج الرياض',
       'صف سيارات جدة',
@@ -138,6 +147,7 @@ export const pageSEO = {
     title: 'من نحن - شركة أومنيرا لخدمات صف السيارات',
     description:
       'تعرف على أومنيرا - شركة سعودية رائدة في خدمات صف السيارات الاحترافية. خبرة طويلة، فريق محترف، وحلول مبتكرة لقطاع الضيافة والفعاليات. نساهم في تحقيق رؤية 2030.',
+    ogImageKey: 'about' as keyof typeof ogImages,
     keywords: [
       'عن أومنيرا',
       'شركة صف سيارات سعودية',
@@ -151,6 +161,7 @@ export const pageSEO = {
     title: 'خدماتنا المتميزة - حلول شاملة لصف وإدارة السيارات',
     description:
       'اكتشف خدمات أومنيرا الشاملة: الفاليه باركينج، إدارة المواقف، التقنيات المتقدمة، والمنظمين المحترفين. حلول متكاملة للفنادق، المطاعم، المراكز التجارية، المستشفيات، والفعاليات.',
+    ogImageKey: 'services' as keyof typeof ogImages,
     keywords: [
       'خدمات الفاليه باركينج',
       'إدارة المواقف',
@@ -164,6 +175,7 @@ export const pageSEO = {
     title: 'الأسعار والباقات - خطط مرنة تناسب احتياجاتك',
     description:
       'باقات أومنيرا المرنة لخدمات صف السيارات: أساسية، احترافية، ومتقدمة. أسعار تنافسية، جودة عالية، ودعم متواصل. اختر الباقة المناسبة لمنشأتك.',
+    ogImageKey: 'pricing' as keyof typeof ogImages,
     keywords: [
       'أسعار صف السيارات',
       'باقات الفاليه باركينج',
@@ -176,6 +188,7 @@ export const pageSEO = {
     title: 'اتصل بنا - نحن هنا للإجابة على استفساراتك',
     description:
       'تواصل مع فريق أومنيرا للحصول على استشارة مجانية أو حجز خدماتنا. متاحون 24/7 للرد على جميع استفساراتك. اتصل بنا الآن واحصل على عرض سعر مخصص.',
+    ogImageKey: 'contact' as keyof typeof ogImages,
     keywords: [
       'تواصل مع أومنيرا',
       'حجز خدمة صف سيارات',
@@ -189,6 +202,7 @@ export const pageSEO = {
     title: 'المدن التي نخدمها - تغطية شاملة في المملكة',
     description:
       'خدمات أومنيرا متوفرة في جميع مدن المملكة: الرياض، جدة، الدمام، مكة المكرمة، المدينة المنورة، والطائف. تغطية شاملة وخدمة احترافية في كل مكان.',
+    ogImageKey: 'locations' as keyof typeof ogImages,
     keywords: [
       'صف سيارات الرياض',
       'فاليه باركينج جدة',

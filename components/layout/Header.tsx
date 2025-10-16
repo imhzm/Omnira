@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, Mail } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import Image from 'next/image';
 
 const Header = () => {
@@ -39,13 +39,15 @@ const Header = () => {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 space-x-reverse group">
-            <div className="relative w-14 h-14">
-              {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sunset-golden rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
-              {/* Logo Container */}
-              <div className="relative w-full h-full bg-gradient-to-br from-sage-primary to-sage-medium rounded-2xl shadow-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <span className="text-3xl font-black text-white relative z-10">O</span>
-              </div>
+            <div className="relative w-14 h-14 group-hover:scale-105 transition-transform duration-300">
+              <Image
+                src="/logo.png"
+                alt="OMNIRA - أومنيرا"
+                width={56}
+                height={56}
+                className="object-contain"
+                priority
+              />
             </div>
             <div className="relative">
               <h1 className="text-2xl font-black tracking-tight bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">

@@ -4,6 +4,7 @@ import HeroSection from "@/components/home/HeroSection";
 import Header from "@/components/layout/Header";
 import PrefetchLinks from "@/components/PrefetchLinks";
 import { jsonLdWebsite, jsonLdOrganization } from '@/lib/seo-config';
+import { getOGImage } from '@/lib/og-images';
 
 // Critical sections - SSR enabled
 const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), { 
@@ -87,14 +88,7 @@ export const metadata: Metadata = {
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. حلول ذكية للفنادق، المطاعم، والمراكز التجارية في جميع مدن المملكة.',
     url: 'https://omnira.sa',
     siteName: 'OMNIRA',
-    images: [
-      {
-        url: 'https://omnira.sa/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'OMNIRA - خدمات صف السيارات الاحترافية',
-      },
-    ],
+    images: [getOGImage('home')],
     locale: 'ar_SA',
     type: 'website',
   },
@@ -102,7 +96,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف الذكية',
-    images: ['https://omnira.sa/og-image.jpg'],
+    images: [getOGImage('home').url],
     creator: '@omnira_sa',
   },
   robots: {
