@@ -2,10 +2,12 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Building2, CarFront, Cpu, Users, FileText, Cable, Headphones, Droplets, ArrowLeft } from 'lucide-react';
+
+const FALLBACK_IMG = 'https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=2070';
 
 const ServicesGrid = () => {
   const ref = useRef(null);
@@ -78,64 +80,73 @@ const ServicesGrid = () => {
     },
   ];
 
+  const ServiceCard = ({ service, index, Icon, isInView }: { service: any; index: number; Icon: any; isInView: boolean }) => {
+    const [imgError, setImgError] = useState(false);
+    return (
+      <motion.div
+        key={index}
+        initial={{ opacity: 0, y: 50 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.2, delay: 0 }}
+      >
+        <Link href={`/services/${service.slug}`}>
+          <div className="service-card h-full group cursor-pointer">
+            <div className="relative h-56 mb-6 rounded-xl overflow-hidden">
+              <Image
+                src={imgError ? FALLBACK_IMG : service.image}
+                alt={service.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                onError={() => setImgError(true)}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/40 to-transparent"></div>
+            </div>
+
+            <div className="relative w-16 h-16 mb-4 -mt-16 z-10">
+              <div className="absolute inset-0 bg-gradient-luxury rounded-xl"></div>
+              <div className="absolute inset-0.5 bg-white rounded-xl flex items-center justify-center group-hover:bg-beige-primary transition-colors">
+                <Icon className="w-8 h-8 text-sage-primary" />
+              </div>
+            </div>
+
+            <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-dark transition-colors">
+              {service.title}
+            </h3>
+            
+            <p className="text-brown-text mb-4 leading-relaxed">
+              {service.shortDesc}
+            </p>
+
+            <div className="flex flex-wrap gap-2 mb-4">
+              {service.features.map((feature: string, i: number) => (
+                <span
+                  key={i}
+                  className="text-xs px-3 py-1 bg-sage-primary/10 text-sage-primary rounded-full border border-sage-primary/20"
+                >
+                  {feature}
+                </span>
+              ))}
+            </div>
+
+            <div className="flex items-center text-sage-primary group-hover:translate-x-2 transition-transform">
+              <span className="text-sm font-medium">اعرف المزيد</span>
+              <ArrowLeft className="w-4 h-4 mr-2" />
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+    );
+  };
+
   return (
-    <section ref={ref} className="section-padding bg-black-primary">
+    <section ref={ref} className="py-24 bg-gradient-to-b from-white via-beige-light to-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <Link href={`/services/${service.slug}`}>
-                  <div className="service-card h-full group cursor-pointer">
-                    <div className="relative h-56 mb-6 rounded-xl overflow-hidden">
-                      <Image
-                        src={service.image}
-                        alt={service.title}
-                        fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-500"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black-primary to-transparent"></div>
-                    </div>
-
-                    <div className="relative w-16 h-16 mb-4 -mt-16 z-10">
-                      <div className="absolute inset-0 bg-gradient-luxury rounded-xl"></div>
-                      <div className="absolute inset-0.5 bg-black-soft rounded-xl flex items-center justify-center group-hover:bg-black-primary transition-colors">
-                        <Icon className="w-8 h-8 text-gold-primary" />
-                      </div>
-                    </div>
-
-                    <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gold-primary transition-colors">
-                      {service.title}
-                    </h3>
-                    
-                    <p className="text-gray-400 mb-4 leading-relaxed">
-                      {service.shortDesc}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-4">
-                      {service.features.map((feature, i) => (
-                        <span
-                          key={i}
-                          className="text-xs px-3 py-1 bg-gold-primary/10 text-gold-primary rounded-full border border-gold-primary/20"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center text-gold-primary group-hover:translate-x-2 transition-transform">
-                      <span className="text-sm font-medium">اعرف المزيد</span>
-                      <ArrowLeft className="w-4 h-4 mr-2" />
-                    </div>
-                  </div>
-                </Link>
-              </motion.div>
+              <ServiceCard key={index} service={service} index={index} Icon={Icon} isInView={isInView} />
             );
           })}
         </div>

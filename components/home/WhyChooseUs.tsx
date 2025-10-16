@@ -55,7 +55,7 @@ const WhyChooseUs = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="heading-gradient">لماذا تختار أومنيرا؟</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-brown-text text-lg max-w-2xl mx-auto">
             نجمع بين الخبرة الواسعة، التقنية المتقدمة، والالتزام بأعلى معايير الجودة
           </p>
         </motion.div>
@@ -74,14 +74,14 @@ const WhyChooseUs = () => {
               >
                 {/* Icon Container */}
                 <div className="icon-container mb-6">
-                  <Icon className="w-8 h-8 text-gold-primary" />
+                  <Icon className="w-8 h-8 text-sage-primary" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gold-primary transition-colors">
+                <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
                   {reason.title}
                 </h3>
-                <p className="text-gray-400 leading-relaxed">
+                <p className="text-brown-text leading-relaxed">
                   {reason.description}
                 </p>
               </motion.div>
@@ -94,24 +94,24 @@ const WhyChooseUs = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="mt-16 pt-16 border-t border-gold-primary/20"
+          className="mt-16 pt-16 border-t border-sage-primary/20"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="stat-number mb-2">99.9%</div>
-              <div className="text-gray-400">معدل رضا العملاء</div>
+              <div className="text-brown-medium">معدل رضا العملاء</div>
             </div>
             <div>
               <div className="stat-number mb-2">5,000+</div>
-              <div className="text-gray-400">سيارة مخدومة شهرياً</div>
+              <div className="text-brown-medium">سيارة مخدومة شهرياً</div>
             </div>
             <div>
               <div className="stat-number mb-2">200+</div>
-              <div className="text-gray-400">عميل راضٍ</div>
+              <div className="text-brown-medium">عميل راضٍ</div>
             </div>
             <div>
               <div className="stat-number mb-2">24/7</div>
-              <div className="text-gray-400">خدمة متواصلة</div>
+              <div className="text-brown-medium">خدمة متواصلة</div>
             </div>
           </div>
         </motion.div>

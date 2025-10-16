@@ -49,7 +49,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-black-soft relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-primary/5 rounded-full blur-3xl"></div>
@@ -65,7 +65,7 @@ const FeaturesSection = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gold-shine-effect">لماذا نحن الخيار الأفضل؟</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-brown-text text-lg max-w-2xl mx-auto">
             نجمع بين الخبرة والتكنولوجيا لتقديم خدمة استثنائية تفوق توقعاتك
           </p>
         </motion.div>
@@ -107,21 +107,21 @@ const FeatureCard = ({ feature, index, isInView }: FeatureCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative p-8 rounded-2xl bg-gradient-dark border border-gold-primary/20 hover:border-gold-primary transition-all duration-300 h-full">
+      <div className="relative p-8 rounded-2xl bg-white border-2 border-beige-medium hover:border-sage-primary transition-all duration-300 h-full shadow-sm hover:shadow-xl">
         {/* Icon */}
         <div className="relative w-16 h-16 mb-6">
           <div className={`absolute inset-0 bg-gradient-to-br ${feature.gradient} rounded-xl opacity-20 group-hover:opacity-30 transition-opacity`}></div>
           <div className="absolute inset-0 flex items-center justify-center">
-            <Icon className="w-8 h-8 text-gold-primary" />
+            <Icon className="w-8 h-8 text-sage-primary" />
           </div>
         </div>
 
         {/* Content */}
-        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gold-primary transition-colors">
+        <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
           {feature.title}
         </h3>
         
-        <p className="text-gray-400 leading-relaxed">
+        <p className="text-brown-text leading-relaxed">
           {feature.description}
         </p>
 

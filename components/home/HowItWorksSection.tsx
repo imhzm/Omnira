@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-black-primary relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -60,13 +60,13 @@ const HowItWorksSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-20"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gold-shine-effect">كيف تعمل الخدمة؟</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-brown-text text-lg max-w-2xl mx-auto">
             عملية بسيطة وسريعة من 4 خطوات فقط
           </p>
         </motion.div>
@@ -111,7 +111,7 @@ const StepCard = ({ step, index, isInView }: StepCardProps) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.2 }}
+      transition={{ duration: 0.2, delay: 0 }}
       className="relative"
     >
       {/* Card */}
@@ -122,15 +122,17 @@ const StepCard = ({ step, index, isInView }: StepCardProps) => {
             src={step.image}
             alt={step.title}
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
             className="object-cover group-hover:scale-110 transition-transform duration-500"
+            loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black-primary via-black-primary/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/40 via-transparent to-transparent"></div>
           
           {/* Number Badge */}
           <div className="absolute top-4 right-4">
             <div className="relative w-16 h-16">
               <div className="absolute inset-0 bg-gradient-luxury rounded-full"></div>
-              <div className="absolute inset-0.5 bg-black-primary rounded-full flex items-center justify-center">
+              <div className="absolute inset-0.5 bg-white rounded-full flex items-center justify-center">
                 <span className="text-2xl font-bold text-gold-primary">{step.number}</span>
               </div>
             </div>
@@ -144,11 +146,11 @@ const StepCard = ({ step, index, isInView }: StepCardProps) => {
             <Icon className="w-6 h-6 text-gold-primary" />
           </div>
 
-          <h3 className="text-xl font-bold mb-2 text-white group-hover:text-gold-primary transition-colors">
+          <h3 className="text-xl font-bold mb-2 text-brown-dark group-hover:text-gold-primary transition-colors">
             {step.title}
           </h3>
           
-          <p className="text-gray-400 text-sm leading-relaxed">
+          <p className="text-brown-text text-sm leading-relaxed">
             {step.description}
           </p>
         </div>

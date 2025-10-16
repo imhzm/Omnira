@@ -71,19 +71,19 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-black-primary">
+    <section ref={ref} className="section-padding bg-beige-light">
       <div className="container-custom">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gold-shine-effect">خدماتنا المتميزة</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-brown-text text-lg max-w-2xl mx-auto">
             نقدم مجموعة شاملة من خدمات صف السيارات الاحترافية المصممة خصيصاً لتلبية احتياجاتك
           </p>
         </motion.div>
@@ -124,7 +124,7 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.2, delay: 0 }}
     >
       <Link href={service.href}>
         <div className="service-card h-full group cursor-pointer">
@@ -134,25 +134,27 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
               src={service.image}
               alt={service.title}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               className="object-cover group-hover:scale-110 transition-transform duration-500"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black-primary to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/80 to-transparent"></div>
           </div>
 
           {/* Icon */}
           <div className="relative w-16 h-16 mb-4 -mt-16 z-10">
             <div className="absolute inset-0 bg-gradient-luxury rounded-xl"></div>
-            <div className="absolute inset-0.5 bg-black-soft rounded-xl flex items-center justify-center group-hover:bg-black-primary transition-colors">
-              <Icon className="w-8 h-8 text-gold-primary" />
+            <div className="absolute inset-0.5 bg-white rounded-xl flex items-center justify-center group-hover:bg-beige-light transition-colors">
+              <Icon className="w-8 h-8 text-sage-primary" />
             </div>
           </div>
 
           {/* Content */}
-          <h3 className="text-xl font-bold mb-3 text-white group-hover:text-gold-primary transition-colors">
+          <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
             {service.title}
           </h3>
           
-          <p className="text-gray-400 mb-4 leading-relaxed">
+          <p className="text-brown-text mb-4 leading-relaxed">
             {service.description}
           </p>
 
@@ -161,7 +163,7 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
             {service.features.map((feature, i) => (
               <span
                 key={i}
-                className="text-xs px-3 py-1 bg-gold-primary/10 text-gold-primary rounded-full border border-gold-primary/20"
+                className="text-xs px-3 py-1 bg-sage-primary/10 text-sage-dark rounded-full border border-sage-primary/20"
               >
                 {feature}
               </span>
@@ -169,7 +171,7 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
           </div>
 
           {/* CTA */}
-          <div className="flex items-center text-gold-primary group-hover:translate-x-2 transition-transform">
+          <div className="flex items-center text-sage-primary group-hover:translate-x-2 transition-transform">
             <span className="text-sm font-medium">اعرف المزيد</span>
             <ArrowLeft className="w-4 h-4 mr-2" />
           </div>

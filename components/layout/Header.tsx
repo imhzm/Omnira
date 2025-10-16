@@ -29,11 +29,14 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         isScrolled
-          ? 'bg-black-primary/98 backdrop-blur-xl shadow-2xl border-b border-gold-primary/10'
-          : 'bg-black-primary/95 backdrop-blur-lg shadow-lg border-b border-gold-primary/5'
+          ? 'glass-advanced shadow-2xl border-b-2 border-sage-primary/30'
+          : 'bg-white/80 backdrop-blur-2xl shadow-xl border-b border-sage-primary/20'
       }`}
+      style={{
+        backdropFilter: 'blur(25px) saturate(180%)',
+      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-24">
@@ -44,7 +47,7 @@ const Header = () => {
               <div className="absolute inset-0 bg-gradient-luxury rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
               {/* Outer Border */}
               <div className="absolute inset-0 bg-gradient-luxury rounded-xl p-[2px]">
-                <div className="w-full h-full bg-black-primary rounded-xl flex items-center justify-center relative overflow-hidden">
+                <div className="w-full h-full bg-white rounded-xl flex items-center justify-center relative overflow-hidden">
                   {/* Shimmer Effect */}
                   <div className="absolute inset-0 bg-gradient-shimmer animate-shimmer"></div>
                   {/* Logo Letter */}
@@ -56,7 +59,6 @@ const Header = () => {
               <h1 className="text-2xl font-black tracking-tight">
                 <span className="gold-shine-effect">OMNIRA</span>
               </h1>
-              <p className="text-xs text-gold-light/80 tracking-wider">أومنيرا • للخدمات</p>
             </div>
           </Link>
 
@@ -66,7 +68,7 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative px-4 py-2 text-gray-200 hover:text-white transition-all duration-300 group"
+                className="relative px-4 py-2 text-brown-text hover:text-brown-dark transition-all duration-300 group"
               >
                 <span className="relative z-10 font-medium">{item.name}</span>
                 {/* Hover Background */}
@@ -84,7 +86,7 @@ const Header = () => {
             {/* Phone Icon */}
             <a 
               href="tel:+966XXXXXXXXX" 
-              className="relative p-3 text-gray-300 hover:text-gold-primary transition-all duration-300 group"
+              className="relative p-3 text-brown-medium hover:text-sage-primary transition-all duration-300 group"
               aria-label="اتصل بنا"
             >
               <div className="absolute inset-0 bg-gold-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -103,7 +105,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-white p-2"
+            className="lg:hidden text-brown-dark p-2"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -113,13 +115,13 @@ const Header = () => {
 
       {/* Mobile Menu المطور */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-black-primary/98 backdrop-blur-xl border-t border-gold-primary/20 shadow-2xl">
+        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-sage-primary/20 shadow-2xl">
           <nav className="container-custom py-6 space-y-2">
             {navItems.map((item, index) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-4 px-4 text-gray-200 hover:text-white transition-all duration-300 rounded-xl relative group overflow-hidden"
+                className="block py-4 px-4 text-brown-text hover:text-brown-dark transition-all duration-300 rounded-xl relative group overflow-hidden"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/0 via-gold-primary/10 to-gold-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

@@ -56,7 +56,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-black-soft">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white">
       <div className="container-custom">
         {/* Header */}
         <motion.div
@@ -68,7 +68,7 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="heading-gradient">ماذا يقول عملاؤنا</span>
           </h2>
-          <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          <p className="text-brown-text text-lg max-w-2xl mx-auto">
             ثقة عملائنا ورضاهم هي أكبر إنجازاتنا
           </p>
         </motion.div>
@@ -94,23 +94,24 @@ const Testimonials = () => {
               </div>
 
               {/* Text */}
-              <p className="text-gray-300 leading-relaxed mb-6 relative z-10">
+              <p className="text-brown-text leading-relaxed mb-6 relative z-10">
                 &ldquo;{testimonial.text}&rdquo;
               </p>
 
               {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-gold-primary/20">
+              <div className="flex items-center gap-4 pt-6 border-t border-beige-medium">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden">
                   <Image
                     src={testimonial.image}
                     alt={testimonial.name}
                     fill
+                    sizes="48px"
                     className="object-cover"
                   />
                 </div>
                 <div>
-                  <div className="font-bold text-white">{testimonial.name}</div>
-                  <div className="text-sm text-gray-400">{testimonial.position}</div>
+                  <div className="font-bold text-brown-dark">{testimonial.name}</div>
+                  <div className="text-sm text-brown-medium">{testimonial.position}</div>
                 </div>
               </div>
             </motion.div>

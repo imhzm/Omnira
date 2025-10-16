@@ -13,84 +13,63 @@ const PricingPlans = () => {
   const plans = [
     {
       name: 'باقة الفعاليات',
-      price: '2,500',
-      period: 'يبدأ من',
+      price: '500',
+      period: '',
       description: 'مثالية للمناسبات والفعاليات الخاصة',
       popular: false,
       features: [
-        'فريق من 4 سائقين',
-        'خدمة لمدة 6 ساعات',
-        'تغطية حتى 100 سيارة',
+        'فريق مكون من 6 أشخاص',
+        'خدمة 8 ساعات',
         'نظام تذاكر إلكتروني',
         'تأمين شامل',
         'مشرف موقع',
         'زي موحد احترافي',
       ],
       extras: [
-        '+ 300 ريال لكل ساعة إضافية',
-        '+ 200 ريال لكل سائق إضافي',
+        '+ 30 ريال لكل ساعة إضافية (أوفرتايم)',
+        '+ 20 ريال للدقيقة',
       ],
     },
     {
-      name: 'باقة المنشآت الشهرية',
-      price: '8,000',
+      name: 'باقة المطاعم والفنادق',
+      price: '3,000',
       period: 'شهرياً',
-      description: 'للفنادق والمطاعم والمنشآت التجارية',
+      description: 'للمطاعم والفنادق والمنشآت التجارية',
       popular: true,
       features: [
         'فريق دائم',
-        'خدمة 12 ساعة يومياً',
-        '6 أيام في الأسبوع',
+        'خدمة مستمرة شهرياً',
         'نظام إدارة كامل',
         'تقارير شهرية',
         'تأمين شامل',
         'زي موحد برعايتكم',
         'مشرف ميداني',
-        'خصم 10% على العقود السنوية',
-        'دعم فني 24/7',
-      ],
-      extras: [],
-    },
-    {
-      name: 'باقة VIP',
-      price: 'حسب الطلب',
-      period: '',
-      description: 'خدمة فاخرة ومخصصة بالكامل',
-      popular: false,
-      features: [
-        'خدمة مخصصة تماماً',
-        'سائقون متخصصون',
-        'خدمات إضافية حسب الطلب',
-        'أولوية قصوى',
-        'سرية تامة',
-        'مدير حساب مخصص',
-        'تقارير تفصيلية',
-        'SLA مخصص',
+        'دعم فني مستمر',
       ],
       extras: [],
     },
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-black-primary">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
-          <p className="text-gray-400 text-lg mb-4">
+          <p className="text-brown-text text-lg mb-4">
             جميع الباقات تشمل تأميناً شاملاً وفريقاً محترفاً ونظام تتبع إلكتروني
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.2, delay: 0 }}
               className={`relative p-8 rounded-2xl ${
                 plan.popular
                   ? 'bg-gradient-luxury border-2 border-gold-primary'
@@ -107,41 +86,41 @@ const PricingPlans = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-black-primary' : 'text-gold-primary'}`}>
+                <h3 className={`text-2xl font-bold mb-2 ${plan.popular ? 'text-brown-dark' : 'text-sage-primary'}`}>
                   {plan.name}
                 </h3>
-                <p className={`text-sm mb-4 ${plan.popular ? 'text-black-soft' : 'text-gray-400'}`}>
+                <p className={`text-sm mb-4 ${plan.popular ? 'text-brown-medium' : 'text-brown-text'}`}>
                   {plan.description}
                 </p>
                 <div className="mb-2">
-                  <span className={`text-5xl font-bold ${plan.popular ? 'text-black-primary' : 'text-white'}`}>
+                  <span className={`text-5xl font-bold text-brown-dark`}>
                     {plan.price}
                   </span>
                   {plan.price !== 'حسب الطلب' && (
-                    <span className={`text-xl ${plan.popular ? 'text-black-soft' : 'text-gray-400'}`}> ريال</span>
+                    <span className={`text-xl text-brown-medium`}> ريال</span>
                   )}
                 </div>
                 {plan.period && (
-                  <p className={`text-sm ${plan.popular ? 'text-black-soft' : 'text-gray-400'}`}>{plan.period}</p>
+                  <p className={`text-sm text-brown-medium`}>{plan.period}</p>
                 )}
               </div>
 
               <div className="space-y-4 mb-8">
                 {plan.features.map((feature, i) => (
                   <div key={i} className="flex items-start space-x-3 space-x-reverse">
-                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-black-primary' : 'text-gold-primary'}`} />
-                    <span className={plan.popular ? 'text-black-primary' : 'text-gray-300'}>{feature}</span>
+                    <Check className={`w-5 h-5 flex-shrink-0 mt-0.5 ${plan.popular ? 'text-sage-primary' : 'text-sage-primary'}`} />
+                    <span className={plan.popular ? 'text-brown-dark' : 'text-brown-text'}>{feature}</span>
                   </div>
                 ))}
               </div>
 
               {plan.extras.length > 0 && (
-                <div className="border-t border-gray-700 pt-6 mb-6">
-                  <p className={`text-sm font-bold mb-3 ${plan.popular ? 'text-black-primary' : 'text-gold-primary'}`}>
+                <div className="border-t border-beige-medium pt-6 mb-6">
+                  <p className={`text-sm font-bold mb-3 ${plan.popular ? 'text-sage-primary' : 'text-sage-primary'}`}>
                     إضافات:
                   </p>
                   {plan.extras.map((extra, i) => (
-                    <p key={i} className={`text-sm mb-2 ${plan.popular ? 'text-black-soft' : 'text-gray-400'}`}>
+                    <p key={i} className={`text-sm mb-2 text-brown-medium`}>
                       {extra}
                     </p>
                   ))}
@@ -150,11 +129,7 @@ const PricingPlans = () => {
 
               <Link
                 href="/contact"
-                className={`block w-full py-4 rounded-lg text-center font-bold transition-all ${
-                  plan.popular
-                    ? 'bg-black-primary text-gold-primary hover:bg-black-soft'
-                    : 'bg-gold-primary text-black-primary hover:bg-gold-medium'
-                }`}
+                className={`block w-full py-4 rounded-lg text-center font-bold transition-all bg-sage-primary text-white hover:bg-sage-dark`}
               >
                 {plan.price === 'حسب الطلب' ? 'اطلب عرض سعر' : 'احجز الآن'}
               </Link>
@@ -162,27 +137,16 @@ const PricingPlans = () => {
           ))}
         </div>
 
-        {/* Additional Services */}
+        {/* Note */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0.8 }}
-          className="mt-16 text-center"
+          transition={{ delay: 0 }}
+          className="mt-12 text-center"
         >
-          <h3 className="text-2xl font-bold mb-8 text-gold-primary">خدمات إضافية</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: 'جولف كار', price: 'حسب المدة' },
-              { name: 'غسيل سريع', price: '30-40 ريال' },
-              { name: 'غسيل شامل', price: '120-150 ريال' },
-              { name: 'خدمات مساندة', price: 'حسب الاحتياج' },
-            ].map((service, i) => (
-              <div key={i} className="p-6 rounded-xl bg-gradient-dark border border-gold-primary/20">
-                <h4 className="font-bold text-white mb-2">{service.name}</h4>
-                <p className="text-gold-primary">{service.price}</p>
-              </div>
-            ))}
-          </div>
+          <p className="text-brown-text text-sm">
+            للمزيد من التفاصيل أو للحصول على عرض سعر مخصص، يرجى التواصل معنا
+          </p>
         </motion.div>
       </div>
     </section>

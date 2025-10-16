@@ -5,8 +5,8 @@ import LocationsHero from '@/components/locations/LocationsHero';
 import LocationsGrid from '@/components/locations/LocationsGrid';
 
 export const metadata: Metadata = {
-  title: 'المدن التي نخدمها | OMNIRA - خدمات صف السيارات في 150+ مدينة سعودية',
-  description: 'خدمات صف السيارات والفاليه باركينج من أومنيرا متوفرة في 150+ مدينة سعودية. نغطي الرياض، جدة، الدمام، مكة المكرمة، المدينة المنورة، الخبر، الطائف، تبوك، أبها، الأحساء، القطيف، الجبيل، ينبع، خميس مشيط، نجران، جازان، حائل، الباحة، عرعر، سكاكا، والقصيم. تواجد في جميع المناطق: الوسطى، الشرقية، الغربية، الشمالية، والجنوبية. اتصل بنا الآن!',
+  title: 'المدن التي نخدمها | OMNIRA - خدمات فاليه باركينج في 150+ مدينة سعودية',
+  description: 'خدمات صف السيارات والفاليه باركينج من أومنيرا متوفرة في أكثر من 150 مدينة سعودية. خدماتنا تغطي الرياض، جدة، الدمام، مكة المكرمة، المدينة المنورة، الخبر، الطائف، تبوك، أبها، وجميع مدن المملكة. فريق محترف متواجد في كل منطقة.',
   keywords: [
     'مدن السعودية',
     'خدمات صف سيارات الرياض',
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
 
 export default function LocationsPage() {
   return (
-    <main className="min-h-screen bg-black-primary">
+    <main className="min-h-screen bg-beige-primary">
       <Header />
       <LocationsHero />
       <LocationsGrid />

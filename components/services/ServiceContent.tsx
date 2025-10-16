@@ -11,6 +11,8 @@ interface ServiceContentProps {
   data: any;
 }
 
+const FALLBACK_IMG = 'https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=2070';
+
 const ServiceContent = ({ data }: ServiceContentProps) => {
   return (
     <div className="bg-black-primary">
@@ -21,6 +23,36 @@ const ServiceContent = ({ data }: ServiceContentProps) => {
       <ClientsSection clients={data.clients} />
       <FAQSection faqs={data.faqs} />
     </div>
+  );
+};
+
+const FeatureItem = ({ feature, index, isInView }: { feature: any; index: number; isInView: boolean }) => {
+  const [imgError, setImgError] = useState(false);
+  return (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
+      className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
+    >
+      <div className="flex-1">
+        <div className="relative h-64 rounded-xl overflow-hidden">
+          <Image
+            src={imgError ? FALLBACK_IMG : feature.image}
+            alt={feature.title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 50vw"
+            className="object-cover"
+            onError={() => setImgError(true)}
+          />
+        </div>
+      </div>
+      <div className="flex-1">
+        <h3 className="text-2xl font-bold mb-4 text-gold-primary">{feature.title}</h3>
+        <p className="text-gray-300 leading-relaxed text-lg">{feature.description}</p>
+      </div>
+    </motion.div>
   );
 };
 
@@ -107,28 +139,7 @@ const FeaturesSection = ({ features }: any) => {
 
         <div className="space-y-16">
           {features.map((feature: any, index: number) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
-            >
-              <div className="flex-1">
-                <div className="relative h-64 rounded-xl overflow-hidden">
-                  <Image
-                    src={feature.image}
-                    alt={feature.title}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              <div className="flex-1">
-                <h3 className="text-2xl font-bold mb-4 text-gold-primary">{feature.title}</h3>
-                <p className="text-gray-300 leading-relaxed text-lg">{feature.description}</p>
-              </div>
-            </motion.div>
+            <FeatureItem key={index} feature={feature} index={index} isInView={isInView} />
           ))}
         </div>
       </div>

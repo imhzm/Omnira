@@ -1,29 +1,28 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Sans_Arabic, Almarai, Inter } from "next/font/google";
+import dynamic from "next/dynamic";
+import { IBM_Plex_Sans_Arabic, Almarai } from "next/font/google";
 import "./globals.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
-import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import FloatingElements from "@/components/ui/FloatingElements";
+
+const WhatsAppButton = dynamic(() => import("@/components/layout/WhatsAppButton"), { ssr: false });
+const FloatingElements = dynamic(() => import("@/components/ui/FloatingElements"), { ssr: false });
+const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
 
 const ibmPlexArabic = IBM_Plex_Sans_Arabic({
-  weight: ['200', '300', '400', '500', '600', '700'],
+  weight: ['400', '700'],
   subsets: ['arabic'],
   variable: '--font-ibm-plex',
   display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
 
 const almarai = Almarai({
-  weight: ['300', '400', '700', '800'],
+  weight: ['400'],
   subsets: ['arabic'],
   variable: '--font-almarai',
   display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  variable: '--font-inter',
-  display: 'swap',
+  fallback: ['system-ui', 'arial'],
 });
 
 export const metadata: Metadata = {
@@ -82,19 +81,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ar" dir="rtl" className="dark">
+    <html lang="ar" dir="rtl">
       <head>
-        {/* Google Fonts - Preconnect for Performance */}
+        {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        
-        {/* Google Fonts - Direct Import for Fallback */}
-        {/* eslint-disable-next-line @next/next/no-page-custom-font */}
-        <link 
-          href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@200;300;400;500;600;700&family=Almarai:wght@300;400;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap" 
-          rel="stylesheet" 
-        />
-        
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.pexels.com" />
+        <link rel="dns-prefetch" href="https://cdn.pixabay.com" />
         {/* Local Business Schema */}
         <script
           type="application/ld+json"
@@ -110,11 +104,12 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${ibmPlexArabic.variable} ${almarai.variable} ${inter.variable} antialiased`}>
+      <body className={`${ibmPlexArabic.variable} ${almarai.variable} antialiased`}>
         <ScrollProgress />
         <FloatingElements />
         {children}
         <WhatsAppButton />
+        <ScrollToTop />
       </body>
     </html>
   );

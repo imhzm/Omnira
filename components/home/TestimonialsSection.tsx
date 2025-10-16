@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-black-soft relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-gold-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-gold-primary/5 rounded-full blur-3xl"></div>
@@ -56,13 +56,13 @@ const TestimonialsSection = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
+          transition={{ duration: 0.2 }}
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="gold-shine-effect">آراء عملائنا</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-brown-text text-lg max-w-2xl mx-auto">
             ثقة عملائنا هي أغلى ما نملك. اقرأ تجاربهم معنا
           </p>
         </motion.div>
@@ -101,7 +101,7 @@ const TestimonialCard = ({ testimonial, index, isInView }: TestimonialCardProps)
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
+      transition={{ duration: 0.2, delay: 0 }}
       className="group"
     >
       <div className="relative p-8 rounded-2xl bg-gradient-dark border border-gold-primary/20 hover:border-gold-primary transition-all duration-300 h-full">
@@ -118,7 +118,7 @@ const TestimonialCard = ({ testimonial, index, isInView }: TestimonialCardProps)
         </div>
 
         {/* Comment */}
-        <p className="text-gray-300 leading-relaxed mb-6 relative z-10">
+        <p className="text-brown-text leading-relaxed mb-6 relative z-10">
           &ldquo;{testimonial.comment}&rdquo;
         </p>
 
@@ -129,13 +129,15 @@ const TestimonialCard = ({ testimonial, index, isInView }: TestimonialCardProps)
               src={testimonial.image}
               alt={testimonial.name}
               fill
+              sizes="56px"
               className="object-cover"
+              loading="lazy"
             />
           </div>
           <div>
-            <h4 className="font-bold text-white">{testimonial.name}</h4>
-            <p className="text-sm text-gray-400">{testimonial.position}</p>
-            <p className="text-xs text-gold-primary">{testimonial.location}</p>
+            <h4 className="font-bold text-brown-dark">{testimonial.name}</h4>
+            <p className="text-sm text-brown-medium">{testimonial.position}</p>
+            <p className="text-xs text-sage-primary">{testimonial.location}</p>
           </div>
         </div>
 

@@ -1,7 +1,7 @@
-// SEO Configuration - October 2025 Standards
+// SEO Configuration
 export const siteConfig = {
   name: 'OMNIRA - أومنيرا',
-  description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية (Valet Parking) والإدارة الذكية للمواقف. نقدم حلولاً متطورة للفنادق والمطاعم والمراكز التجارية والفعاليات في جميع مدن المملكة العربية السعودية.',
+  description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية (Valet Parking) والإدارة الذكية للمواقف. نساهم في تحقيق رؤية المملكة 2030 من خلال حلول متطورة لقطاع الضيافة والسياحة في جميع مدن المملكة.',
   url: 'https://omnira.sa',
   ogImage: 'https://omnira.sa/og-image.jpg',
   links: {
@@ -12,7 +12,6 @@ export const siteConfig = {
   },
   creator: 'OMNIRA Company Holding',
   registrationNumber: '7051975600',
-  foundingDate: '2025-10-08',
   address: {
     streetAddress: 'عبدالرحمن الشعيبي، حي الروضة',
     addressLocality: 'الرياض',
@@ -67,7 +66,6 @@ export const jsonLdOrganization = {
   image: siteConfig.ogImage,
   telephone: siteConfig.contact.phone,
   email: siteConfig.contact.email,
-  foundingDate: siteConfig.foundingDate,
   priceRange: siteConfig.priceRange,
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',

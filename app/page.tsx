@@ -1,20 +1,20 @@
 import { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import HeroSection from "@/components/home/HeroSection";
-import StatsSection from "@/components/home/StatsSection";
-import ServicesSection from "@/components/home/ServicesSection";
-import WhyChooseUs from "@/components/home/WhyChooseUs";
-import FeaturesSection from "@/components/home/FeaturesSection";
-import HowItWorksSection from "@/components/home/HowItWorksSection";
-import Testimonials from "@/components/home/Testimonials";
-import TestimonialsSection from "@/components/home/TestimonialsSection";
-import CTASection from "@/components/home/CTASection";
 import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
 import { jsonLdWebsite, jsonLdOrganization } from '@/lib/seo-config';
+
+const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), { ssr: true });
+const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), { ssr: true });
+const FeaturesSection = dynamic(() => import("@/components/home/FeaturesSection"), { ssr: true });
+const HowItWorksSection = dynamic(() => import("@/components/home/HowItWorksSection"), { ssr: true });
+const Testimonials = dynamic(() => import("@/components/home/Testimonials"), { ssr: true });
+const CTASection = dynamic(() => import("@/components/home/CTASection"), { ssr: true });
+const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true });
 
 export const metadata: Metadata = {
   title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية والإدارة الذكية للمواقف في السعودية',
-  description: 'شركة سعودية رائدة في خدمات الفاليه باركينج (Valet Parking) والإدارة الذكية لمواقف السيارات. نقدم حلولاً متطورة بتقنيات حديثة للفنادق، المطاعم، المراكز التجارية، والفعاليات في الرياض، جدة، الدمام، وجميع مدن المملكة. احجز الآن!',
+  description: 'شركة سعودية رائدة في خدمات الفاليه باركينج (Valet Parking) والإدارة الذكية لمواقف السيارات. نساهم في تحقيق رؤية المملكة 2030 من خلال حلول متطورة لقطاع الضيافة والسياحة. نخدم الفنادق، المطاعم، المراكز التجارية، والفعاليات في جميع مدن المملكة. احجز الآن!',
   keywords: [
     'صف سيارات',
     'فاليه باركينج',
@@ -34,6 +34,8 @@ export const metadata: Metadata = {
     'حلول مواقف السيارات',
     'تقنيات صف السيارات',
     'نظام إدارة المواقف',
+    'رؤية المملكة 2030',
+    'قطاع الضيافة والسياحة',
   ],
   authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.sa' }],
   creator: 'OMNIRA Company Holding',
@@ -103,10 +105,9 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
-      <main className="min-h-screen bg-black-primary">
+      <main className="min-h-screen bg-beige-primary">
         <Header />
         <HeroSection />
-        <StatsSection />
         <ServicesSection />
         <WhyChooseUs />
         <FeaturesSection />

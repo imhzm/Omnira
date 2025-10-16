@@ -8,7 +8,7 @@ import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
 
 const AboutContent = () => {
   return (
-    <div className="bg-black-primary">
+    <div className="bg-beige-primary">
       <StorySection />
       <VisionMissionSection />
       <ValuesSection />
@@ -23,7 +23,7 @@ const StorySection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-black-soft">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -36,6 +36,7 @@ const StorySection = () => {
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
                 alt="مقر شركة أومنيرا"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
               />
             </div>
@@ -47,9 +48,9 @@ const StorySection = () => {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-4xl font-bold mb-6 gold-shine-effect">قصتنا</h2>
-            <div className="space-y-4 text-gray-300 leading-relaxed">
+            <div className="space-y-4 text-brown-text leading-relaxed">
               <p>
-                تأسست <span className="text-gold-primary font-bold">أومنيرا (OMNIRA)</span> في عام 2025 برؤية واضحة: 
+                تأسست <span className="text-gold-primary font-bold">أومنيرا (OMNIRA)</span> برؤية واضحة: 
                 تحويل صناعة صف السيارات في المملكة من خدمة عادية إلى تجربة فاخرة لا تُنسى.
               </p>
               <p>
@@ -59,7 +60,6 @@ const StorySection = () => {
               </p>
               <p>
                 <strong className="text-gold-primary">السجل التجاري:</strong> 7051975600<br/>
-                <strong className="text-gold-primary">تاريخ التأسيس:</strong> 8 أكتوبر 2025<br/>
                 <strong className="text-gold-primary">المقر الرئيسي:</strong> الرياض، المملكة العربية السعودية
               </p>
             </div>
@@ -81,7 +81,7 @@ const VisionMissionSection = () => {
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.2 }}
             className="p-8 rounded-2xl bg-gradient-dark border border-gold-primary/20"
           >
             <div className="w-16 h-16 rounded-full bg-gold-primary/10 flex items-center justify-center mb-6">
@@ -90,14 +90,15 @@ const VisionMissionSection = () => {
             <h3 className="text-3xl font-bold mb-4 text-gold-primary">رؤيتنا</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
               أن نكون الخيار الأول لخدمات صف السيارات في المملكة والمنطقة، ونضع معايير 
-              جديدة للاحترافية والجودة في هذا القطاع.
+              جديدة للاحترافية والجودة في هذا القطاع. نسعى للمساهمة في تحقيق أهداف 
+              <span className="text-gold-primary font-semibold">رؤية المملكة 2030</span> من خلال تقديم خدمات متطورة تدعم قطاع الضيافة والسياحة.
             </p>
           </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={{ duration: 0.2, delay: 0 }}
             className="p-8 rounded-2xl bg-gradient-dark border border-gold-primary/20"
           >
             <div className="w-16 h-16 rounded-full bg-gold-primary/10 flex items-center justify-center mb-6">
@@ -244,14 +245,15 @@ const TeamSection = () => {
               key={index}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.2, delay: 0 }}
               className="text-center"
             >
               <div className="relative h-64 mb-4 rounded-xl overflow-hidden">
                 <Image
-                  src={`https://images.unsplash.com/photo-${index === 0 ? '1560250097-0b93528c311a' : index === 1 ? '1573496359142-b8d87734a5a2' : '1519085360753-af0119f7fa1a'}?q=80&w=1000`}
+                  src={`https://images.unsplash.com/photo-${index === 0 ? '1560250097-0b93528c311a' : index === 1 ? '1573496359142-b8d87734a5a2' : '1500648767791-00dcc994a43e'}?q=80&w=1000`}
                   alt="عضو فريق"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover"
                 />
               </div>
