@@ -37,10 +37,10 @@ const HeroSection = () => {
   ];
 
   useEffect(() => {
-    // Load video immediately for faster experience
+    // تأخير تحميل الفيديو ليظهر السلايدر أولاً
     const timer = setTimeout(() => {
       setShouldLoadVideo(true);
-    }, 100);
+    }, 8000); // 8 ثواني - يعرض السلايدر أولاً
 
     return () => clearTimeout(timer);
   }, []);

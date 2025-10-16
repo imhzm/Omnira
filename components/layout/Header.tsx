@@ -38,15 +38,21 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="group flex items-center h-full py-3">
-            <Image
-              src="/logo.png"
-              alt="OMNIRA - أومنيرا"
-              width={180}
-              height={50}
-              className="object-contain w-auto h-full group-hover:scale-105 transition-transform duration-300"
-              priority
-            />
+          <Link href="/" className="group flex items-center h-full py-3 relative">
+            <div className="relative">
+              {/* Shadow Glow Effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-primary/30 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gold-primary/20 blur-md scale-105 animate-pulse"></div>
+              
+              <Image
+                src="/logo.png"
+                alt="OMNIRA - أومنيرا"
+                width={180}
+                height={50}
+                className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-110 transition-all duration-500 animate-float"
+                priority
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation المطور */}

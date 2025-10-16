@@ -38,14 +38,20 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="mb-6 h-14 flex items-center">
-              <Image
-                src="/logo.png"
-                alt="OMNIRA - أومنيرا"
-                width={180}
-                height={50}
-                className="object-contain w-auto h-full"
-              />
+            <div className="mb-6 h-14 flex items-center group">
+              <div className="relative">
+                {/* Shadow Glow Effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-primary/30 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 bg-gold-primary/20 blur-md scale-105 animate-pulse"></div>
+                
+                <Image
+                  src="/logo.png"
+                  alt="OMNIRA - أومنيرا"
+                  width={180}
+                  height={50}
+                  className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-105 transition-all duration-500 animate-float"
+                />
+              </div>
             </div>
             <p className="text-brown-text text-sm mb-6 leading-relaxed">
               شركة سعودية رائدة في <span className="text-sage-primary font-bold">خدمات صف السيارات</span>. نساهم في تحقيق <span className="text-sunset-golden font-bold">رؤية 2030</span>
