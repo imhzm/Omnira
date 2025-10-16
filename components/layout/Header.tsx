@@ -36,19 +36,17 @@ const Header = () => {
       }`}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-24">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="group flex items-center">
-            <div className="relative w-40 h-12 group-hover:scale-105 transition-transform duration-300">
-              <Image
-                src="/logo.png"
-                alt="OMNIRA - أومنيرا"
-                width={160}
-                height={48}
-                className="object-contain object-left"
-                priority
-              />
-            </div>
+          <Link href="/" className="group flex items-center h-full py-4">
+            <Image
+              src="/logo.png"
+              alt="OMNIRA - أومنيرا"
+              width={140}
+              height={40}
+              className="object-contain w-auto h-full group-hover:scale-105 transition-transform duration-300"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation المطور */}

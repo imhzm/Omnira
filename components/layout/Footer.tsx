@@ -38,16 +38,14 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="mb-6">
-              <div className="relative w-40 h-12">
-                <Image
-                  src="/logo.png"
-                  alt="OMNIRA - أومنيرا"
-                  width={160}
-                  height={48}
-                  className="object-contain object-left"
-                />
-              </div>
+            <div className="mb-6 h-12 flex items-center">
+              <Image
+                src="/logo.png"
+                alt="OMNIRA - أومنيرا"
+                width={140}
+                height={40}
+                className="object-contain w-auto h-full"
+              />
             </div>
             <p className="text-brown-text text-sm mb-6 leading-relaxed">
               شركة سعودية رائدة في <span className="text-sage-primary font-bold">خدمات صف السيارات</span>. نساهم في تحقيق <span className="text-sunset-golden font-bold">رؤية 2030</span>
