@@ -9,7 +9,32 @@ import Image from 'next/image';
 const HeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const videoRef = useRef<HTMLDivElement>(null);
+
+  // صور السلايدر - باركينج وخدمات السيارات الفاخرة
+  const sliderImages = [
+    {
+      url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070',
+      alt: 'خدمات صف السيارات الفاخرة'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1486006920555-c77dcf18193e?q=80&w=2070',
+      alt: 'موقف سيارات فندق فاخر'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070',
+      alt: 'سيارة فاخرة في الموقف'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?q=80&w=2070',
+      alt: 'سيارة رياضية في موقف فاخر'
+    },
+    {
+      url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=2070',
+      alt: 'خدمات فاليه باركينج احترافية'
+    }
+  ];
 
   useEffect(() => {
     // Load video immediately for faster experience
@@ -20,22 +45,58 @@ const HeroSection = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  // سلايدر تلقائي
+  useEffect(() => {
+    if (!isVideoLoaded) {
+      const interval = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
+      }, 3000); // تغيير كل 3 ثواني
+
+      return () => clearInterval(interval);
+    }
+  }, [isVideoLoaded, sliderImages.length]);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Video */}
       <div className="absolute inset-0 z-0" ref={videoRef}>
-        {/* Placeholder Image - loads instantly */}
-        <div className={`absolute inset-0 transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
-          <Image
-            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070"
-            alt="OMNIRA Valet Parking"
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-            quality={85}
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
+        {/* Image Slider - يعرض لحين تحميل الفيديو */}
+        <div className={`absolute inset-0 transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+          {sliderImages.map((image, index) => (
+            <div
+              key={index}
+              className={`absolute inset-0 transition-opacity duration-1000 ${
+                currentSlide === index ? 'opacity-100' : 'opacity-0'
+              }`}
+            >
+              <Image
+                src={image.url}
+                alt={image.alt}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority={index === 0}
+                quality={85}
+              />
+            </div>
+          ))}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
+          
+          {/* Slider Indicators */}
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 space-x-reverse">
+            {sliderImages.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
+                  currentSlide === index 
+                    ? 'w-8 bg-gold-primary' 
+                    : 'w-2 bg-white/50 hover:bg-white/80'
+                }`}
+                aria-label={`الذهاب إلى الصورة ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
 
         {/* Vimeo Video Background - lazy loaded */}
