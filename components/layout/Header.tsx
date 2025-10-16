@@ -53,8 +53,8 @@ const Header = () => {
           : 'bg-white/90 backdrop-blur-lg shadow-lg border-b border-sage-primary/20'
       }`}
     >
-      <div className="container-custom">
-        <div className="flex items-center justify-between h-20">
+      <div className="container-custom relative">
+        <div className="flex items-center justify-between h-20 relative">
           {/* Logo */}
           <Link href="/" className="group flex items-center h-full py-3 relative">
             <div className="relative">
@@ -111,19 +111,38 @@ const Header = () => {
                   
                   {/* Mega Menu للخدمات */}
                   {item.hasSubmenu && showServicesMenu && (
-                    <div className="absolute top-full right-0 mt-2 w-72 bg-white/98 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-sage-primary/20 p-4 animate-slideDown">
-                      <div className="absolute -top-2 right-8 w-4 h-4 bg-white rotate-45 border-t-2 border-r-2 border-sage-primary/20"></div>
-                      {servicesMenu.map((service) => (
-                        <Link
-                          key={service.href}
-                          href={service.href}
-                          className="flex items-center space-x-3 space-x-reverse p-3 rounded-xl hover:bg-sage-primary/10 transition-all duration-300 group"
-                          onClick={() => setShowServicesMenu(false)}
-                        >
-                          <span className="text-2xl group-hover:scale-125 transition-transform duration-300">{service.emoji}</span>
-                          <span className="font-semibold text-brown-dark group-hover:text-sage-primary transition-colors duration-300">{service.name}</span>
-                        </Link>
-                      ))}
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-white/98 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-sage-primary/30 p-6 animate-slideDown z-[100]">
+                      {/* السهم في الأعلى */}
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white rotate-45 border-t-2 border-l-2 border-sage-primary/30"></div>
+                      
+                      {/* العنوان */}
+                      <div className="mb-4 pb-3 border-b-2 border-sage-primary/20">
+                        <h3 className="text-lg font-black text-brown-dark flex items-center space-x-2 space-x-reverse">
+                          <span className="w-2 h-2 bg-gold-primary rounded-full animate-pulse"></span>
+                          <span>خدماتنا المميزة</span>
+                        </h3>
+                      </div>
+                      
+                      {/* القائمة */}
+                      <div className="space-y-2">
+                        {servicesMenu.map((service, idx) => (
+                          <Link
+                            key={service.href}
+                            href={service.href}
+                            className="flex items-center space-x-3 space-x-reverse p-4 rounded-xl hover:bg-gradient-to-r hover:from-sage-primary/10 hover:to-gold-primary/10 transition-all duration-300 group border-2 border-transparent hover:border-sage-primary/20 animate-fadeInUp"
+                            onClick={() => setShowServicesMenu(false)}
+                            style={{ animationDelay: `${idx * 100}ms`, opacity: 0 }}
+                          >
+                            <div className="flex-shrink-0 w-10 h-10 bg-sage-primary/10 rounded-xl flex items-center justify-center group-hover:bg-sage-primary/20 group-hover:scale-110 transition-all duration-300">
+                              <span className="text-2xl">{service.emoji}</span>
+                            </div>
+                            <span className="font-bold text-brown-dark group-hover:text-sage-primary transition-colors duration-300 flex-1 text-right">{service.name}</span>
+                            <svg className="w-5 h-5 text-sage-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                            </svg>
+                          </Link>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>

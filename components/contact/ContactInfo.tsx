@@ -8,7 +8,9 @@ const ContactInfo = () => {
     {
       icon: MapPin,
       title: 'العنوان',
-      details: ['عبدالرحمن الشعيبي، حي الروضة', 'الرياض 12311', 'المملكة العربية السعودية'],
+      details: ['POMF+3FG روضة، الرياض السعودية', 'حي الروضة، الرياض 12311', 'المملكة العربية السعودية'],
+      coordinates: '24°43\'57.7"N 46°46\'25.4"E',
+      mapLink: 'https://maps.app.goo.gl/BpyJj4V4sjPssrbf9',
     },
     {
       icon: Phone,
@@ -93,18 +95,61 @@ const ContactInfo = () => {
         })}
       </div>
 
-      {/* Google Maps */}
+      {/* Google Maps - خريطة تفاعلية */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="rounded-2xl overflow-hidden border-2 border-sage-primary/20 shadow-xl"
+        className="rounded-2xl overflow-hidden border-2 border-sage-primary/30 shadow-2xl hover:shadow-sage-primary/20 transition-all duration-300"
       >
-        <div className="relative h-80 bg-gradient-to-br from-sage-primary/5 to-beige-light flex items-center justify-center">
-          <div className="text-center">
-            <MapPin className="w-16 h-16 text-sage-primary mx-auto mb-4" />
-            <p className="text-brown-dark font-bold text-lg">خريطة الموقع</p>
-            <p className="text-brown-text text-sm mt-2">الرياض 12311، حي الروضة</p>
+        {/* Header */}
+        <div className="bg-gradient-to-r from-sage-primary to-sage-medium p-4 flex items-center justify-between">
+          <div className="flex items-center space-x-3 space-x-reverse">
+            <MapPin className="w-6 h-6 text-white" />
+            <div>
+              <h3 className="text-white font-black text-lg">موقعنا على الخريطة</h3>
+              <p className="text-white/80 text-sm">POMF+3FG روضة، الرياض</p>
+            </div>
+          </div>
+          <a
+            href="https://maps.app.goo.gl/BpyJj4V4sjPssrbf9"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white/20 hover:bg-white/30 text-white px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 flex items-center space-x-2 space-x-reverse"
+          >
+            <span>فتح في Google Maps</span>
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+            </svg>
+          </a>
+        </div>
+        
+        {/* Map */}
+        <div className="relative h-96 bg-gray-100">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0989!2d46.773722!3d24.73269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQzJzU3LjciTiA0NsKwNDYnMjUuNCJF!5e0!3m2!1sar!2ssa!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="موقع OMNIRA على الخريطة"
+            className="absolute inset-0"
+          />
+        </div>
+        
+        {/* Footer Info */}
+        <div className="bg-gradient-to-r from-beige-light to-white p-4 border-t-2 border-sage-primary/10">
+          <div className="flex items-center justify-between text-sm">
+            <div className="flex items-center space-x-2 space-x-reverse text-brown-dark">
+              <span className="font-bold">الإحداثيات:</span>
+              <span className="font-mono text-sage-primary">24°43&apos;57.7&quot;N 46°46&apos;25.4&quot;E</span>
+            </div>
+            <div className="flex items-center space-x-2 space-x-reverse text-brown-text">
+              <MapPin className="w-4 h-4" />
+              <span>حي الروضة، الرياض 12311</span>
+            </div>
           </div>
         </div>
       </motion.div>
