@@ -21,7 +21,7 @@ const ContactHero = () => {
 
       <div className="container-custom relative z-10 text-center py-20">
         <motion.div
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="space-y-6"

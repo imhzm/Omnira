@@ -36,14 +36,14 @@ const PricingHero = () => {
 
       <div className="container-custom relative z-10 py-20">
         <motion.div
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-5xl mx-auto"
         >
           {/* Badge */}
           <motion.div
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.1 }}
             className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8 group hover:border-sage-primary transition-all"
@@ -55,7 +55,7 @@ const PricingHero = () => {
 
           {/* Main Title */}
           <motion.h1
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight"
@@ -65,7 +65,7 @@ const PricingHero = () => {
 
           {/* Subtitle */}
           <motion.p
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="text-xl md:text-2xl text-brown-dark font-medium max-w-3xl mx-auto mb-12 leading-relaxed"
@@ -77,7 +77,7 @@ const PricingHero = () => {
 
           {/* Features Grid */}
           <motion.div
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
@@ -101,7 +101,7 @@ const PricingHero = () => {
 
           {/* Pricing Note */}
           <motion.div
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.9 }}
             className="mt-12 inline-flex items-center space-x-2 space-x-reverse bg-gradient-to-r from-accents-emerald/10 to-sage-primary/10 px-6 py-3 rounded-full border border-sage-primary/30"

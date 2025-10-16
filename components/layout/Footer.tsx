@@ -26,53 +26,60 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-beige-medium border-t border-sage-primary/20">
-      <div className="container-custom py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <footer className="bg-gradient-to-b from-sage-50 via-white to-sage-50 border-t-2 border-sage-primary/30 relative overflow-hidden">
+      {/* Animated Blobs */}
+      <div className="absolute inset-0 z-0 opacity-5">
+        <div className="absolute -top-40 -left-40 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+      </div>
+
+      <div className="container-custom py-16 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="flex items-center space-x-3 space-x-reverse mb-4">
-              <div className="relative w-12 h-12">
-                <div className="absolute inset-0 bg-gradient-luxury rounded-lg"></div>
-                <div className="absolute inset-0.5 bg-white rounded-lg flex items-center justify-center">
-                  <span className="text-2xl font-bold gold-shine-effect">O</span>
+            <div className="flex items-center space-x-3 space-x-reverse mb-6">
+              <div className="relative w-14 h-14">
+                <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sunset-golden rounded-2xl blur-md opacity-50"></div>
+                <div className="relative w-full h-full bg-gradient-to-br from-sage-primary to-sage-medium rounded-2xl shadow-xl flex items-center justify-center">
+                  <span className="text-3xl font-black text-white">O</span>
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-bold gold-shine-effect">OMNIRA</h3>
-                <p className="text-xs text-brown-medium">أومنيرا</p>
+                <h3 className="text-2xl font-black bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">OMNIRA</h3>
+                <p className="text-xs text-brown-medium font-medium">أومنيرا</p>
               </div>
             </div>
-            <p className="text-brown-text text-sm mb-4">
-              شركة سعودية رائدة في خدمات صف السيارات الاحترافية. نساهم في تحقيق رؤية 2030 من خلال حلول ذكية ومتطورة للفنادق، المطاعم، والفعاليات.
+            <p className="text-brown-text text-sm mb-6 leading-relaxed">
+              شركة سعودية رائدة في <span className="text-sage-primary font-bold">خدمات صف السيارات</span>. نساهم في تحقيق <span className="text-sunset-golden font-bold">رؤية 2030</span>
             </p>
-            <div className="flex space-x-4 space-x-reverse">
-              <a href="#" className="text-brown-medium hover:text-sage-primary transition-colors" aria-label="Facebook">
-                <Facebook className="w-5 h-5" />
+            <div className="flex space-x-3 space-x-reverse">
+              <a href="#" className="group p-3 rounded-xl bg-sage-primary/10 text-sage-primary hover:bg-sage-primary hover:text-white transition-all duration-300" aria-label="Facebook">
+                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="text-brown-medium hover:text-sage-primary transition-colors" aria-label="Twitter">
-                <Twitter className="w-5 h-5" />
+              <a href="#" className="group p-3 rounded-xl bg-accents-sky/10 text-accents-sky hover:bg-accents-sky hover:text-white transition-all duration-300" aria-label="Twitter">
+                <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="text-brown-medium hover:text-sage-primary transition-colors" aria-label="Instagram">
-                <Instagram className="w-5 h-5" />
+              <a href="#" className="group p-3 rounded-xl bg-sunset-golden/10 text-sunset-golden hover:bg-sunset-golden hover:text-white transition-all duration-300" aria-label="Instagram">
+                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
-              <a href="#" className="text-brown-medium hover:text-sage-primary transition-colors" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5" />
+              <a href="#" className="group p-3 rounded-xl bg-accents-emerald/10 text-accents-emerald hover:bg-accents-emerald hover:text-white transition-all duration-300" aria-label="LinkedIn">
+                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
               </a>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-sage-primary font-semibold mb-4">خدماتنا</h4>
+            <h4 className="text-sage-primary font-black text-lg mb-6">خدماتنا</h4>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-brown-text hover:text-sage-primary transition-colors text-sm"
+                    className="text-brown-text hover:text-sage-primary transition-all duration-300 text-sm font-medium group inline-flex items-center"
                   >
-                    {link.name}
+                    <span className="group-hover:translate-x-1 transition-transform">←</span>
+                    <span className="mr-2">{link.name}</span>
                   </Link>
                 </li>
               ))}
@@ -81,28 +88,30 @@ const Footer = () => {
 
           {/* More Services */}
           <div>
-            <h4 className="text-sage-primary font-semibold mb-4">خدمات أخرى</h4>
+            <h4 className="text-sage-primary font-black text-lg mb-6">خدمات أخرى</h4>
             <ul className="space-y-2">
               {footerLinks.moreServices.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-brown-text hover:text-sage-primary transition-colors text-sm"
+                    className="text-brown-text hover:text-sage-primary transition-all duration-300 text-sm font-medium group inline-flex items-center"
                   >
-                    {link.name}
+                    <span className="group-hover:translate-x-1 transition-transform">←</span>
+                    <span className="mr-2">{link.name}</span>
                   </Link>
                 </li>
               ))}
             </ul>
-            <h4 className="text-sage-primary font-semibold mb-4 mt-6">الشركة</h4>
+            <h4 className="text-sage-primary font-black text-lg mb-6 mt-8">الشركة</h4>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-brown-text hover:text-sage-primary transition-colors text-sm"
+                    className="text-brown-text hover:text-sage-primary transition-all duration-300 text-sm font-medium group inline-flex items-center"
                   >
-                    {link.name}
+                    <span className="group-hover:translate-x-1 transition-transform">←</span>
+                    <span className="mr-2">{link.name}</span>
                   </Link>
                 </li>
               ))}
@@ -111,23 +120,29 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="text-sage-primary font-semibold mb-4">تواصل معنا</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-3 space-x-reverse">
-                <MapPin className="w-5 h-5 text-sage-primary flex-shrink-0 mt-0.5" />
+            <h4 className="text-sage-primary font-black text-lg mb-6">تواصل معنا</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start space-x-3 space-x-reverse group">
+                <div className="p-2 rounded-lg bg-sage-primary/10 group-hover:bg-sage-primary transition-colors">
+                  <MapPin className="w-4 h-4 text-sage-primary group-hover:text-white flex-shrink-0 transition-colors" />
+                </div>
                 <span className="text-brown-text text-sm">
                   عبدالرحمن الشعيبي، حي الروضة<br />
                   الرياض 12311، السعودية
                 </span>
               </li>
-              <li className="flex items-center space-x-3 space-x-reverse">
-                <MessageCircle className="w-5 h-5 text-sage-primary flex-shrink-0" />
+              <li className="flex items-center space-x-3 space-x-reverse group">
+                <div className="p-2 rounded-lg bg-accents-emerald/10 group-hover:bg-accents-emerald transition-colors">
+                  <MessageCircle className="w-4 h-4 text-accents-emerald group-hover:text-white flex-shrink-0 transition-colors" />
+                </div>
                 <a href="https://wa.me/966XXXXXXXXX" target="_blank" rel="noopener noreferrer" className="text-brown-text hover:text-sage-primary text-sm transition-colors">
                   واتساب: +966 XX XXX XXXX
                 </a>
               </li>
-              <li className="flex items-center space-x-3 space-x-reverse">
-                <Mail className="w-5 h-5 text-sage-primary flex-shrink-0" />
+              <li className="flex items-center space-x-3 space-x-reverse group">
+                <div className="p-2 rounded-lg bg-accents-sky/10 group-hover:bg-accents-sky transition-colors">
+                  <Mail className="w-4 h-4 text-accents-sky group-hover:text-white flex-shrink-0 transition-colors" />
+                </div>
                 <a href="mailto:info@omnira.sa" className="text-brown-text hover:text-sage-primary text-sm transition-colors">
                   info@omnira.sa
                 </a>
@@ -137,29 +152,35 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-brown-light/30 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-center items-center">
-            <p className="text-brown-medium text-sm text-center">
-              © {currentYear} OMNIRA Company Holding. جميع الحقوق محفوظة | السجل التجاري: 7051975600
+        <div className="border-t-2 border-sage-primary/20 mt-12 pt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-brown-dark text-sm font-medium">
+              © {currentYear} <span className="text-sage-primary font-bold">OMNIRA</span> Company Holding. جميع الحقوق محفوظة
             </p>
-            <p className="text-brown-medium text-sm text-center mt-2">
-              تم التصميم بكل حب <span aria-hidden="true">❤️</span> بواسطة Sky Wave —
+            <p className="text-brown-medium text-sm">
+              السجل التجاري: <span className="text-sage-primary font-bold">7051975600</span>
+            </p>
+          </div>
+          <div className="mt-6 pt-6 border-t border-sage-primary/10 text-center">
+            <p className="text-brown-medium text-sm">
+              تم التصميم بكل حب <span className="text-sunset-golden">❤️</span> بواسطة 
               <a
                 href="https://www.skywaveads.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sage-primary hover:text-sage-dark mx-1"
+                className="text-sage-primary hover:text-sage-medium font-bold mx-1 transition-colors"
               >
-                www.skywaveads.com
+                Sky Wave
               </a>
-              |
+              —
               <a
                 href="https://wa.me/201067894321"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-brown-text hover:text-sage-primary ml-1"
+                className="inline-flex items-center gap-1 text-accents-emerald hover:text-accents-emerald/80 font-medium mr-1 transition-colors"
               >
-                +201067894321
+                <MessageCircle className="w-3 h-3" />
+                <span>+201067894321</span>
               </a>
             </p>
           </div>

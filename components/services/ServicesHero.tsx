@@ -40,14 +40,14 @@ const ServicesHero = () => {
 
       <div className="container-custom relative z-10 py-24">
         <motion.div
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center max-w-6xl mx-auto"
         >
           {/* Badge */}
           <motion.div
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.1 }}
             className="inline-flex items-center space-x-3 space-x-reverse glass-effect px-8 py-4 rounded-full border-2 border-sage-primary/30 mb-10 group hover:border-sage-primary transition-all"
@@ -59,7 +59,7 @@ const ServicesHero = () => {
 
           {/* Main Title */}
           <motion.h1
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
             className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight"
@@ -69,7 +69,7 @@ const ServicesHero = () => {
 
           {/* Subtitle */}
           <motion.p
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
             className="text-xl md:text-2xl text-brown-dark font-medium max-w-4xl mx-auto mb-16 leading-relaxed"
@@ -81,7 +81,7 @@ const ServicesHero = () => {
 
           {/* Stats */}
           <motion.div
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto"

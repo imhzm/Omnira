@@ -20,12 +20,12 @@ const LocationsHero = () => {
 
       <div className="container-custom relative z-10 text-center py-20">
         <motion.div
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            initial={false}
+            initial={{ opacity: 1 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.2, duration: 0.6 }}
             className="inline-block px-8 py-3 chip-blur rounded-full mb-6"

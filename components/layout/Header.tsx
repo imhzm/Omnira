@@ -29,36 +29,29 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'glass-advanced shadow-2xl border-b-2 border-sage-primary/30'
-          : 'bg-white/80 backdrop-blur-2xl shadow-xl border-b border-sage-primary/20'
+          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b-2 border-sage-primary/30'
+          : 'bg-white/90 backdrop-blur-lg shadow-lg border-b border-sage-primary/20'
       }`}
-      style={{
-        backdropFilter: 'blur(25px) saturate(180%)',
-      }}
     >
       <div className="container-custom">
         <div className="flex items-center justify-between h-24">
-          {/* Logo المطور */}
+          {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 space-x-reverse group">
             <div className="relative w-14 h-14">
               {/* Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-luxury rounded-xl blur-lg opacity-50 group-hover:opacity-100 transition-opacity duration-300"></div>
-              {/* Outer Border */}
-              <div className="absolute inset-0 bg-gradient-luxury rounded-xl p-[2px]">
-                <div className="w-full h-full bg-white rounded-xl flex items-center justify-center relative overflow-hidden">
-                  {/* Shimmer Effect */}
-                  <div className="absolute inset-0 bg-gradient-shimmer animate-shimmer"></div>
-                  {/* Logo Letter */}
-                  <span className="text-3xl font-black gold-shine-effect relative z-10">O</span>
-                </div>
+              <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sunset-golden rounded-2xl blur-lg opacity-40 group-hover:opacity-70 transition-opacity duration-300"></div>
+              {/* Logo Container */}
+              <div className="relative w-full h-full bg-gradient-to-br from-sage-primary to-sage-medium rounded-2xl shadow-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+                <span className="text-3xl font-black text-white relative z-10">O</span>
               </div>
             </div>
             <div className="relative">
-              <h1 className="text-2xl font-black tracking-tight">
-                <span className="gold-shine-effect">OMNIRA</span>
+              <h1 className="text-2xl font-black tracking-tight bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">
+                OMNIRA
               </h1>
+              <p className="text-xs text-brown-medium font-medium">أومنيرا</p>
             </div>
           </Link>
 
@@ -68,15 +61,13 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="relative px-4 py-2 text-brown-text hover:text-brown-dark transition-all duration-300 group"
+                className="relative px-4 py-2 text-brown-dark font-semibold hover:text-sage-primary transition-all duration-300 group"
               >
-                <span className="relative z-10 font-medium">{item.name}</span>
+                <span className="relative z-10">{item.name}</span>
                 {/* Hover Background */}
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/0 via-gold-primary/10 to-gold-primary/0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-sage-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {/* Bottom Border */}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[2px] bg-gradient-luxury group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
-                {/* Glow Effect */}
-                <div className="absolute inset-0 bg-gold-primary/5 rounded-lg blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[3px] bg-gradient-to-r from-sage-primary to-sunset-golden group-hover:w-3/4 transition-all duration-300 rounded-full"></span>
               </Link>
             ))}
           </nav>
@@ -86,19 +77,19 @@ const Header = () => {
             {/* Phone Icon */}
             <a 
               href="tel:+966XXXXXXXXX" 
-              className="relative p-3 text-brown-medium hover:text-sage-primary transition-all duration-300 group"
+              className="relative p-3 text-sage-primary hover:text-sage-medium transition-all duration-300 group"
               aria-label="اتصل بنا"
             >
-              <div className="absolute inset-0 bg-gold-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Phone className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gold-primary/20 rounded-full blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0 bg-sage-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <Phone className="w-5 h-5 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
             </a>
             {/* CTA Button */}
             <Link 
               href="/contact" 
-              className="btn-gold px-8 py-3 text-sm font-semibold shadow-lg shadow-gold-primary/20 hover:shadow-xl hover:shadow-gold-primary/30 transition-all duration-300"
+              className="group inline-flex items-center justify-center space-x-2 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-8 py-3 text-sm font-black rounded-xl hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105 transition-all duration-300"
             >
-              احجز الآن
+              <span>احجز الآن</span>
+              <span className="group-hover:-translate-x-1 transition-transform">←</span>
             </Link>
           </div>
 
@@ -121,17 +112,17 @@ const Header = () => {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-4 px-4 text-brown-text hover:text-brown-dark transition-all duration-300 rounded-xl relative group overflow-hidden"
+                className="block py-4 px-4 text-brown-dark font-semibold hover:text-sage-primary transition-all duration-300 rounded-xl relative group overflow-hidden"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/0 via-gold-primary/10 to-gold-primary/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10 font-medium">{item.name}</span>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-0 h-[2px] bg-gradient-luxury group-hover:w-8 transition-all duration-300"></div>
+                <div className="absolute inset-0 bg-sage-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <span className="relative z-10">{item.name}</span>
+                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-0 h-[3px] bg-gradient-to-r from-sage-primary to-sunset-golden group-hover:w-8 transition-all duration-300 rounded-full"></div>
               </Link>
             ))}
             <Link
               href="/contact"
-              className="block mt-6 text-center btn-gold py-4 shadow-lg shadow-gold-primary/20"
+              className="block mt-6 text-center bg-gradient-to-r from-sage-primary to-sage-medium text-white py-4 font-black rounded-xl hover:shadow-2xl hover:shadow-sage-primary/30 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               احجز الآن

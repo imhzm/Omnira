@@ -34,7 +34,7 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
 
       <div className="container-custom relative z-10 py-24">
         <motion.div
-          initial={false}
+          initial={{ opacity: 1 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-5xl mx-auto"
