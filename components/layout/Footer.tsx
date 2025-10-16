@@ -38,12 +38,12 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
           <div>
-            <div className="mb-6 h-12 flex items-center">
+            <div className="mb-6 h-14 flex items-center">
               <Image
                 src="/logo.png"
                 alt="OMNIRA - أومنيرا"
-                width={140}
-                height={40}
+                width={180}
+                height={50}
                 className="object-contain w-auto h-full"
               />
             </div>

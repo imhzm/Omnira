@@ -38,12 +38,12 @@ const Header = () => {
       <div className="container-custom">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="group flex items-center h-full py-4">
+          <Link href="/" className="group flex items-center h-full py-3">
             <Image
               src="/logo.png"
               alt="OMNIRA - أومنيرا"
-              width={140}
-              height={40}
+              width={180}
+              height={50}
               className="object-contain w-auto h-full group-hover:scale-105 transition-transform duration-300"
               priority
             />
