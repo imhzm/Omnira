@@ -70,9 +70,9 @@ const CTASection = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
             >
-              <Link href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-10 py-5 text-lg font-black rounded-2xl hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105 transition-all">
+              <Link href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-10 py-5 text-lg font-black rounded-2xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500">
                 <span>احجز الآن</span>
-                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-500" />
               </Link>
               <Link href="/pricing" className="inline-flex items-center justify-center space-x-2 space-x-reverse px-10 py-5 text-lg font-bold border-2 border-sage-primary text-sage-primary rounded-2xl hover:bg-sage-primary hover:text-white hover:shadow-xl transition-all">
                 <span>اطلب عرض سعر</span>

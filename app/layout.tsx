@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { IBM_Plex_Sans_Arabic, Almarai } from "next/font/google";
 import "./globals.css";
+import "./performance.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 

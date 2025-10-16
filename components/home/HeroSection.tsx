@@ -3,39 +3,72 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 
 const HeroSection = () => {
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const videoRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    // Delay video loading slightly to prioritize critical content
+    const timer = setTimeout(() => {
+      setShouldLoadVideo(true);
+    }, 500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Video */}
-      <div className="absolute inset-0 z-0">
-        {/* Vimeo Video Background */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div style={{ padding: '56.67% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
-            <iframe
-              src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-              referrerPolicy="strict-origin-when-cross-origin"
-              style={{
-                position: 'absolute',
-                top: '50%',
-                left: '50%',
-                width: '100vw',
-                height: '100vh',
-                minWidth: '100%',
-                minHeight: '100%',
-                transform: 'translate(-50%, -50%)',
-                objectFit: 'cover',
-              }}
-              title="OMNIRA Valet Parking KSA"
-            />
-          </div>
+      <div className="absolute inset-0 z-0" ref={videoRef}>
+        {/* Placeholder Image - loads instantly */}
+        <div className={`absolute inset-0 transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-0' : 'opacity-100'}`}>
+          <Image
+            src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070"
+            alt="OMNIRA Valet Parking"
+            fill
+            sizes="100vw"
+            className="object-cover"
+            priority
+            quality={85}
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70"></div>
         </div>
+
+        {/* Vimeo Video Background - lazy loaded */}
+        {shouldLoadVideo && (
+          <div className="absolute inset-0 overflow-hidden">
+            <div style={{ padding: '56.67% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
+              <iframe
+                src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0&quality=540p"
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
+                referrerPolicy="strict-origin-when-cross-origin"
+                loading="lazy"
+                style={{
+                  position: 'absolute',
+                  top: '50%',
+                  left: '50%',
+                  width: '100vw',
+                  height: '100vh',
+                  minWidth: '100%',
+                  minHeight: '100%',
+                  transform: 'translate(-50%, -50%)',
+                  objectFit: 'cover',
+                }}
+                title="OMNIRA Valet Parking KSA"
+                onLoad={() => setIsVideoLoaded(true)}
+              />
+            </div>
+          </div>
+        )}
         {/* Enhanced Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/20 via-transparent to-sage-primary/20"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/60 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/20 via-transparent to-sage-primary/20 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/60 via-transparent to-transparent z-10"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -97,10 +130,10 @@ const HeroSection = () => {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link
               href="/contact"
-              className="btn-gold px-10 py-5 text-lg font-bold group inline-flex items-center space-x-3 space-x-reverse shadow-2xl shadow-gold-primary/30 hover:shadow-gold-primary/50 transition-all duration-300"
+              className="btn-gold px-10 py-5 text-lg font-bold group inline-flex items-center space-x-3 space-x-reverse shadow-lg shadow-gold-primary/20 hover:shadow-xl hover:shadow-gold-primary/30 transition-all duration-500"
             >
               <span>احجز الآن</span>
-              <ArrowLeft className="w-6 h-6 group-hover:-translate-x-2 transition-transform" />
+              <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-500" />
             </Link>
           </div>
 

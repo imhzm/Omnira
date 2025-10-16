@@ -85,10 +85,10 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Link
               href="/contact"
-              className="btn-gold px-10 py-5 text-lg font-bold inline-flex items-center justify-center space-x-3 space-x-reverse group hover:scale-105 transition-transform"
+              className="btn-gold px-10 py-5 text-lg font-bold inline-flex items-center justify-center space-x-3 space-x-reverse group transition-all duration-500"
             >
               <span>احجز الآن</span>
-              <ArrowRight className="w-6 h-6 group-hover:-translate-x-2 transition-transform" />
+              <ArrowRight className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-500" />
             </Link>
             
             <a

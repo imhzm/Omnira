@@ -142,15 +142,15 @@ const PricingPlans = () => {
 
               <Link
                 href="/contact"
-                className={`block w-full py-5 rounded-2xl text-center font-black text-lg transition-all shadow-lg group ${
+                className={`block w-full py-5 rounded-2xl text-center font-black text-lg transition-all duration-500 shadow-lg group ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-sage-primary to-sage-medium text-white hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105'
-                    : 'bg-sage-primary text-white hover:bg-sage-600 hover:shadow-xl'
+                    ? 'bg-gradient-to-r from-sage-primary to-sage-medium text-white hover:shadow-xl hover:shadow-sage-primary/20'
+                    : 'bg-sage-primary text-white hover:bg-sage-600 hover:shadow-lg'
                 }`}
               >
                 <span className="inline-flex items-center space-x-2 space-x-reverse">
                   <span>{plan.price === 'حسب الطلب' ? 'اطلب عرض سعر' : 'احجز الآن'}</span>
-                  <ArrowLeft className="w-5 h-5 group-hover:-translate-x-2 transition-transform" />
+                  <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-500" />
                 </span>
               </Link>
             </motion.div>

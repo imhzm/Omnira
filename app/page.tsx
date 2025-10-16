@@ -2,15 +2,44 @@ import { Metadata } from 'next';
 import dynamic from 'next/dynamic';
 import HeroSection from "@/components/home/HeroSection";
 import Header from "@/components/layout/Header";
+import PrefetchLinks from "@/components/PrefetchLinks";
 import { jsonLdWebsite, jsonLdOrganization } from '@/lib/seo-config';
 
-const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), { ssr: true });
-const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), { ssr: true });
-const FeaturesSection = dynamic(() => import("@/components/home/FeaturesSection"), { ssr: true });
-const HowItWorksSection = dynamic(() => import("@/components/home/HowItWorksSection"), { ssr: true });
-const Testimonials = dynamic(() => import("@/components/home/Testimonials"), { ssr: true });
-const CTASection = dynamic(() => import("@/components/home/CTASection"), { ssr: true });
-const Footer = dynamic(() => import("@/components/layout/Footer"), { ssr: true });
+// Critical sections - SSR enabled
+const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), { 
+  ssr: true,
+  loading: () => <div className="h-screen" />
+});
+
+const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), { 
+  ssr: true,
+  loading: () => <div className="h-screen" />
+});
+
+// Below fold - Lazy load without SSR for faster initial load
+const FeaturesSection = dynamic(() => import("@/components/home/FeaturesSection"), { 
+  ssr: false,
+  loading: () => <div className="h-96" />
+});
+
+const HowItWorksSection = dynamic(() => import("@/components/home/HowItWorksSection"), { 
+  ssr: false,
+  loading: () => <div className="h-96" />
+});
+
+const Testimonials = dynamic(() => import("@/components/home/Testimonials"), { 
+  ssr: false,
+  loading: () => <div className="h-96" />
+});
+
+const CTASection = dynamic(() => import("@/components/home/CTASection"), { 
+  ssr: false,
+  loading: () => <div className="h-64" />
+});
+
+const Footer = dynamic(() => import("@/components/layout/Footer"), { 
+  ssr: true
+});
 
 export const metadata: Metadata = {
   title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية والإدارة الذكية للمواقف في السعودية',
@@ -105,6 +134,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
+      <PrefetchLinks />
       <main className="min-h-screen bg-white">
         <Header />
         <HeroSection />
