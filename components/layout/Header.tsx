@@ -39,12 +39,12 @@ const Header = () => {
         <div className="flex items-center justify-between h-24">
           {/* Logo */}
           <Link href="/" className="group">
-            <div className="relative w-32 h-20 group-hover:scale-105 transition-transform duration-300">
+            <div className="relative w-40 h-16 group-hover:scale-105 transition-transform duration-300">
               <Image
                 src="/logo.png"
                 alt="OMNIRA - أومنيرا"
-                width={128}
-                height={80}
+                width={160}
+                height={64}
                 className="object-contain"
                 priority
               />

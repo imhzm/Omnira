@@ -39,12 +39,12 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="mb-6">
-              <div className="relative w-32 h-20">
+              <div className="relative w-40 h-16">
                 <Image
                   src="/logo.png"
                   alt="OMNIRA - أومنيرا"
-                  width={128}
-                  height={80}
+                  width={160}
+                  height={64}
                   className="object-contain"
                 />
               </div>
