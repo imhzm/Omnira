@@ -1,34 +1,66 @@
-# robots.txt for OMNIRA - October 2025
+# robots.txt for OMNIRA - Updated November 2025
+# تعليمات لروبوتات محركات البحث
 
-# Allow all crawlers
+# السماح لجميع الروبوتات
 User-agent: *
 Allow: /
-
-# Sitemaps
-Sitemap: https://omnira.sa/sitemap.xml
-Sitemap: https://omnira.sa/sitemap-services.xml
-Sitemap: https://omnira.sa/sitemap-locations.xml
-
-# Disallow admin and private areas (if any in future)
 Disallow: /api/
 Disallow: /admin/
 Disallow: /_next/
 Disallow: /private/
+Disallow: /tmp/
+Disallow: /dev/
 
-# Allow specific crawlers with special rules
+# سماح خاص لروبوت جوجل
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
+# سماح خاص لروبوت بينج
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 0
 
+# سماح خاص لروبوت ياهو
 User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
-# Block bad bots
+# خرائط الموقع
+Sitemap: https://omnira.sa/sitemap.xml
+Sitemap: https://omnira.sa/sitemap-services.xml
+Sitemap: https://omnira.sa/sitemap-locations.xml
+Sitemap: https://omnira.sa/sitemap-images.xml
+
+# حظر ملفات القوالب
+Disallow: /*.json$
+Disallow: /*.md$
+Disallow: /*.tsx$
+Disallow: /*.ts$
+Disallow: /*.log$
+Disallow: /*.config.js$
+Disallow: /vercel.json$
+
+# السماح بالوصول إلى ملفات الخرائط
+Allow: /sitemap.xml
+Allow: /sitemap-*.xml
+
+# تعامل خاص مع روبوت الصور من جوجل
+User-agent: Googlebot-Image
+Allow: /images/
+Allow: /public/images/
+Allow: /public/og-*.jpg
+Allow: /favicon.png
+Allow: /icons/
+Disallow: /_next/image
+
+# تعامل خاص مع محرك جوجل الجوال
+User-agent: Googlebot-Mobile
+Allow: /
+Disallow: /_next/
+Disallow: /api/
+
+# حظر الروبوتات المضرة ومحللي المنافسين
 User-agent: AhrefsBot
 Disallow: /
 
@@ -41,5 +73,27 @@ Disallow: /
 User-agent: MJ12bot
 Disallow: /
 
-# Host
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Rogerbot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+# معلومات المضيف
 Host: https://omnira.sa
+
+# توجيهات خاصة بالتحكم في معدل الزحف
+User-agent: *
+Request-rate: 1/2s
+
+# معلومات إضافية لمحركات البحث
+# موقع شركة أومنيرا لخدمات الفاليه باركينج وإدارة المواقف في المملكة العربية السعودية

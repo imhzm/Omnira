@@ -3,6 +3,15 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import LocationsHero from '@/components/locations/LocationsHero';
 import LocationsGrid from '@/components/locations/LocationsGrid';
+import dynamic from 'next/dynamic';
+import { generateFAQSchema } from '@/lib/schemas';
+import { getOGImage } from '@/lib/og-images';
+
+// استيراد مكون الخريطة التفاعلية بشكل ديناميكي لتفادي مشاكل الترميز على الخادم
+const InteractiveMap = dynamic(
+  () => import('@/components/locations/InteractiveMap'),
+  { ssr: false }
+);
 
 export const metadata: Metadata = {
   title: 'المدن التي نخدمها | OMNIRA - خدمات فاليه باركينج في 150+ مدينة سعودية',
@@ -34,12 +43,7 @@ export const metadata: Metadata = {
     description: 'خدمات صف السيارات في جميع مدن السعودية: الرياض، جدة، الدمام، مكة، المدينة، الخبر، الطائف، وأكثر',
     url: 'https://omnira.sa/locations',
     siteName: 'OMNIRA',
-    images: [{
-      url: 'https://omnira.sa/og-locations.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'خدمات أومنيرا في جميع مدن السعودية',
-    }],
+    images: [getOGImage('locations')],
     locale: 'ar_SA',
     type: 'website',
   },
@@ -47,7 +51,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'المدن التي نخدمها | OMNIRA',
     description: '150+ مدينة سعودية - خدمات صف السيارات والفاليه في جميع أنحاء المملكة',
-    images: ['https://omnira.sa/og-locations.jpg'],
+    images: [getOGImage('locations').url],
+    creator: '@omnira_sa',
   },
   robots: {
     index: true,
@@ -56,12 +61,77 @@ export const metadata: Metadata = {
 };
 
 export default function LocationsPage() {
+  // الأسئلة الشائعة حول المواقع
+  const locationsFAQs = [
+    {
+      question: 'هل تقدمون خدماتكم في جميع مدن المملكة؟',
+      answer: 'نعم، نقدم خدماتنا في أكثر من 150 مدينة ومحافظة في جميع مناطق المملكة العربية السعودية من خلال فروعنا وشبكة شركائنا المحليين.'
+    },
+    {
+      question: 'كيف يمكنني طلب خدماتكم في مدينتي؟',
+      answer: 'يمكنك التواصل معنا مباشرة عبر صفحة الاتصال أو الاتصال بالرقم الموحد، وسنقوم بتوجيهك للفرع الأقرب لك أو ترتيب الخدمة عن بعد.'
+    },
+    {
+      question: 'هل تختلف أسعار الخدمات من مدينة لأخرى؟',
+      answer: 'تعتمد أسعار خدماتنا على عدة عوامل منها المدينة، نوع الخدمة، حجم المشروع، والمدة. نقدم أسعاراً تنافسية في جميع المناطق مع مراعاة الاختلافات اللوجستية.'
+    },
+    {
+      question: 'كم تستغرق عملية بدء الخدمة في المدن البعيدة؟',
+      answer: 'نستطيع بدء الخدمة في معظم المدن الرئيسية خلال 24-48 ساعة. أما المدن النائية والمحافظات البعيدة فقد تستغرق من 3-5 أيام حسب المتطلبات اللوجستية.'
+    },
+  ];
+
+  // بيانات مهيكلة للمواقع
+  const locationsSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    'name': 'أومنيرا',
+    'url': 'https://omnira.sa/locations',
+    'areaServed': [
+      {
+        '@type': 'AdministrativeArea',
+        'name': 'المملكة العربية السعودية',
+        'containsPlace': [
+          { '@type': 'City', 'name': 'الرياض' },
+          { '@type': 'City', 'name': 'جدة' },
+          { '@type': 'City', 'name': 'الدمام' },
+          { '@type': 'City', 'name': 'مكة المكرمة' },
+          { '@type': 'City', 'name': 'المدينة المنورة' },
+          { '@type': 'City', 'name': 'الخبر' },
+          { '@type': 'City', 'name': 'الطائف' },
+          { '@type': 'City', 'name': 'تبوك' },
+          { '@type': 'City', 'name': 'أبها' },
+          { '@type': 'City', 'name': 'حائل' },
+          { '@type': 'City', 'name': 'نجران' },
+          { '@type': 'City', 'name': 'الباحة' },
+          { '@type': 'City', 'name': 'جازان' }
+        ]
+      }
+    ]
+  };
+
+  // بيانات مهيكلة للأسئلة الشائعة
+  const faqSchema = generateFAQSchema(locationsFAQs);
+  
   return (
-    <main className="min-h-screen bg-beige-primary">
-      <Header />
-      <LocationsHero />
-      <LocationsGrid />
-      <Footer />
-    </main>
+    <>
+      {/* إضافة البيانات المهيكلة */}
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(locationsSchema) }}
+      />
+      <script 
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      
+      <main className="min-h-screen bg-beige-primary">
+        <Header />
+        <LocationsHero />
+        <InteractiveMap />
+        <LocationsGrid />
+        <Footer />
+      </main>
+    </>
   );
 }

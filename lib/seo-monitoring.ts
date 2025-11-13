@@ -63,10 +63,11 @@ export const trackWebVitals = (metric: any) => {
 // Page view tracking
 export const trackPageView = (url: string, title: string) => {
   if (seoMonitoring.googleAnalytics.enabled) {
-    window.gtag?.('config', seoMonitoring.googleAnalytics.measurementId, {
+    const pageData: Record<string, any> = {
       page_path: url,
       page_title: title,
-    });
+    };
+    window.gtag?.('config', seoMonitoring.googleAnalytics.measurementId, pageData);
   }
 
   if (seoMonitoring.facebookPixel.enabled) {
@@ -77,11 +78,14 @@ export const trackPageView = (url: string, title: string) => {
 // Event tracking
 export const trackEvent = (eventName: string, eventData?: Record<string, any>) => {
   if (seoMonitoring.googleAnalytics.enabled) {
-    window.gtag?.('event', eventName, eventData);
+    // استخدام كائن فارغ إذا كانت البيانات غير معرفة
+    const data: Record<string, any> = eventData || {};
+    window.gtag?.('event', eventName, data);
   }
 
   if (seoMonitoring.facebookPixel.enabled) {
-    window.fbq?.('trackCustom', eventName, eventData);
+    const data: Record<string, any> = eventData || {};
+    window.fbq?.('trackCustom', eventName, data);
   }
 };
 
@@ -94,11 +98,18 @@ export const trackConversion = (conversionType: 'contact' | 'booking' | 'quote',
   });
 
   if (seoMonitoring.facebookPixel.enabled) {
-    window.fbq?.('track', 'Lead', {
+    // إنشاء كائن بيانات معد مسبقًا
+    const leadData: Record<string, any> = {
       content_name: conversionType,
-      value: value,
       currency: 'SAR',
-    });
+    };
+    
+    // إضافة القيمة فقط إذا كانت معرفة
+    if (value !== undefined) {
+      leadData.value = value;
+    }
+    
+    window.fbq?.('track', 'Lead', leadData);
   }
 };
 
@@ -126,7 +137,7 @@ export const seoHealthCheck = () => {
 
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void;
+    gtag?: (command: string, action: string, params: Record<string, any>) => void;
     fbq?: (...args: any[]) => void;
     dataLayer?: any[];
   }

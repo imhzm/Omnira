@@ -2,28 +2,49 @@
 
 import { useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import Head from 'next/head';
 
 /**
- * Prefetch important pages in the background for faster navigation
+ * تحسين أداء التصفح من خلال تحميل مسبق للصفحات الهامة
+ * وإضافة الارتباطات والتعليمات الهامة لمحركات البحث
  */
 const PrefetchLinks = () => {
   const router = useRouter();
 
   useEffect(() => {
-    // Prefetch critical pages after initial load
+    // تحميل مسبق للصفحات الرئيسية بعد تحميل الصفحة الحالية
     const prefetchTimer = setTimeout(() => {
-      // Most visited pages
+      // الصفحات الأكثر زيارة
       router.prefetch('/about');
       router.prefetch('/services');
       router.prefetch('/contact');
       router.prefetch('/pricing');
       router.prefetch('/locations');
-    }, 2000); // Wait 2s after page load
+      
+      // صفحات الخدمات الأكثر طلباً
+      router.prefetch('/services/valet-parking');
+      router.prefetch('/services/hotels');
+      router.prefetch('/services/restaurants');
+      router.prefetch('/services/events');
+    }, 1500); // انتظار 1.5 ثانية فقط بعد تحميل الصفحة
 
     return () => clearTimeout(prefetchTimer);
   }, [router]);
 
-  return null;
+  return (
+    <>
+      {/* روابط DNS للخدمات الخارجية لتسريع التحميل */}
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="https://images.unsplash.com" />
+      <link rel="dns-prefetch" href="https://player.vimeo.com" />
+      
+      {/* تعليمات لمحركات البحث */}
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+      <link rel="alternate" hrefLang="ar" href="https://omnira.sa" />
+      <link rel="alternate" hrefLang="en" href="https://omnira.sa/en" />
+      <link rel="canonical" href="https://omnira.sa" />
+    </>
+  );
 };
 
 export default PrefetchLinks;

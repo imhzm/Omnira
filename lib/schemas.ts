@@ -252,3 +252,115 @@ export function generateBreadcrumbSchema(items: { name: string; url: string }[])
     }))
   };
 }
+
+// مخطط الأسئلة الشائعة
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(faq => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer
+      }
+    }))
+  };
+}
+
+// مخطط لصفحة المقال
+export function generateArticleSchema(article: {
+  headline: string;
+  description: string;
+  image: string;
+  datePublished: string;
+  dateModified?: string;
+  author?: string;
+  publisher?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.headline,
+    description: article.description,
+    image: article.image,
+    datePublished: article.datePublished,
+    dateModified: article.dateModified || article.datePublished,
+    author: {
+      '@type': 'Organization',
+      name: article.author || 'OMNIRA Company Holding'
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: article.publisher || 'OMNIRA Company Holding',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://omnira.sa/logo.png'
+      }
+    }
+  };
+}
+
+// مخطط المراجعات
+export function generateReviewSchema(review: {
+  name: string;
+  reviewBody: string;
+  ratingValue: number;
+  author: string;
+  datePublished?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    reviewBody: review.reviewBody,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: review.ratingValue,
+      bestRating: '5',
+      worstRating: '1'
+    },
+    name: review.name,
+    author: {
+      '@type': 'Person',
+      name: review.author
+    },
+    datePublished: review.datePublished || new Date().toISOString().split('T')[0]
+  };
+}
+
+// مخطط المنتج
+export function generateProductSchema(product: {
+  name: string;
+  description: string;
+  image: string;
+  price?: string;
+  priceCurrency?: string;
+  availability?: string;
+  category?: string;
+  brand?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    image: product.image,
+    brand: {
+      '@type': 'Brand',
+      name: product.brand || 'OMNIRA'
+    },
+    category: product.category,
+    offers: product.price ? {
+      '@type': 'Offer',
+      price: product.price,
+      priceCurrency: product.priceCurrency || 'SAR',
+      availability: product.availability || 'https://schema.org/InStock',
+      url: 'https://omnira.sa/services',
+      seller: {
+        '@type': 'Organization',
+        name: 'OMNIRA Company Holding'
+      }
+    } : undefined
+  };
+}

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
-import { IBM_Plex_Sans_Arabic, Almarai } from "next/font/google";
-import "./globals.css";
+import localFont from "next/font/local";
+import './globals.css';
+import './favicon.css'; 
 import "./performance.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
 import ScrollProgress from "@/components/ui/ScrollProgress";
@@ -10,20 +11,26 @@ const WhatsAppButton = dynamic(() => import("@/components/layout/WhatsAppButton"
 const FloatingElements = dynamic(() => import("@/components/ui/FloatingElements"), { ssr: false });
 const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
 
-const ibmPlexArabic = IBM_Plex_Sans_Arabic({
-  weight: ['400', '700'],
-  subsets: ['arabic'],
-  variable: '--font-ibm-plex',
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
+const arabicFont = localFont({
+  src: [
+    { path: "../public/fonts/Cairo-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Cairo-Medium.ttf", weight: "500", style: "normal" },
+    { path: "../public/fonts/Cairo-SemiBold.ttf", weight: "600", style: "normal" },
+    { path: "../public/fonts/Cairo-Bold.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-ibm-plex",
+  display: "swap",
+  fallback: ["Cairo", "system-ui", "Tahoma"],
 });
 
-const almarai = Almarai({
-  weight: ['400'],
-  subsets: ['arabic'],
-  variable: '--font-almarai',
-  display: 'swap',
-  fallback: ['system-ui', 'arial'],
+const englishFont = localFont({
+  src: [
+    { path: "../public/fonts/Arial-Regular.ttf", weight: "400", style: "normal" },
+    { path: "../public/fonts/Arial-Bold.ttf", weight: "700", style: "normal" },
+  ],
+  variable: "--font-inter",
+  display: "swap",
+  fallback: ["Arial", "system-ui", "Segoe UI"],
 });
 
 export const metadata: Metadata = {
@@ -34,15 +41,14 @@ export const metadata: Metadata = {
   description: "أومنيرا - شركة سعودية رائدة في خدمات صف السيارات الاحترافية وإدارة المواقف الذكية. حلول متطورة للفنادق، المطاعم، الفعاليات والمنشآت التجارية في الرياض، جدة والدمام.",
   icons: {
     icon: [
-      { url: '/logo.png', sizes: 'any' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon.png', sizes: 'any' },
     ],
     apple: [
-      { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+      { url: '/favicon.png', sizes: 'any', type: 'image/png' },
     ],
-    shortcut: '/logo.png',
+    shortcut: '/favicon.png',
   },
+  metadataBase: new URL('https://omnira.sa'),
   keywords: [
     "صف السيارات",
     "خدمات فاليه",
@@ -76,11 +82,20 @@ export const metadata: Metadata = {
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
     siteName: 'OMNIRA',
+    images: [
+      {
+        url: '/favicon.png',
+        width: 800,
+        height: 800,
+        alt: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية في السعودية',
+      }
+    ],
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
+    images: ['/favicon.png'],
   },
   verification: {
     google: 'your-google-verification-code',
@@ -95,6 +110,14 @@ export default function RootLayout({
   return (
     <html lang="ar" dir="rtl">
       <head>
+        {/* PWA Support */}
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#C68B48" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+        
         {/* Preconnect to external domains for faster loading */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -104,22 +127,31 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://images.unsplash.com" />
         <link rel="dns-prefetch" href="https://images.pexels.com" />
         <link rel="dns-prefetch" href="https://cdn.pixabay.com" />
-        {/* Local Business Schema */}
+        
+        {/* SEO enhancements */}
+        <link rel="canonical" href="https://omnira.sa" />
+        <link rel="alternate" hrefLang="ar" href="https://omnira.sa" />
+        <link rel="alternate" hrefLang="en" href="https://omnira.sa/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://omnira.sa" />
+        
+        {/* Structured Data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessSchema),
           }}
         />
-        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
         />
+        
+        {/* Circular Favicon Script */}
+        <script src="/circular-favicon.js" async defer />
       </head>
-      <body className={`${ibmPlexArabic.variable} ${almarai.variable} antialiased`}>
+      <body className={`${arabicFont.variable} ${englishFont.variable} antialiased`}>
         <ScrollProgress />
         <FloatingElements />
         {children}

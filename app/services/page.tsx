@@ -3,10 +3,15 @@ import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import ServicesHero from '@/components/services/ServicesHero';
 import ServicesGrid from '@/components/services/ServicesGrid';
+import { jsonLdWebsite } from '@/lib/seo-config';
+import { getOGImage } from '@/lib/og-images';
+import { RichContent, PageType } from '@/lib/seo-content';
+import { RelatedLinks, ContentCategory, SidebarLinks } from '@/lib/internal-links';
+import { generateFAQSchema } from '@/lib/schemas';
 
 export const metadata: Metadata = {
-  title: 'خدماتنا المتميزة | OMNIRA - 8 حلول احترافية لإدارة وصف السيارات في السعودية',
-  description: 'اكتشف خدماتنا الشاملة: إدارة وتشغيل المواقف، الفاليه باركينج الفاخر، التقنيات الذكية (ANPR, IoT, AI)، المنظمين المحترفين، الاستشارات الهندسية، جولف كار، خدمات مساندة متكاملة، وغسيل السيارات. حلول مبتكرة للفنادق، المطاعم، المراكز التجارية، والفعاليات في جميع مدن المملكة.',
+  title: 'خدماتنا الاحترافية | أومنيرا - 8 حلول متكاملة لإدارة وصف السيارات في السعودية',
+  description: 'اكتشف خدماتنا الشاملة في الفاليه باركينج، إدارة المواقف، التقنيات الذكية مع أنظمة ANPR وإنترنت الأشياء، فريق منظمين محترفين، استشارات هندسية، خدمة جولف كار، خدمات مساندة، وغسيل سيارات. حلول متكاملة للفنادق، المطاعم، المولات، والفعاليات في الرياض، جدة، والدمام.',
   keywords: [
     'خدمات صف السيارات',
     'خدمات الفاليه باركينج',
@@ -30,17 +35,20 @@ export const metadata: Metadata = {
     canonical: '/services',
   },
   openGraph: {
-    title: 'خدماتنا | OMNIRA - 8 حلول احترافية لصف السيارات',
-    description: 'حلول شاملة: الفاليه باركينج، إدارة المواقف، التقنيات الذكية، والمزيد لجميع احتياجاتك',
+    title: 'خدماتنا الاحترافية | أومنيرا - 8 حلول متكاملة لصف السيارات',
+    description: 'حلول شاملة: الفاليه باركينج، إدارة المواقف، التقنيات الذكية، منظمين محترفين، استشارات، جولف كار، خدمات مساندة، وغسيل سيارات',
     url: 'https://omnira.sa/services',
     siteName: 'OMNIRA',
     locale: 'ar_SA',
     type: 'website',
+    images: [getOGImage('services')],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'خدمات OMNIRA - حلول صف السيارات الشاملة',
-    description: '8 خدمات احترافية لإدارة وصف السيارات في السعودية',
+    title: 'خدمات أومنيرا - 8 حلول متميزة لصف السيارات',
+    description: 'خدمات احترافية متكاملة لإدارة وصف السيارات في السعودية',
+    images: [getOGImage('services').url],
+    creator: '@omnira_sa',
   },
   robots: {
     index: true,
@@ -49,12 +57,166 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  // البيانات المنظمة للخدمات
+  const servicesSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'item': {
+          '@type': 'Service',
+          'name': 'خدمات الفاليه باركينج',
+          'url': 'https://omnira.sa/services/valet-parking',
+          'description': 'خدمة فاليه باركينج فاخرة للفنادق والمطاعم والفعاليات',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'OMNIRA',
+            'url': 'https://omnira.sa',
+          }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        'position': 2,
+        'item': {
+          '@type': 'Service',
+          'name': 'إدارة وتشغيل المواقف',
+          'url': 'https://omnira.sa/services/parking-management',
+          'description': 'خدمات متكاملة لإدارة وتشغيل مواقف السيارات',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'OMNIRA',
+            'url': 'https://omnira.sa',
+          }
+        }
+      },
+      {
+        '@type': 'ListItem',
+        'position': 3,
+        'item': {
+          '@type': 'Service',
+          'name': 'التقنيات المتقدمة',
+          'url': 'https://omnira.sa/services/advanced-technology',
+          'description': 'حلول تقنية متقدمة لإدارة المواقف',
+          'provider': {
+            '@type': 'Organization',
+            'name': 'OMNIRA',
+            'url': 'https://omnira.sa',
+          }
+        }
+      },
+    ]
+  };
+  
+  // الأسئلة الشائعة حول الخدمات
+  const servicesFAQs = [
+    {
+      question: 'ما هي خدمات أومنيرا الرئيسية؟',
+      answer: 'تقدم أومنيرا مجموعة متكاملة من الخدمات تشمل: خدمات الفاليه باركينج الاحترافية، إدارة وتشغيل المواقف، التقنيات المتقدمة لإدارة المواقف، خدمات الفعاليات والمناسبات، وخدمات مخصصة للفنادق والمطاعم والمراكز التجارية.'
+    },
+    {
+      question: 'هل خدمات أومنيرا متوفرة في جميع مناطق المملكة؟',
+      answer: 'نعم، توفر أومنيرا خدماتها في جميع المناطق الرئيسية في المملكة العربية السعودية، بما في ذلك الرياض، جدة، الدمام، مكة المكرمة، المدينة المنورة، وغيرها من المدن.'
+    },
+    {
+      question: 'كيف يمكنني طلب خدمة خاصة لمنشأتي؟',
+      answer: 'يمكنك التواصل معنا عبر صفحة الاتصال أو الاتصال المباشر. سيقوم فريق خدمة العملاء بتوجيهك لاختيار الخدمة المناسبة وتقديم عرض سعر مخصص وفقاً لاحتياجات منشأتك.'
+    },
+    {
+      question: 'ما الذي يميز خدمات أومنيرا عن المنافسين؟',
+      answer: 'تتميز أومنيرا بفريق عمل احترافي مدرب على أعلى مستوى، أحدث التقنيات في مجال إدارة المواقف، تأمين شامل على جميع المركبات، وحلول مخصصة لكل عميل تراعي طبيعة المنشأة واحتياجاتها الخاصة.'
+    },
+  ];
+  
+  // إنشاء مخطط الأسئلة الشائعة
+  const faqSchema = generateFAQSchema(servicesFAQs);
+
   return (
-    <main className="min-h-screen bg-white">
-      <Header />
-      <ServicesHero />
-      <ServicesGrid />
-      <Footer />
-    </main>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <main className="min-h-screen bg-white">
+        <Header />
+        <ServicesHero />
+        <ServicesGrid />
+        
+        {/* قسم المحتوى الغني للسيو */}
+        <section className="py-16 bg-beige-light">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* المحتوى الرئيسي */}
+              <div className="w-full lg:w-2/3">
+                <RichContent 
+                  type={PageType.SERVICES}
+                  className="bg-white p-8 rounded-xl shadow-sm"
+                />
+              </div>
+              
+              {/* الشريط الجانبي */}
+              <div className="w-full lg:w-1/3">
+                <div className="space-y-6">
+                  <SidebarLinks 
+                    category={ContentCategory.SERVICES} 
+                    currentPath="/services" 
+                  />
+                  
+                  {/* الروابط ذات الصلة */}
+                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                    <RelatedLinks 
+                      currentCategory={ContentCategory.SERVICES}
+                      currentPath="/services"
+                      count={4}
+                      title="صفحات قد تهمك"
+                    />
+                  </div>
+                  
+                  {/* دعوة للتواصل */}
+                  <div className="bg-gold-primary/10 p-6 rounded-lg border border-gold-primary/20">
+                    <h3 className="text-xl font-bold mb-4 text-brown-dark">احصل على استشارة مجانية</h3>
+                    <p className="mb-4 text-brown-text">
+                      تحدث مع أحد خبرائنا لاختيار الخدمة المناسبة لمنشأتك
+                    </p>
+                    <a 
+                      href="/contact?source=services" 
+                      className="inline-block px-6 py-2 bg-gold-primary text-white rounded-lg hover:bg-gold-dark transition duration-300"
+                    >
+                      تواصل معنا
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        {/* قسم الأسئلة الشائعة */}
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold mb-8 text-center">الأسئلة الشائعة حول خدماتنا</h2>
+            
+            <div className="max-w-3xl mx-auto bg-beige-light rounded-xl p-6">
+              <div className="space-y-6">
+                {servicesFAQs.map((faq, index) => (
+                  <div key={index} className="bg-white rounded-lg p-5 shadow-sm">
+                    <h3 className="text-lg font-bold mb-2 text-brown-dark">{faq.question}</h3>
+                    <p className="text-gray-700">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+        
+        <Footer />
+      </main>
+    </>
   );
 }

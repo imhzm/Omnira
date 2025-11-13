@@ -4,6 +4,10 @@ import Footer from '@/components/layout/Footer';
 import PricingHero from '@/components/pricing/PricingHero';
 import PricingPlans from '@/components/pricing/PricingPlans';
 import PricingFAQ from '@/components/pricing/PricingFAQ';
+import { pricingData } from '@/lib/static-content';
+import { getOGImage } from '@/lib/og-images';
+import PricingComparison from '@/components/pricing/PricingComparison';
+import PricingCTA from '@/components/pricing/PricingCTA';
 
 export const metadata: Metadata = {
   title: 'الأسعار والباقات | OMNIRA - باقات صف السيارات والفاليه باركينج بأسعار تنافسية',
@@ -31,24 +35,20 @@ export const metadata: Metadata = {
     canonical: '/pricing',
   },
   openGraph: {
-    title: 'الأسعار والباقات | OMNIRA - باقات مرنة بأسعار تنافسية',
-    description: 'باقات صف السيارات والفاليه: شهرية، سنوية، VIP، وحلول مخصصة. أسعار تنافسية وجودة عالية',
+    title: 'الأسعار والباقات | أومنيرا - باقات مرنة بأسعار تنافسية',
+    description: 'باقات صف السيارات والفاليه: شهرية، سنوية، VIP، وحلول مخصصة. أسعار تنافسية وجودة عالية. قارن بين الباقات واختر ما يناسبك!',
     url: 'https://omnira.sa/pricing',
     siteName: 'OMNIRA',
-    images: [{
-      url: 'https://omnira.sa/og-pricing.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'أسعار وباقات خدمات أومنيرا',
-    }],
+    images: [getOGImage('pricing')],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'الأسعار والباقات | OMNIRA',
-    description: 'باقات مرنة للفاليه وصف السيارات - أسعار تنافسية وجودة عالية',
-    images: ['https://omnira.sa/og-pricing.jpg'],
+    title: 'الأسعار والباقات | أومنيرا',
+    description: 'باقات مرنة للفاليه وصف السيارات - أسعار تنافسية وجودة عالية. احصل على عرض سعر الآن!',
+    images: [getOGImage('pricing').url],
+    creator: '@omnira_sa',
   },
   robots: {
     index: true,
@@ -57,13 +57,51 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
+  // إعداد بيانات مهيكلة للأسعار لتحسين السيو
+  const pricingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    'name': 'خدمات أومنيرا لصف السيارات',
+    'description': 'خدمات فاليه باركينج وإدارة مواقف السيارات في المملكة العربية السعودية',
+    'provider': {
+      '@type': 'Organization',
+      'name': 'أومنيرا',
+      'url': 'https://omnira.sa'
+    },
+    'offers': [
+      ...pricingData.map((plan, index) => ({
+        '@type': 'Offer',
+        'name': plan.title,
+        'description': `باقة ${plan.title} من أومنيرا`,
+        'priceSpecification': {
+          '@type': 'PriceSpecification',
+          'price': plan.price.replace(/[^0-9]/g, ''),
+          'priceCurrency': 'SAR',
+        },
+        'url': `https://omnira.sa${plan.link}`,
+      }))
+    ]
+  };
+
   return (
-    <main className="min-h-screen bg-black-primary">
-      <Header />
-      <PricingHero />
-      <PricingPlans />
-      <PricingFAQ />
-      <Footer />
-    </main>
+    <>
+      {/* إضافة بيانات مهيكلة */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(pricingSchema),
+        }}
+      />
+      
+      <main className="min-h-screen bg-black-primary">
+        <Header />
+        <PricingHero />
+        <PricingPlans />
+        <PricingComparison />
+        <PricingFAQ />
+        <PricingCTA />
+        <Footer />
+      </main>
+    </>
   );
 }

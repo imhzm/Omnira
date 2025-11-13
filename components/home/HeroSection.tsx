@@ -1,10 +1,11 @@
 'use client';
 
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
-import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const HeroSection = () => {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
@@ -12,6 +13,15 @@ const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [imageErrors, setImageErrors] = useState<Set<number>>(new Set());
   const videoRef = useRef<HTMLDivElement>(null);
+  
+  // استخدام usePathname لتجنب مشاكل hydration
+  const pathname = usePathname();
+
+  // حل مشكلة hydration باستخدام useEffect للتحميل المتأخر
+  const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // صور السلايدر - باركينج وخدمات السيارات الفاخرة
   const sliderImages = [
@@ -37,25 +47,78 @@ const HeroSection = () => {
     }
   ];
 
+  // تعريف دالة للتحقق من تحميل الفيديو
+  const handleVideoLoad = React.useCallback(() => {
+    // تأكد من التنفيذ فقط على جانب العميل
+    if (!isMounted || typeof window === 'undefined') return;
+    
+    // تأخير بسيط للتأكد من جاهزية الفيديو للعرض
+    setTimeout(() => {
+      setIsVideoLoaded(true);
+    }, 1000); // تأخير لمدة ثانية للتأكد من جاهزية الفيديو
+  }, [isMounted]); // إضافة isMounted كتبعية
+  
+  // مرجع للإشارة إلى الإطار
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
+  // بدء تحميل الفيديو مبكرًا لتسريع العملية (فقط على جانب العميل)
   useEffect(() => {
-    // تأخير تحميل الفيديو ليظهر السلايدر أولاً
-    const videoLoadTimer = setTimeout(() => {
-      setShouldLoadVideo(true);
-    }, 8000); // 8 ثواني - يعرض السلايدر أولاً
-
-    return () => clearTimeout(videoLoadTimer);
-  }, []);
-
-  // تحديث حالة تحميل الفيديو بعد فترة من بدء التحميل
-  useEffect(() => {
-    if (shouldLoadVideo) {
-      const videoReadyTimer = setTimeout(() => {
-        setIsVideoLoaded(true);
-      }, 3000); // 3 ثواني لتحميل وتشغيل الفيديو
-
-      return () => clearTimeout(videoReadyTimer);
+    // تأكد من أننا على جانب العميل
+    if (isMounted && typeof window !== 'undefined') {
+      // بدء تحميل الفيديو بعد تحميل الصفحة بقليل
+      const timer = setTimeout(() => {
+        setShouldLoadVideo(true);
+      }, 500); // بدء التحميل بعد نصف ثانية لضمان اكتمال الـ hydration أولاً
+      
+      return () => clearTimeout(timer);
     }
-  }, [shouldLoadVideo]);
+  }, [isMounted]);
+  
+  // تحقق من حالة تحميل الفيديو - فقط على جانب العميل بعد التحميل
+  useEffect(() => {
+    // إذا لم يتم تحميل الصفحة بالكامل أو لم يتم طلب تحميل الفيديو، لا تقم بأي معالجة
+    if (!isMounted || !shouldLoadVideo) return;
+    
+    // استخدام مؤقت للتأكد من تحميل الفيديو بدل من الاعتماد على الرسائل فقط
+    // هذا سيمنع المشاكل إذا لم تصل رسائل من Vimeo
+    const videoTimer = setTimeout(() => {
+      handleVideoLoad();
+    }, 3000); // انتظر 3 ثواني من بدء التحميل لتأكيد تحميل الفيديو
+    
+    // استمع لرسائل مشغل فيميو كطريقة إضافية للكشف
+    const handleMessage = (event: MessageEvent) => {
+      try {
+        // تحقق من أن الرسالة من Vimeo أولاً
+        if (!event.origin.includes('player.vimeo.com')) return;
+        
+        // تجنب الأخطاء إذا لم تكن البيانات JSON صالحة
+        if (typeof event.data !== 'string') return;
+        
+        const data = JSON.parse(event.data);
+        // إذا كان الفيديو جاهزًا للتشغيل
+        if (data.event === 'ready' || data.event === 'play') {
+          // إلغاء المؤقت وتشغيل معالج التحميل مباشرة
+          clearTimeout(videoTimer);
+          handleVideoLoad();
+        }
+      } catch (e) {
+        // تجاهل أخطاء تحليل JSON
+      }
+    };
+
+    // بعد التأكد من التحميل على جانب العميل
+    if (typeof window !== 'undefined') {
+      // إضافة مستمع الرسائل بشكل آمن
+      window.addEventListener('message', handleMessage, false);
+      
+      return () => {
+        clearTimeout(videoTimer);
+        window.removeEventListener('message', handleMessage, false);
+      };
+    }
+    
+    return () => clearTimeout(videoTimer);
+  }, [isMounted, shouldLoadVideo, handleVideoLoad]);
 
   // سلايدر تلقائي
   useEffect(() => {
@@ -68,12 +131,13 @@ const HeroSection = () => {
     }
   }, [isVideoLoaded, sliderImages.length]);
 
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24">
       {/* Background Video */}
       <div className="absolute inset-0 z-0" ref={videoRef}>
         {/* Image Slider - يعرض لحين تحميل الفيديو */}
-        <div className={`absolute inset-0 transition-opacity duration-500 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
+        <div className={`absolute inset-0 transition-opacity duration-1000 z-10 ${isVideoLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
           {sliderImages.map((image, index) => (
             <div
               key={index}
@@ -133,15 +197,17 @@ const HeroSection = () => {
         </div>
 
         {/* Vimeo Video Background - lazy loaded */}
-        {shouldLoadVideo && (
-          <div className="absolute inset-0 overflow-hidden">
+        {isMounted && shouldLoadVideo && (
+          <div className={`absolute inset-0 overflow-hidden transition-opacity duration-1000 ${isVideoLoaded ? 'opacity-100 z-20' : 'opacity-0'}`}>
             <div style={{ padding: '56.67% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
               <iframe
-                src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0&quality=auto&speed=1"
+                ref={iframeRef}
+                src="https://player.vimeo.com/video/1127926871?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=1&loop=1&background=1&controls=0&quality=360p&speed=1&dnt=1&api=1"
                 frameBorder="0"
                 allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
                 referrerPolicy="strict-origin-when-cross-origin"
                 loading="eager"
+                onLoad={handleVideoLoad} // هذا الحدث يعمل عندما يكتمل تحميل لعنصر iframe
                 style={{
                   position: 'absolute',
                   top: '50%',
@@ -156,12 +222,28 @@ const HeroSection = () => {
                 title="OMNIRA Valet Parking KSA"
               />
             </div>
+            
+            {/* مؤشر تحميل فاخر مع رسالة */}
+            {isMounted && shouldLoadVideo && !isVideoLoaded && (
+              <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-3">
+                <div className="flex items-center gap-3">
+                  <div className="h-2 w-2 bg-gold-primary rounded-full animate-ping"></div>
+                  <div className="h-2 w-2 bg-gold-primary rounded-full animate-ping" style={{ animationDelay: '0.2s' }}></div>
+                  <div className="h-2 w-2 bg-gold-primary rounded-full animate-ping" style={{ animationDelay: '0.4s' }}></div>
+                </div>
+                <div className="bg-black/70 backdrop-blur-sm px-4 py-2 rounded-full text-xs text-gold-primary font-bold">
+                  جارٍ تحميل الفيديو...
+                </div>
+              </div>
+            )}
           </div>
         )}
-        {/* Enhanced Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/20 via-transparent to-sage-primary/20 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/60 via-transparent to-transparent z-10"></div>
+        {/* Enhanced Gradient Overlays - زيادة z-index للطبقات */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/30 via-transparent to-sage-primary/30 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/70 via-transparent to-transparent z-30"></div>
+        {/* طبقة داكنة موحدة للمساعدة في وضوح النصوص */}
+        <div className="absolute inset-0 bg-black/40 z-30"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -170,27 +252,37 @@ const HeroSection = () => {
         </div>
       </div>
 
-      {/* Animated Particles */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-gold-light rounded-full"
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{
-              opacity: [0, 1, 0],
-              scale: [0, 1, 0],
-              x: Math.random() * 1920,
-              y: Math.random() * 1080,
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Infinity,
-              delay: Math.random() * 2,
-            }}
-          />
-        ))}
-      </div>
+      {/* Animated Particles - فقط بعد تحميل الصفحة بالكامل على العميل */}
+      {isMounted && typeof window !== 'undefined' && (
+        <div className="absolute inset-0 z-10 pointer-events-none">
+          {[...Array(20)].map((_, i) => {
+            // تعيين قيم ثابتة للرندر الأولي لتجنب مشاكل hydration
+            const xPos = ((i % 5) * 20) + ((i * 53) % 80); // قيم ثابتة بدلاً من Math.random
+            const yPos = ((i % 4) * 25) + ((i * 47) % 75); // قيم ثابتة
+            const animDuration = 3 + ((i % 5) * 0.5); // قيمة ثابتة بدلاً من random
+            const animDelay = (i % 5) * 0.4; // قيمة ثابتة بدلاً من random
+            
+            return (
+              <motion.div
+                key={i}
+                className="absolute w-1 h-1 bg-gold-light rounded-full"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{
+                  opacity: [0, 1, 0],
+                  scale: [0, 1, 0],
+                  x: `${xPos}%`,
+                  y: `${yPos}%`,
+                }}
+                transition={{
+                  duration: animDuration,
+                  repeat: Infinity,
+                  delay: animDelay,
+                }}
+              />
+            );
+          })}
+        </div>
+      )}
 
       {/* Content */}
       <div className="container-custom relative z-20 text-center">
