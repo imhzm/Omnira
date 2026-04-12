@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     ],
     shortcut: '/favicon.png',
   },
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   keywords: [
     "صف السيارات",
     "خدمات فاليه",
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ar_SA',
-    url: 'https://omnira.sa',
+    url: 'https://omnira.skywaveads.com',
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
     siteName: 'OMNIRA',
@@ -129,10 +129,10 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://cdn.pixabay.com" />
         
         {/* SEO enhancements */}
-        <link rel="canonical" href="https://omnira.sa" />
-        <link rel="alternate" hrefLang="ar" href="https://omnira.sa" />
-        <link rel="alternate" hrefLang="en" href="https://omnira.sa/en" />
-        <link rel="alternate" hrefLang="x-default" href="https://omnira.sa" />
+        <link rel="canonical" href="https://omnira.skywaveads.com" />
+        <link rel="alternate" hrefLang="ar" href="https://omnira.skywaveads.com" />
+        <link rel="alternate" hrefLang="en" href="https://omnira.skywaveads.com/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://omnira.skywaveads.com" />
         
         {/* Structured Data */}
         <script

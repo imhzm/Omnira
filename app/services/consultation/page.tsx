@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'تخطيط مواقف متطور',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/consultation',
   },
   openGraph: {
     title: 'استشارات مواقف | OMNIRA - تخطيط وتصميم ودراسات جدوى متخصصة',
     description: 'استشارات هندسية: تخطيط، تصميم، دراسات جدوى، تحليل تدفق، حلول مبتكرة',
-    url: 'https://omnira.sa/services/consultation',
+    url: 'https://omnira.skywaveads.com/services/consultation',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-consultation.jpg',
+      url: 'https://omnira.skywaveads.com/og-consultation.jpg',
       width: 1200,
       height: 630,
       alt: 'استشارات مواقف السيارات من أومنيرا',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'استشارات مواقف | OMNIRA',
     description: 'تخطيط وتصميم مواقف السيارات - دراسات جدوى وحلول هندسية',
-    images: ['https://omnira.sa/og-consultation.jpg'],
+    images: ['https://omnira.skywaveads.com/og-consultation.jpg'],
   },
   robots: {
     index: true,

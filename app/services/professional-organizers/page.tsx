@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'professional parking team',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/professional-organizers',
   },
   openGraph: {
     title: 'منظمين مواقف محترفين | OMNIRA - فريق مدرب بأعلى المعايير',
     description: 'فريق منظمين مواقف محترفين: تنظيم الحركة، توجيه المركبات، خدمة عملاء، أمان كامل',
-    url: 'https://omnira.sa/services/professional-organizers',
+    url: 'https://omnira.skywaveads.com/services/professional-organizers',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-professional-organizers.jpg',
+      url: 'https://omnira.skywaveads.com/og-professional-organizers.jpg',
       width: 1200,
       height: 630,
       alt: 'فريق منظمين مواقف محترفين من أومنيرا',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'منظمين مواقف محترفين | OMNIRA',
     description: 'فريق مدرب لتنظيم المواقف وإدارة الحركة بكفاءة واحترافية',
-    images: ['https://omnira.sa/og-professional-organizers.jpg'],
+    images: ['https://omnira.skywaveads.com/og-professional-organizers.jpg'],
   },
   robots: {
     index: true,

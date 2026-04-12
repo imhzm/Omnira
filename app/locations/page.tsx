@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     'فاليه باركينج السعودية',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/locations',
   },
   openGraph: {
     title: 'المدن التي نخدمها | OMNIRA - تغطية شاملة لـ 150+ مدينة سعودية',
     description: 'خدمات صف السيارات في جميع مدن السعودية: الرياض، جدة، الدمام، مكة، المدينة، الخبر، الطائف، وأكثر',
-    url: 'https://omnira.sa/locations',
+    url: 'https://omnira.skywaveads.com/locations',
     siteName: 'OMNIRA',
     images: [getOGImage('locations')],
     locale: 'ar_SA',
@@ -86,7 +86,7 @@ export default function LocationsPage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'أومنيرا',
-    'url': 'https://omnira.sa/locations',
+    'url': 'https://omnira.skywaveads.com/locations',
     'areaServed': [
       {
         '@type': 'AdministrativeArea',

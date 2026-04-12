@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'رقم الهاتف',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: 'اتصل بنا | OMNIRA - خدمة عملاء 24/7 ودعم فني متواصل',
     description: 'تواصل معنا: هاتف، واتساب، بريد إلكتروني. خدمة عملاء 24/7 واستشارات مجانية',
-    url: 'https://omnira.sa/contact',
+    url: 'https://omnira.skywaveads.com/contact',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-contact.jpg',
+      url: 'https://omnira.skywaveads.com/og-contact.jpg',
       width: 1200,
       height: 630,
       alt: 'تواصل مع أومنيرا',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'اتصل بنا | OMNIRA',
     description: 'خدمة عملاء 24/7 - تواصل معنا الآن للحصول على استشارة مجانية',
-    images: ['https://omnira.sa/og-contact.jpg'],
+    images: ['https://omnira.skywaveads.com/og-contact.jpg'],
   },
   robots: {
     index: true,

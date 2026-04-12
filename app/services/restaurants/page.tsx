@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'عقود فاليه مطاعم',
     'حل مشكلة مواقف المطاعم',
   ],
-  authors: [{ name: 'OMNIRA Restaurant Services', url: 'https://omnira.sa' }],
-  metadataBase: new URL('https://omnira.sa'),
+  authors: [{ name: 'OMNIRA Restaurant Services', url: 'https://omnira.skywaveads.com' }],
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/restaurants',
   },
   openGraph: {
     title: 'خدمات الفاليه باركينج للمطاعم | OMNIRA - تجربة تناول طعام لا تُنسى',
     description: 'عزز تجربة عملائك مع فاليه احترافي - خدمة سريعة، أسعار تنافسية، باقات مرنة',
-    url: 'https://omnira.sa/services/restaurants',
+    url: 'https://omnira.skywaveads.com/services/restaurants',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-restaurants.jpg',
+      url: 'https://omnira.skywaveads.com/og-restaurants.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات الفاليه للمطاعم والكافيهات',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه احترافي للمطاعم | OMNIRA',
     description: 'خدمة سريعة، أسعار منافسة، باقات مرنة - عزز تجربة عملائك',
-    images: ['https://omnira.sa/og-restaurants.jpg'],
+    images: ['https://omnira.skywaveads.com/og-restaurants.jpg'],
   },
   robots: {
     index: true,

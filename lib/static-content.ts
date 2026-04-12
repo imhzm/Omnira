@@ -214,8 +214,8 @@ export const companySchema = {
   "@type": "Organization",
   "name": "أومنيرا",
   "alternateName": "OMNIRA",
-  "url": "https://omnira.sa",
-  "logo": "https://omnira.sa/logo.png",
+  "url": "https://omnira.skywaveads.com",
+  "logo": "https://omnira.skywaveads.com/logo.png",
   "sameAs": [
     "https://www.facebook.com/omnira.sa",
     "https://twitter.com/omnira_sa",

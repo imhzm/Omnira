@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://omnira.sa';
+  const baseUrl = 'https://omnira.skywaveads.com';
   const currentDate = new Date();
   const lastMonth = new Date(currentDate);
   lastMonth.setMonth(lastMonth.getMonth() - 1);

@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'إدارة مواقف احترافية',
     'تكنولوجيا مواقف متقدمة',
   ],
-  authors: [{ name: 'OMNIRA Smart Solutions', url: 'https://omnira.sa' }],
-  metadataBase: new URL('https://omnira.sa'),
+  authors: [{ name: 'OMNIRA Smart Solutions', url: 'https://omnira.skywaveads.com' }],
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/malls',
   },
   openGraph: {
     title: 'حلول إدارة مواقف المراكز التجارية الذكية | OMNIRA - زيادة 40% في السعة',
     description: 'نظام ذكي متطور - شاشات LED، تطبيق جوال، دفع إلكتروني، تقارير فورية - نحسّن تجربة التسوق',
-    url: 'https://omnira.sa/services/malls',
+    url: 'https://omnira.skywaveads.com/services/malls',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-malls.jpg',
+      url: 'https://omnira.skywaveads.com/og-malls.jpg',
       width: 1200,
       height: 630,
       alt: 'حلول إدارة المواقف الذكية للمراكز التجارية',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'نظام مواقف ذكي للمولات | OMNIRA',
     description: 'زيادة السعة 40%، تقليل الازدحام، تحسين التجربة - حلول متطورة للمراكز التجارية',
-    images: ['https://omnira.sa/og-malls.jpg'],
+    images: ['https://omnira.skywaveads.com/og-malls.jpg'],
   },
   robots: {
     index: true,

@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     'إدارة مواقف ذكية',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/parking-management',
   },
   openGraph: {
     title: 'إدارة وتشغيل المواقف | OMNIRA - كفاءة وذكاء في إدارة مواقف السيارات',
     description: 'حلول متكاملة لإدارة وتشغيل مواقف السيارات. أنظمة ذكية، فريق محترف، تقارير تفصيلية',
-    url: 'https://omnira.sa/services/parking-management',
+    url: 'https://omnira.skywaveads.com/services/parking-management',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-parking-management.jpg',
+      url: 'https://omnira.skywaveads.com/og-parking-management.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات إدارة وتشغيل المواقف من أومنيرا',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'إدارة المواقف | OMNIRA',
     description: 'حلول ذكية لإدارة وتشغيل مواقف السيارات في السعودية',
-    images: ['https://omnira.sa/og-parking-management.jpg'],
+    images: ['https://omnira.skywaveads.com/og-parking-management.jpg'],
   },
   robots: {
     index: true,

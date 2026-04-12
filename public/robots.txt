@@ -27,10 +27,10 @@ Allow: /
 Crawl-delay: 1
 
 # خرائط الموقع
-Sitemap: https://omnira.sa/sitemap.xml
-Sitemap: https://omnira.sa/sitemap-services.xml
-Sitemap: https://omnira.sa/sitemap-locations.xml
-Sitemap: https://omnira.sa/sitemap-images.xml
+Sitemap: https://omnira.skywaveads.com/sitemap.xml
+Sitemap: https://omnira.skywaveads.com/sitemap-services.xml
+Sitemap: https://omnira.skywaveads.com/sitemap-locations.xml
+Sitemap: https://omnira.skywaveads.com/sitemap-images.xml
 
 # حظر ملفات القوالب
 Disallow: /*.json$
@@ -89,7 +89,7 @@ User-agent: Screaming Frog SEO Spider
 Disallow: /
 
 # معلومات المضيف
-Host: https://omnira.sa
+Host: https://omnira.skywaveads.com
 
 # توجيهات خاصة بالتحكم في معدل الزحف
 User-agent: *

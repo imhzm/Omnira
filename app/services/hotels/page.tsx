@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'خدمات ضيافة فندقية',
     'عقود فاليه فنادق',
   ],
-  authors: [{ name: 'OMNIRA Hospitality Services', url: 'https://omnira.sa' }],
-  metadataBase: new URL('https://omnira.sa'),
+  authors: [{ name: 'OMNIRA Hospitality Services', url: 'https://omnira.skywaveads.com' }],
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/hotels',
   },
   openGraph: {
     title: 'خدمات الفاليه باركينج للفنادق | OMNIRA - تجربة ضيافة استثنائية',
     description: 'فاليه فندقي فاخر 24/7 - تكامل مع PMS، سائقون محترفون، خدمة VIP، تقارير تفصيلية',
-    url: 'https://omnira.sa/services/hotels',
+    url: 'https://omnira.skywaveads.com/services/hotels',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-hotels.jpg',
+      url: 'https://omnira.skywaveads.com/og-hotels.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات الفاليه باركينج للفنادق الفاخرة',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه فندقي فاخر 24/7 | OMNIRA',
     description: 'خدمات احترافية للفنادق 5 نجوم - تكامل PMS، فريق مدرب، خدمة VIP',
-    images: ['https://omnira.sa/og-hotels.jpg'],
+    images: ['https://omnira.skywaveads.com/og-hotels.jpg'],
   },
   robots: {
     index: true,

@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     'رؤية المملكة 2030',
     'قطاع الضيافة والسياحة',
   ],
-  authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.sa' }],
+  authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.skywaveads.com' }],
   creator: 'OMNIRA Company Holding',
   publisher: 'OMNIRA Company Holding',
   formatDetection: {
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/',
     languages: {
@@ -86,7 +86,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية في السعودية',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. حلول ذكية للفنادق، المطاعم، والمراكز التجارية في جميع مدن المملكة.',
-    url: 'https://omnira.sa',
+    url: 'https://omnira.skywaveads.com',
     siteName: 'OMNIRA',
     images: [getOGImage('home')],
     locale: 'ar_SA',

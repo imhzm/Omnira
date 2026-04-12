@@ -4,191 +4,191 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <!-- صفحة الخدمات الرئيسية -->
   <url>
-    <loc>https://omnira.sa/services</loc>
+    <loc>https://omnira.skywaveads.com/services</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-services.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-services.jpg</image:loc>
       <image:caption>خدمات أومنيرا OMNIRA المتكاملة</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة الفاليه باركينج -->
   <url>
-    <loc>https://omnira.sa/services/valet-parking</loc>
+    <loc>https://omnira.skywaveads.com/services/valet-parking</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-valet-parking.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-valet-parking.jpg</image:loc>
       <image:caption>خدمات الفاليه باركينج الفاخرة من أومنيرا</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة إدارة المواقف -->
   <url>
-    <loc>https://omnira.sa/services/parking-management</loc>
+    <loc>https://omnira.skywaveads.com/services/parking-management</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-parking-management.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-parking-management.jpg</image:loc>
       <image:caption>إدارة وتشغيل المواقف بتقنيات ذكية</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة التكنولوجيا المتقدمة -->
   <url>
-    <loc>https://omnira.sa/services/advanced-technology</loc>
+    <loc>https://omnira.skywaveads.com/services/advanced-technology</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-advanced-technology.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-advanced-technology.jpg</image:loc>
       <image:caption>التقنيات المتقدمة لإدارة المواقف</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة المنظمين المحترفين -->
   <url>
-    <loc>https://omnira.sa/services/professional-organizers</loc>
+    <loc>https://omnira.skywaveads.com/services/professional-organizers</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-professional-organizers.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-professional-organizers.jpg</image:loc>
       <image:caption>منظمين محترفين مدربين</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة الاستشارات -->
   <url>
-    <loc>https://omnira.sa/services/consultation</loc>
+    <loc>https://omnira.skywaveads.com/services/consultation</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-consultation.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-consultation.jpg</image:loc>
       <image:caption>استشارات متخصصة في إدارة المواقف</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة الجولف كارت -->
   <url>
-    <loc>https://omnira.sa/services/golf-cart</loc>
+    <loc>https://omnira.skywaveads.com/services/golf-cart</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-golf-cart.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-golf-cart.jpg</image:loc>
       <image:caption>خدمة الجولف كارت للتنقل الداخلي</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات الدعم -->
   <url>
-    <loc>https://omnira.sa/services/support-services</loc>
+    <loc>https://omnira.skywaveads.com/services/support-services</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-support-services.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-support-services.jpg</image:loc>
       <image:caption>خدمات مساندة متكاملة</image:caption>
     </image:image>
   </url>
 
   <!-- خدمة غسيل السيارات -->
   <url>
-    <loc>https://omnira.sa/services/car-wash</loc>
+    <loc>https://omnira.skywaveads.com/services/car-wash</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-car-wash.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-car-wash.jpg</image:loc>
       <image:caption>خدمة غسيل السيارات الاحترافية</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات الفنادق -->
   <url>
-    <loc>https://omnira.sa/services/hotels</loc>
+    <loc>https://omnira.skywaveads.com/services/hotels</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-hotels.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-hotels.jpg</image:loc>
       <image:caption>حلول صف السيارات للفنادق الفاخرة</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات المطاعم -->
   <url>
-    <loc>https://omnira.sa/services/restaurants</loc>
+    <loc>https://omnira.skywaveads.com/services/restaurants</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-restaurants.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-restaurants.jpg</image:loc>
       <image:caption>خدمات صف السيارات للمطاعم</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات المراكز التجارية -->
   <url>
-    <loc>https://omnira.sa/services/malls</loc>
+    <loc>https://omnira.skywaveads.com/services/malls</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-malls.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-malls.jpg</image:loc>
       <image:caption>إدارة مواقف المراكز التجارية</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات الفعاليات -->
   <url>
-    <loc>https://omnira.sa/services/events</loc>
+    <loc>https://omnira.skywaveads.com/services/events</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-events.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-events.jpg</image:loc>
       <image:caption>خدمات صف السيارات للفعاليات</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات المستشفيات -->
   <url>
-    <loc>https://omnira.sa/services/hospitals</loc>
+    <loc>https://omnira.skywaveads.com/services/hospitals</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-hospitals.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-hospitals.jpg</image:loc>
       <image:caption>خدمات مواقف المستشفيات</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات الشركات -->
   <url>
-    <loc>https://omnira.sa/services/corporate</loc>
+    <loc>https://omnira.skywaveads.com/services/corporate</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-corporate.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-corporate.jpg</image:loc>
       <image:caption>حلول مواقف الشركات</image:caption>
     </image:image>
   </url>
 
   <!-- خدمات الـ VIP -->
   <url>
-    <loc>https://omnira.sa/services/vip</loc>
+    <loc>https://omnira.skywaveads.com/services/vip</loc>
     <lastmod>2025-11-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://omnira.sa/og-vip.jpg</image:loc>
+      <image:loc>https://omnira.skywaveads.com/og-vip.jpg</image:loc>
       <image:caption>خدمة VIP الفاخرة</image:caption>
     </image:image>
   </url>

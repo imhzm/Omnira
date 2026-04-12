@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     'about us valet parking',
     'parking management company Saudi Arabia',
   ],
-  authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.sa' }],
+  authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.skywaveads.com' }],
   creator: 'OMNIRA Company Holding',
   publisher: 'OMNIRA Company Holding',
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/about',
     languages: {
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'من نحن - أومنيرا | قصة نجاح سعودية في صف السيارات',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. نساهم في تحقيق رؤية 2030. تعرف على قصتنا، رؤيتنا، قيمنا، وفريقنا المحترف.',
-    url: 'https://omnira.sa/about',
+    url: 'https://omnira.skywaveads.com/about',
     siteName: 'OMNIRA',
     images: [getOGImage('about')],
     locale: 'ar_SA',
@@ -71,7 +71,7 @@ export default function AboutPage() {
     title: 'من نحن - قصة أومنيرا',
     description: 'تعرف على أومنيرا، الشركة السعودية الرائدة في خدمات صف السيارات الاحترافية',
     url: '/about',
-    image: 'https://omnira.sa/og-about.jpg',
+    image: 'https://omnira.skywaveads.com/og-about.jpg',
     dateModified: new Date().toISOString(),
   });
 

@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     'تقنيات مواقف متطورة',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/advanced-technology',
   },
   openGraph: {
     title: 'تقنيات متقدمة لإدارة المواقف | OMNIRA - ANPR و IoT وأنظمة ذكية',
     description: 'أحدث التقنيات: ANPR، إرشاد ذكي، IoT، استشعار، كاميرات، دفع إلكتروني، تطبيقات موبايل',
-    url: 'https://omnira.sa/services/advanced-technology',
+    url: 'https://omnira.skywaveads.com/services/advanced-technology',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-advanced-technology.jpg',
+      url: 'https://omnira.skywaveads.com/og-advanced-technology.jpg',
       width: 1200,
       height: 630,
       alt: 'التقنيات المتقدمة لإدارة المواقف من أومنيرا',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'تقنيات ذكية للمواقف | OMNIRA',
     description: 'ANPR، IoT، أنظمة إرشاد، استشعار، دفع إلكتروني - حلول تقنية متطورة',
-    images: ['https://omnira.sa/og-advanced-technology.jpg'],
+    images: ['https://omnira.skywaveads.com/og-advanced-technology.jpg'],
   },
   robots: {
     index: true,

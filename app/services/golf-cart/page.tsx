@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'internal transport',
   ],
   authors: [{ name: 'OMNIRA Company Holding' }],
-  metadataBase: new URL('https://omnira.sa'),
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/golf-cart',
   },
   openGraph: {
     title: 'خدمة جولف كار | OMNIRA - عربات كهربائية للنقل الداخلي في المواقف',
     description: 'عربات جولف كهربائية حديثة مع سائقين مدربين. حل مريح وصديق للبيئة للمواقف الكبيرة',
-    url: 'https://omnira.sa/services/golf-cart',
+    url: 'https://omnira.skywaveads.com/services/golf-cart',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-golf-cart.jpg',
+      url: 'https://omnira.skywaveads.com/og-golf-cart.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمة توفير جولف كار من أومنيرا',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'خدمة جولف كار | OMNIRA',
     description: 'عربات جولف كهربائية للنقل الداخلي - حل مريح وصديق للبيئة',
-    images: ['https://omnira.sa/og-golf-cart.jpg'],
+    images: ['https://omnira.skywaveads.com/og-golf-cart.jpg'],
   },
   robots: {
     index: true,

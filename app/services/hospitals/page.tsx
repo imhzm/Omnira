@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'إدارة مواقف المستشفيات',
     'تخفيف ضغط المرضى',
   ],
-  authors: [{ name: 'OMNIRA Healthcare Services', url: 'https://omnira.sa' }],
-  metadataBase: new URL('https://omnira.sa'),
+  authors: [{ name: 'OMNIRA Healthcare Services', url: 'https://omnira.skywaveads.com' }],
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/hospitals',
   },
   openGraph: {
     title: 'خدمات الفاليه للمستشفيات | OMNIRA - راحة المرضى أولويتنا',
     description: 'خدمة حساسة 24/7 - أولوية للطوارئ، دعم ذوي الإعاقة، فريق متعاطف - نخفف الضغط',
-    url: 'https://omnira.sa/services/hospitals',
+    url: 'https://omnira.skywaveads.com/services/hospitals',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-hospitals.jpg',
+      url: 'https://omnira.skywaveads.com/og-hospitals.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات الفاليه باركينج للمستشفيات والمراكز الطبية',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه متخصص للمستشفيات | OMNIRA',
     description: 'خدمة حساسة 24/7 - أولوية طوارئ، دعم خاص، فريق متعاطف',
-    images: ['https://omnira.sa/og-hospitals.jpg'],
+    images: ['https://omnira.skywaveads.com/og-hospitals.jpg'],
   },
   robots: {
     index: true,

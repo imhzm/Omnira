@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'باقات مواقف مرنة',
     'خصومات عقود طويلة',
   ],
-  authors: [{ name: 'OMNIRA Corporate Solutions', url: 'https://omnira.sa' }],
-  metadataBase: new URL('https://omnira.sa'),
+  authors: [{ name: 'OMNIRA Corporate Solutions', url: 'https://omnira.skywaveads.com' }],
+  metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/corporate',
   },
   openGraph: {
     title: 'حلول إدارة المواقف للشركات | OMNIRA - استثمار في إنتاجية فريقك',
     description: 'وفر 30 دقيقة يومياً - عقود مرنة، خدمة VIP، اشتراكات موظفين، تقارير تفصيلية',
-    url: 'https://omnira.sa/services/corporate',
+    url: 'https://omnira.skywaveads.com/services/corporate',
     siteName: 'OMNIRA',
     images: [{
-      url: 'https://omnira.sa/og-corporate.jpg',
+      url: 'https://omnira.skywaveads.com/og-corporate.jpg',
       width: 1200,
       height: 630,
       alt: 'حلول إدارة المواقف للشركات والمقرات',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'حلول مواقف احترافية للشركات | OMNIRA',
     description: 'عقود مرنة، VIP للإدارة، اشتراكات موظفين - وفر وقت فريقك',
-    images: ['https://omnira.sa/og-corporate.jpg'],
+    images: ['https://omnira.skywaveads.com/og-corporate.jpg'],
   },
   robots: {
     index: true,
