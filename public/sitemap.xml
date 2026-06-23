@@ -8,7 +8,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-image.jpg</image:loc>
       <image:caption>خدمات صف السيارات الاحترافية - أومنيرا OMNIRA</image:caption>
@@ -21,7 +20,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/about" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/about" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-about.jpg</image:loc>
       <image:caption>فريق أومنيرا المحترف - قصة نجاح سعودية</image:caption>
@@ -34,7 +32,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-services.jpg</image:loc>
       <image:caption>خدماتنا المتميزة في صف وإدارة السيارات</image:caption>
@@ -47,7 +44,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/contact" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/contact" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-contact.jpg</image:loc>
       <image:caption>تواصل معنا - نحن هنا لخدمتك</image:caption>
@@ -60,7 +56,6 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/pricing" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/pricing" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-pricing.jpg</image:loc>
       <image:caption>باقات أومنيرا المرنة - أسعار تنافسية</image:caption>
@@ -73,7 +68,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/locations" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/locations" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-locations.jpg</image:loc>
       <image:caption>مدن المملكة - نخدم جميع أنحاء السعودية</image:caption>
@@ -86,7 +80,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/valet-parking" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/valet-parking" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-valet-parking.jpg</image:loc>
       <image:caption>خدمات الفاليه باركينج الاحترافية</image:caption>
@@ -99,7 +92,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/parking-management" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/parking-management" />
     <image:image>
       <image:loc>https://omnira.skywaveads.com/og-parking-management.jpg</image:loc>
       <image:caption>إدارة وتشغيل المواقف بتقنيات ذكية</image:caption>
@@ -112,7 +104,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/advanced-technology" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/advanced-technology" />
   </url>
 
   <!-- خدمة المنظمين المحترفين -->
@@ -121,7 +112,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/professional-organizers" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/professional-organizers" />
   </url>
 
   <!-- خدمة الاستشارات -->
@@ -130,7 +120,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/consultation" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/consultation" />
   </url>
 
   <!-- خدمة الجولف كارت -->
@@ -139,7 +128,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/golf-cart" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/golf-cart" />
   </url>
 
   <!-- خدمات الدعم -->
@@ -148,7 +136,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/support-services" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/support-services" />
   </url>
 
   <!-- خدمة غسيل السيارات -->
@@ -157,7 +144,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/car-wash" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/car-wash" />
   </url>
 
   <!-- خدمات الفنادق -->
@@ -166,7 +152,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/hotels" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/hotels" />
   </url>
 
   <!-- خدمات المطاعم -->
@@ -175,7 +160,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/restaurants" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/restaurants" />
   </url>
 
   <!-- خدمات المراكز التجارية -->
@@ -184,7 +168,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/malls" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/malls" />
   </url>
 
   <!-- خدمات الفعاليات -->
@@ -193,7 +176,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/events" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/events" />
   </url>
 
   <!-- خدمات المستشفيات -->
@@ -202,7 +184,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/hospitals" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/hospitals" />
   </url>
 
   <!-- خدمات الشركات -->
@@ -211,7 +192,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/corporate" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/corporate" />
   </url>
 
   <!-- خدمات الـ VIP -->
@@ -220,6 +200,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="ar" href="https://omnira.skywaveads.com/services/vip" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://omnira.skywaveads.com/en/services/vip" />
   </url>
 </urlset>

@@ -1,18 +1,22 @@
-# 🏆 OMNIRA - موقع خدمات صف السيارات
+# 🚗 OMNIRA - موقع خدمات صف السيارات
 
-![OMNIRA](https://img.shields.io/badge/OMNIRA-أومنيرا-D4AF37?style=for-the-badge)
+![OMNIRA](https://img.shields.io/badge/OMNIRA-أومنيرا-7FA08E?style=for-the-badge)
 
-موقع احترافي لشركة **أومنيرا (OMNIRA)** المتخصصة في خدمات صف السيارات وإدارة المواقف الذكية في المملكة العربية السعودية.
+موقع تعريفي احترافي لشركة **أومنيرا (OMNIRA)** المتخصصة في خدمات صف السيارات (Valet Parking) وإدارة المواقف الذكية في المملكة العربية السعودية.
+
+> موقع **تعريفي ثابت (frontend-only)** بالكامل — لا توجد قاعدة بيانات أو واجهة برمجية خلفية. كل المحتوى مُولّد ثابتاً.
 
 ## 🎨 التقنيات المستخدمة
 
-- **Next.js 14** - React Framework
+- **Next.js 14** - React Framework (App Router)
 - **TypeScript** - Type Safety
 - **TailwindCSS** - Styling
 - **Framer Motion** - Animations
+- **GSAP** - Advanced Animations
 - **Lucide React** - Icons
-- **PostgreSQL** - Database
-- **Prisma** - ORM
+- **Radix UI** - Accessible UI Primitives
+- **React Hook Form + Zod** - النماذج والتحقق من المدخلات
+- **Zustand** - State Management
 
 ## 🚀 البدء
 
@@ -21,7 +25,7 @@
 - Node.js 20+
 - npm أو yarn
 
-### التنصيب
+### التنصيب والتشغيل
 
 ```bash
 # تنصيب المكتبات
@@ -35,6 +39,9 @@ npm run build
 
 # تشغيل الموقع في وضع الإنتاج
 npm start
+
+# فحص جودة الكود
+npm run lint
 ```
 
 افتح [http://localhost:3000](http://localhost:3000) في المتصفح.
@@ -43,50 +50,46 @@ npm start
 
 ```
 omnira-website/
-├── app/                    # Pages & Routes
-├── components/             # React Components
-│   ├── home/              # Homepage Components
-│   └── layout/            # Layout Components
-├── lib/                    # Utilities
-├── public/                 # Static Files
-└── styles/                 # Global Styles
+├── app/                    # الصفحات والمسارات (App Router)
+│   ├── about/             # من نحن
+│   ├── services/          # الخدمات وقطاعات العملاء
+│   ├── locations/         # المدن
+│   ├── pricing/           # الأسعار
+│   ├── contact/           # اتصل بنا
+│   └── sitemap/           # خريطة الموقع
+├── components/             # مكونات React
+├── lib/                    # أدوات مساعدة وإعدادات السيو
+└── public/                 # الملفات الثابتة (صور، sitemap، robots)
 ```
 
 ## 🎨 الألوان
 
-- **Gold Primary:** #D4AF37
-- **Gold Light:** #F4E4C1
-- **Black Primary:** #0A0A0A
-- **Black Soft:** #1A1A1A
+نظام ألوان مستوحى من الطبيعة السعودية (Sage / Sand) — انظر `tailwind.config.ts`:
+
+- **Sage Primary (اللون الأساسي):** `#7FA08E`
+- **Sage Light:** `#9FB8A8`
+- **Sage Medium:** `#6B8A7A`
+- **Sage Dark:** `#5A7568`
+- **Sand / Beige (خلفيات):** `#F5F0E8` → `#FAF7F2`
+
+> اللغة الأساسية للموقع هي العربية مع اتجاه RTL.
 
 ## 📝 الصفحات
 
 - `/` - الصفحة الرئيسية
 - `/about` - من نحن
-- `/services` - الخدمات
+- `/services` - الخدمات (مع صفحات فرعية لكل خدمة وقطاع)
 - `/locations` - المدن
 - `/pricing` - الأسعار
 - `/contact` - اتصل بنا
-
-## 🔒 المتغيرات البيئية
-
-انسخ `.env.example` إلى `.env.local` وقم بتعبئة القيم المطلوبة.
+- `/sitemap` - خريطة الموقع
 
 ## 🌐 النشر على Netlify
 
-الموقع جاهز للنشر على Netlify:
+الموقع جاهز للنشر على Netlify (انظر `netlify.toml`):
 
-1. قم بربط المشروع مع Netlify
-2. أضف المتغيرات البيئية في لوحة تحكم Netlify
-3. سيتم البناء والنشر تلقائياً
-
-### المتغيرات البيئية المطلوبة على Netlify:
-
-- `DATABASE_URL` - رابط قاعدة البيانات
-- `NEXTAUTH_SECRET` - مفتاح التشفير
-- `NEXTAUTH_URL` - رابط الموقع
-- `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` - مفتاح Google Maps
-- المتغيرات الاختيارية الأخرى حسب الحاجة
+1. قم بربط المستودع مع Netlify
+2. سيتم البناء والنشر تلقائياً عند كل دفعة
 
 ## 📄 الترخيص
 

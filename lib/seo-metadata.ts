@@ -65,7 +65,6 @@ export function generateMetadata({
       canonical: url,
       languages: {
         'ar-SA': url,
-        'en-US': `${url}/en`,
       },
     },
     openGraph: {

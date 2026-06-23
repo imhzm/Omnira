@@ -25,7 +25,7 @@ export const siteConfig = {
   },
   openingHours: 'Mo-Su 00:00-24:00',
   priceRange: '$$',
-  languages: ['ar', 'en'],
+  languages: ['ar'],
   defaultLanguage: 'ar',
 };
 

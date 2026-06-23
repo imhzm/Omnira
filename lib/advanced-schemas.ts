@@ -13,7 +13,7 @@ export const multilanguageSiteSchema = {
   alternateName: 'OMNIRA Valet Parking',
   description: siteConfig.description,
   url: siteConfig.url,
-  inLanguage: ['ar-SA', 'en-US'],
+  inLanguage: ['ar-SA'],
   potentialAction: {
     '@type': 'SearchAction',
     target: {

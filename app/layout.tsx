@@ -131,7 +131,6 @@ export default function RootLayout({
         {/* SEO enhancements */}
         <link rel="canonical" href="https://omnira.skywaveads.com" />
         <link rel="alternate" hrefLang="ar" href="https://omnira.skywaveads.com" />
-        <link rel="alternate" hrefLang="en" href="https://omnira.skywaveads.com/en" />
         <link rel="alternate" hrefLang="x-default" href="https://omnira.skywaveads.com" />
         
         {/* Structured Data */}

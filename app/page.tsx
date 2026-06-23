@@ -80,7 +80,6 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: {
       'ar-SA': '/',
-      'en-US': '/en',
     },
   },
   openGraph: {

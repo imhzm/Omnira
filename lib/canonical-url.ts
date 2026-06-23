@@ -27,7 +27,7 @@ export function generateURLs(
   const {
     addTrailingSlash = false,
     baseURL = 'https://omnira.skywaveads.com',
-    locales = ['ar', 'en'],
+    locales = ['ar'],
     removeIndex = true,
   } = options;
 
@@ -63,13 +63,7 @@ export function generateURLs(
   if (locales.includes('ar')) {
     languages['ar'] = canonicalPath;
   }
-  
-  if (locales.includes('en')) {
-    // صفحة مترجمة بالإنجليزية
-    const enPath = cleanPath ? `${baseURL}/en/${cleanPath}` : `${baseURL}/en`;
-    languages['en'] = enPath;
-  }
-  
+
   // إرجاع النتيجة
   return {
     canonical: canonicalPath,
