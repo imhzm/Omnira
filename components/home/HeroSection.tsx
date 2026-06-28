@@ -282,8 +282,8 @@ const HeroSection = () => {
       )}
 
       {/* Content */}
-      <div className="container-custom relative z-20 text-center">
-        <div>
+      <div className="container-custom relative z-20 text-center sm:text-right">
+        <div className="max-w-4xl mx-auto sm:mx-0">
           {/* Premium Badge - شارة فاخرة */}
           <div className="inline-flex items-center space-x-3 space-x-reverse bg-gradient-to-r from-[#0A0A0C]/92 via-[#15151B]/88 to-[#0A0A0C]/92 backdrop-blur-xl px-10 py-5 rounded-2xl border-2 border-gold-primary/60 mb-10 relative overflow-hidden group shadow-2xl shadow-gold-primary/30">
             {/* Animated Background */}
@@ -306,9 +306,20 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-2xl border-2 border-gold-primary/0 group-hover:border-gold-primary/80 transition-all duration-500"></div>
           </div>
 
-          {/* Main Heading - عنوان فاخر */}
-          <h1 className="text-5xl md:text-6xl lg:text-8xl font-black mb-8 leading-[1.1]">
-            <span className="text-white drop-shadow-2xl block">التميّز في خدماتنا</span>
+          {/* Main Heading - kinetic */}
+          <h1 className="font-black text-white leading-[0.95] tracking-tight text-[3.4rem] sm:text-7xl lg:text-8xl xl:text-[8.5rem] mb-8">
+            {['الفخامة', 'تبدأ مِن', 'الوصول'].map((line, i) => (
+              <span key={i} className="block overflow-hidden pb-1">
+                <motion.span
+                  initial={{ y: '120%' }}
+                  animate={{ y: '0%' }}
+                  transition={{ duration: 0.95, delay: 0.15 + i * 0.13, ease: [0.22, 0.61, 0.36, 1] }}
+                  className={`block ${i === 2 ? 'bg-gradient-to-l from-gold-light via-gold-primary to-gold-rose bg-clip-text text-transparent' : 'drop-shadow-2xl'}`}
+                >
+                  {line}
+                </motion.span>
+              </span>
+            ))}
           </h1>
 
           {/* Subtitle - عنوان فرعي فاخر */}
@@ -323,13 +334,19 @@ const HeroSection = () => {
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4">
             <Link
               href="/contact"
-              className="btn-gold px-10 py-5 text-lg font-bold group inline-flex items-center space-x-3 space-x-reverse shadow-lg shadow-gold-primary/20 hover:shadow-xl hover:shadow-gold-primary/30 transition-all duration-500"
+              className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold-primary px-9 py-4 text-base md:text-lg font-bold text-[#0A0A0C] shadow-xl shadow-gold-primary/30 transition-transform duration-300 hover:scale-[1.04]"
             >
-              <span>احجز الآن</span>
-              <ArrowLeft className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-500" />
+              <span className="relative z-10">احجز خدمتك الآن</span>
+              <ArrowLeft className="relative z-10 w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1.5" />
+            </Link>
+            <Link
+              href="/services"
+              className="inline-flex items-center gap-2 rounded-full border-2 border-white/25 px-8 py-4 text-base md:text-lg font-bold text-white backdrop-blur-sm transition-all duration-300 hover:border-gold-primary hover:text-gold-primary"
+            >
+              استكشف خدماتنا
             </Link>
           </div>
 
@@ -356,6 +373,23 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.6, duration: 0.8 }}
+        className="absolute bottom-7 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+      >
+        <span className="text-[10px] tracking-[0.35em] text-white/50">اسحب للأسفل</span>
+        <span className="relative flex h-9 w-[22px] justify-center rounded-full border border-white/30 pt-2">
+          <motion.span
+            animate={{ y: [0, 11, 0], opacity: [1, 0.2, 1] }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: 'easeInOut' }}
+            className="h-1.5 w-1.5 rounded-full bg-gold-primary"
+          />
+        </span>
+      </motion.div>
     </section>
   );
 };
