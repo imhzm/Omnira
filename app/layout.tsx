@@ -2,14 +2,16 @@ import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import localFont from "next/font/local";
 import './globals.css';
-import './favicon.css'; 
+import './favicon.css';
 import "./performance.css";
+import "./presentation.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
 import ScrollProgress from "@/components/ui/ScrollProgress";
 
 const WhatsAppButton = dynamic(() => import("@/components/layout/WhatsAppButton"), { ssr: false });
 const FloatingElements = dynamic(() => import("@/components/ui/FloatingElements"), { ssr: false });
 const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
+const SlideNav = dynamic(() => import("@/components/ui/SlideNav"), { ssr: false });
 
 const arabicFont = localFont({
   src: [
@@ -156,6 +158,7 @@ export default function RootLayout({
         {children}
         <WhatsAppButton />
         <ScrollToTop />
+        <SlideNav />
       </body>
     </html>
   );

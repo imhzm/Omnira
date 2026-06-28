@@ -1,0 +1,43 @@
+/* ===========================================================
+   Presentation / Slide-style scrolling  (applied site-wide)
+   Each top-level <section> behaves like a full slide that the
+   page snaps to as you scroll. Desktop only; mobile stays natural.
+   =========================================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y proximity;
+  }
+
+  /* top-level sections become the "slides" */
+  main section:not(section section) {
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
+    scroll-margin-top: 5rem;   /* clear the fixed header */
+    min-height: 100vh;         /* short sections fill the viewport like a slide */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* heroes already center themselves — keep them intact */
+  main section.min-h-screen {
+    min-height: 100vh;
+  }
+}
+
+/* Respect users who prefer no motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+    scroll-snap-type: none;
+  }
+  main section:not(section section) {
+    min-height: 0;
+    display: block;
+  }
+}

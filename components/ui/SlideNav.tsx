@@ -1,0 +1,110 @@
+'use client';
+
+import { useEffect, useState, useCallback, useRef } from 'react';
+import { usePathname } from 'next/navigation';
+
+type Slide = { id: string; label: string; el: HTMLElement };
+
+/**
+ * Side dot-navigation that turns every page into a guided "presentation":
+ * it auto-discovers the page's top-level <section>s, shows a dot per slide,
+ * highlights the active one while scrolling, and smooth-scrolls on click.
+ * Pure client-side, zero per-page wiring.
+ */
+export default function SlideNav() {
+  const pathname = usePathname();
+  const [slides, setSlides] = useState<Slide[]>([]);
+  const [active, setActive] = useState(0);
+  const debRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const scan = useCallback(() => {
+    const main = document.querySelector('main');
+    if (!main) return;
+    const all = Array.from(main.querySelectorAll('section')) as HTMLElement[];
+    const tops = all.filter(
+      (s) => !s.parentElement?.closest('section') && s.offsetHeight > 240
+    );
+    const list: Slide[] = tops.map((el, i) => {
+      if (!el.id) el.id = `slide-${i + 1}`;
+      const h = el.querySelector('h1, h2');
+      const label =
+        (h?.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 22) ||
+        `قسم ${i + 1}`;
+      return { id: el.id, label, el };
+    });
+    setSlides((prev) =>
+      prev.length === list.length && prev.every((p, i) => p.el === list[i].el)
+        ? prev
+        : list
+    );
+  }, []);
+
+  // (re)scan on navigation + whenever main's content changes (lazy sections)
+  useEffect(() => {
+    setSlides([]);
+    setActive(0);
+    const main = document.querySelector('main');
+    const run = () => {
+      if (debRef.current) clearTimeout(debRef.current);
+      debRef.current = setTimeout(scan, 250);
+    };
+    run();
+    const mo = main ? new MutationObserver(run) : null;
+    if (main) mo!.observe(main, { childList: true, subtree: true });
+    const t = setTimeout(scan, 1600);
+    return () => {
+      mo?.disconnect();
+      clearTimeout(t);
+      if (debRef.current) clearTimeout(debRef.current);
+    };
+  }, [pathname, scan]);
+
+  // track the active slide
+  useEffect(() => {
+    if (slides.length < 2) return;
+    const obs = new IntersectionObserver(
+      (entries) =>
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            const idx = slides.findIndex((s) => s.el === e.target);
+            if (idx >= 0) setActive(idx);
+          }
+        }),
+      { rootMargin: '-45% 0px -45% 0px' }
+    );
+    slides.forEach((s) => obs.observe(s.el));
+    return () => obs.disconnect();
+  }, [slides]);
+
+  if (slides.length < 2) return null;
+
+  return (
+    <nav
+      aria-label="التنقل بين أقسام الصفحة"
+      className="hidden lg:flex fixed right-5 top-1/2 -translate-y-1/2 z-[9990] flex-col items-end gap-3"
+    >
+      {slides.map((s, i) => (
+        <button
+          key={s.id}
+          onClick={() =>
+            s.el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+          className="group relative flex items-center justify-end py-1"
+          aria-label={s.label}
+          aria-current={i === active}
+        >
+          <span className="absolute right-full mr-3 whitespace-nowrap rounded-md bg-[#0E0E11]/90 backdrop-blur-md px-3 py-1 text-xs font-medium text-[#F5ECDB] border border-gold-primary/30 shadow-lg opacity-0 translate-x-1 pointer-events-none transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0">
+            {s.label}
+          </span>
+          <span
+            className={`block rounded-full border transition-all duration-300 ${
+              i === active
+                ? 'w-3.5 h-3.5 bg-gold-primary border-gold-primary shadow-[0_0_12px_rgba(201,162,74,0.85)]'
+                : 'w-2.5 h-2.5 bg-transparent border-gold-primary/50 group-hover:bg-gold-primary/60'
+            }`}
+          />
+        </button>
+      ))}
+    </nav>
+  );
+}
