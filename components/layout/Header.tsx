@@ -56,18 +56,18 @@ const Header = () => {
       <div className="container-custom relative">
         <div className="flex items-center justify-between h-20 relative">
           {/* Logo */}
-          <Link href="/" className="group flex items-center h-full py-3 relative">
+          <Link href="/" className="group flex items-center h-full py-2 relative">
             <div className="relative">
               {/* Shadow Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-primary/30 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-gold-primary/20 blur-md scale-105"></div>
-              
+              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/40 via-gold-primary/25 to-gold-primary/40 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-gold-primary/15 blur-md scale-105"></div>
+
               <Image
                 src="/logo.png"
                 alt="Omnira Valet"
-                width={126}
-                height={35}
-                className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-110 transition-all duration-500"
+                width={300}
+                height={84}
+                className="object-contain w-auto h-12 md:h-16 relative z-10 drop-shadow-[0_3px_14px_rgba(201,162,74,0.6)] group-hover:drop-shadow-[0_8px_24px_rgba(201,162,74,0.85)] group-hover:scale-105 transition-all duration-500"
                 priority
               />
             </div>
