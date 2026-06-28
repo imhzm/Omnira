@@ -65,17 +65,10 @@ const HeroSection = () => {
   // مرجع للإشارة إلى الإطار
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
-  // بدء تحميل الفيديو مبكرًا لتسريع العملية (فقط على جانب العميل)
+  // تم تعطيل فيديو الخلفية عمداً — سلايدر الصور السينمائية الفاخر هو خلفية الهيرو
+  // لإعادة تفعيله: ضع setTimeout(() => setShouldLoadVideo(true), 500) داخل التأثير
   useEffect(() => {
-    // تأكد من أننا على جانب العميل
-    if (isMounted && typeof window !== 'undefined') {
-      // بدء تحميل الفيديو بعد تحميل الصفحة بقليل
-      const timer = setTimeout(() => {
-        setShouldLoadVideo(true);
-      }, 500); // بدء التحميل بعد نصف ثانية لضمان اكتمال الـ hydration أولاً
-      
-      return () => clearTimeout(timer);
-    }
+    setShouldLoadVideo(false);
   }, [isMounted]);
   
   // تحقق من حالة تحميل الفيديو - فقط على جانب العميل بعد التحميل
