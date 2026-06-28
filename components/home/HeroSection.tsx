@@ -237,10 +237,11 @@ const HeroSection = () => {
             )}
           </div>
         )}
-        {/* Enhanced Gradient Overlays - أخف لإبراز الصورة الفاخرة مع وضوح النص */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 z-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/10 via-transparent to-gold-primary/10 z-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/55 via-transparent to-transparent z-30"></div>
+        {/* Enhanced Gradient Overlays - أغمق لإبراز الخط العملاق المملوء بالصورة */}
+        <div className="absolute inset-0 bg-black/55 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/75 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/8 via-transparent to-gold-primary/8 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C]/80 via-transparent to-transparent z-30"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -306,20 +307,35 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-2xl border-2 border-gold-primary/0 group-hover:border-gold-primary/80 transition-all duration-500"></div>
           </div>
 
-          {/* Main Heading - kinetic */}
-          <h1 className="font-black text-white leading-[0.95] tracking-tight text-[3.4rem] sm:text-7xl lg:text-8xl xl:text-[8.5rem] mb-8">
-            {['الفخامة', 'تبدأ مِن', 'الوصول'].map((line, i) => (
-              <span key={i} className="block overflow-hidden pb-1">
-                <motion.span
-                  initial={{ y: '120%' }}
-                  animate={{ y: '0%' }}
-                  transition={{ duration: 0.95, delay: 0.15 + i * 0.13, ease: [0.22, 0.61, 0.36, 1] }}
-                  className={`block ${i === 2 ? 'bg-gradient-to-l from-gold-light via-gold-primary to-gold-rose bg-clip-text text-transparent' : 'drop-shadow-2xl'}`}
-                >
-                  {line}
-                </motion.span>
-              </span>
-            ))}
+          {/* Main Heading - giant, image-filled (FIND-style) */}
+          <h1 className="font-black leading-[0.82] tracking-tight mb-8">
+            <span className="block overflow-hidden pb-1">
+              <motion.span
+                initial={{ y: '120%' }}
+                animate={{ y: '0%' }}
+                transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 0.61, 0.36, 1] }}
+                className="block text-white/85 text-3xl sm:text-5xl lg:text-6xl drop-shadow-xl"
+              >
+                نُعيد تعريف
+              </motion.span>
+            </span>
+            <span className="block overflow-hidden pb-3">
+              <motion.span
+                initial={{ y: '120%' }}
+                animate={{ y: '0%' }}
+                transition={{ duration: 1.05, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+                className="block bg-clip-text text-transparent text-[20vw] sm:text-[16vw] lg:text-[13rem] leading-[0.78]"
+                style={{
+                  backgroundImage: 'url(/images/hero/hero-2.jpg)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center 35%',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                }}
+              >
+                الفخامة
+              </motion.span>
+            </span>
           </h1>
 
           {/* Subtitle - عنوان فرعي فاخر */}

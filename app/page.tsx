@@ -7,9 +7,13 @@ import { jsonLdWebsite, jsonLdOrganization } from '@/lib/seo-config';
 import { getOGImage } from '@/lib/og-images';
 
 // Critical sections - SSR enabled
-const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), { 
+const ServicesSection = dynamic(() => import("@/components/home/ServicesSection"), {
   ssr: true,
   loading: () => <div className="h-screen" />
+});
+
+const GiantSectors = dynamic(() => import("@/components/home/GiantSectors"), {
+  ssr: true,
 });
 
 const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), { 
@@ -131,6 +135,7 @@ export default function Home() {
       <main className="min-h-screen bg-[#0E0E11]">
         <Header />
         <HeroSection />
+        <GiantSectors />
         <ServicesSection />
         <WhyChooseUs />
         <FeaturesSection />
