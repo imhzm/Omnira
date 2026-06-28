@@ -23,27 +23,27 @@ const HeroSection = () => {
     setIsMounted(true);
   }, []);
 
-  // صور السلايدر - باركينج وخدمات السيارات الفاخرة
+  // صور السلايدر - صور أومنيرا فاليه الفاخرة (Higgsfield)
   const sliderImages = [
     {
-      url: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=2070&q=80',
-      alt: 'خدمات صف السيارات الفاخرة'
+      url: '/images/omnira-hero.jpg',
+      alt: 'خدمة صف السيارات الفاخرة من أومنيرا فاليه'
     },
     {
-      url: 'https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=2070&q=80',
-      alt: 'موقف سيارات فندق فاخر'
+      url: '/images/valet-hotel.jpg',
+      alt: 'فاليه باركينج أمام فندق خمس نجوم'
     },
     {
-      url: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=2070&q=80',
-      alt: 'سيارة فاخرة في خدمة الفاليه'
+      url: '/images/services/events-service.jpg',
+      alt: 'خدمة الفاليه في الفعاليات الفاخرة'
     },
     {
-      url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=2070&q=80',
-      alt: 'سيارات فاخرة في موقف احترافي'
+      url: '/images/professional-team.jpg',
+      alt: 'فريق أومنيرا فاليه الاحترافي'
     },
     {
-      url: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=2070&q=80',
-      alt: 'خدمات فاليه باركينج احترافية'
+      url: '/images/smart-parking.jpg',
+      alt: 'الإدارة الذكية لمواقف السيارات'
     }
   ];
 
@@ -177,7 +177,7 @@ const HeroSection = () => {
               )}
             </div>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/60 z-10"></div>
           
           {/* Slider Indicators */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 space-x-reverse">
@@ -238,12 +238,12 @@ const HeroSection = () => {
             )}
           </div>
         )}
-        {/* Enhanced Gradient Overlays - زيادة z-index للطبقات */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70 z-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/30 via-transparent to-sage-primary/30 z-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/70 via-transparent to-transparent z-30"></div>
-        {/* طبقة داكنة موحدة للمساعدة في وضوح النصوص */}
-        <div className="absolute inset-0 bg-black/40 z-30"></div>
+        {/* Enhanced Gradient Overlays - أخف لإبراز الصورة الفاخرة مع وضوح النص */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/65 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/10 via-transparent to-gold-primary/10 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/85 via-transparent to-transparent z-30"></div>
+        {/* طبقة خفيفة لوضوح النصوص */}
+        <div className="absolute inset-0 bg-black/15 z-30"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>

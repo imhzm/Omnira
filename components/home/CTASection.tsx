@@ -16,11 +16,12 @@ const CTASection = () => {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070"
+          src="/images/valet-hotel.jpg"
           alt="اتصل بنا"
           fill
           sizes="100vw"
           className="object-cover opacity-5"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11]/50 to-[#0A0A0C]"></div>
       </div>
