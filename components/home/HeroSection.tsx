@@ -23,27 +23,31 @@ const HeroSection = () => {
     setIsMounted(true);
   }, []);
 
-  // صور السلايدر - صور أومنيرا فاليه الفاخرة (Higgsfield)
+  // سلايدر الهيرو - صور سينمائية فاخرة حصرية (Higgsfield)
   const sliderImages = [
     {
-      url: '/images/omnira-hero.jpg',
-      alt: 'خدمة صف السيارات الفاخرة من أومنيرا فاليه'
+      url: '/images/hero/hero-1.jpg',
+      alt: 'وصول سيارة رولز-رويس وخدمة فاليه أمام فندق خمس نجوم'
     },
     {
-      url: '/images/valet-hotel.jpg',
-      alt: 'فاليه باركينج أمام فندق خمس نجوم'
+      url: '/images/hero/hero-3.jpg',
+      alt: 'ممر فندق فاخر بخطوط ضوء ذهبية - خدمة صف سيارات راقية'
     },
     {
-      url: '/images/services/events-service.jpg',
-      alt: 'خدمة الفاليه في الفعاليات الفاخرة'
+      url: '/images/hero/hero-2.jpg',
+      alt: 'تسليم مفتاح السيارة بأناقة على صينية مخمل - تجربة VIP'
     },
     {
-      url: '/images/professional-team.jpg',
-      alt: 'فريق أومنيرا فاليه الاحترافي'
+      url: '/images/hero/hero-4.jpg',
+      alt: 'سيارة بنتلي سوداء فاخرة في مدخل عصري راقٍ'
     },
     {
-      url: '/images/smart-parking.jpg',
-      alt: 'الإدارة الذكية لمواقف السيارات'
+      url: '/images/hero/hero-6.jpg',
+      alt: 'فريق أومنيرا فاليه الاحترافي أمام فندق فاخر'
+    },
+    {
+      url: '/images/hero/hero-5.jpg',
+      alt: 'خدمة فاليه فاخرة مع إطلالة على أفق المدينة'
     }
   ];
 
@@ -146,7 +150,7 @@ const HeroSection = () => {
               }`}
             >
               {/* Gradient Placeholder - يظهر أثناء التحميل */}
-              <div className="absolute inset-0 bg-gradient-to-br from-sage-primary/40 via-brown-dark/60 to-sage-medium/40 animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0A0A0C] via-[#141418] to-[#0A0A0C] animate-pulse" />
               
               {!imageErrors.has(index) ? (
                 <Image
@@ -167,7 +171,7 @@ const HeroSection = () => {
                 />
               ) : (
                 // صورة احتياطية فاخرة
-                <div className="w-full h-full bg-gradient-to-br from-sage-primary/50 via-brown-dark/70 to-gold-primary/40 flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-[#141418] via-[#0A0A0C] to-gold-primary/30 flex items-center justify-center">
                   <div className="text-center text-white backdrop-blur-sm bg-black/30 p-12 rounded-3xl">
                     <div className="text-8xl mb-6 animate-bounce">🚗</div>
                     <p className="text-3xl font-black mb-2">خدمات صف السيارات الفاخرة</p>
@@ -286,7 +290,7 @@ const HeroSection = () => {
       <div className="container-custom relative z-20 text-center">
         <div>
           {/* Premium Badge - شارة فاخرة */}
-          <div className="inline-flex items-center space-x-3 space-x-reverse bg-gradient-to-r from-brown-dark/95 via-brown-dark/90 to-brown-dark/95 backdrop-blur-xl px-10 py-5 rounded-2xl border-2 border-gold-primary/60 mb-10 relative overflow-hidden group shadow-2xl shadow-gold-primary/30">
+          <div className="inline-flex items-center space-x-3 space-x-reverse bg-gradient-to-r from-[#0A0A0C]/92 via-[#15151B]/88 to-[#0A0A0C]/92 backdrop-blur-xl px-10 py-5 rounded-2xl border-2 border-gold-primary/60 mb-10 relative overflow-hidden group shadow-2xl shadow-gold-primary/30">
             {/* Animated Background */}
             <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/20 via-sunset-golden/20 to-gold-primary/20 opacity-0 group-hover:opacity-100 transition-all duration-500 animate-gradient"></div>
             <div className="absolute inset-0 bg-gradient-shimmer animate-shimmer"></div>

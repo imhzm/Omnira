@@ -128,7 +128,7 @@ const StepCard = ({ step, index, isInView }: StepCardProps) => {
             className="object-cover group-hover:scale-110 transition-transform duration-500"
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/40 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
           
           {/* Number Badge */}
           <div className="absolute top-4 right-4">

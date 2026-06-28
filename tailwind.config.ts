@@ -12,8 +12,8 @@ const config: Config = {
       colors: {
         // 🎨 Luxury Gold Palette - أسود وذهبي فاخر
         sage: {
-          50: '#FBF5E6',           // أفتح درجة - للخلفيات الناعمة
-          100: '#F3E7C6',          // ناعم جداً
+          50: '#16130C',           // خلفية ناعمة داكنة (ثيم أسود فاخر)
+          100: '#1E1910',          // داكن دافئ
           200: '#E8D6A0',          // فاتح مع حيوية
           300: '#DBC074',          // متوسط فاتح
           400: '#D0AE55',          // فاتح
@@ -90,12 +90,13 @@ const config: Config = {
           bronze: '#8A6E2F',
         },
         black: {
-          primary: '#E8DCC4',
-          rich: '#F5ECDB',
-          soft: '#D9CBB0',
-          medium: '#C9A24A',
-          light: '#E0C273',
-          charcoal: '#C8B58A',
+          DEFAULT: '#0A0A0C',
+          primary: '#0A0A0C',
+          rich: '#050506',
+          soft: '#15151B',
+          medium: '#1E1E26',
+          light: '#2A2A33',
+          charcoal: '#17171C',
         },
         luxury: {
           pearl: '#F5ECDB',

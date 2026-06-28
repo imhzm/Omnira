@@ -50,12 +50,12 @@ export default function ScrollToTop() {
 
           {/* Tooltip */}
           <motion.div
-            className="absolute bottom-full right-0 mb-2 bg-brown-dark/95 backdrop-blur-md text-white px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity"
+            className="absolute bottom-full right-0 mb-2 bg-[#0E0E11]/95 backdrop-blur-md text-white px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity"
             initial={{ y: 10, opacity: 0 }}
             whileHover={{ y: 0, opacity: 1 }}
           >
             <span className="text-sm font-medium">العودة للأعلى</span>
-            <div className="absolute top-full right-4 w-2 h-2 bg-brown-dark/95 rotate-45 -mt-1" />
+            <div className="absolute top-full right-4 w-2 h-2 bg-[#0E0E11]/95 rotate-45 -mt-1" />
           </motion.div>
 
           {/* Animated Ring */}
