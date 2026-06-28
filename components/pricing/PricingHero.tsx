@@ -17,7 +17,7 @@ const PricingHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2070"
+          src="/images/services/parking-management.jpg"
           alt="الأسعار والباقات"
           fill
           sizes="100vw"

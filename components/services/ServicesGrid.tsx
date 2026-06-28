@@ -19,7 +19,7 @@ const ServicesGrid = () => {
       icon: Building2,
       title: 'إدارة وتشغيل المواقف',
       shortDesc: 'تشغيل مواقف السيارات بكفاءة واحترافية وفق أعلى المعايير',
-      image: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=2070',
+      image: '/images/services/parking-management.jpg',
       features: ['إدارة متكاملة', 'كفاءة عالية', 'معايير عالمية'],
     },
     {
@@ -27,7 +27,7 @@ const ServicesGrid = () => {
       icon: CarFront,
       title: 'تقديم خدمات الفاليه باركينج',
       shortDesc: 'استقبال المركبات وإيقافها بعناية لضمان راحة العملاء',
-      image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070',
+      image: '/images/services/valet-parking.jpg',
       features: ['خدمة VIP', 'سائقون محترفون', 'راحة تامة'],
     },
     {
@@ -35,7 +35,7 @@ const ServicesGrid = () => {
       icon: Cpu,
       title: 'تقنيات متقدمة لإدارة المواقف',
       shortDesc: 'توفير أحدث الأنظمة والتقنيات لتنظيم وتشغيل المواقف بسهولة وفعالية',
-      image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034',
+      image: '/images/services/advanced-technology.jpg',
       features: ['أنظمة ذكية', 'تتبع فوري', 'تقارير تحليلية'],
     },
     {
@@ -43,7 +43,7 @@ const ServicesGrid = () => {
       icon: Users,
       title: 'توفير منظمين محترفين',
       shortDesc: 'فريق مؤهل لتنظيم الحركة داخل المواقف وتوجيه المركبات بسلاسة',
-      image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070',
+      image: '/images/professional-team.jpg',
       features: ['فريق مدرب', 'تنظيم احترافي', 'خدمة متميزة'],
     },
     {
@@ -51,7 +51,7 @@ const ServicesGrid = () => {
       icon: FileText,
       title: 'استشارات ما قبل التطوير والبناء',
       shortDesc: 'تقديم دراسات متخصصة وحلول فعّالة لتخطيط وتصميم مواقف السيارات',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070',
+      image: '/images/smart-parking.jpg',
       features: ['دراسات متخصصة', 'حلول فعالة', 'تخطيط احترافي'],
     },
     {
@@ -59,7 +59,7 @@ const ServicesGrid = () => {
       icon: Cable,
       title: 'توفير جولف كار',
       shortDesc: 'تسهيل تنقل العملاء داخل المواقف الكبيرة باستخدام عربات الجولف',
-      image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?q=80&w=2070',
+      image: '/images/valet-service.jpg',
       features: ['راحة العملاء', 'تنقل سهل', 'مواقف كبيرة'],
     },
     {
@@ -67,7 +67,7 @@ const ServicesGrid = () => {
       icon: Headphones,
       title: 'خدمات مساندة',
       shortDesc: 'دعم متكامل لتشغيل المواقف وتحقيق تجربة سلسة للمستخدمين',
-      image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070',
+      image: '/images/services/advanced-technology.jpg',
       features: ['دعم فني', 'خدمة 24/7', 'حلول متكاملة'],
     },
     {
@@ -75,7 +75,7 @@ const ServicesGrid = () => {
       icon: Droplets,
       title: 'غسيل السيارات',
       shortDesc: 'خدمات تنظيف متكاملة للمركبات أثناء تواجدها في المواقف',
-      image: 'https://images.unsplash.com/photo-1601362840469-51e4d8d58785?q=80&w=2098',
+      image: '/images/omnira-hero.jpg',
       features: ['تنظيف شامل', 'منتجات عالية', 'خدمة سريعة'],
     },
   ];

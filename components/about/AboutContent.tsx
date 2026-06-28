@@ -33,7 +33,7 @@ const StorySection = () => {
           >
             <div className="relative h-96 rounded-2xl overflow-hidden">
               <Image
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
+                src="/images/hero/hero-5.jpg"
                 alt="مقر شركة أومنيرا فاليه"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -250,7 +250,7 @@ const TeamSection = () => {
             >
               <div className="relative h-64 mb-4 rounded-3xl overflow-hidden border-2 border-sage-primary/20 group-hover:border-sage-primary transition-all">
                 <Image
-                  src={`https://images.unsplash.com/photo-${index === 0 ? '1560250097-0b93528c311a' : index === 1 ? '1573496359142-b8d87734a5a2' : '1500648767791-00dcc994a43e'}?q=80&w=1000`}
+                  src={index === 0 ? '/images/people/person-3.jpg' : index === 1 ? '/images/people/person-1.jpg' : '/images/people/person-4.jpg'}
                   alt="عضو فريق"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"

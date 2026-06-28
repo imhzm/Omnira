@@ -16,28 +16,28 @@ const HowItWorksSection = () => {
       icon: Calendar,
       title: 'الحجز',
       description: 'احجز الخدمة عبر الموقع أو التطبيق أو اتصل بنا مباشرة. حدد التاريخ، الوقت، والموقع',
-      image: 'https://images.unsplash.com/photo-1512428559087-560fa5ceab42?q=80&w=2070',
+      image: '/images/services/advanced-technology.jpg',
     },
     {
       number: '02',
       icon: CheckCircle,
       title: 'التأكيد',
       description: 'نراجع طلبك ونرسل لك تأكيداً فورياً مع تفاصيل الخدمة وفريق العمل المخصص',
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070',
+      image: '/images/professional-team.jpg',
     },
     {
       number: '03',
       icon: CarFront,
       title: 'الخدمة',
       description: 'يصل فريقنا في الموعد المحدد. نستلم السيارات بمهنية ونديرها بكفاءة عالية',
-      image: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070',
+      image: '/images/services/parking-management.jpg',
     },
     {
       number: '04',
       icon: Key,
       title: 'التسليم',
       description: 'نعيد السيارات لأصحابها بسرعة وأمان. تجربة سلسة من البداية للنهاية',
-      image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=2070',
+      image: '/images/services/valet-parking.jpg',
     },
   ];
 

@@ -20,7 +20,7 @@ const ServicesHero = () => {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={imgError ? FALLBACK_HERO : "https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=2074"}
+          src={imgError ? FALLBACK_HERO : "/images/services/valet-parking.jpg"}
           alt="خدمات صف السيارات الاحترافية"
           fill
           sizes="100vw"

@@ -16,7 +16,7 @@ const AboutHero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070"
+          src="/images/hero/hero-6.jpg"
           alt="فريق عمل أومنيرا فاليه المحترف"
           fill
           sizes="100vw"

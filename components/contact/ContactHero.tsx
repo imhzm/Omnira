@@ -9,7 +9,7 @@ const ContactHero = () => {
     <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-beige-light via-[#0E0E11] to-sage-soft">
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074"
+          src="/images/hero/hero-2.jpg"
           alt="تواصل معنا"
           fill
           sizes="100vw"
