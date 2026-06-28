@@ -319,19 +319,19 @@ const HeroSection = () => {
                 نُعيد تعريف
               </motion.span>
             </span>
-            <span className="block overflow-hidden pb-3">
+            <span className="block pb-2">
               <motion.span
-                initial={{ y: '120%' }}
-                animate={{ y: '0%' }}
-                transition={{ duration: 1.05, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
-                className="block bg-clip-text text-transparent text-[20vw] sm:text-[16vw] lg:text-[13rem] leading-[0.78]"
+                initial={{ opacity: 0, y: 44 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
+                className="block bg-clip-text text-transparent text-[19vw] sm:text-[15vw] lg:text-[12rem] leading-[0.95]"
                 style={{
-                  backgroundImage: 'url(/images/hero/hero-2.jpg)',
+                  backgroundImage: 'url(/images/hero/hero-3.jpg)',
                   backgroundSize: 'cover',
-                  backgroundPosition: 'center 35%',
+                  backgroundPosition: 'center',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
-                  WebkitTextStroke: '1.5px rgba(201,162,74,0.5)',
+                  WebkitTextStroke: '1.5px rgba(201,162,74,0.55)',
                   filter: 'drop-shadow(0 8px 30px rgba(0,0,0,0.9))',
                 }}
               >
@@ -340,16 +340,10 @@ const HeroSection = () => {
             </span>
           </h1>
 
-          {/* Subtitle - عنوان فرعي فاخر */}
-          <div className="max-w-4xl mx-auto mb-12 space-y-4">
-            <p className="text-2xl md:text-3xl text-white drop-shadow-lg font-bold leading-relaxed">
-              خدمة فاخرة • راحة استثنائية • احترافية عالية
-            </p>
-            <p className="text-lg md:text-xl text-white/90 drop-shadow-lg leading-relaxed max-w-3xl mx-auto">
-              نوفر لك ولضيوفك تجربة مميزة تجمع بين الأمان والفخامة في خدمات صف السيارات وإدارة المواقف. 
-              <span className="text-sunset-golden font-bold drop-shadow-md">حلول ذكية</span> للفنادق، المطاعم، والفعاليات في جميع أنحاء المملكة.
-            </p>
-          </div>
+          {/* Subtitle */}
+          <p className="max-w-xl mx-auto sm:mx-0 mb-10 text-base md:text-xl text-white/75 leading-relaxed drop-shadow-lg">
+            نُدير وصول ضيوفك بأناقةٍ واحترافية — للفنادق والمطاعم والفعاليات في كل أنحاء المملكة.
+          </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-4">
