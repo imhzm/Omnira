@@ -177,7 +177,7 @@ const HeroSection = () => {
               )}
             </div>
           ))}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-black/15 to-black/60 z-10"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/5 to-black/55 z-10"></div>
           
           {/* Slider Indicators */}
           <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2 space-x-reverse">
@@ -239,11 +239,9 @@ const HeroSection = () => {
           </div>
         )}
         {/* Enhanced Gradient Overlays - أخف لإبراز الصورة الفاخرة مع وضوح النص */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-black/65 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/60 z-30"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/10 via-transparent to-gold-primary/10 z-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/85 via-transparent to-transparent z-30"></div>
-        {/* طبقة خفيفة لوضوح النصوص */}
-        <div className="absolute inset-0 bg-black/15 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-beige-primary/55 via-transparent to-transparent z-30"></div>
         {/* Animated Mesh Gradient */}
         <div className="absolute inset-0 opacity-30">
           <div className="absolute top-0 -left-4 w-72 h-72 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
