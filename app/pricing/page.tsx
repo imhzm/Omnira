@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     'أسعار خدمات المواقف',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/pricing',
   },
   openGraph: {
     title: 'الأسعار والباقات | أومنيرا فاليه - باقات مرنة بأسعار تنافسية',
     description: 'باقات صف السيارات والفاليه: شهرية، سنوية، VIP، وحلول مخصصة. أسعار تنافسية وجودة عالية. قارن بين الباقات واختر ما يناسبك!',
-    url: 'https://omnira.skywaveads.com/pricing',
+    url: 'https://omniravalet.com/pricing',
     siteName: 'Omnira Valet',
     images: [getOGImage('pricing')],
     locale: 'ar_SA',
@@ -66,7 +66,7 @@ export default function PricingPage() {
     'provider': {
       '@type': 'Organization',
       'name': 'Omnira Valet',
-      'url': 'https://omnira.skywaveads.com'
+      'url': 'https://omniravalet.com'
     },
     'offers': [
       ...pricingData.map((plan, index) => ({
@@ -78,7 +78,7 @@ export default function PricingPage() {
           'price': plan.price.replace(/[^0-9]/g, ''),
           'priceCurrency': 'SAR',
         },
-        'url': `https://omnira.skywaveads.com${plan.link}`,
+        'url': `https://omniravalet.com${plan.link}`,
       }))
     ]
   };

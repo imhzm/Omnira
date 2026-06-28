@@ -26,7 +26,7 @@ export function generateURLs(
 ): AlternateURLs {
   const {
     addTrailingSlash = false,
-    baseURL = 'https://omnira.skywaveads.com',
+    baseURL = 'https://omniravalet.com',
     locales = ['ar'],
     removeIndex = true,
   } = options;

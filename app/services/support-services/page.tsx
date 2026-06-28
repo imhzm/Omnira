@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'parking support',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/support-services',
   },
   openGraph: {
     title: 'خدمات مساندة للمواقف | Omnira Valet - صيانة ونظافة وأمن متكامل',
     description: 'خدمات شاملة: صيانة دورية، نظافة مستمرة، أمن وحراسة، دعم فني 24/7، إدارة الطوارئ',
-    url: 'https://omnira.skywaveads.com/services/support-services',
+    url: 'https://omniravalet.com/services/support-services',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-support-services.jpg',
+      url: 'https://omniravalet.com/og-support-services.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات مساندة للمواقف من أومنيرا فاليه',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'خدمات مساندة للمواقف | Omnira Valet',
     description: 'صيانة، نظافة، أمن، ودعم فني 24/7 - حلول شاملة لمواقف آمنة ونظيفة',
-    images: ['https://omnira.skywaveads.com/og-support-services.jpg'],
+    images: ['https://omniravalet.com/og-support-services.jpg'],
   },
   robots: {
     index: true,

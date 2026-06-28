@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'إدارة مواقف المستشفيات',
     'تخفيف ضغط المرضى',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/hospitals',
   },
   openGraph: {
     title: 'خدمات الفاليه للمستشفيات | Omnira Valet - راحة المرضى أولويتنا',
     description: 'خدمة حساسة 24/7 - أولوية للطوارئ، دعم ذوي الإعاقة، فريق متعاطف - نخفف الضغط',
-    url: 'https://omnira.skywaveads.com/services/hospitals',
+    url: 'https://omniravalet.com/services/hospitals',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-hospitals.jpg',
+      url: 'https://omniravalet.com/og-hospitals.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات الفاليه باركينج للمستشفيات والمراكز الطبية',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه متخصص للمستشفيات | Omnira Valet',
     description: 'خدمة حساسة 24/7 - أولوية طوارئ، دعم خاص، فريق متعاطف',
-    images: ['https://omnira.skywaveads.com/og-hospitals.jpg'],
+    images: ['https://omniravalet.com/og-hospitals.jpg'],
   },
   robots: {
     index: true,

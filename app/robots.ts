@@ -19,7 +19,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/api/', '/admin/'],
       },
     ],
-    sitemap: 'https://omnira.skywaveads.com/sitemap.xml',
-    host: 'https://omnira.skywaveads.com',
+    sitemap: 'https://omniravalet.com/sitemap.xml',
+    host: 'https://omniravalet.com',
   };
 }

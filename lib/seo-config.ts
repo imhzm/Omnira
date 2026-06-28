@@ -2,8 +2,8 @@
 export const siteConfig = {
   name: 'Omnira Valet',
   description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية (Valet Parking) والإدارة الذكية للمواقف. نساهم في تحقيق رؤية المملكة 2030 من خلال حلول متطورة لقطاع الضيافة والسياحة في جميع مدن المملكة.',
-  url: 'https://omnira.skywaveads.com',
-  ogImage: 'https://omnira.skywaveads.com/og-image.jpg',
+  url: 'https://omniravalet.com',
+  ogImage: 'https://omniravalet.com/og-image.jpg',
   links: {
     twitter: 'https://twitter.com/omnira_sa',
     facebook: 'https://facebook.com/omnira.sa',

@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'رقم الهاتف',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
     title: 'اتصل بنا | Omnira Valet - خدمة عملاء 24/7 ودعم فني متواصل',
     description: 'تواصل معنا: هاتف، واتساب، بريد إلكتروني. خدمة عملاء 24/7 واستشارات مجانية',
-    url: 'https://omnira.skywaveads.com/contact',
+    url: 'https://omniravalet.com/contact',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-contact.jpg',
+      url: 'https://omniravalet.com/og-contact.jpg',
       width: 1200,
       height: 630,
       alt: 'تواصل مع أومنيرا فاليه',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'اتصل بنا | Omnira Valet',
     description: 'خدمة عملاء 24/7 - تواصل معنا الآن للحصول على استشارة مجانية',
-    images: ['https://omnira.skywaveads.com/og-contact.jpg'],
+    images: ['https://omniravalet.com/og-contact.jpg'],
   },
   robots: {
     index: true,

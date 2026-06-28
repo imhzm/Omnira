@@ -30,14 +30,14 @@ export const metadata: Metadata = {
     'parking management services Saudi Arabia',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services',
   },
   openGraph: {
     title: 'خدماتنا الاحترافية | أومنيرا فاليه - 8 حلول متكاملة لصف السيارات',
     description: 'حلول شاملة: الفاليه باركينج، إدارة المواقف، التقنيات الذكية، منظمين محترفين، استشارات، جولف كار، خدمات مساندة، وغسيل سيارات',
-    url: 'https://omnira.skywaveads.com/services',
+    url: 'https://omniravalet.com/services',
     siteName: 'Omnira Valet',
     locale: 'ar_SA',
     type: 'website',
@@ -68,12 +68,12 @@ export default function ServicesPage() {
         'item': {
           '@type': 'Service',
           'name': 'خدمات الفاليه باركينج',
-          'url': 'https://omnira.skywaveads.com/services/valet-parking',
+          'url': 'https://omniravalet.com/services/valet-parking',
           'description': 'خدمة فاليه باركينج فاخرة للفنادق والمطاعم والفعاليات',
           'provider': {
             '@type': 'Organization',
             'name': 'Omnira Valet',
-            'url': 'https://omnira.skywaveads.com',
+            'url': 'https://omniravalet.com',
           }
         }
       },
@@ -83,12 +83,12 @@ export default function ServicesPage() {
         'item': {
           '@type': 'Service',
           'name': 'إدارة وتشغيل المواقف',
-          'url': 'https://omnira.skywaveads.com/services/parking-management',
+          'url': 'https://omniravalet.com/services/parking-management',
           'description': 'خدمات متكاملة لإدارة وتشغيل مواقف السيارات',
           'provider': {
             '@type': 'Organization',
             'name': 'Omnira Valet',
-            'url': 'https://omnira.skywaveads.com',
+            'url': 'https://omniravalet.com',
           }
         }
       },
@@ -98,12 +98,12 @@ export default function ServicesPage() {
         'item': {
           '@type': 'Service',
           'name': 'التقنيات المتقدمة',
-          'url': 'https://omnira.skywaveads.com/services/advanced-technology',
+          'url': 'https://omniravalet.com/services/advanced-technology',
           'description': 'حلول تقنية متقدمة لإدارة المواقف',
           'provider': {
             '@type': 'Organization',
             'name': 'Omnira Valet',
-            'url': 'https://omnira.skywaveads.com',
+            'url': 'https://omniravalet.com',
           }
         }
       },

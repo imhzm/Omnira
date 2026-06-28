@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'mobile car wash',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/car-wash',
   },
   openGraph: {
     title: 'خدمة غسيل السيارات | Omnira Valet - تنظيف وتلميع احترافي في المواقف',
     description: 'غسيل خارجي، تنظيف داخلي، تلميع، تشميع - خدمات غسيل احترافية بأعلى جودة',
-    url: 'https://omnira.skywaveads.com/services/car-wash',
+    url: 'https://omniravalet.com/services/car-wash',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-car-wash.jpg',
+      url: 'https://omniravalet.com/og-car-wash.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمة غسيل السيارات من أومنيرا فاليه',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'خدمة غسيل السيارات | Omnira Valet',
     description: 'غسيل وتنظيف وتلميع السيارات - خدمة احترافية سريعة وآمنة',
-    images: ['https://omnira.skywaveads.com/og-car-wash.jpg'],
+    images: ['https://omniravalet.com/og-car-wash.jpg'],
   },
   robots: {
     index: true,

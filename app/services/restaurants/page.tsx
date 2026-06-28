@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'عقود فاليه مطاعم',
     'حل مشكلة مواقف المطاعم',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/restaurants',
   },
   openGraph: {
     title: 'خدمات الفاليه باركينج للمطاعم | Omnira Valet - تجربة تناول طعام لا تُنسى',
     description: 'عزز تجربة عملائك مع فاليه احترافي - خدمة سريعة، أسعار تنافسية، باقات مرنة',
-    url: 'https://omnira.skywaveads.com/services/restaurants',
+    url: 'https://omniravalet.com/services/restaurants',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-restaurants.jpg',
+      url: 'https://omniravalet.com/og-restaurants.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات الفاليه للمطاعم والكافيهات',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه احترافي للمطاعم | Omnira Valet',
     description: 'خدمة سريعة، أسعار منافسة، باقات مرنة - عزز تجربة عملائك',
-    images: ['https://omnira.skywaveads.com/og-restaurants.jpg'],
+    images: ['https://omniravalet.com/og-restaurants.jpg'],
   },
   robots: {
     index: true,

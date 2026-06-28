@@ -30,17 +30,17 @@ export const metadata: Metadata = {
     'خدمة VIP valet',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/valet-parking',
   },
   openGraph: {
     title: 'خدمات الفاليه باركينج الفاخرة | Omnira Valet - انطباع أول مميز',
     description: 'فاليه باركينج احترافي للفنادق والمطاعم والفعاليات. فريق مدرب، تأمين شامل، خدمة 24/7',
-    url: 'https://omnira.skywaveads.com/services/valet-parking',
+    url: 'https://omniravalet.com/services/valet-parking',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-valet-parking.jpg',
+      url: 'https://omniravalet.com/og-valet-parking.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات الفاليه باركينج الفاخرة من أومنيرا فاليه',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه باركينج فاخر | Omnira Valet',
     description: 'خدمات valet parking احترافية للفنادق والمطاعم والفعاليات في السعودية',
-    images: ['https://omnira.skywaveads.com/og-valet-parking.jpg'],
+    images: ['https://omniravalet.com/og-valet-parking.jpg'],
   },
   robots: {
     index: true,
@@ -72,8 +72,8 @@ export default function ValetParkingPage() {
     "provider": {
       "@type": "Organization",
       "name": "Omnira Valet",
-      "url": "https://omnira.skywaveads.com",
-      "logo": "https://omnira.skywaveads.com/logo.png",
+      "url": "https://omniravalet.com",
+      "logo": "https://omniravalet.com/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+966XXXXXXXXX",
@@ -128,19 +128,19 @@ export default function ValetParkingPage() {
         "@type": "ListItem",
         "position": 1,
         "name": "الرئيسية",
-        "item": "https://omnira.skywaveads.com"
+        "item": "https://omniravalet.com"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "الخدمات",
-        "item": "https://omnira.skywaveads.com/services"
+        "item": "https://omniravalet.com/services"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "فاليه باركينج",
-        "item": "https://omnira.skywaveads.com/services/valet-parking"
+        "item": "https://omniravalet.com/services/valet-parking"
       }
     ]
   };

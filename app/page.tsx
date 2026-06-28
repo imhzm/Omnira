@@ -67,7 +67,7 @@ export const metadata: Metadata = {
     'رؤية المملكة 2030',
     'قطاع الضيافة والسياحة',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
   creator: 'Omnira Valet',
   publisher: 'Omnira Valet',
   formatDetection: {
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/',
     languages: {
@@ -85,7 +85,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Omnira Valet | خدمات صف السيارات الاحترافية في السعودية',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. حلول ذكية للفنادق، المطاعم، والمراكز التجارية في جميع مدن المملكة.',
-    url: 'https://omnira.skywaveads.com',
+    url: 'https://omniravalet.com',
     siteName: 'Omnira Valet',
     images: [getOGImage('home')],
     locale: 'ar_SA',

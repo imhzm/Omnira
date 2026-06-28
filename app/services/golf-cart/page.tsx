@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'internal transport',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/golf-cart',
   },
   openGraph: {
     title: 'خدمة جولف كار | Omnira Valet - عربات كهربائية للنقل الداخلي في المواقف',
     description: 'عربات جولف كهربائية حديثة مع سائقين مدربين. حل مريح وصديق للبيئة للمواقف الكبيرة',
-    url: 'https://omnira.skywaveads.com/services/golf-cart',
+    url: 'https://omniravalet.com/services/golf-cart',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-golf-cart.jpg',
+      url: 'https://omniravalet.com/og-golf-cart.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمة توفير جولف كار من أومنيرا فاليه',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'خدمة جولف كار | Omnira Valet',
     description: 'عربات جولف كهربائية للنقل الداخلي - حل مريح وصديق للبيئة',
-    images: ['https://omnira.skywaveads.com/og-golf-cart.jpg'],
+    images: ['https://omniravalet.com/og-golf-cart.jpg'],
   },
   robots: {
     index: true,

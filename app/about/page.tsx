@@ -26,10 +26,10 @@ export const metadata: Metadata = {
     'about us valet parking',
     'parking management company Saudi Arabia',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
   creator: 'Omnira Valet',
   publisher: 'Omnira Valet',
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/about',
     languages: {
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'من نحن - أومنيرا فاليه | قصة نجاح سعودية في صف السيارات',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. نساهم في تحقيق رؤية 2030. تعرف على قصتنا، رؤيتنا، قيمنا، وفريقنا المحترف.',
-    url: 'https://omnira.skywaveads.com/about',
+    url: 'https://omniravalet.com/about',
     siteName: 'Omnira Valet',
     images: [getOGImage('about')],
     locale: 'ar_SA',
@@ -70,7 +70,7 @@ export default function AboutPage() {
     title: 'من نحن - قصة أومنيرا فاليه',
     description: 'تعرف على أومنيرا فاليه، الشركة السعودية الرائدة في خدمات صف السيارات الاحترافية',
     url: '/about',
-    image: 'https://omnira.skywaveads.com/og-about.jpg',
+    image: 'https://omniravalet.com/og-about.jpg',
     dateModified: new Date().toISOString(),
   });
 

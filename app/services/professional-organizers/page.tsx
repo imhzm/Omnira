@@ -26,17 +26,17 @@ export const metadata: Metadata = {
     'professional parking team',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/professional-organizers',
   },
   openGraph: {
     title: 'منظمين مواقف محترفين | Omnira Valet - فريق مدرب بأعلى المعايير',
     description: 'فريق منظمين مواقف محترفين: تنظيم الحركة، توجيه المركبات، خدمة عملاء، أمان كامل',
-    url: 'https://omnira.skywaveads.com/services/professional-organizers',
+    url: 'https://omniravalet.com/services/professional-organizers',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-professional-organizers.jpg',
+      url: 'https://omniravalet.com/og-professional-organizers.jpg',
       width: 1200,
       height: 630,
       alt: 'فريق منظمين مواقف محترفين من أومنيرا فاليه',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'منظمين مواقف محترفين | Omnira Valet',
     description: 'فريق مدرب لتنظيم المواقف وإدارة الحركة بكفاءة واحترافية',
-    images: ['https://omnira.skywaveads.com/og-professional-organizers.jpg'],
+    images: ['https://omniravalet.com/og-professional-organizers.jpg'],
   },
   robots: {
     index: true,

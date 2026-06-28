@@ -40,8 +40,8 @@ const PrefetchLinks = () => {
       
       {/* تعليمات لمحركات البحث */}
       <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-      <link rel="alternate" hrefLang="ar" href="https://omnira.skywaveads.com" />
-      <link rel="canonical" href="https://omnira.skywaveads.com" />
+      <link rel="alternate" hrefLang="ar" href="https://omniravalet.com" />
+      <link rel="canonical" href="https://omniravalet.com" />
     </>
   );
 };

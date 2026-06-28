@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'خدمات راقية للشخصيات',
     'حماية خصوصية VIP',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/vip',
   },
   openGraph: {
     title: 'خدمة VIP الفاخرة لكبار الشخصيات | Omnira Valet - التميز والسرية',
     description: 'خدمة حصرية فاخرة - سرية مطلقة، سائقون متخصصون، أولوية قصوى - للشخصيات المميزة',
-    url: 'https://omnira.skywaveads.com/services/vip',
+    url: 'https://omniravalet.com/services/vip',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-vip.jpg',
+      url: 'https://omniravalet.com/og-vip.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمة الفاليه VIP الفاخرة لكبار الشخصيات',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'خدمة VIP فاخرة حصرية | Omnira Valet',
     description: 'سرية مطلقة، سائقون متخصصون، خدمة شخصية - للشخصيات المميزة فقط',
-    images: ['https://omnira.skywaveads.com/og-vip.jpg'],
+    images: ['https://omniravalet.com/og-vip.jpg'],
   },
   robots: {
     index: true,

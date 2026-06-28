@@ -34,14 +34,14 @@ export const metadata: Metadata = {
     'فاليه باركينج السعودية',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/locations',
   },
   openGraph: {
     title: 'المدن التي نخدمها | Omnira Valet - تغطية شاملة لـ 150+ مدينة سعودية',
     description: 'خدمات صف السيارات في جميع مدن السعودية: الرياض، جدة، الدمام، مكة، المدينة، الخبر، الطائف، وأكثر',
-    url: 'https://omnira.skywaveads.com/locations',
+    url: 'https://omniravalet.com/locations',
     siteName: 'Omnira Valet',
     images: [getOGImage('locations')],
     locale: 'ar_SA',
@@ -86,7 +86,7 @@ export default function LocationsPage() {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     'name': 'Omnira Valet',
-    'url': 'https://omnira.skywaveads.com/locations',
+    'url': 'https://omniravalet.com/locations',
     'areaServed': [
       {
         '@type': 'AdministrativeArea',

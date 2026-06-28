@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'إدارة مواقف احترافية',
     'تكنولوجيا مواقف متقدمة',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/malls',
   },
   openGraph: {
     title: 'حلول إدارة مواقف المراكز التجارية الذكية | Omnira Valet - زيادة 40% في السعة',
     description: 'نظام ذكي متطور - شاشات LED، تطبيق جوال، دفع إلكتروني، تقارير فورية - نحسّن تجربة التسوق',
-    url: 'https://omnira.skywaveads.com/services/malls',
+    url: 'https://omniravalet.com/services/malls',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-malls.jpg',
+      url: 'https://omniravalet.com/og-malls.jpg',
       width: 1200,
       height: 630,
       alt: 'حلول إدارة المواقف الذكية للمراكز التجارية',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'نظام مواقف ذكي للمولات | Omnira Valet',
     description: 'زيادة السعة 40%، تقليل الازدحام، تحسين التجربة - حلول متطورة للمراكز التجارية',
-    images: ['https://omnira.skywaveads.com/og-malls.jpg'],
+    images: ['https://omniravalet.com/og-malls.jpg'],
   },
   robots: {
     index: true,

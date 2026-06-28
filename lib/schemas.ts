@@ -2,17 +2,17 @@
 export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://omnira.skywaveads.com/#business',
+  '@id': 'https://omniravalet.com/#business',
   name: 'Omnira Valet',
   alternateName: 'Omnira Valet',
   description: 'شركة أومنيرا فاليه الرائدة في تقديم خدمات الفاليه باركينج وإدارة مواقف السيارات في المملكة العربية السعودية. نوفر حلولاً احترافية للفنادق، المطاعم، الفعاليات، والمنشآت التجارية.',
   
-  url: 'https://omnira.skywaveads.com',
-  logo: 'https://omnira.skywaveads.com/logo.png',
+  url: 'https://omniravalet.com',
+  logo: 'https://omniravalet.com/logo.png',
   image: [
-    'https://omnira.skywaveads.com/images/omnira-hero.jpg',
-    'https://omnira.skywaveads.com/images/valet-service.jpg',
-    'https://omnira.skywaveads.com/images/professional-team.jpg'
+    'https://omniravalet.com/images/omnira-hero.jpg',
+    'https://omniravalet.com/images/valet-service.jpg',
+    'https://omniravalet.com/images/professional-team.jpg'
   ],
 
   // معلومات التواصل
@@ -100,7 +100,7 @@ export const localBusinessSchema = {
           name: 'خدمات الفاليه باركينج',
           description: 'خدمة فاليه باركينج احترافية للفنادق والمطاعم والفعاليات',
           provider: {
-            '@id': 'https://omnira.skywaveads.com/#business'
+            '@id': 'https://omniravalet.com/#business'
           }
         }
       },
@@ -111,7 +111,7 @@ export const localBusinessSchema = {
           name: 'إدارة مواقف السيارات',
           description: 'حلول شاملة لإدارة المواقف للمراكز التجارية والمنشآت الكبرى',
           provider: {
-            '@id': 'https://omnira.skywaveads.com/#business'
+            '@id': 'https://omniravalet.com/#business'
           }
         }
       },
@@ -122,7 +122,7 @@ export const localBusinessSchema = {
           name: 'صف السيارات للفعاليات',
           description: 'خدمات متخصصة للمؤتمرات والحفلات والفعاليات الكبرى',
           provider: {
-            '@id': 'https://omnira.skywaveads.com/#business'
+            '@id': 'https://omniravalet.com/#business'
           }
         }
       }
@@ -165,11 +165,11 @@ export const localBusinessSchema = {
 export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://omnira.skywaveads.com/#organization',
+  '@id': 'https://omniravalet.com/#organization',
   name: 'Omnira Valet',
   alternateName: 'Omnira Valet',
-  url: 'https://omnira.skywaveads.com',
-  logo: 'https://omnira.skywaveads.com/logo.png',
+  url: 'https://omniravalet.com',
+  logo: 'https://omniravalet.com/logo.png',
   
   contactPoint: [
     {
@@ -209,7 +209,7 @@ export const serviceSchema = {
   '@type': 'Service',
   serviceType: 'Valet Parking Service',
   provider: {
-    '@id': 'https://omnira.skywaveads.com/#business'
+    '@id': 'https://omniravalet.com/#business'
   },
   areaServed: {
     '@type': 'Country',
@@ -296,7 +296,7 @@ export function generateArticleSchema(article: {
       name: article.publisher || 'Omnira Valet',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://omnira.skywaveads.com/logo.png'
+        url: 'https://omniravalet.com/logo.png'
       }
     }
   };
@@ -356,7 +356,7 @@ export function generateProductSchema(product: {
       price: product.price,
       priceCurrency: product.priceCurrency || 'SAR',
       availability: product.availability || 'https://schema.org/InStock',
-      url: 'https://omnira.skywaveads.com/services',
+      url: 'https://omniravalet.com/services',
       seller: {
         '@type': 'Organization',
         name: 'Omnira Valet'

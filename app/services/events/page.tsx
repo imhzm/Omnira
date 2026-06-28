@@ -25,18 +25,18 @@ export const metadata: Metadata = {
     'فريق فاليه محترف للمناسبات',
     'أسعار فاليه باركينج الفعاليات',
   ],
-  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  authors: [{ name: 'Omnira Valet', url: 'https://omniravalet.com' }],
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/events',
   },
   openGraph: {
     title: 'خدمات صف السيارات للفعاليات | Omnira Valet - نجاح فعاليتك يبدأ من هنا',
     description: 'فاليه باركينج احترافي لحفلات الزفاف، المؤتمرات، المعارض. فريق محترف، تخطيط مسبق، أسعار تنافسية',
-    url: 'https://omnira.skywaveads.com/services/events',
+    url: 'https://omniravalet.com/services/events',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-events.jpg',
+      url: 'https://omniravalet.com/og-events.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات صف السيارات للفعاليات من أومنيرا فاليه',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'فاليه باركينج للفعاليات | Omnira Valet',
     description: 'خدمات احترافية للحفلات والمؤتمرات - فريق محترف، تخطيط دقيق، أسعار تنافسية',
-    images: ['https://omnira.skywaveads.com/og-events.jpg'],
+    images: ['https://omniravalet.com/og-events.jpg'],
   },
   robots: {
     index: true,

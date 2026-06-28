@@ -214,8 +214,8 @@ export const companySchema = {
   "@type": "Organization",
   "name": "Omnira Valet",
   "alternateName": "Omnira Valet",
-  "url": "https://omnira.skywaveads.com",
-  "logo": "https://omnira.skywaveads.com/logo.png",
+  "url": "https://omniravalet.com",
+  "logo": "https://omniravalet.com/logo.png",
   "sameAs": [
     "https://www.facebook.com/omnira.sa",
     "https://twitter.com/omnira_sa",

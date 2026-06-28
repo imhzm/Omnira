@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     'إدارة مواقف ذكية',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/parking-management',
   },
   openGraph: {
     title: 'إدارة وتشغيل المواقف | Omnira Valet - كفاءة وذكاء في إدارة مواقف السيارات',
     description: 'حلول متكاملة لإدارة وتشغيل مواقف السيارات. أنظمة ذكية، فريق محترف، تقارير تفصيلية',
-    url: 'https://omnira.skywaveads.com/services/parking-management',
+    url: 'https://omniravalet.com/services/parking-management',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-parking-management.jpg',
+      url: 'https://omniravalet.com/og-parking-management.jpg',
       width: 1200,
       height: 630,
       alt: 'خدمات إدارة وتشغيل المواقف من أومنيرا فاليه',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'إدارة المواقف | Omnira Valet',
     description: 'حلول ذكية لإدارة وتشغيل مواقف السيارات في السعودية',
-    images: ['https://omnira.skywaveads.com/og-parking-management.jpg'],
+    images: ['https://omniravalet.com/og-parking-management.jpg'],
   },
   robots: {
     index: true,

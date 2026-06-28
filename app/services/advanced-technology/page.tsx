@@ -27,17 +27,17 @@ export const metadata: Metadata = {
     'تقنيات مواقف متطورة',
   ],
   authors: [{ name: 'Omnira Valet' }],
-  metadataBase: new URL('https://omnira.skywaveads.com'),
+  metadataBase: new URL('https://omniravalet.com'),
   alternates: {
     canonical: '/services/advanced-technology',
   },
   openGraph: {
     title: 'تقنيات متقدمة لإدارة المواقف | Omnira Valet - ANPR و IoT وأنظمة ذكية',
     description: 'أحدث التقنيات: ANPR، إرشاد ذكي، IoT، استشعار، كاميرات، دفع إلكتروني، تطبيقات موبايل',
-    url: 'https://omnira.skywaveads.com/services/advanced-technology',
+    url: 'https://omniravalet.com/services/advanced-technology',
     siteName: 'Omnira Valet',
     images: [{
-      url: 'https://omnira.skywaveads.com/og-advanced-technology.jpg',
+      url: 'https://omniravalet.com/og-advanced-technology.jpg',
       width: 1200,
       height: 630,
       alt: 'التقنيات المتقدمة لإدارة المواقف من أومنيرا فاليه',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'تقنيات ذكية للمواقف | Omnira Valet',
     description: 'ANPR، IoT، أنظمة إرشاد، استشعار، دفع إلكتروني - حلول تقنية متطورة',
-    images: ['https://omnira.skywaveads.com/og-advanced-technology.jpg'],
+    images: ['https://omniravalet.com/og-advanced-technology.jpg'],
   },
   robots: {
     index: true,
