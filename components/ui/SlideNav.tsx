@@ -81,7 +81,7 @@ export default function SlideNav() {
   return (
     <nav
       aria-label="التنقل بين أقسام الصفحة"
-      className="hidden lg:flex fixed right-5 top-1/2 -translate-y-1/2 z-[9990] flex-col items-end gap-3"
+      className="hidden lg:flex fixed right-4 top-1/2 -translate-y-1/2 z-[9990] flex-col items-center gap-3 rounded-full bg-[#0A0A0C]/40 backdrop-blur-md border border-gold-primary/15 px-2.5 py-4 shadow-xl"
     >
       {slides.map((s, i) => (
         <button
