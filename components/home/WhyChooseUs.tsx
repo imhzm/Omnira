@@ -43,7 +43,7 @@ const WhyChooseUs = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-sage-50 via-white to-sage-50 relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-accents-emerald/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -84,7 +84,7 @@ const WhyChooseUs = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 {/* Icon Container */}
                 <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">

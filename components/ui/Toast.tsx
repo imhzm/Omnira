@@ -89,7 +89,7 @@ export default function Toast({
               onClick={onClose}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
+              className="text-[#C8B58A] hover:text-white transition-colors flex-shrink-0"
             >
               <X className="w-5 h-5" />
             </motion.button>

@@ -15,7 +15,7 @@ const FALLBACK_IMG = 'https://images.pexels.com/photos/1831234/pexels-photo-1831
 
 const ServiceContent = ({ data }: ServiceContentProps) => {
   return (
-    <div className="bg-gradient-to-b from-white via-beige-light to-white">
+    <div className="bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C]">
       <OverviewSection data={data.overview} />
       <BenefitsSection benefits={data.benefits} />
       <FeaturesSection features={data.features} />
@@ -61,13 +61,13 @@ const OverviewSection = ({ data }: any) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-[#0A0A0C]">
       <div className="container-custom max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="bg-white/80 backdrop-blur-md p-10 md:p-16 rounded-3xl border-2 border-sage-primary/20 shadow-2xl"
+          className="bg-[#141418]/80 backdrop-blur-md p-10 md:p-16 rounded-3xl border-2 border-sage-primary/20 shadow-2xl"
         >
           <h2 className="text-4xl md:text-5xl font-black mb-10 gold-shine-effect">{data.title}</h2>
           <div className="text-brown-dark text-lg leading-loose space-y-6 whitespace-pre-line">
@@ -106,7 +106,7 @@ const BenefitsSection = ({ benefits }: any) => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-white/90 backdrop-blur-md border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all group"
+              className="p-8 rounded-2xl bg-[#141418]/90 backdrop-blur-md border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all group"
             >
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-sage-primary/30">
                 <CheckCircle className="w-8 h-8 text-sage-primary" />
@@ -126,7 +126,7 @@ const FeaturesSection = ({ features }: any) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-[#0A0A0C]">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -183,7 +183,7 @@ const ProcessSection = ({ process }: any) => {
                 className="relative"
               >
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-6 md:p-8 rounded-2xl bg-white/80 backdrop-blur-md border-2 border-sage-primary/20 shadow-lg`}>
+                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-6 md:p-8 rounded-2xl bg-[#141418]/80 backdrop-blur-md border-2 border-sage-primary/20 shadow-lg`}>
                     <h3 className="text-2xl font-black mb-3 text-sage-primary">{step.title}</h3>
                     <p className="text-brown-dark leading-relaxed">{step.description}</p>
                   </div>
@@ -191,7 +191,7 @@ const ProcessSection = ({ process }: any) => {
                   {/* Circle */}
                   <div className="relative w-20 h-20 flex-shrink-0 lg:order-1">
                     <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sage-medium rounded-full shadow-xl shadow-sage-primary/30"></div>
-                    <div className="absolute inset-1 bg-white rounded-full flex items-center justify-center">
+                    <div className="absolute inset-1 bg-[#0A0A0C] rounded-full flex items-center justify-center">
                       <span className="text-3xl font-black text-sage-primary">{step.step}</span>
                     </div>
                   </div>
@@ -212,7 +212,7 @@ const ClientsSection = ({ clients }: any) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section ref={ref} className="section-padding bg-[#0A0A0C]">
       <div className="container-custom max-w-6xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -268,7 +268,7 @@ const FAQSection = ({ faqs }: any) => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border-2 border-sage-primary/30 rounded-xl overflow-hidden bg-white/80 backdrop-blur-sm"
+              className="border-2 border-sage-primary/30 rounded-xl overflow-hidden bg-[#141418]/80 backdrop-blur-sm"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

@@ -56,7 +56,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C] relative overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -96,7 +96,7 @@ const Testimonials = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 relative"
+              className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 relative"
             >
               {/* Quote Icon */}
               <div className="absolute top-6 left-6 w-14 h-14 rounded-2xl bg-sage-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all">

@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const LocationsHero = () => {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-beige-light via-white to-beige-light">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-beige-light via-[#0E0E11] to-beige-light">
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=1920"
@@ -15,7 +15,7 @@ const LocationsHero = () => {
           className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-beige-primary/90 via-white/70 to-beige-primary/90"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-beige-primary/90 via-[#0E0E11]/70 to-beige-primary/90"></div>
       </div>
 
       <div className="container-custom relative z-10 text-center py-20">

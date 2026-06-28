@@ -281,7 +281,7 @@ export const SidebarLinks: React.FC<{ category: ContentCategory; currentPath: st
               href={link.href}
               title={link.title}
               isActive={currentPath === link.href}
-              className="py-2 block text-gray-700 hover:text-gold-primary transition-colors"
+              className="py-2 block text-[#F5ECDB] hover:text-gold-primary transition-colors"
               activeClassName="text-gold-primary font-bold"
             >
               {link.title}

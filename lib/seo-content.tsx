@@ -200,7 +200,7 @@ export const RichContent: React.FC<RichContentProps> = ({
         {content.paragraphs.map((paragraph, index) => (
           <div key={index}>
             <h3 className="text-xl font-semibold mb-2">{paragraph.title}</h3>
-            <p className="text-gray-700">{paragraph.content}</p>
+            <p className="text-[#F5ECDB]">{paragraph.content}</p>
           </div>
         ))}
       </div>

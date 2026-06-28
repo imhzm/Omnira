@@ -49,7 +49,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C] relative overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -118,7 +118,7 @@ const FeatureCard = ({ feature, index, isInView }: FeatureCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group"
     >
-      <div className="relative p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary transition-all duration-300 h-full hover:shadow-2xl hover:scale-105">
+      <div className="relative p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary transition-all duration-300 h-full hover:shadow-2xl hover:scale-105">
         {/* Icon */}
         <div className="relative w-16 h-16 mb-6">
           <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.gradient} opacity-10 group-hover:opacity-20 transition-opacity absolute inset-0`}></div>

@@ -24,7 +24,7 @@ export default function PricingCTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-black-primary to-gray-900">
+    <section className="py-20 bg-gradient-to-r from-black-primary to-[#141418]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -37,27 +37,27 @@ export default function PricingCTA() {
           <div className="flex flex-wrap gap-6 justify-center items-center mb-12">
             <Link 
               href="/contact?source=pricing"
-              className="px-8 py-4 rounded-lg bg-gold-primary text-white font-bold text-lg hover:bg-gold-dark transition duration-300 flex items-center gap-2"
+              className="px-8 py-4 rounded-lg bg-gold-primary text-[#0A0A0C] font-bold text-lg hover:bg-gold-dark transition duration-300 flex items-center gap-2"
             >
               <span>احصل على عرض سعر مخصص</span>
               <ChevronLeft className="w-5 h-5" />
             </Link>
             <a
               href="tel:+966500000000"
-              className="px-8 py-4 rounded-lg border-2 border-gold-primary text-gold-primary font-bold text-lg hover:bg-gold-primary hover:text-white transition-all duration-300"
+              className="px-8 py-4 rounded-lg border-2 border-gold-primary text-gold-primary font-bold text-lg hover:bg-gold-primary hover:text-[#0A0A0C] transition-all duration-300"
             >
               اتصل بنا مباشرة
             </a>
           </div>
 
-          <div className="mt-12 p-8 bg-white/10 backdrop-blur-sm rounded-xl">
+          <div className="mt-12 p-8 bg-[#141418]/60 backdrop-blur-sm rounded-xl border border-[#C9A24A]/25">
             <h3 className="text-2xl font-bold text-white mb-4">ابقَ على اطلاع بأحدث العروض</h3>
             <p className="text-gray-300 mb-6">
               سجل بريدك الإلكتروني للحصول على آخر العروض والخصومات الخاصة
             </p>
             
             {submitted ? (
-              <div className="p-4 bg-green-600/20 border border-green-500 rounded-lg text-white">
+              <div className="p-4 bg-[#C9A24A]/20 border border-[#C9A24A] rounded-lg text-[#F5ECDB]">
                 شكراً لتسجيلك! سنتواصل معك قريباً بأحدث العروض.
               </div>
             ) : (
@@ -67,16 +67,16 @@ export default function PricingCTA() {
                   placeholder="البريد الإلكتروني"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-3 rounded-lg bg-white/20 text-white border border-white/30 focus:outline-none focus:border-gold-primary placeholder-gray-400"
+                  className="flex-1 px-4 py-3 rounded-lg bg-[#141418]/60 text-[#F5ECDB] border border-[#C9A24A]/30 focus:outline-none focus:border-gold-primary placeholder-[#C8B58A]"
                   required
                 />
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-3 rounded-lg bg-gold-primary text-white font-bold hover:bg-gold-dark transition duration-300 flex items-center justify-center gap-2"
+                  className="px-6 py-3 rounded-lg bg-gold-primary text-[#0A0A0C] font-bold hover:bg-gold-dark transition duration-300 flex items-center justify-center gap-2"
                 >
                   {loading ? (
-                    <span className="inline-block w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></span>
+                    <span className="inline-block w-5 h-5 border-2 border-[#0A0A0C] border-t-transparent rounded-full animate-spin"></span>
                   ) : (
                     <>
                       <span>اشتراك</span>
@@ -90,7 +90,7 @@ export default function PricingCTA() {
 
           <div className="mt-12">
             <h4 className="text-xl font-bold text-white mb-2">تحتاج إلى مساعدة في اختيار الباقة المناسبة؟</h4>
-            <p className="text-gray-400 mb-6">
+            <p className="text-[#C8B58A] mb-6">
               فريق خدمة العملاء لدينا متاح على مدار الساعة للإجابة على جميع استفساراتك
             </p>
             <Link

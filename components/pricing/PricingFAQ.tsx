@@ -55,7 +55,7 @@ const PricingFAQ = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border-2 border-sage-primary/30 rounded-xl overflow-hidden hover:border-sage-primary transition-colors bg-white/80 backdrop-blur-sm"
+              className="border-2 border-sage-primary/30 rounded-xl overflow-hidden hover:border-sage-primary transition-colors bg-[#141418]/80 backdrop-blur-sm"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

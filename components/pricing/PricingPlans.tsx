@@ -56,7 +56,7 @@ const PricingPlans = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C]">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,16 +77,16 @@ const PricingPlans = () => {
               transition={{ duration: 0.2, delay: 0 }}
               className={`relative p-8 md:p-10 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                 plan.popular
-                  ? 'bg-gradient-to-br from-white via-sage-50 to-white border-2 border-sage-primary shadow-xl shadow-sage-primary/20'
-                  : 'bg-white/90 backdrop-blur-md border-2 border-sage-primary/30 hover:border-sage-primary'
+                  ? 'bg-gradient-to-br from-[#141418] via-sage-50 to-[#141418] border-2 border-sage-primary shadow-xl shadow-sage-primary/20'
+                  : 'bg-[#141418]/90 backdrop-blur-md border-2 border-sage-primary/30 hover:border-sage-primary'
               }`}
             >
               {plan.badge && (
                 <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
                   <div className={`px-6 py-2 rounded-full font-bold text-sm shadow-lg ${
                     plan.popular
-                      ? 'bg-gradient-to-r from-accent-amber to-sunset-golden text-white animate-pulseSoft'
-                      : 'bg-gradient-to-r from-sage-primary to-sage-medium text-white'
+                      ? 'bg-gradient-to-r from-accent-amber to-sunset-golden text-[#0A0A0C] animate-pulseSoft'
+                      : 'bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C]'
                   }`}>
                     <span>{plan.badge}</span>
                   </div>
@@ -132,7 +132,7 @@ const PricingPlans = () => {
                   </p>
                   <div className="space-y-2">
                     {plan.extras.map((extra, i) => (
-                      <p key={i} className="text-sm text-brown-dark bg-amber-50 px-4 py-2 rounded-lg border border-accent-amber/20">
+                      <p key={i} className="text-sm text-brown-dark bg-[#1A1A20] px-4 py-2 rounded-lg border border-accent-amber/20">
                         {extra}
                       </p>
                     ))}
@@ -144,8 +144,8 @@ const PricingPlans = () => {
                 href="/contact"
                 className={`block w-full py-5 rounded-2xl text-center font-black text-lg transition-all duration-500 shadow-lg group ${
                   plan.popular
-                    ? 'bg-gradient-to-r from-sage-primary to-sage-medium text-white hover:shadow-xl hover:shadow-sage-primary/20'
-                    : 'bg-sage-primary text-white hover:bg-sage-600 hover:shadow-lg'
+                    ? 'bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] hover:shadow-xl hover:shadow-sage-primary/20'
+                    : 'bg-sage-primary text-[#0A0A0C] hover:bg-sage-600 hover:shadow-lg'
                 }`}
               >
                 <span className="inline-flex items-center space-x-2 space-x-reverse">

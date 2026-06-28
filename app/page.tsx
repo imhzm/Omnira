@@ -128,7 +128,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(combinedSchema) }}
       />
       <PrefetchLinks />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#0E0E11]">
         <Header />
         <HeroSection />
         <ServicesSection />

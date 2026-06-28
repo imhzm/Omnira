@@ -6,7 +6,7 @@ import { Phone, Mail, MessageCircle } from 'lucide-react';
 
 const ContactHero = () => {
   return (
-    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-beige-light via-white to-sage-soft">
+    <section className="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-beige-light via-[#0E0E11] to-sage-soft">
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?q=80&w=2074"
@@ -16,7 +16,7 @@ const ContactHero = () => {
           className="object-cover opacity-20"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-beige-light/95 via-white/90 to-beige-light/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-beige-light/95 via-[#0E0E11]/90 to-beige-light/95"></div>
       </div>
 
       <div className="container-custom relative z-10 text-center py-20">

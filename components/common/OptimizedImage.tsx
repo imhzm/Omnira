@@ -78,7 +78,7 @@ export default function OptimizedImage({
       }}
       className={cn(
         isLoading && loadingClassName,
-        "bg-gray-200 rounded-lg"
+        "bg-[#141418] rounded-lg"
       )}
     >
       <Image
@@ -96,7 +96,7 @@ export default function OptimizedImage({
       />
       {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="w-10 h-10 border-4 border-gray-300 border-t-gold-primary rounded-full animate-spin"></div>
+          <div className="w-10 h-10 border-4 border-[#222229] border-t-gold-primary rounded-full animate-spin"></div>
         </div>
       )}
     </div>
@@ -144,7 +144,7 @@ export function LazyImage({
     <div 
       id={`lazy-image-${src?.toString().slice(-10)}`} 
       className={cn(
-        "relative bg-gray-100 overflow-hidden",
+        "relative bg-[#0E0E11] overflow-hidden",
         className
       )}
     >
@@ -159,7 +159,7 @@ export function LazyImage({
       ) : (
         <div 
           style={{ width, height }}
-          className="bg-gray-200 animate-pulse rounded"
+          className="bg-[#141418] animate-pulse rounded"
         />
       )}
     </div>
@@ -202,7 +202,7 @@ export function ProductImage({
             <button
               key={index}
               onClick={() => setSelectedImage(thumb)}
-              className={`thumbnail-btn min-w-[70px] h-[70px] border-2 rounded overflow-hidden ${selectedImage === thumb ? 'border-gold-primary' : 'border-gray-200'}`}
+              className={`thumbnail-btn min-w-[70px] h-[70px] border-2 rounded overflow-hidden ${selectedImage === thumb ? 'border-gold-primary' : 'border-[#222229]'}`}
             >
               <Image
                 src={thumb}

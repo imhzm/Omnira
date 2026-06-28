@@ -89,7 +89,7 @@ const StatsSection = () => {
             <span className="heading-gradient">أرقام تتحدث عن نفسها</span>
           </h2>
           
-          <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto">
+          <p className="text-[#C8B58A] text-lg md:text-xl max-w-2xl mx-auto">
             نفخر بثقة عملائنا وجودة خدماتنا المتميزة
           </p>
         </motion.div>
@@ -115,7 +115,7 @@ const StatsSection = () => {
         >
           <div className="inline-flex items-center gap-3 bg-black-soft/80 backdrop-blur-sm px-8 py-4 rounded-full border border-gold-primary/20">
             <Shield className="w-6 h-6 text-gold-primary" />
-            <span className="text-gray-300">
+            <span className="text-[#D9CBB0]">
               <span className="text-gold-primary font-bold">معتمدون رسمياً</span> من الهيئة العامة للمنشآت الصغيرة والمتوسطة
             </span>
           </div>
@@ -221,7 +221,7 @@ const StatCard = ({ stat, index, isInView }: StatCardProps) => {
           </h3>
 
           {/* Description */}
-          <p className="text-gray-400 text-sm text-center leading-relaxed">
+          <p className="text-[#C8B58A] text-sm text-center leading-relaxed">
             {stat.description}
           </p>
 

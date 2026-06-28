@@ -10,98 +10,98 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // 🎨 Modern Sage Palette - مستوحى من الطبيعة السعودية
+        // 🎨 Luxury Gold Palette - أسود وذهبي فاخر
         sage: {
-          50: '#F5F9F7',           // أفتح درجة - للخلفيات الناعمة
-          100: '#E8F0ED',          // ناعم جداً
-          200: '#C8DDD3',          // فاتح مع حيوية
-          300: '#A8CBB9',          // متوسط فاتح
-          400: '#9FB8A8',          // فاتح
-          500: '#7FA08E',          // رئيسي - اللون الأساسي
-          600: '#6B8A7A',          // متوسط
-          700: '#5A7568',          // داكن
-          800: '#496056',          // داكن جداً
-          900: '#384B44',          // أغمق درجة
-          primary: '#7FA08E',      
-          light: '#9FB8A8',        
-          medium: '#6B8A7A',       
-          dark: '#5A7568',         
-          soft: '#E8F0ED',         
+          50: '#FBF5E6',           // أفتح درجة - للخلفيات الناعمة
+          100: '#F3E7C6',          // ناعم جداً
+          200: '#E8D6A0',          // فاتح مع حيوية
+          300: '#DBC074',          // متوسط فاتح
+          400: '#D0AE55',          // فاتح
+          500: '#C9A24A',          // رئيسي - اللون الأساسي
+          600: '#B58E36',          // متوسط
+          700: '#94722A',          // داكن
+          800: '#735820',          // داكن جداً
+          900: '#544015',          // أغمق درجة
+          primary: '#C9A24A',
+          light: '#E0C273',
+          medium: '#B58E36',
+          dark: '#8A6E2F',
+          soft: '#1C1A14',
         },
-        
-        // 🏜️ Desert Sand Palette - ألوان الصحراء العربية
+
+        // 🏜️ Noir Palette - أسود فاخر
         sand: {
-          50: '#FDFBF7',           // أبيض رملي
-          100: '#FAF7F2',          // بيج فاتح جداً
-          200: '#F5F0E8',          // بيج رئيسي
-          300: '#EBE4D8',          // بيج متوسط
-          400: '#E0D5C7',          // بيج داكن
-          500: '#D4C4B0',          // رملي
-          600: '#C4B09A',          // رملي داكن
-          700: '#B09A84',          // بني رملي
-          800: '#9A846E',          // بني صحراوي
-          900: '#846E58',          // بني داكن
+          50: '#0A0A0C',           // أعمق سواد
+          100: '#0E0E11',          // أسود ناعم
+          200: '#141418',          // فحمي رئيسي
+          300: '#1A1A20',          // فحمي متوسط
+          400: '#222229',          // فحمي فاتح
+          500: '#2C2C34',          // فحمي أفتح
+          600: '#3A3A44',          // رمادي داكن
+          700: '#474752',          // رمادي
+          800: '#565663',          // رمادي متوسط
+          900: '#6A6A78',          // رمادي فاتح
         },
-        
-        // Beige & Brown Palette - المحدثة
+
+        // Noir & Cream Palette - المحدثة
         beige: {
-          primary: '#F5F0E8',      
-          light: '#FAF7F2',        
-          medium: '#EBE4D8',       
-          dark: '#E0D5C7',         
+          primary: '#141418',
+          light: '#0E0E11',
+          medium: '#1A1A20',
+          dark: '#222229',
         },
         brown: {
-          primary: '#8B7355',      
-          light: '#A89179',        
-          medium: '#6B5744',       
-          dark: '#3D2F24',         
-          text: '#2C1F17',         
+          primary: '#C8B58A',
+          light: '#D9CBB0',
+          medium: '#C9A24A',
+          dark: '#EFE3CE',
+          text: '#F5ECDB',
         },
-        
-        // ✨ Accent Colors - ألوان مميزة للتفاعل
+
+        // ✨ Accent Colors - مضبوطة على عائلة الذهبي
         accents: {
-          emerald: '#10B981',      // زمردي حيوي
-          amber: '#F59E0B',        // كهرماني دافئ
-          rose: '#F43F5E',         // وردي أنيق
-          sky: '#0EA5E9',          // سماوي منعش
-          violet: '#8B5CF6',       // بنفسجي فاخر
-          coral: '#FF6B6B',        // مرجاني
-          mint: '#4ECDC4',         // نعناعي
-          honey: '#FFB84D',        // عسلي
+          emerald: '#C9A24A',      // ذهبي
+          amber: '#E0C273',        // ذهبي فاتح
+          rose: '#D9B66A',         // ذهبي وردي
+          sky: '#C8B58A',          // كريمي
+          violet: '#B58E36',       // برونزي
+          coral: '#E0C273',        // ذهبي فاتح
+          mint: '#C8B58A',         // كريمي
+          honey: '#E0C273',        // عسلي ذهبي
         },
-        
-        // 🌅 Sunset Gradient Palette - ألوان الغروب
+
+        // 🌅 Golden Gradient Palette - ألوان ذهبية
         sunset: {
-          dawn: '#FFE5B4',         // فجر
-          morning: '#FFD4A3',      // صباح
-          noon: '#FFC078',         // ظهيرة
-          golden: '#FFB347',       // ذهبي
-          amber: '#FF9F45',        // كهرماني
-          dusk: '#FF8C42',         // غسق
+          dawn: '#F3E7C6',         // فجر
+          morning: '#EAD79A',      // صباح
+          noon: '#DBC074',         // ظهيرة
+          golden: '#C9A24A',       // ذهبي
+          amber: '#B58E36',        // كهرماني
+          dusk: '#8A6E2F',         // غسق
         },
         // Keep old colors for compatibility
         gold: {
-          primary: '#7FA08E',
-          light: '#9FB8A8',
-          medium: '#6B8A7A',
-          dark: '#5A7568',
-          rose: '#7FA08E',
-          champagne: '#E8F0ED',
-          bronze: '#5A7568',
+          primary: '#C9A24A',
+          light: '#E0C273',
+          medium: '#B58E36',
+          dark: '#8A6E2F',
+          rose: '#D9B66A',
+          champagne: '#E8D6A8',
+          bronze: '#8A6E2F',
         },
         black: {
-          primary: '#F5F0E8',
-          rich: '#FAF7F2',
-          soft: '#EBE4D8',
-          medium: '#8B7355',
-          light: '#A89179',
-          charcoal: '#6B5744',
+          primary: '#E8DCC4',
+          rich: '#F5ECDB',
+          soft: '#D9CBB0',
+          medium: '#C9A24A',
+          light: '#E0C273',
+          charcoal: '#C8B58A',
         },
         luxury: {
-          pearl: '#FAF7F2',
-          cream: '#F5F0E8',
-          silver: '#8B7355',
-          platinum: '#EBE4D8',
+          pearl: '#F5ECDB',
+          cream: '#E8D6A8',
+          silver: '#C8B58A',
+          platinum: '#D9CBB0',
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -139,45 +139,45 @@ const config: Config = {
       },
       backgroundImage: {
         // 🌟 Premium Luxury Gradients
-        'gradient-luxury': 'linear-gradient(135deg, #7FA08E 0%, #9FB8A8 50%, #E8F0ED 100%)',
-        'gradient-luxury-reverse': 'linear-gradient(135deg, #E8F0ED 0%, #9FB8A8 50%, #7FA08E 100%)',
-        'gradient-gold-shine': 'linear-gradient(90deg, #5A7568 0%, #7FA08E 25%, #9FB8A8 50%, #7FA08E 75%, #5A7568 100%)',
-        
+        'gradient-luxury': 'linear-gradient(135deg, #C9A24A 0%, #E0C273 50%, #8A6E2F 100%)',
+        'gradient-luxury-reverse': 'linear-gradient(135deg, #8A6E2F 0%, #E0C273 50%, #C9A24A 100%)',
+        'gradient-gold-shine': 'linear-gradient(90deg, #8A6E2F 0%, #C9A24A 25%, #E0C273 50%, #C9A24A 75%, #8A6E2F 100%)',
+
         // 🎭 Sophisticated Backgrounds
-        'gradient-dark': 'linear-gradient(180deg, #F5F0E8 0%, #FAF7F2 50%, #FFFFFF 100%)',
-        'gradient-dark-elegant': 'radial-gradient(ellipse at top, #FAF7F2 0%, #F5F0E8 50%, #EBE4D8 100%)',
-        'gradient-soft': 'linear-gradient(135deg, #FDFBF7 0%, #FAF7F2 50%, #F5F0E8 100%)',
-        
+        'gradient-dark': 'linear-gradient(180deg, #141418 0%, #0E0E11 50%, #0A0A0C 100%)',
+        'gradient-dark-elegant': 'radial-gradient(ellipse at top, #1A1A20 0%, #141418 50%, #0A0A0C 100%)',
+        'gradient-soft': 'linear-gradient(135deg, #1A1A20 0%, #141418 50%, #0E0E11 100%)',
+
         // 🌅 Sunset & Nature Inspired
-        'gradient-sunset': 'linear-gradient(135deg, #FFE5B4 0%, #FFD4A3 25%, #FFC078 50%, #FFB347 75%, #FF9F45 100%)',
-        'gradient-forest': 'linear-gradient(135deg, #384B44 0%, #5A7568 25%, #7FA08E 50%, #9FB8A8 75%, #E8F0ED 100%)',
-        'gradient-oasis': 'linear-gradient(135deg, #0EA5E9 0%, #4ECDC4 50%, #10B981 100%)',
-        
+        'gradient-sunset': 'linear-gradient(135deg, #F3E7C6 0%, #EAD79A 25%, #DBC074 50%, #C9A24A 75%, #B58E36 100%)',
+        'gradient-forest': 'linear-gradient(135deg, #0A0A0C 0%, #8A6E2F 25%, #C9A24A 50%, #E0C273 75%, #1C1A14 100%)',
+        'gradient-oasis': 'linear-gradient(135deg, #8A6E2F 0%, #C9A24A 50%, #E0C273 100%)',
+
         // 🏜️ Desert Dreams
-        'gradient-desert': 'linear-gradient(135deg, #FFB84D 0%, #FF9F45 25%, #D4C4B0 50%, #F5F0E8 100%)',
-        'gradient-sand': 'linear-gradient(180deg, #FDFBF7 0%, #F5F0E8 50%, #EBE4D8 100%)',
-        
+        'gradient-desert': 'linear-gradient(135deg, #E0C273 0%, #C9A24A 25%, #8A6E2F 50%, #141418 100%)',
+        'gradient-sand': 'linear-gradient(180deg, #0A0A0C 0%, #141418 50%, #0E0E11 100%)',
+
         // ✨ Hero & Premium Sections
-        'gradient-hero': 'linear-gradient(135deg, rgba(245, 240, 232, 0.95) 0%, rgba(127, 160, 142, 0.08) 50%, rgba(245, 240, 232, 0.95) 100%)',
-        'gradient-hero-premium': 'radial-gradient(circle at 50% 50%, rgba(127, 160, 142, 0.06) 0%, rgba(245, 240, 232, 0.9) 50%, rgba(245, 240, 232, 1) 100%)',
-        'gradient-hero-modern': 'linear-gradient(135deg, #7FA08E 0%, rgba(127, 160, 142, 0.8) 50%, #E8F0ED 100%)',
-        
+        'gradient-hero': 'linear-gradient(135deg, rgba(10, 10, 12, 0.95) 0%, rgba(201, 162, 74, 0.10) 50%, rgba(10, 10, 12, 0.95) 100%)',
+        'gradient-hero-premium': 'radial-gradient(circle at 50% 50%, rgba(201, 162, 74, 0.08) 0%, rgba(14, 14, 17, 0.9) 50%, rgba(10, 10, 12, 1) 100%)',
+        'gradient-hero-modern': 'linear-gradient(135deg, #C9A24A 0%, rgba(201, 162, 74, 0.8) 50%, #1C1A14 100%)',
+
         // 🎨 Interactive Cards
-        'gradient-card': 'linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 247, 242, 0.95) 100%)',
-        'gradient-card-hover': 'linear-gradient(145deg, rgba(127, 160, 142, 0.04) 0%, rgba(255, 255, 255, 0.9) 100%)',
-        'gradient-card-premium': 'linear-gradient(145deg, #FDFBF7 0%, #FAF7F2 50%, #F5F0E8 100%)',
-        'gradient-card-accent': 'linear-gradient(135deg, rgba(255, 184, 77, 0.1) 0%, rgba(127, 160, 142, 0.1) 100%)',
-        
+        'gradient-card': 'linear-gradient(145deg, rgba(20, 20, 24, 0.9) 0%, rgba(14, 14, 17, 0.95) 100%)',
+        'gradient-card-hover': 'linear-gradient(145deg, rgba(201, 162, 74, 0.08) 0%, rgba(20, 20, 24, 0.9) 100%)',
+        'gradient-card-premium': 'linear-gradient(145deg, #1A1A20 0%, #141418 50%, #0E0E11 100%)',
+        'gradient-card-accent': 'linear-gradient(135deg, rgba(224, 194, 115, 0.12) 0%, rgba(201, 162, 74, 0.12) 100%)',
+
         // 🌈 Overlay & Effects
-        'gradient-overlay': 'linear-gradient(to bottom, rgba(245, 240, 232, 0) 0%, rgba(245, 240, 232, 0.9) 100%)',
-        'gradient-overlay-dark': 'linear-gradient(to bottom, rgba(61, 47, 36, 0) 0%, rgba(61, 47, 36, 0.8) 100%)',
-        'gradient-shimmer': 'linear-gradient(90deg, transparent 0%, rgba(127, 160, 142, 0.15) 50%, transparent 100%)',
-        'gradient-shimmer-gold': 'linear-gradient(90deg, transparent 0%, rgba(255, 184, 77, 0.2) 50%, transparent 100%)',
-        
+        'gradient-overlay': 'linear-gradient(to bottom, rgba(10, 10, 12, 0) 0%, rgba(10, 10, 12, 0.9) 100%)',
+        'gradient-overlay-dark': 'linear-gradient(to bottom, rgba(10, 10, 12, 0) 0%, rgba(10, 10, 12, 0.85) 100%)',
+        'gradient-shimmer': 'linear-gradient(90deg, transparent 0%, rgba(201, 162, 74, 0.18) 50%, transparent 100%)',
+        'gradient-shimmer-gold': 'linear-gradient(90deg, transparent 0%, rgba(224, 194, 115, 0.25) 50%, transparent 100%)',
+
         // 🔥 Animated Gradients
         'gradient-radial': 'radial-gradient(circle, var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-        'gradient-mesh': 'radial-gradient(at 40% 20%, #7FA08E 0%, transparent 50%), radial-gradient(at 80% 80%, #FFB347 0%, transparent 50%), radial-gradient(at 0% 50%, #4ECDC4 0%, transparent 50%)',
+        'gradient-mesh': 'radial-gradient(at 40% 20%, #C9A24A 0%, transparent 50%), radial-gradient(at 80% 80%, #E0C273 0%, transparent 50%), radial-gradient(at 0% 50%, #8A6E2F 0%, transparent 50%)',
       },
       fontFamily: {
         arabic: [
@@ -252,16 +252,16 @@ const config: Config = {
           '100%': { transform: 'translateX(100%) rotate(360deg)' },
         },
         glow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(127, 160, 142, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(127, 160, 142, 0.6), 0 0 60px rgba(127, 160, 142, 0.4)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(201, 162, 74, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(201, 162, 74, 0.6), 0 0 60px rgba(201, 162, 74, 0.4)' },
         },
         glowPulse: {
-          '0%, 100%': { 
-            boxShadow: '0 0 20px rgba(127, 160, 142, 0.3)',
+          '0%, 100%': {
+            boxShadow: '0 0 20px rgba(201, 162, 74, 0.3)',
             transform: 'scale(1)'
           },
-          '50%': { 
-            boxShadow: '0 0 50px rgba(127, 160, 142, 0.8), 0 0 80px rgba(127, 160, 142, 0.5)',
+          '50%': {
+            boxShadow: '0 0 50px rgba(201, 162, 74, 0.8), 0 0 80px rgba(201, 162, 74, 0.5)',
             transform: 'scale(1.05)'
           },
         },

@@ -18,7 +18,7 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
   const [imgError, setImgError] = useState(false);
   const FALLBACK_HERO = 'https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=1920';
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-soft via-white to-beige-light">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-soft via-[#0A0A0C] to-beige-light">
       <div className="absolute inset-0 z-0">
         <Image
           src={imgError ? FALLBACK_HERO : data.heroImage}
@@ -29,7 +29,7 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
           priority
           onError={() => setImgError(true)}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-beige-light/95 via-white/90 to-beige-light/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-beige-light/95 via-[#0A0A0C]/90 to-beige-light/95"></div>
       </div>
 
       <div className="container-custom relative z-10 py-24">
@@ -95,7 +95,7 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
               href="https://wa.me/966XXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-5 text-lg font-bold border-2 border-sage-primary text-brown-dark bg-white/80 backdrop-blur-sm rounded-2xl hover:bg-sage-primary hover:text-white transition-all inline-flex items-center justify-center space-x-3 space-x-reverse group"
+              className="px-10 py-5 text-lg font-bold border-2 border-sage-primary text-brown-dark bg-[#141418]/80 backdrop-blur-sm rounded-2xl hover:bg-sage-primary hover:text-[#0A0A0C] transition-all inline-flex items-center justify-center space-x-3 space-x-reverse group"
             >
               <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform" />
               <span>واتساب فوري</span>

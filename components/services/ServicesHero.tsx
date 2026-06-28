@@ -16,7 +16,7 @@ const ServicesHero = () => {
   ];
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-50 via-white to-beige-light">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-50 via-[#0A0A0C] to-beige-light">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -28,7 +28,7 @@ const ServicesHero = () => {
           priority
           onError={() => setImgError(true)}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-beige-light/90 to-white/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0C]/95 via-beige-light/90 to-[#0A0A0C]/95"></div>
       </div>
 
       {/* Animated Blobs */}

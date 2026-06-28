@@ -16,7 +16,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-beige-light via-white to-beige-light flex items-center justify-center px-4">
+    <div className="min-h-screen bg-gradient-to-b from-beige-light via-[#0E0E11] to-beige-light flex items-center justify-center px-4">
       <div className="max-w-2xl mx-auto text-center">
         <h1 className="text-9xl font-black mb-4">
           <span className="gold-shine-effect">خطأ</span>

@@ -66,7 +66,7 @@ const LocationsGrid = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0E0E11] via-beige-light to-[#0E0E11]">
       <div className="container-custom">
         {/* معلومات الاتصال العامة */}
         <motion.div
@@ -74,7 +74,7 @@ const LocationsGrid = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="p-8 rounded-2xl bg-white border-2 border-beige-medium shadow-sm">
+          <div className="p-8 rounded-2xl bg-[#141418] border-2 border-beige-medium shadow-sm">
             <h2 className="text-3xl font-bold mb-6 text-sage-primary text-center">
               تواصل معنا في أي مدينة
             </h2>
@@ -121,7 +121,7 @@ const LocationsGrid = () => {
                     whileHover={{ scale: 1.05, y: -5 }}
                     className="group relative"
                   >
-                    <div className="relative p-6 rounded-xl bg-white border-2 border-beige-medium hover:border-sage-primary transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
+                    <div className="relative p-6 rounded-xl bg-[#141418] border-2 border-beige-medium hover:border-sage-primary transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
                       {/* تأثير الخلفية عند Hover */}
                       <div className="absolute inset-0 bg-gradient-luxury opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                       
@@ -154,7 +154,7 @@ const LocationsGrid = () => {
           transition={{ delay: 1 }}
           className="mt-20 text-center"
         >
-          <div className="p-12 rounded-2xl bg-white border-2 border-beige-medium shadow-sm">
+          <div className="p-12 rounded-2xl bg-[#141418] border-2 border-beige-medium shadow-sm">
             <h2 className="text-4xl font-bold mb-4 gold-shine-effect">
               لم تجد مدينتك؟
             </h2>
@@ -170,7 +170,7 @@ const LocationsGrid = () => {
               </a>
               <a
                 href="tel:+966XXXXXXXXX"
-                className="px-10 py-4 text-lg border-2 border-sage-primary text-sage-dark rounded-lg hover:bg-sage-primary hover:text-white transition-all inline-flex items-center justify-center"
+                className="px-10 py-4 text-lg border-2 border-sage-primary text-sage-dark rounded-lg hover:bg-sage-primary hover:text-[#0A0A0C] transition-all inline-flex items-center justify-center"
               >
                 <Phone className="w-5 h-5 ml-2" />
                 <span>+966 XX XXX XXXX</span>

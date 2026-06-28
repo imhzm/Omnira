@@ -94,13 +94,13 @@ export default function PricingComparison() {
   const [activePlan, setActivePlan] = useState<PlanName>('باقة الفنادق');
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-[#0A0A0C]">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl font-bold text-black-primary mb-4">
+          <h2 className="text-3xl font-bold text-[#F5ECDB] mb-4">
             قارن بين باقاتنا
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-[#C8B58A] mb-8">
             اختر الباقة المناسبة لاحتياجاتك من خلال مقارنة المزايا والخدمات المتاحة في كل باقة
           </p>
         </div>
@@ -112,8 +112,8 @@ export default function PricingComparison() {
               key={plan.name}
               className={`px-6 py-3 rounded-lg font-medium text-lg transition-all duration-300 ${
                 activePlan === plan.name
-                  ? 'bg-gold-primary text-white shadow-lg'
-                  : 'bg-white text-gray-700 border border-gray-200 hover:bg-gray-100'
+                  ? 'bg-gold-primary text-[#0A0A0C] shadow-lg'
+                  : 'bg-[#141418] text-[#C8B58A] border border-[#222229] hover:bg-[#1A1A20]'
               }`}
               onClick={() => setActivePlan(plan.name)}
             >
@@ -123,19 +123,19 @@ export default function PricingComparison() {
         </div>
 
         {/* جدول المقارنة */}
-        <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+        <div className="bg-[#141418] rounded-xl shadow-lg overflow-hidden border border-[#222229]">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>
-                <tr className="bg-gray-50">
-                  <th className="px-6 py-4 text-right text-lg font-semibold text-gray-700 border-b">المزايا</th>
+                <tr className="bg-[#1A1A20]">
+                  <th className="px-6 py-4 text-right text-lg font-semibold text-[#C8B58A] border-b border-[#222229]">المزايا</th>
                   {comparisonData.plans.map((plan) => (
                     <th 
                       key={plan.name}
-                      className={`px-6 py-4 text-center text-lg font-semibold border-b ${
+                      className={`px-6 py-4 text-center text-lg font-semibold border-b border-[#222229] ${
                         activePlan === plan.name
-                          ? 'text-gold-primary bg-gold-50'
-                          : 'text-gray-700'
+                          ? 'text-gold-primary bg-[#C9A24A]/10'
+                          : 'text-[#C8B58A]'
                       }`}
                     >
                       {plan.name}
@@ -145,19 +145,19 @@ export default function PricingComparison() {
               </thead>
               <tbody>
                 {Object.keys(comparisonData.plans[0].features).map((feature, index) => (
-                  <tr key={feature} className={index % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
-                    <td className="px-6 py-4 text-gray-800 font-medium">{feature}</td>
+                  <tr key={feature} className={index % 2 === 0 ? 'bg-[#141418]' : 'bg-[#1A1A20]'}>
+                    <td className="px-6 py-4 text-[#F5ECDB] font-medium">{feature}</td>
                     {comparisonData.plans.map((plan) => (
                       <td
                         key={`${plan.name}-${feature}`}
                         className={`px-6 py-4 text-center ${
-                          activePlan === plan.name ? 'bg-gold-50/30' : ''
+                          activePlan === plan.name ? 'bg-[#C9A24A]/10' : ''
                         }`}
                       >
                         {plan.features[feature as Feature] ? (
-                          <Check className="text-green-500 w-6 h-6 mx-auto" />
+                          <Check className="text-[#C9A24A] w-6 h-6 mx-auto" />
                         ) : (
-                          <X className="text-red-400 w-6 h-6 mx-auto" />
+                          <X className="text-[#8A6E2F] w-6 h-6 mx-auto" />
                         )}
                       </td>
                     ))}
@@ -165,20 +165,20 @@ export default function PricingComparison() {
                 ))}
 
                 {/* القطاعات المناسبة */}
-                <tr className="bg-gray-50">
-                  <td className="px-6 py-4 text-gray-800 font-medium">القطاعات المناسبة</td>
+                <tr className="bg-[#1A1A20]">
+                  <td className="px-6 py-4 text-[#F5ECDB] font-medium">القطاعات المناسبة</td>
                   {comparisonData.plans.map((plan) => (
                     <td
                       key={`${plan.name}-sectors`}
                       className={`px-6 py-4 text-center ${
-                        activePlan === plan.name ? 'bg-gold-50/30' : ''
+                        activePlan === plan.name ? 'bg-[#C9A24A]/10' : ''
                       }`}
                     >
                       <div className="flex flex-wrap justify-center gap-1">
                         {suitableSectors[plan.name as PlanName].map((sector: string) => (
                           <span
                             key={sector}
-                            className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full"
+                            className="px-2 py-1 bg-[#222229] text-[#C8B58A] text-xs rounded-full"
                           >
                             {sector}
                           </span>
@@ -193,7 +193,7 @@ export default function PricingComparison() {
         </div>
 
         {/* نص توضيحي */}
-        <div className="mt-8 text-center text-sm text-gray-500">
+        <div className="mt-8 text-center text-sm text-[#C8B58A]">
           * جميع الباقات تشمل تأميناً شاملاً وسائقين محترفين ومدربين. تفاصيل أكثر عن الباقات متوفرة عند التواصل معنا.
         </div>
       </div>

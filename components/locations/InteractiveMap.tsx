@@ -140,12 +140,12 @@ export default function InteractiveMap() {
   }
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16 bg-[#0E0E11]">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 text-[#F5ECDB]">
           خدماتنا تغطي جميع مدن المملكة
         </h2>
-        <p className="text-lg text-center text-gray-600 max-w-3xl mx-auto mb-12">
+        <p className="text-lg text-center text-[#C8B58A] max-w-3xl mx-auto mb-12">
           تتوفر خدمات أومنيرا فاليه في جميع مناطق المملكة العربية السعودية. انقر على المنطقة لمعرفة المدن التي نخدمها.
         </p>
 
@@ -172,7 +172,7 @@ export default function InteractiveMap() {
                       : region.hoverRadius || 8}
                   fill={region.color || '#C68B48'}
                   opacity={selectedRegion ? (selectedRegion.id === region.id ? 0.9 : 0.3) : 0.7}
-                  stroke={hoveredRegion?.id === region.id || selectedRegion?.id === region.id ? '#fff' : 'transparent'}
+                  stroke={hoveredRegion?.id === region.id || selectedRegion?.id === region.id ? '#E8D6A8' : 'transparent'}
                   strokeWidth="2"
                   cursor="pointer"
                   className="transition-all duration-300 ease-in-out hover:opacity-90"
@@ -189,7 +189,7 @@ export default function InteractiveMap() {
                   x={region.coordinates.x}
                   y={region.coordinates.y + (region.hoverRadius || 8) + 4}
                   textAnchor="middle"
-                  fill={hoveredRegion?.id === region.id || selectedRegion?.id === region.id ? '#000' : '#333'}
+                  fill={hoveredRegion?.id === region.id || selectedRegion?.id === region.id ? '#F5ECDB' : '#C8B58A'}
                   fontSize="2.5"
                   fontWeight={hoveredRegion?.id === region.id || selectedRegion?.id === region.id ? 'bold' : 'normal'}
                   className="pointer-events-none select-none"
@@ -200,8 +200,8 @@ export default function InteractiveMap() {
             </svg>
             
             {/* تعليمات استخدام الخريطة */}
-            <div className="absolute bottom-4 right-4 bg-white bg-opacity-80 p-3 rounded-lg shadow-sm text-sm">
-              <p className="font-medium">انقر على أي منطقة لمعرفة المدن المتوفرة</p>
+            <div className="absolute bottom-4 right-4 bg-[#141418] bg-opacity-80 p-3 rounded-lg shadow-sm text-sm">
+              <p className="font-medium text-[#F5ECDB]">انقر على أي منطقة لمعرفة المدن المتوفرة</p>
             </div>
           </div>
           
@@ -213,7 +213,7 @@ export default function InteractiveMap() {
             
             {selectedRegion ? (
               <div>
-                <p className="text-gray-700 mb-4">
+                <p className="text-[#C8B58A] mb-4">
                   نقدم خدماتنا في {selectedRegion.cities.length} مدينة في {selectedRegion.name}
                 </p>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -233,10 +233,10 @@ export default function InteractiveMap() {
               </div>
             ) : (
               <div>
-                <p className="text-gray-700">
+                <p className="text-[#C8B58A]">
                   تتوفر خدمات أومنيرا فاليه في أكثر من 150 مدينة ومحافظة في جميع أنحاء المملكة العربية السعودية.
                 </p>
-                <p className="text-gray-700 mt-4">
+                <p className="text-[#C8B58A] mt-4">
                   اختر منطقة من الخريطة لعرض المدن التي نخدمها فيها.
                 </p>
                 <div className="mt-6">

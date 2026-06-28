@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-sage-50 via-white to-sage-50 border-t-2 border-sage-primary/30 relative overflow-hidden">
+    <footer className="bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] border-t-2 border-sage-primary/30 relative overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>

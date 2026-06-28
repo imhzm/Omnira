@@ -32,7 +32,7 @@ export default function NotFound() {
     <>
       <Header />
       
-      <div className="min-h-[70vh] py-20 bg-gradient-to-b from-beige-light via-white to-beige-light flex items-center justify-center px-4">
+      <div className="min-h-[70vh] py-20 bg-gradient-to-b from-beige-light via-[#0E0E11] to-beige-light flex items-center justify-center px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-9xl font-black mb-4">
             <span className="gold-shine-effect">404</span>

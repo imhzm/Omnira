@@ -395,7 +395,7 @@ export default function RelatedLinks({
               <div className="flex-1">
                 <span className="font-medium text-brown-dark group-hover:text-gold-primary">{link.title}</span>
                 {showDescription && link.description && (
-                  <p className="text-sm text-gray-500 mt-1">{link.description}</p>
+                  <p className="text-sm text-[#C8B58A] mt-1">{link.description}</p>
                 )}
               </div>
             </Link>

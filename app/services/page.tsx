@@ -143,7 +143,7 @@ export default function ServicesPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#0E0E11]">
         <Header />
         <ServicesHero />
         <ServicesGrid />
@@ -156,7 +156,7 @@ export default function ServicesPage() {
               <div className="w-full lg:w-2/3">
                 <RichContent 
                   type={PageType.SERVICES}
-                  className="bg-white p-8 rounded-xl shadow-sm"
+                  className="bg-[#141418] p-8 rounded-xl shadow-sm"
                 />
               </div>
               
@@ -169,7 +169,7 @@ export default function ServicesPage() {
                   />
                   
                   {/* الروابط ذات الصلة */}
-                  <div className="bg-white p-6 rounded-lg shadow-sm">
+                  <div className="bg-[#141418] p-6 rounded-lg shadow-sm">
                     <RelatedLinks 
                       currentCategory={ContentCategory.SERVICES}
                       currentPath="/services"
@@ -198,16 +198,16 @@ export default function ServicesPage() {
         </section>
         
         {/* قسم الأسئلة الشائعة */}
-        <section className="py-16 bg-white">
+        <section className="py-16 bg-[#0E0E11]">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold mb-8 text-center">الأسئلة الشائعة حول خدماتنا</h2>
             
             <div className="max-w-3xl mx-auto bg-beige-light rounded-xl p-6">
               <div className="space-y-6">
                 {servicesFAQs.map((faq, index) => (
-                  <div key={index} className="bg-white rounded-lg p-5 shadow-sm">
+                  <div key={index} className="bg-[#141418] rounded-lg p-5 shadow-sm">
                     <h3 className="text-lg font-bold mb-2 text-brown-dark">{faq.question}</h3>
-                    <p className="text-gray-700">{faq.answer}</p>
+                    <p className="text-[#C8B58A]">{faq.answer}</p>
                   </div>
                 ))}
               </div>

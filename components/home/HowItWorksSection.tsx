@@ -42,7 +42,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-sage-50 via-white to-sage-50 relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-0 left-0 w-96 h-96 bg-accents-mint/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -132,14 +132,14 @@ const StepCard = ({ step, index, isInView }: StepCardProps) => {
           
           {/* Number Badge */}
           <div className="absolute top-4 right-4">
-            <div className="relative w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center">
+            <div className="relative w-16 h-16 bg-[#141418] rounded-2xl shadow-xl flex items-center justify-center">
               <span className="text-3xl font-black bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">{step.number}</span>
             </div>
           </div>
         </div>
 
         {/* Content */}
-        <div className="relative p-6 rounded-3xl bg-white border-2 border-sage-primary/20 group-hover:border-sage-primary transition-all duration-300 hover:shadow-2xl">
+        <div className="relative p-6 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 group-hover:border-sage-primary transition-all duration-300 hover:shadow-2xl">
           {/* Icon */}
           <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-sage-primary/10 border-2 border-sage-primary/30 mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all">
             <Icon className="w-7 h-7 text-sage-primary" />

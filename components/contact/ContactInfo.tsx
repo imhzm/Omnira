@@ -60,7 +60,7 @@ const ContactInfo = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-6 rounded-2xl bg-white/90 backdrop-blur-md border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all duration-300 group"
+              className="p-6 rounded-2xl bg-[#0E0E11]/90 backdrop-blur-md border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all duration-300 group"
             >
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0">
@@ -125,7 +125,7 @@ const ContactInfo = () => {
         </div>
         
         {/* Map */}
-        <div className="relative h-96 bg-gray-100">
+        <div className="relative h-96 bg-[#141418]">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0989!2d46.773722!3d24.73269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQzJzU3LjciTiA0NsKwNDYnMjUuNCJF!5e0!3m2!1sar!2ssa!4v1234567890"
             width="100%"
@@ -140,7 +140,7 @@ const ContactInfo = () => {
         </div>
         
         {/* Footer Info */}
-        <div className="bg-gradient-to-r from-beige-light to-white p-4 border-t-2 border-sage-primary/10">
+        <div className="bg-gradient-to-r from-beige-light to-[#0E0E11] p-4 border-t-2 border-sage-primary/10">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-2 space-x-reverse text-brown-dark">
               <span className="font-bold">الإحداثيات:</span>

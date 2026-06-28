@@ -12,7 +12,7 @@ const AboutHero = () => {
   ];
 
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-50 via-white to-beige-light">
+    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-50 via-[#0E0E11] to-beige-light">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -23,7 +23,7 @@ const AboutHero = () => {
           className="object-cover opacity-10"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white/95 via-beige-light/90 to-white/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0E0E11]/95 via-beige-light/90 to-[#0E0E11]/95"></div>
       </div>
 
       {/* Animated Blobs */}

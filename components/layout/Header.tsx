@@ -49,8 +49,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b-2 border-sage-primary/30'
-          : 'bg-white/90 backdrop-blur-lg shadow-lg border-b border-sage-primary/20'
+          ? 'bg-[#0E0E11]/95 backdrop-blur-xl shadow-2xl border-b-2 border-sage-primary/30'
+          : 'bg-[#0E0E11]/90 backdrop-blur-lg shadow-lg border-b border-sage-primary/20'
       }`}
     >
       <div className="container-custom relative">
@@ -111,9 +111,9 @@ const Header = () => {
                   
                   {/* Mega Menu للخدمات */}
                   {item.hasSubmenu && showServicesMenu && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-white/98 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-sage-primary/30 p-6 animate-slideDown z-[100]">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-[#141418]/98 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-sage-primary/30 p-6 animate-slideDown z-[100]">
                       {/* السهم في الأعلى */}
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white rotate-45 border-t-2 border-l-2 border-sage-primary/30"></div>
+                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#141418] rotate-45 border-t-2 border-l-2 border-sage-primary/30"></div>
                       
                       {/* العنوان */}
                       <div className="mb-4 pb-3 border-b-2 border-sage-primary/20">
@@ -184,7 +184,7 @@ const Header = () => {
 
       {/* Mobile Menu المطور */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-white/98 backdrop-blur-xl border-t border-sage-primary/20 shadow-2xl">
+        <div className="lg:hidden bg-[#141418]/98 backdrop-blur-xl border-t border-sage-primary/20 shadow-2xl">
           <nav className="container-custom py-6 space-y-2">
             {navItems.map((item, index) => (
               <Link

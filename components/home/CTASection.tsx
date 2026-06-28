@@ -12,7 +12,7 @@ const CTASection = () => {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-sage-50 via-white to-sage-50 relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -22,7 +22,7 @@ const CTASection = () => {
           sizes="100vw"
           className="object-cover opacity-5"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-sage-50/50 to-white"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11]/50 to-[#0A0A0C]"></div>
       </div>
 
       {/* Animated Blobs */}
@@ -87,7 +87,7 @@ const CTASection = () => {
             transition={{ delay: 0.4 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            <a href="tel:+966XXXXXXXXX" className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <a href="tel:+966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Phone className="w-8 h-8 text-sage-primary" />
               </div>
@@ -95,7 +95,7 @@ const CTASection = () => {
               <p className="text-sage-primary font-bold" dir="ltr">+966 XX XXX XXXX</p>
             </a>
             
-            <a href="https://wa.me/966XXXXXXXXX" className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <a href="https://wa.me/966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-accents-emerald/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <MessageCircle className="w-8 h-8 text-accents-emerald" />
               </div>
@@ -103,7 +103,7 @@ const CTASection = () => {
               <p className="text-accents-emerald font-bold">راسلنا الآن</p>
             </a>
             
-            <a href="mailto:info@omnira.sa" className="group p-8 rounded-3xl bg-white border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <a href="mailto:info@omnira.sa" className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-accents-sky/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="w-8 h-8 text-accents-sky" />
               </div>

@@ -46,7 +46,7 @@ const TestimonialsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-beige-light to-white relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C] relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-gold-primary/5 rounded-full blur-3xl"></div>
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-gold-primary/5 rounded-full blur-3xl"></div>

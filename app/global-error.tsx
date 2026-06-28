@@ -18,7 +18,7 @@ export default function GlobalError({
   return (
     <html lang="ar" dir="rtl">
       <body>
-        <div className="min-h-screen bg-gradient-to-b from-beige-light via-white to-beige-light flex items-center justify-center px-4">
+        <div className="min-h-screen bg-gradient-to-b from-beige-light via-[#0E0E11] to-beige-light flex items-center justify-center px-4">
           <div className="max-w-2xl mx-auto text-center">
             <h1 className="text-9xl font-black mb-4 text-sage-primary">500</h1>
             <h2 className="text-4xl font-bold mb-6 text-brown-dark">

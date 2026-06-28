@@ -71,7 +71,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-white via-sage-50 to-white relative overflow-hidden">
+    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
@@ -142,7 +142,7 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
       transition={{ duration: 0.2, delay: 0 }}
     >
       <Link href={service.href}>
-        <div className="h-full group cursor-pointer bg-white rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
+        <div className="h-full group cursor-pointer bg-[#141418] rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
           {/* Image */}
           <div className="relative h-56 overflow-hidden">
             <Image
@@ -156,7 +156,7 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
             <div className="absolute inset-0 bg-gradient-to-t from-sage-primary/70 to-transparent"></div>
             
             {/* Floating Icon */}
-            <div className="absolute bottom-4 right-4 w-16 h-16 bg-white rounded-2xl shadow-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+            <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#141418] rounded-2xl shadow-xl flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
               <Icon className="w-8 h-8 text-sage-primary" />
             </div>
           </div>

@@ -305,7 +305,7 @@ export default function ValetParkingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#0E0E11]">
         <Header />
         <ServiceDetailHero data={serviceData} />
         <ServiceContent data={serviceData} />

@@ -56,7 +56,7 @@ const sitemapData = {
 export default function SitemapPage() {
   return (
     <>
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-[#0E0E11]">
         <Header />
         
         <section className="py-12 sm:py-16 lg:py-20 px-4 container mx-auto">
@@ -64,7 +64,7 @@ export default function SitemapPage() {
             <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-black-primary text-center">
               خريطة الموقع
             </h1>
-            <p className="text-lg text-gray-600 mb-12 text-center">
+            <p className="text-lg text-[#C8B58A] mb-12 text-center">
               استكشف جميع صفحات وخدمات أومنيرا فاليه من خلال هذه الخريطة التفاعلية للموقع
             </p>
             

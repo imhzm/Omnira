@@ -33,7 +33,7 @@ const ContactForm = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="bg-white/90 backdrop-blur-md p-8 md:p-10 rounded-3xl border-2 border-sage-primary/20 shadow-2xl">
+      <div className="bg-[#0E0E11]/90 backdrop-blur-md p-8 md:p-10 rounded-3xl border-2 border-sage-primary/20 shadow-2xl">
         <div className="mb-8">
           <h2 className="text-4xl font-black mb-3 gold-shine-effect">أرسل لنا رسالة</h2>
           <p className="text-brown-text text-base">املأ النموذج وسنتواصل معك خلال 24 ساعة</p>
@@ -48,7 +48,7 @@ const ContactForm = () => {
               required
               value={formData.name}
               onChange={handleChange}
-              className="w-full px-5 py-4 bg-white border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
+              className="w-full px-5 py-4 bg-[#1A1A20] border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
               placeholder="أدخل اسمك الكامل"
             />
           </div>
@@ -61,7 +61,7 @@ const ContactForm = () => {
               required
               value={formData.email}
               onChange={handleChange}
-              className="w-full px-5 py-4 bg-white border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
+              className="w-full px-5 py-4 bg-[#1A1A20] border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
               placeholder="example@email.com"
             />
           </div>
@@ -74,7 +74,7 @@ const ContactForm = () => {
               required
               value={formData.phone}
               onChange={handleChange}
-              className="w-full px-5 py-4 bg-white border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
+              className="w-full px-5 py-4 bg-[#1A1A20] border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
               placeholder="05xxxxxxxx"
             />
           </div>
@@ -85,7 +85,7 @@ const ContactForm = () => {
               name="service"
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-5 py-4 bg-white border-2 border-sage-primary/20 rounded-xl text-brown-dark focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
+              className="w-full px-5 py-4 bg-[#1A1A20] border-2 border-sage-primary/20 rounded-xl text-brown-dark focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all"
             >
               <option value="">اختر الخدمة</option>
               <option value="parking-management">إدارة وتشغيل المواقف</option>
@@ -107,7 +107,7 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows={6}
-              className="w-full px-5 py-4 bg-white border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all resize-none"
+              className="w-full px-5 py-4 bg-[#1A1A20] border-2 border-sage-primary/20 rounded-xl text-brown-dark placeholder:text-brown-text/50 focus:border-sage-primary focus:ring-4 focus:ring-sage-primary/10 focus:outline-none transition-all resize-none"
               placeholder="اكتب رسالتك هنا..."
             />
           </div>
