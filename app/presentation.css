@@ -41,3 +41,17 @@ html {
     display: block;
   }
 }
+
+/* ---- cinematic motion ---- */
+@keyframes kenburns {
+  0%   { transform: scale(1.03); }
+  100% { transform: scale(1.18); }
+}
+.kenburns-active {
+  animation: kenburns 8000ms ease-out both;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kenburns-active { animation: none; }
+}

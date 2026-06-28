@@ -12,6 +12,7 @@ const WhatsAppButton = dynamic(() => import("@/components/layout/WhatsAppButton"
 const FloatingElements = dynamic(() => import("@/components/ui/FloatingElements"), { ssr: false });
 const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
 const SlideNav = dynamic(() => import("@/components/ui/SlideNav"), { ssr: false });
+const SlideAnimator = dynamic(() => import("@/components/ui/SlideAnimator"), { ssr: false });
 
 const arabicFont = localFont({
   src: [
@@ -159,6 +160,7 @@ export default function RootLayout({
         <WhatsAppButton />
         <ScrollToTop />
         <SlideNav />
+        <SlideAnimator />
       </body>
     </html>
   );

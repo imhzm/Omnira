@@ -122,7 +122,7 @@ const HeroSection = () => {
     if (!isVideoLoaded) {
       const interval = setInterval(() => {
         setCurrentSlide((prev) => (prev + 1) % sliderImages.length);
-      }, 3000); // تغيير كل 3 ثواني
+      }, 5000); // تغيير كل 5 ثواني (إيقاع سينمائي)
 
       return () => clearInterval(interval);
     }
@@ -138,8 +138,10 @@ const HeroSection = () => {
           {sliderImages.map((image, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                currentSlide === index ? 'opacity-100' : 'opacity-0'
+              className={`absolute inset-0 transition-all duration-[1600ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${
+                currentSlide === index
+                  ? 'opacity-100 scale-100 translate-x-0'
+                  : `opacity-0 scale-110 ${index % 2 === 0 ? 'translate-x-12' : '-translate-x-12'}`
               }`}
             >
               {/* Gradient Placeholder - يظهر أثناء التحميل */}
@@ -151,7 +153,7 @@ const HeroSection = () => {
                   alt={image.alt}
                   fill
                   sizes="100vw"
-                  className="object-cover"
+                  className={`object-cover ${currentSlide === index ? 'kenburns-active' : ''}`}
                   priority={index === 0}
                   quality={85}
                   onError={() => {
