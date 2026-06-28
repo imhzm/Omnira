@@ -35,10 +35,10 @@ const englishFont = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية في السعودية",
-    template: "%s | OMNIRA - أومنيرا"
+    default: "Omnira Valet | خدمات صف السيارات الاحترافية في السعودية",
+    template: "%s | Omnira Valet"
   },
-  description: "أومنيرا - شركة سعودية رائدة في خدمات صف السيارات الاحترافية وإدارة المواقف الذكية. حلول متطورة للفنادق، المطاعم، الفعاليات والمنشآت التجارية في الرياض، جدة والدمام.",
+  description: "أومنيرا فاليه - شركة سعودية رائدة في خدمات صف السيارات الاحترافية وإدارة المواقف الذكية. حلول متطورة للفنادق، المطاعم، الفعاليات والمنشآت التجارية في الرياض، جدة والدمام.",
   icons: {
     icon: [
       { url: '/favicon.png', sizes: 'any' },
@@ -61,9 +61,9 @@ export const metadata: Metadata = {
     "صف السيارات للفعاليات",
     "صف السيارات للفنادق"
   ],
-  authors: [{ name: "OMNIRA Company Holding" }],
-  creator: "OMNIRA Company Holding",
-  publisher: "OMNIRA Company Holding",
+  authors: [{ name: "Omnira Valet" }],
+  creator: "Omnira Valet",
+  publisher: "Omnira Valet",
   robots: {
     index: true,
     follow: true,
@@ -79,21 +79,21 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ar_SA',
     url: 'https://omnira.skywaveads.com',
-    title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
+    title: 'Omnira Valet | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [
       {
         url: '/favicon.png',
         width: 800,
         height: 800,
-        alt: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية في السعودية',
+        alt: 'Omnira Valet | خدمات صف السيارات الاحترافية في السعودية',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
+    title: 'Omnira Valet | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
     images: ['/favicon.png'],
   },

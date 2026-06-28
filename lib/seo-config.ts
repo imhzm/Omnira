@@ -1,6 +1,6 @@
 // SEO Configuration
 export const siteConfig = {
-  name: 'OMNIRA - أومنيرا',
+  name: 'Omnira Valet',
   description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية (Valet Parking) والإدارة الذكية للمواقف. نساهم في تحقيق رؤية المملكة 2030 من خلال حلول متطورة لقطاع الضيافة والسياحة في جميع مدن المملكة.',
   url: 'https://omnira.skywaveads.com',
   ogImage: 'https://omnira.skywaveads.com/og-image.jpg',
@@ -10,7 +10,7 @@ export const siteConfig = {
     instagram: 'https://instagram.com/omnira.sa',
     linkedin: 'https://linkedin.com/company/omnira',
   },
-  creator: 'OMNIRA Company Holding',
+  creator: 'Omnira Valet',
   registrationNumber: '7051975600',
   address: {
     streetAddress: 'عبدالرحمن الشعيبي، حي الروضة',
@@ -59,7 +59,7 @@ export const jsonLdOrganization = {
   '@type': 'LocalBusiness',
   '@id': `${siteConfig.url}/#organization`,
   name: siteConfig.name,
-  alternateName: 'OMNIRA Valet Parking',
+  alternateName: 'Omnira Valet',
   description: siteConfig.description,
   url: siteConfig.url,
   logo: `${siteConfig.url}/logo.png`,

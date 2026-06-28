@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمة توفير جولف كار | OMNIRA - عربات جولف كهربائية للمواقف في السعودية',
+  title: 'خدمة توفير جولف كار | Omnira Valet - عربات جولف كهربائية للمواقف في السعودية',
   description: 'خدمة توفير عربات جولف كهربائية (Golf Cart) لتسهيل تنقل العملاء داخل المواقف الكبيرة والمراكز التجارية والفنادق. حل مريح وآمن وصديق للبيئة يحسن تجربة العملاء. عربات حديثة، سائقين مدربين، خدمة نقل داخلي، صيانة دورية. للمولات، الفعاليات، المنتجعات، المستشفيات. نخدم جميع مدن السعودية. احجز خدمتك!',
   keywords: [
     'جولف كار',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'جولف كار للفنادق',
     'internal transport',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/golf-cart',
   },
   openGraph: {
-    title: 'خدمة جولف كار | OMNIRA - عربات كهربائية للنقل الداخلي في المواقف',
+    title: 'خدمة جولف كار | Omnira Valet - عربات كهربائية للنقل الداخلي في المواقف',
     description: 'عربات جولف كهربائية حديثة مع سائقين مدربين. حل مريح وصديق للبيئة للمواقف الكبيرة',
     url: 'https://omnira.skywaveads.com/services/golf-cart',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-golf-cart.jpg',
       width: 1200,
       height: 630,
-      alt: 'خدمة توفير جولف كار من أومنيرا',
+      alt: 'خدمة توفير جولف كار من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'خدمة جولف كار | OMNIRA',
+    title: 'خدمة جولف كار | Omnira Valet',
     description: 'عربات جولف كهربائية للنقل الداخلي - حل مريح وصديق للبيئة',
     images: ['https://omnira.skywaveads.com/og-golf-cart.jpg'],
   },
@@ -64,7 +64,7 @@ export default function GolfCartPage() {
     
     overview: {
       title: 'راحة ورفاهية في التنقل داخل المواقف',
-      description: `في المواقف الكبيرة والمترامية الأطراف، قد يضطر العملاء للمشي مسافات طويلة تصل أحياناً لمئات الأمتار من سيارتهم إلى وجهتهم. هذا يمثل تحدياً خاصاً لكبار السن، ذوي الإعاقة، العائلات بأطفال صغار، أو الأشخاص الذين يحملون أمتعة ثقيلة. في أومنيرا، نقدم حلاً عملياً ومريحاً من خلال خدمة توفير عربات الجولف الكهربائية (Golf Carts).
+      description: `في المواقف الكبيرة والمترامية الأطراف، قد يضطر العملاء للمشي مسافات طويلة تصل أحياناً لمئات الأمتار من سيارتهم إلى وجهتهم. هذا يمثل تحدياً خاصاً لكبار السن، ذوي الإعاقة، العائلات بأطفال صغار، أو الأشخاص الذين يحملون أمتعة ثقيلة. في أومنيرا فاليه، نقدم حلاً عملياً ومريحاً من خلال خدمة توفير عربات الجولف الكهربائية (Golf Carts).
 
 عربات الجولف ليست مجرد وسيلة نقل؛ بل هي لمسة رفاهية تحول التجربة المملة للمشي في موقف واسع إلى رحلة مريحة وسريعة. خدمتنا تشمل توفير أسطول من عربات الجولف الحديثة والمريحة، مع سائقين مدربين يعملون على مدار ساعات التشغيل لنقل العملاء من وإلى سياراتهم بسلاسة وأمان.
 

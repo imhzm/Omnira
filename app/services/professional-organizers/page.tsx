@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'منظمين مواقف محترفين | OMNIRA - فريق مدرب لتنظيم المواقف في السعودية',
+  title: 'منظمين مواقف محترفين | Omnira Valet - فريق مدرب لتنظيم المواقف في السعودية',
   description: 'نوفر منظمين مواقف سيارات محترفين ومدربين بأعلى المعايير. فريق متخصص لتنظيم حركة المرور، توجيه المركبات، إدارة التدفق، خدمة العملاء، والأمان. مظهر احترافي، زي موحد، تدريب مستمر. للفعاليات، الفنادق، المولات، المستشفيات. نخدم جميع مدن السعودية. احجز فريقك الآن!',
   keywords: [
     'منظمين مواقف',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'trained parking organizers',
     'professional parking team',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/professional-organizers',
   },
   openGraph: {
-    title: 'منظمين مواقف محترفين | OMNIRA - فريق مدرب بأعلى المعايير',
+    title: 'منظمين مواقف محترفين | Omnira Valet - فريق مدرب بأعلى المعايير',
     description: 'فريق منظمين مواقف محترفين: تنظيم الحركة، توجيه المركبات، خدمة عملاء، أمان كامل',
     url: 'https://omnira.skywaveads.com/services/professional-organizers',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-professional-organizers.jpg',
       width: 1200,
       height: 630,
-      alt: 'فريق منظمين مواقف محترفين من أومنيرا',
+      alt: 'فريق منظمين مواقف محترفين من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'منظمين مواقف محترفين | OMNIRA',
+    title: 'منظمين مواقف محترفين | Omnira Valet',
     description: 'فريق مدرب لتنظيم المواقف وإدارة الحركة بكفاءة واحترافية',
     images: ['https://omnira.skywaveads.com/og-professional-organizers.jpg'],
   },
@@ -64,7 +64,7 @@ export default function ProfessionalOrganizersPage() {
     
     overview: {
       title: 'منظمون محترفون لإدارة سلسة للحركة',
-      description: `العنصر البشري يبقى حجر الأساس في تقديم خدمة استثنائية، مهما تطورت التقنيات. في أومنيرا، نفهم أن وجود فريق من المنظمين المحترفين المدربين جيداً هو ما يحدث الفرق الحقيقي في تجربة المستخدم وكفاءة العمليات داخل مواقف السيارات.
+      description: `العنصر البشري يبقى حجر الأساس في تقديم خدمة استثنائية، مهما تطورت التقنيات. في أومنيرا فاليه، نفهم أن وجود فريق من المنظمين المحترفين المدربين جيداً هو ما يحدث الفرق الحقيقي في تجربة المستخدم وكفاءة العمليات داخل مواقف السيارات.
 
 منظمونا ليسوا مجرد موظفين يوجهون السيارات؛ بل هم سفراء لمنشأتك، يمثلون صورتها ويتفاعلون مباشرة مع عملائك. لذلك، نحرص على اختيار أفضل الكوادر وتدريبهم تدريباً مكثفاً على جميع جوانب العمل، من مهارات التنظيم والتوجيه، إلى خدمة العملاء المتميزة، إلى بروتوكولات السلامة والطوارئ.
 

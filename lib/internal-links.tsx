@@ -35,9 +35,9 @@ export type CityKey = 'riyadh' | 'jeddah' | 'dammam' | 'makkah' | 'madinah';
 
 // معلومات عن روابط الصفحات الرئيسية
 export const mainPageLinks: Record<MainPageKey, LinkInfo> = {
-  home: { href: '/', title: 'الرئيسية', description: 'الصفحة الرئيسية لشركة أومنيرا' },
-  about: { href: '/about', title: 'من نحن', description: 'تعرف على شركة أومنيرا وخدماتها في مجال صف السيارات' },
-  services: { href: '/services', title: 'خدماتنا', description: 'خدمات صف السيارات والفاليه باركينج من أومنيرا' },
+  home: { href: '/', title: 'الرئيسية', description: 'الصفحة الرئيسية لشركة أومنيرا فاليه' },
+  about: { href: '/about', title: 'من نحن', description: 'تعرف على شركة أومنيرا فاليه وخدماتها في مجال صف السيارات' },
+  services: { href: '/services', title: 'خدماتنا', description: 'خدمات صف السيارات والفاليه باركينج من أومنيرا فاليه' },
   pricing: { href: '/pricing', title: 'الأسعار والباقات', description: 'باقات وأسعار خدمات الفاليه باركينج وإدارة المواقف' },
   locations: { href: '/locations', title: 'المدن والمناطق', description: 'خدماتنا متوفرة في جميع مدن المملكة' },
   contact: { href: '/contact', title: 'اتصل بنا', description: 'تواصل معنا للحصول على خدماتنا أو استفسارات' },
@@ -45,7 +45,7 @@ export const mainPageLinks: Record<MainPageKey, LinkInfo> = {
 
 // روابط صفحات الخدمات
 export const serviceLinks: Record<ServiceKey, LinkInfo> = {
-  valetParking: { href: '/services/valet-parking', title: 'خدمة الفاليه باركينج', description: 'خدمة صف السيارات الاحترافية من أومنيرا' },
+  valetParking: { href: '/services/valet-parking', title: 'خدمة الفاليه باركينج', description: 'خدمة صف السيارات الاحترافية من أومنيرا فاليه' },
   parkingManagement: { href: '/services/parking-management', title: 'إدارة المواقف', description: 'حلول شاملة لإدارة مواقف السيارات والتحكم بها' },
   hotels: { href: '/services/hotels', title: 'خدمات الفنادق', description: 'خدمات فاليه باركينج للفنادق والمنتجعات' },
   restaurants: { href: '/services/restaurants', title: 'خدمات المطاعم', description: 'خدمات فاليه باركينج للمطاعم والمقاهي' },

@@ -257,7 +257,7 @@ export default function RelatedLinks({
       {
         title: 'خدماتنا في الدمام',
         href: '/locations/dammam',
-        description: 'خدمات أومنيرا في الدمام والمنطقة الشرقية',
+        description: 'خدمات أومنيرا فاليه في الدمام والمنطقة الشرقية',
         category: 'locations',
         importance: 'primary',
       },
@@ -294,7 +294,7 @@ export default function RelatedLinks({
       {
         title: 'من نحن',
         href: '/about',
-        description: 'تعرف على شركة أومنيرا وتاريخها',
+        description: 'تعرف على شركة أومنيرا فاليه وتاريخها',
         category: 'about',
         importance: 'secondary',
       },

@@ -1,6 +1,6 @@
 {
-  "name": "أومنيرا - خدمات صف السيارات الاحترافية في السعودية",
-  "short_name": "أومنيرا",
+  "name": "Omnira Valet | خدمات صف السيارات الاحترافية في السعودية",
+  "short_name": "Omnira Valet",
   "description": "خدمات الفاليه باركينج وإدارة المواقف الذكية في المملكة العربية السعودية",
   "start_url": "/",
   "display": "standalone",
@@ -87,13 +87,13 @@
       "src": "/screenshots/home-screenshot.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "label": "الصفحة الرئيسية لشركة أومنيرا"
+      "label": "الصفحة الرئيسية لشركة أومنيرا فاليه"
     },
     {
       "src": "/screenshots/services-screenshot.png",
       "sizes": "1080x1920",
       "type": "image/png",
-      "label": "خدمات أومنيرا المتنوعة"
+      "label": "خدمات أومنيرا فاليه المتنوعة"
     }
   ],
   "related_applications": [

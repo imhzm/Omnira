@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمات الفاليه باركينج للمستشفيات والمراكز الطبية | OMNIRA - أولوية قصوى للطوارئ 24/7',
+  title: 'خدمات الفاليه باركينج للمستشفيات والمراكز الطبية | Omnira Valet - أولوية قصوى للطوارئ 24/7',
   description: 'خدمات فاليه باركينج متخصصة للمستشفيات والمراكز الطبية في السعودية. نخفف الضغط على المرضى وعائلاتهم. أولوية قصوى لحالات الطوارئ، استجابة فورية على مدار الساعة، فريق متعاطف مدرب على الحساسية، دعم خاص لكبار السن وذوي الإعاقة، مساعدة الكراسي المتحركة، تنسيق مباشر مع قسم الطوارئ، نظام استدعاء سريع، معايير نظافة عالية. نخدم مستشفيات الرياض، جدة، الدمام، مكة، المدينة. خدمة 24/7/365. عقود مرنة للمستشفيات الحكومية والخاصة.',
   keywords: [
     'فاليه باركينج للمستشفيات',
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     'إدارة مواقف المستشفيات',
     'تخفيف ضغط المرضى',
   ],
-  authors: [{ name: 'OMNIRA Healthcare Services', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/hospitals',
   },
   openGraph: {
-    title: 'خدمات الفاليه للمستشفيات | OMNIRA - راحة المرضى أولويتنا',
+    title: 'خدمات الفاليه للمستشفيات | Omnira Valet - راحة المرضى أولويتنا',
     description: 'خدمة حساسة 24/7 - أولوية للطوارئ، دعم ذوي الإعاقة، فريق متعاطف - نخفف الضغط',
     url: 'https://omnira.skywaveads.com/services/hospitals',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-hospitals.jpg',
       width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'فاليه متخصص للمستشفيات | OMNIRA',
+    title: 'فاليه متخصص للمستشفيات | Omnira Valet',
     description: 'خدمة حساسة 24/7 - أولوية طوارئ، دعم خاص، فريق متعاطف',
     images: ['https://omnira.skywaveads.com/og-hospitals.jpg'],
   },

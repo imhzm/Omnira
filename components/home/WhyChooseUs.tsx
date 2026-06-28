@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
           </motion.div>
 
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            <span className="gold-shine-effect">لماذا تختار أومنيرا؟</span>
+            <span className="gold-shine-effect">لماذا تختار أومنيرا فاليه؟</span>
           </h2>
           <p className="text-brown-dark text-lg md:text-xl max-w-3xl mx-auto font-medium">
             نجمع بين <span className="text-sage-primary font-bold">الخبرة الواسعة</span>، <span className="text-accents-sky font-bold">التقنية المتقدمة</span>، والالتزام بأعلى معايير الجودة

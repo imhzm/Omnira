@@ -34,7 +34,7 @@ const StorySection = () => {
             <div className="relative h-96 rounded-2xl overflow-hidden">
               <Image
                 src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070"
-                alt="مقر شركة أومنيرا"
+                alt="مقر شركة أومنيرا فاليه"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -50,13 +50,13 @@ const StorySection = () => {
             <h2 className="text-4xl font-bold mb-6 gold-shine-effect">قصتنا</h2>
             <div className="space-y-4 text-brown-text leading-relaxed">
               <p>
-                تأسست <span className="text-sage-primary font-bold">أومنيرا (OMNIRA)</span> برؤية واضحة: 
+                تأسست <span className="text-sage-primary font-bold">أومنيرا فاليه (Omnira Valet)</span> برؤية واضحة:
                 تحويل صناعة صف السيارات في المملكة من خدمة عادية إلى تجربة فاخرة لا تُنسى.
               </p>
               <p>
                 نؤمن بأن كل تفصيل مهم، من اللحظة التي يصل فيها الضيف إلى لحظة مغادرته. 
                 فريقنا المدرب بعناية، وأنظمتنا التقنية المتطورة، وشغفنا بالتميز، كلها عناصر 
-                تجعل OMNIRA الخيار الأول للفنادق الفاخرة، المطاعم الراقية، والمنشآت الكبرى.
+                تجعل Omnira Valet الخيار الأول للفنادق الفاخرة، المطاعم الراقية، والمنشآت الكبرى.
               </p>
               <p>
                 <strong className="text-sage-primary">السجل التجاري:</strong> 7051975600<br/>

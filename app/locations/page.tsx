@@ -14,8 +14,8 @@ const InteractiveMap = dynamic(
 );
 
 export const metadata: Metadata = {
-  title: 'المدن التي نخدمها | OMNIRA - خدمات فاليه باركينج في 150+ مدينة سعودية',
-  description: 'خدمات صف السيارات والفاليه باركينج من أومنيرا متوفرة في أكثر من 150 مدينة سعودية. خدماتنا تغطي الرياض، جدة، الدمام، مكة المكرمة، المدينة المنورة، الخبر، الطائف، تبوك، أبها، وجميع مدن المملكة. فريق محترف متواجد في كل منطقة.',
+  title: 'المدن التي نخدمها | Omnira Valet - خدمات فاليه باركينج في 150+ مدينة سعودية',
+  description: 'خدمات صف السيارات والفاليه باركينج من أومنيرا فاليه متوفرة في أكثر من 150 مدينة سعودية. خدماتنا تغطي الرياض، جدة، الدمام، مكة المكرمة، المدينة المنورة، الخبر، الطائف، تبوك، أبها، وجميع مدن المملكة. فريق محترف متواجد في كل منطقة.',
   keywords: [
     'مدن السعودية',
     'خدمات صف سيارات الرياض',
@@ -33,23 +33,23 @@ export const metadata: Metadata = {
     'صف سيارات تبوك',
     'فاليه باركينج السعودية',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/locations',
   },
   openGraph: {
-    title: 'المدن التي نخدمها | OMNIRA - تغطية شاملة لـ 150+ مدينة سعودية',
+    title: 'المدن التي نخدمها | Omnira Valet - تغطية شاملة لـ 150+ مدينة سعودية',
     description: 'خدمات صف السيارات في جميع مدن السعودية: الرياض، جدة، الدمام، مكة، المدينة، الخبر، الطائف، وأكثر',
     url: 'https://omnira.skywaveads.com/locations',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [getOGImage('locations')],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'المدن التي نخدمها | OMNIRA',
+    title: 'المدن التي نخدمها | Omnira Valet',
     description: '150+ مدينة سعودية - خدمات صف السيارات والفاليه في جميع أنحاء المملكة',
     images: [getOGImage('locations').url],
     creator: '@omnira_sa',
@@ -85,7 +85,7 @@ export default function LocationsPage() {
   const locationsSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
-    'name': 'أومنيرا',
+    'name': 'Omnira Valet',
     'url': 'https://omnira.skywaveads.com/locations',
     'areaServed': [
       {

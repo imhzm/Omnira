@@ -3,9 +3,9 @@ export const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   '@id': 'https://omnira.skywaveads.com/#business',
-  name: 'OMNIRA - أومنيرا للخدمات',
-  alternateName: 'OMNIRA Company Holding',
-  description: 'شركة أومنيرا الرائدة في تقديم خدمات الفاليه باركينج وإدارة مواقف السيارات في المملكة العربية السعودية. نوفر حلولاً احترافية للفنادق، المطاعم، الفعاليات، والمنشآت التجارية.',
+  name: 'Omnira Valet',
+  alternateName: 'Omnira Valet',
+  description: 'شركة أومنيرا فاليه الرائدة في تقديم خدمات الفاليه باركينج وإدارة مواقف السيارات في المملكة العربية السعودية. نوفر حلولاً احترافية للفنادق، المطاعم، الفعاليات، والمنشآت التجارية.',
   
   url: 'https://omnira.skywaveads.com',
   logo: 'https://omnira.skywaveads.com/logo.png',
@@ -91,7 +91,7 @@ export const localBusinessSchema = {
   // الخدمات المقدمة
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'خدمات أومنيرا',
+    name: 'خدمات أومنيرا فاليه',
     itemListElement: [
       {
         '@type': 'Offer',
@@ -154,7 +154,7 @@ export const localBusinessSchema = {
 
   // معلومات الشركة
   foundingDate: '2020',
-  legalName: 'OMNIRA Company Holding',
+  legalName: 'Omnira Valet',
   taxID: '7051975600',
   
   // الكلمات المفتاحية
@@ -166,8 +166,8 @@ export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   '@id': 'https://omnira.skywaveads.com/#organization',
-  name: 'OMNIRA Company Holding',
-  alternateName: 'أومنيرا',
+  name: 'Omnira Valet',
+  alternateName: 'Omnira Valet',
   url: 'https://omnira.skywaveads.com',
   logo: 'https://omnira.skywaveads.com/logo.png',
   
@@ -289,11 +289,11 @@ export function generateArticleSchema(article: {
     dateModified: article.dateModified || article.datePublished,
     author: {
       '@type': 'Organization',
-      name: article.author || 'OMNIRA Company Holding'
+      name: article.author || 'Omnira Valet'
     },
     publisher: {
       '@type': 'Organization',
-      name: article.publisher || 'OMNIRA Company Holding',
+      name: article.publisher || 'Omnira Valet',
       logo: {
         '@type': 'ImageObject',
         url: 'https://omnira.skywaveads.com/logo.png'
@@ -348,7 +348,7 @@ export function generateProductSchema(product: {
     image: product.image,
     brand: {
       '@type': 'Brand',
-      name: product.brand || 'OMNIRA'
+      name: product.brand || 'Omnira Valet'
     },
     category: product.category,
     offers: product.price ? {
@@ -359,7 +359,7 @@ export function generateProductSchema(product: {
       url: 'https://omnira.skywaveads.com/services',
       seller: {
         '@type': 'Organization',
-        name: 'OMNIRA Company Holding'
+        name: 'Omnira Valet'
       }
     } : undefined
   };

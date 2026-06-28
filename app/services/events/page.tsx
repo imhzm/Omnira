@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمات صف السيارات للفعاليات والمؤتمرات | OMNIRA - Valet Parking احترافي',
+  title: 'خدمات صف السيارات للفعاليات والمؤتمرات | Omnira Valet - Valet Parking احترافي',
   description: 'خدمات فاليه باركينج احترافية للفعاليات والمناسبات الكبرى في السعودية. نخدم حفلات الزفاف (300+ ضيف)، المؤتمرات الدولية، المعارض التجارية، حفلات الافتتاح. فريق من 8-12 سائق محترف، تخطيط مسبق دقيق، نظام تذاكر QR إلكتروني، تأمين شامل. خدماتنا في الرياض، جدة، الدمام، مكة، المدينة. نضمن تدفق سلس بدون اختناقات مرورية. أسعار تنافسية تبدأ من 2,500 ريال. احجز الآن واحصل على استشارة مجانية!',
   keywords: [
     'صف سيارات للفعاليات',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'فريق فاليه محترف للمناسبات',
     'أسعار فاليه باركينج الفعاليات',
   ],
-  authors: [{ name: 'OMNIRA Valet Services', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/events',
   },
   openGraph: {
-    title: 'خدمات صف السيارات للفعاليات | OMNIRA - نجاح فعاليتك يبدأ من هنا',
+    title: 'خدمات صف السيارات للفعاليات | Omnira Valet - نجاح فعاليتك يبدأ من هنا',
     description: 'فاليه باركينج احترافي لحفلات الزفاف، المؤتمرات، المعارض. فريق محترف، تخطيط مسبق، أسعار تنافسية',
     url: 'https://omnira.skywaveads.com/services/events',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-events.jpg',
       width: 1200,
       height: 630,
-      alt: 'خدمات صف السيارات للفعاليات من أومنيرا',
+      alt: 'خدمات صف السيارات للفعاليات من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'فاليه باركينج للفعاليات | OMNIRA',
+    title: 'فاليه باركينج للفعاليات | Omnira Valet',
     description: 'خدمات احترافية للحفلات والمؤتمرات - فريق محترف، تخطيط دقيق، أسعار تنافسية',
     images: ['https://omnira.skywaveads.com/og-events.jpg'],
   },
@@ -66,7 +66,7 @@ export default function EventsPage() {
     
     overview: {
       title: 'خدمة صف سيارات استثنائية تليق بفعاليتك الخاصة',
-      description: `الفعاليات الناجحة تبدأ من اللحظة التي يصل فيها ضيوفك. في أومنيرا، نفهم أن إدارة مواقف السيارات في الفعاليات الكبيرة يمكن أن تكون تحدياً، ولهذا نقدم حلولاً شاملة ومخصصة لضمان تجربة سلسة ومريحة لجميع الحضور.
+      description: `الفعاليات الناجحة تبدأ من اللحظة التي يصل فيها ضيوفك. في أومنيرا فاليه، نفهم أن إدارة مواقف السيارات في الفعاليات الكبيرة يمكن أن تكون تحدياً، ولهذا نقدم حلولاً شاملة ومخصصة لضمان تجربة سلسة ومريحة لجميع الحضور.
 
 سواء كنت تنظم حفل زفاف فاخر، مؤتمر دولي، معرض تجاري، حفل افتتاح، أو أي مناسبة خاصة، فريقنا المحترف جاهز لإدارة جميع جوانب صف السيارات بكفاءة وسلاسة. نقدم تخطيطاً مسبقاً دقيقاً، سائقين محترفين، وأنظمة تتبع متقدمة تضمن أن كل ضيف يجد سيارته في انتظاره عندما يحين وقت المغادرة.
 

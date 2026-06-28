@@ -134,7 +134,7 @@ const ContactInfo = () => {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="موقع OMNIRA على الخريطة"
+            title="موقع أومنيرا فاليه على الخريطة"
             className="absolute inset-0"
           />
         </div>

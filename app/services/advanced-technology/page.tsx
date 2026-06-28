@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'تقنيات متقدمة لإدارة المواقف | OMNIRA - أنظمة ذكية وحلول تقنية مبتكرة',
+  title: 'تقنيات متقدمة لإدارة المواقف | Omnira Valet - أنظمة ذكية وحلول تقنية مبتكرة',
   description: 'أحدث التقنيات الذكية لإدارة مواقف السيارات في السعودية. أنظمة ANPR للتعرف على اللوحات، إرشاد ذكي، IoT، استشعار، كاميرات مراقبة، دفع إلكتروني، تطبيق موبايل، تقارير لحظية. حلول تقنية متطورة للمواقف التجارية والفنادق والمراكز. نخدم الرياض، جدة، الدمام. اطلب عرض تجريبي!',
   keywords: [
     'تقنيات إدارة المواقف',
@@ -26,28 +26,28 @@ export const metadata: Metadata = {
     'نظام حجز مواقف',
     'تقنيات مواقف متطورة',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/advanced-technology',
   },
   openGraph: {
-    title: 'تقنيات متقدمة لإدارة المواقف | OMNIRA - ANPR و IoT وأنظمة ذكية',
+    title: 'تقنيات متقدمة لإدارة المواقف | Omnira Valet - ANPR و IoT وأنظمة ذكية',
     description: 'أحدث التقنيات: ANPR، إرشاد ذكي، IoT، استشعار، كاميرات، دفع إلكتروني، تطبيقات موبايل',
     url: 'https://omnira.skywaveads.com/services/advanced-technology',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-advanced-technology.jpg',
       width: 1200,
       height: 630,
-      alt: 'التقنيات المتقدمة لإدارة المواقف من أومنيرا',
+      alt: 'التقنيات المتقدمة لإدارة المواقف من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'تقنيات ذكية للمواقف | OMNIRA',
+    title: 'تقنيات ذكية للمواقف | Omnira Valet',
     description: 'ANPR، IoT، أنظمة إرشاد، استشعار، دفع إلكتروني - حلول تقنية متطورة',
     images: ['https://omnira.skywaveads.com/og-advanced-technology.jpg'],
   },
@@ -65,7 +65,7 @@ export default function AdvancedTechnologyPage() {
     
     overview: {
       title: 'ثورة تقنية في إدارة مواقف السيارات',
-      description: `في عصر التحول الرقمي، لم تعد إدارة مواقف السيارات تعتمد على الأساليب التقليدية. في أومنيرا، نقود ثورة تقنية حقيقية في مجال إدارة المواقف من خلال تقديم أحدث الحلول التكنولوجية المتطورة التي تحول مواقف السيارات إلى مرافق ذكية ومتصلة بالكامل.
+      description: `في عصر التحول الرقمي، لم تعد إدارة مواقف السيارات تعتمد على الأساليب التقليدية. في أومنيرا فاليه، نقود ثورة تقنية حقيقية في مجال إدارة المواقف من خلال تقديم أحدث الحلول التكنولوجية المتطورة التي تحول مواقف السيارات إلى مرافق ذكية ومتصلة بالكامل.
 
 نحن نؤمن بأن التكنولوجيا ليست رفاهية، بل ضرورة في عالم اليوم. لذلك، نوفر مجموعة شاملة من الأنظمة والتقنيات المتقدمة التي تغطي كل جانب من جوانب إدارة المواقف، من الدخول والخروج، إلى الإرشاد والتوجيه، إلى الدفع والمراقبة، وصولاً إلى التحليلات والتقارير المتقدمة.
 

@@ -6,8 +6,8 @@ import ServiceContent from '@/components/services/ServiceContent';
 import { generateServiceSchema, generateFAQSchema } from '@/lib/seo-config';
 
 export const metadata: Metadata = {
-  title: 'خدمات الفاليه باركينج الفاخرة | OMNIRA - Valet Parking احترافي في السعودية',
-  description: 'خدمات فاليه باركينج (Valet Parking) فاخرة من أومنيرا للفنادق الـ 5 نجوم، المطاعم الراقية، الفعاليات الكبرى. فريق محترف مدرب، تأمين شامل، زي موحد أنيق، خدمة VIP استثنائية. نخدم الرياض، جدة، الدمام وجميع مدن المملكة. احجز الآن واحصل على انطباع أول لا يُنسى لعملائك!',
+  title: 'خدمات الفاليه باركينج الفاخرة | Omnira Valet - Valet Parking احترافي في السعودية',
+  description: 'خدمات فاليه باركينج (Valet Parking) فاخرة من أومنيرا فاليه للفنادق الـ 5 نجوم، المطاعم الراقية، الفعاليات الكبرى. فريق محترف مدرب، تأمين شامل، زي موحد أنيق، خدمة VIP استثنائية. نخدم الرياض، جدة، الدمام وجميع مدن المملكة. احجز الآن واحصل على انطباع أول لا يُنسى لعملائك!',
   keywords: [
     'فاليه باركينج',
     'valet parking',
@@ -29,28 +29,28 @@ export const metadata: Metadata = {
     'استقبال السيارات الفاخرة',
     'خدمة VIP valet',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/valet-parking',
   },
   openGraph: {
-    title: 'خدمات الفاليه باركينج الفاخرة | OMNIRA - انطباع أول مميز',
+    title: 'خدمات الفاليه باركينج الفاخرة | Omnira Valet - انطباع أول مميز',
     description: 'فاليه باركينج احترافي للفنادق والمطاعم والفعاليات. فريق مدرب، تأمين شامل، خدمة 24/7',
     url: 'https://omnira.skywaveads.com/services/valet-parking',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-valet-parking.jpg',
       width: 1200,
       height: 630,
-      alt: 'خدمات الفاليه باركينج الفاخرة من أومنيرا',
+      alt: 'خدمات الفاليه باركينج الفاخرة من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'فاليه باركينج فاخر | OMNIRA',
+    title: 'فاليه باركينج فاخر | Omnira Valet',
     description: 'خدمات valet parking احترافية للفنادق والمطاعم والفعاليات في السعودية',
     images: ['https://omnira.skywaveads.com/og-valet-parking.jpg'],
   },
@@ -71,7 +71,7 @@ export default function ValetParkingPage() {
     "serviceType": "Valet Parking",
     "provider": {
       "@type": "Organization",
-      "name": "OMNIRA",
+      "name": "Omnira Valet",
       "url": "https://omnira.skywaveads.com",
       "logo": "https://omnira.skywaveads.com/logo.png",
       "contactPoint": {
@@ -152,7 +152,7 @@ export default function ValetParkingPage() {
     
     overview: {
       title: 'خدمة فاليه باركينج احترافية تليق بعملائك',
-      description: `خدمة الفاليه باركينج (Valet Parking) ليست مجرد إيقاف للسيارات، بل هي تجربة فاخرة تبدأ من اللحظة الأولى التي يصل فيها ضيفك أو عميلك إلى موقعك. في أومنيرا، نفهم تماماً أن الانطباع الأول يدوم، ولهذا نحرص على تقديم خدمة فاليه باركينج استثنائية تعكس مستوى الرقي والاحترافية التي تتميز بها منشأتك.
+      description: `خدمة الفاليه باركينج (Valet Parking) ليست مجرد إيقاف للسيارات، بل هي تجربة فاخرة تبدأ من اللحظة الأولى التي يصل فيها ضيفك أو عميلك إلى موقعك. في أومنيرا فاليه، نفهم تماماً أن الانطباع الأول يدوم، ولهذا نحرص على تقديم خدمة فاليه باركينج استثنائية تعكس مستوى الرقي والاحترافية التي تتميز بها منشأتك.
 
 فريقنا من السائقين المحترفين مدرب على أعلى مستوى في فن استقبال الضيوف وخدمة العملاء. كل سائق يرتدي زياً موحداً أنيقاً ويتمتع بمهارات قيادة متقدمة ومعرفة تامة ببروتوكولات السلامة والأمان. نحن لا نقوم فقط بإيقاف السيارات؛ بل نخلق تجربة سلسة وراقية تجعل ضيوفك يشعرون بالتقدير والاهتمام من اللحظة الأولى.
 

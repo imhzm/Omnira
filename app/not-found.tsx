@@ -5,7 +5,7 @@ import Footer from '@/components/layout/Footer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'الصفحة غير موجودة | أومنيرا - لم يتم العثور على الصفحة المطلوبة',
+  title: 'الصفحة غير موجودة | أومنيرا فاليه - لم يتم العثور على الصفحة المطلوبة',
   description: 'لم يتم العثور على الصفحة التي تبحث عنها. يمكنك العودة للصفحة الرئيسية أو استعراض خدماتنا في صف السيارات والفاليه باركينج وإدارة المواقف.',
   robots: {
     index: false,

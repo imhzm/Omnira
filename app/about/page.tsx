@@ -7,8 +7,8 @@ import { generateArticleSchema } from '@/lib/seo-config';
 import { getOGImage } from '@/lib/og-images';
 
 export const metadata: Metadata = {
-  title: 'من نحن - قصة أومنيرا | OMNIRA - شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
-  description: 'تعرف على قصة أومنيرا OMNIRA، الشركة السعودية الرائدة في خدمات الفاليه باركينج وإدارة مواقف السيارات. نساهم في تحقيق رؤية 2030 من خلال تقديم خدمات متطورة لقطاع الضيافة والسياحة. قيمنا: الاحترافية، الأمانة، التميز، والابتكار.',
+  title: 'من نحن - قصة أومنيرا فاليه | Omnira Valet - شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
+  description: 'تعرف على قصة أومنيرا فاليه، الشركة السعودية الرائدة في خدمات الفاليه باركينج وإدارة مواقف السيارات. نساهم في تحقيق رؤية 2030 من خلال تقديم خدمات متطورة لقطاع الضيافة والسياحة. قيمنا: الاحترافية، الأمانة، التميز، والابتكار.',
   keywords: [
     'من نحن أومنيرا',
     'OMNIRA company',
@@ -26,9 +26,9 @@ export const metadata: Metadata = {
     'about us valet parking',
     'parking management company Saudi Arabia',
   ],
-  authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.skywaveads.com' }],
-  creator: 'OMNIRA Company Holding',
-  publisher: 'OMNIRA Company Holding',
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
+  creator: 'Omnira Valet',
+  publisher: 'Omnira Valet',
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/about',
@@ -37,17 +37,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'من نحن - أومنيرا | قصة نجاح سعودية في صف السيارات',
+    title: 'من نحن - أومنيرا فاليه | قصة نجاح سعودية في صف السيارات',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. نساهم في تحقيق رؤية 2030. تعرف على قصتنا، رؤيتنا، قيمنا، وفريقنا المحترف.',
     url: 'https://omnira.skywaveads.com/about',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [getOGImage('about')],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'من نحن - أومنيرا | شركة سعودية رائدة في صف السيارات',
+    title: 'من نحن - أومنيرا فاليه | شركة سعودية رائدة في صف السيارات',
     description: 'قصة نجاح سعودية في خدمات الفاليه باركينج وإدارة المواقف',
     images: [getOGImage('about').url],
     creator: '@omnira_sa',
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   const articleSchema = generateArticleSchema({
-    title: 'من نحن - قصة أومنيرا',
-    description: 'تعرف على أومنيرا، الشركة السعودية الرائدة في خدمات صف السيارات الاحترافية',
+    title: 'من نحن - قصة أومنيرا فاليه',
+    description: 'تعرف على أومنيرا فاليه، الشركة السعودية الرائدة في خدمات صف السيارات الاحترافية',
     url: '/about',
     image: 'https://omnira.skywaveads.com/og-about.jpg',
     dateModified: new Date().toISOString(),

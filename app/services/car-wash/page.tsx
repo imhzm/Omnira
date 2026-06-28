@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمة غسيل السيارات | OMNIRA - تنظيف وتلميع السيارات في المواقف',
+  title: 'خدمة غسيل السيارات | Omnira Valet - تنظيف وتلميع السيارات في المواقف',
   description: 'خدمات غسيل وتنظيف السيارات الاحترافية في المواقف والمراكز التجارية. غسيل خارجي، تنظيف داخلي، تلميع، تشميع، تنظيف محرك، معطرات، وخدمات إضافية. جودة عالية، منتجات آمنة، فريق محترف، خدمة سريعة. للفنادق، المولات، الشركات، والمطارات. نخدم جميع مدن السعودية. احجز موعدك!',
   keywords: [
     'غسيل السيارات',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'car wash service',
     'mobile car wash',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/car-wash',
   },
   openGraph: {
-    title: 'خدمة غسيل السيارات | OMNIRA - تنظيف وتلميع احترافي في المواقف',
+    title: 'خدمة غسيل السيارات | Omnira Valet - تنظيف وتلميع احترافي في المواقف',
     description: 'غسيل خارجي، تنظيف داخلي، تلميع، تشميع - خدمات غسيل احترافية بأعلى جودة',
     url: 'https://omnira.skywaveads.com/services/car-wash',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-car-wash.jpg',
       width: 1200,
       height: 630,
-      alt: 'خدمة غسيل السيارات من أومنيرا',
+      alt: 'خدمة غسيل السيارات من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'خدمة غسيل السيارات | OMNIRA',
+    title: 'خدمة غسيل السيارات | Omnira Valet',
     description: 'غسيل وتنظيف وتلميع السيارات - خدمة احترافية سريعة وآمنة',
     images: ['https://omnira.skywaveads.com/og-car-wash.jpg'],
   },
@@ -64,7 +64,7 @@ export default function CarWashPage() {
     
     overview: {
       title: 'خدمة غسيل احترافية وأنت تتسوق',
-      description: `تخيل أن تعود لسيارتك بعد التسوق أو العمل أو تناول الطعام لتجدها نظيفة ولامعة دون أي جهد منك. هذا بالضبط ما نقدمه في أومنيرا من خلال خدمة غسيل السيارات المتكاملة داخل المواقف. نحول وقت وقوف سيارتك إلى وقت مفيد لتنظيفها والعناية بها، مما يوفر عليك عناء زيارة مراكز الغسيل المستقلة.
+      description: `تخيل أن تعود لسيارتك بعد التسوق أو العمل أو تناول الطعام لتجدها نظيفة ولامعة دون أي جهد منك. هذا بالضبط ما نقدمه في أومنيرا فاليه من خلال خدمة غسيل السيارات المتكاملة داخل المواقف. نحول وقت وقوف سيارتك إلى وقت مفيد لتنظيفها والعناية بها، مما يوفر عليك عناء زيارة مراكز الغسيل المستقلة.
 
 خدماتنا تشمل كل شيء من الغسيل السريع الخارجي، إلى التنظيف الداخلي الشامل، إلى التلميع والتشميع، إلى خدمات إضافية مثل تنظيف المحرك وتشطيب الإطارات. نستخدم أحدث المعدات، أفضل منتجات التنظيف المعتمدة، وفريق من الفنيين المدربين الذين يعاملون كل سيارة بعناية فائقة كأنها ملكهم.
 

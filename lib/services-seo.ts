@@ -280,7 +280,7 @@ export function generateServiceMetadata(serviceKey: keyof typeof servicesSEO) {
   const service = servicesSEO[serviceKey];
   
   return {
-    title: `${service.title} | OMNIRA - أومنيرا`,
+    title: `${service.title} | Omnira Valet`,
     description: service.description,
     keywords: [
       ...service.keywords,

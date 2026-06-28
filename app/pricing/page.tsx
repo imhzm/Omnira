@@ -10,8 +10,8 @@ import PricingComparison from '@/components/pricing/PricingComparison';
 import PricingCTA from '@/components/pricing/PricingCTA';
 
 export const metadata: Metadata = {
-  title: 'الأسعار والباقات | OMNIRA - باقات صف السيارات والفاليه باركينج بأسعار تنافسية',
-  description: 'أسعار وباقات خدمات صف السيارات والفاليه باركينج من أومنيرا في السعودية. باقات مرنة للفعاليات، الفنادق، المطاعم، المراكز التجارية، والشركات. خدمة VIP، باقات شهرية، عقود سنوية، وحلول مخصصة. أسعار تنافسية، جودة عالية، فريق محترف. اطلب عرض سعر مجاني الآن!',
+  title: 'الأسعار والباقات | Omnira Valet - باقات صف السيارات والفاليه باركينج بأسعار تنافسية',
+  description: 'أسعار وباقات خدمات صف السيارات والفاليه باركينج من أومنيرا فاليه في السعودية. باقات مرنة للفعاليات، الفنادق، المطاعم، المراكز التجارية، والشركات. خدمة VIP، باقات شهرية، عقود سنوية، وحلول مخصصة. أسعار تنافسية، جودة عالية، فريق محترف. اطلب عرض سعر مجاني الآن!',
   keywords: [
     'أسعار صف السيارات',
     'باقات الفاليه',
@@ -29,23 +29,23 @@ export const metadata: Metadata = {
     'باقات VIP',
     'أسعار خدمات المواقف',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/pricing',
   },
   openGraph: {
-    title: 'الأسعار والباقات | أومنيرا - باقات مرنة بأسعار تنافسية',
+    title: 'الأسعار والباقات | أومنيرا فاليه - باقات مرنة بأسعار تنافسية',
     description: 'باقات صف السيارات والفاليه: شهرية، سنوية، VIP، وحلول مخصصة. أسعار تنافسية وجودة عالية. قارن بين الباقات واختر ما يناسبك!',
     url: 'https://omnira.skywaveads.com/pricing',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [getOGImage('pricing')],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'الأسعار والباقات | أومنيرا',
+    title: 'الأسعار والباقات | أومنيرا فاليه',
     description: 'باقات مرنة للفاليه وصف السيارات - أسعار تنافسية وجودة عالية. احصل على عرض سعر الآن!',
     images: [getOGImage('pricing').url],
     creator: '@omnira_sa',
@@ -61,18 +61,18 @@ export default function PricingPage() {
   const pricingSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    'name': 'خدمات أومنيرا لصف السيارات',
+    'name': 'خدمات أومنيرا فاليه لصف السيارات',
     'description': 'خدمات فاليه باركينج وإدارة مواقف السيارات في المملكة العربية السعودية',
     'provider': {
       '@type': 'Organization',
-      'name': 'أومنيرا',
+      'name': 'Omnira Valet',
       'url': 'https://omnira.skywaveads.com'
     },
     'offers': [
       ...pricingData.map((plan, index) => ({
         '@type': 'Offer',
         'name': plan.title,
-        'description': `باقة ${plan.title} من أومنيرا`,
+        'description': `باقة ${plan.title} من أومنيرا فاليه`,
         'priceSpecification': {
           '@type': 'PriceSpecification',
           'price': plan.price.replace(/[^0-9]/g, ''),

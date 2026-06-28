@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'استشارات مواقف السيارات | OMNIRA - تخطيط وتصميم ودراسات جدوى',
+  title: 'استشارات مواقف السيارات | Omnira Valet - تخطيط وتصميم ودراسات جدوى',
   description: 'استشارات هندسية متخصصة لتخطيط وتصميم مواقف السيارات في السعودية. دراسات جدوى شاملة، تصاميم معمارية، تحسين السعة، تحليل التدفق، ترشيد الاستهلاك، واختيار التقنيات. حلول مبتكرة قبل البناء للمراكز التجارية، الفنادق، والمشاريع. خبراء معتمدين. احجز استشارة مجانية!',
   keywords: [
     'استشارات مواقف',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'استشارات مواقف الرياض',
     'تخطيط مواقف متطور',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/consultation',
   },
   openGraph: {
-    title: 'استشارات مواقف | OMNIRA - تخطيط وتصميم ودراسات جدوى متخصصة',
+    title: 'استشارات مواقف | Omnira Valet - تخطيط وتصميم ودراسات جدوى متخصصة',
     description: 'استشارات هندسية: تخطيط، تصميم، دراسات جدوى، تحليل تدفق، حلول مبتكرة',
     url: 'https://omnira.skywaveads.com/services/consultation',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-consultation.jpg',
       width: 1200,
       height: 630,
-      alt: 'استشارات مواقف السيارات من أومنيرا',
+      alt: 'استشارات مواقف السيارات من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'استشارات مواقف | OMNIRA',
+    title: 'استشارات مواقف | Omnira Valet',
     description: 'تخطيط وتصميم مواقف السيارات - دراسات جدوى وحلول هندسية',
     images: ['https://omnira.skywaveads.com/og-consultation.jpg'],
   },
@@ -64,7 +64,7 @@ export default function ConsultationPage() {
     
     overview: {
       title: 'استشارات هندسية احترافية لمواقف ناجحة',
-      description: `القرارات الصحيحة في مراحل التخطيط والتصميم تحدد نجاح أو فشل مشروع موقف السيارات للسنوات القادمة. في أومنيرا، نقدم خدمات استشارية هندسية شاملة تضمن أن مشروعك يبدأ على أسس صحيحة ومدروسة بعناية.
+      description: `القرارات الصحيحة في مراحل التخطيط والتصميم تحدد نجاح أو فشل مشروع موقف السيارات للسنوات القادمة. في أومنيرا فاليه، نقدم خدمات استشارية هندسية شاملة تضمن أن مشروعك يبدأ على أسس صحيحة ومدروسة بعناية.
 
 فريقنا الاستشاري يضم مهندسين معماريين، مهندسي مرور، مخططي مدن، ومتخصصي إدارة مواقف ذوي خبرة واسعة. نقدم رؤية متكاملة تجمع بين الجوانب الهندسية، التشغيلية، المالية، والتنظيمية.
 

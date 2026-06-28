@@ -43,7 +43,7 @@ const Footer = dynamic(() => import("@/components/layout/Footer"), {
 });
 
 export const metadata: Metadata = {
-  title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية والإدارة الذكية للمواقف في السعودية',
+  title: 'Omnira Valet | خدمات صف السيارات الاحترافية والإدارة الذكية للمواقف في السعودية',
   description: 'شركة سعودية رائدة في خدمات الفاليه باركينج (Valet Parking) والإدارة الذكية لمواقف السيارات. نساهم في تحقيق رؤية المملكة 2030 من خلال حلول متطورة لقطاع الضيافة والسياحة. نخدم الفنادق، المطاعم، المراكز التجارية، والفعاليات في جميع مدن المملكة. احجز الآن!',
   keywords: [
     'صف سيارات',
@@ -67,9 +67,9 @@ export const metadata: Metadata = {
     'رؤية المملكة 2030',
     'قطاع الضيافة والسياحة',
   ],
-  authors: [{ name: 'OMNIRA Company Holding', url: 'https://omnira.skywaveads.com' }],
-  creator: 'OMNIRA Company Holding',
-  publisher: 'OMNIRA Company Holding',
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
+  creator: 'Omnira Valet',
+  publisher: 'Omnira Valet',
   formatDetection: {
     email: false,
     address: false,
@@ -83,17 +83,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية في السعودية',
+    title: 'Omnira Valet | خدمات صف السيارات الاحترافية في السعودية',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف. حلول ذكية للفنادق، المطاعم، والمراكز التجارية في جميع مدن المملكة.',
     url: 'https://omnira.skywaveads.com',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [getOGImage('home')],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'OMNIRA - أومنيرا | خدمات صف السيارات الاحترافية',
+    title: 'Omnira Valet | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف الذكية',
     images: [getOGImage('home').url],
     creator: '@omnira_sa',

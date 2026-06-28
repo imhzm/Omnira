@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'حلول إدارة مواقف المراكز التجارية الذكية | OMNIRA - نظام متطور يزيد الإشغال 40%',
+  title: 'حلول إدارة مواقف المراكز التجارية الذكية | Omnira Valet - نظام متطور يزيد الإشغال 40%',
   description: 'نظام إدارة مواقف ذكي للمراكز التجارية والمولات الكبرى في السعودية. نزيد السعة الاستيعابية بنسبة 30-40% بدون توسعات، نقلل وقت البحث عن موقف 60%، شاشات LED توجيهية، تطبيق جوال للحجز المسبق، دفع إلكتروني متعدد، مراقبة 24/7، تقارير تحليلية فورية، أمن متقدم. نخدم مولات الرياض، جدة، الدمام، مكة. نحسّن تجربة التسوق ونزيد رضا الزوار. ROI مثبت خلال 12 شهر. استشارة مجانية وعرض توضيحي!',
   keywords: [
     'إدارة مواقف المراكز التجارية',
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     'إدارة مواقف احترافية',
     'تكنولوجيا مواقف متقدمة',
   ],
-  authors: [{ name: 'OMNIRA Smart Solutions', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/malls',
   },
   openGraph: {
-    title: 'حلول إدارة مواقف المراكز التجارية الذكية | OMNIRA - زيادة 40% في السعة',
+    title: 'حلول إدارة مواقف المراكز التجارية الذكية | Omnira Valet - زيادة 40% في السعة',
     description: 'نظام ذكي متطور - شاشات LED، تطبيق جوال، دفع إلكتروني، تقارير فورية - نحسّن تجربة التسوق',
     url: 'https://omnira.skywaveads.com/services/malls',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-malls.jpg',
       width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'نظام مواقف ذكي للمولات | OMNIRA',
+    title: 'نظام مواقف ذكي للمولات | Omnira Valet',
     description: 'زيادة السعة 40%، تقليل الازدحام، تحسين التجربة - حلول متطورة للمراكز التجارية',
     images: ['https://omnira.skywaveads.com/og-malls.jpg'],
   },
@@ -66,7 +66,7 @@ export default function MallsPage() {
     
     overview: {
       title: 'نظام إدارة مواقف ذكي يحول التحدي إلى ميزة تنافسية',
-      description: `إدارة مواقف المراكز التجارية الكبرى تحدٍ يومي يؤثر مباشرة على تجربة المتسوقين ورضاهم. في أومنيرا، نقدم حلولاً تقنية متقدمة تحول هذا التحدي إلى ميزة تنافسية قوية. نظامنا الذكي يجمع بين التكنولوجيا المتطورة والإدارة البشرية الاحترافية لضمان تجربة سلسة ومريحة لكل زائر.`,
+      description: `إدارة مواقف المراكز التجارية الكبرى تحدٍ يومي يؤثر مباشرة على تجربة المتسوقين ورضاهم. في أومنيرا فاليه، نقدم حلولاً تقنية متقدمة تحول هذا التحدي إلى ميزة تنافسية قوية. نظامنا الذكي يجمع بين التكنولوجيا المتطورة والإدارة البشرية الاحترافية لضمان تجربة سلسة ومريحة لكل زائر.`,
     },
 
     benefits: [

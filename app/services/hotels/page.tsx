@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمات الفاليه باركينج للفنادق 5 نجوم | OMNIRA - خدمة VIP متواصلة 24/7',
+  title: 'خدمات الفاليه باركينج للفنادق 5 نجوم | Omnira Valet - خدمة VIP متواصلة 24/7',
   description: 'خدمات فاليه باركينج فاخرة للفنادق 5 نجوم والمنتجعات السياحية في السعودية. خدمة متواصلة 24/7/365، سائقون محترفون مدربون على معايير الضيافة الفندقية، تكامل كامل مع أنظمة PMS (Opera, Fidelio)، زي موحد أنيق بشعار الفندق، خدمة VIP لكبار الشخصيات، نظام تتبع إلكتروني متقدم، تقارير يومية تفصيلية، تأمين شامل. نخدم فنادق الرياض، جدة، الدمام، مكة، المدينة. عقود شهرية وسنوية مرنة. احجز استشارة مجانية!',
   keywords: [
     'فاليه باركينج للفنادق',
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     'خدمات ضيافة فندقية',
     'عقود فاليه فنادق',
   ],
-  authors: [{ name: 'OMNIRA Hospitality Services', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/hotels',
   },
   openGraph: {
-    title: 'خدمات الفاليه باركينج للفنادق | OMNIRA - تجربة ضيافة استثنائية',
+    title: 'خدمات الفاليه باركينج للفنادق | Omnira Valet - تجربة ضيافة استثنائية',
     description: 'فاليه فندقي فاخر 24/7 - تكامل مع PMS، سائقون محترفون، خدمة VIP، تقارير تفصيلية',
     url: 'https://omnira.skywaveads.com/services/hotels',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-hotels.jpg',
       width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'فاليه فندقي فاخر 24/7 | OMNIRA',
+    title: 'فاليه فندقي فاخر 24/7 | Omnira Valet',
     description: 'خدمات احترافية للفنادق 5 نجوم - تكامل PMS، فريق مدرب، خدمة VIP',
     images: ['https://omnira.skywaveads.com/og-hotels.jpg'],
   },
@@ -66,7 +66,7 @@ export default function HotelsPage() {
     
     overview: {
       title: 'خدمة فاليه فندقية تعكس مستوى الرقي والضيافة',
-      description: `في صناعة الضيافة، الانطباع الأول يبقى إلى الأبد. من اللحظة التي يصل فيها ضيفك إلى بوابة الفندق، تبدأ تجربة الضيافة الحقيقية. في أومنيرا، نفهم تماماً أن خدمة الفاليه في الفنادق ليست مجرد إيقاف للسيارات، بل هي جزء أساسي من تجربة الضيف الشاملة وانعكاس مباشر لمستوى الفندق وعلامته التجارية.
+      description: `في صناعة الضيافة، الانطباع الأول يبقى إلى الأبد. من اللحظة التي يصل فيها ضيفك إلى بوابة الفندق، تبدأ تجربة الضيافة الحقيقية. في أومنيرا فاليه، نفهم تماماً أن خدمة الفاليه في الفنادق ليست مجرد إيقاف للسيارات، بل هي جزء أساسي من تجربة الضيف الشاملة وانعكاس مباشر لمستوى الفندق وعلامته التجارية.
 
 نقدم حلولاً شاملة ومتكاملة مصممة خصيصاً لتلبية المتطلبات الفريدة لصناعة الضيافة. خدماتنا متاحة 24 ساعة، 7 أيام في الأسبوع، مع فريق من السائقين المحترفين المدربين على أعلى معايير خدمة العملاء والضيافة الفندقية. كل سائق يرتدي زياً موحداً أنيقاً يتماشى مع هوية الفندق، ومدرب على بروتوكولات الاستقبال الراقي، التعامل مع جميع أنواع السيارات الفاخرة، وتقديم خدمة شخصية متميزة.
 

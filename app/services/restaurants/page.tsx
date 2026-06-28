@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمات الفاليه باركينج للمطاعم والكافيهات | OMNIRA - عزز تجربة عملائك',
+  title: 'خدمات الفاليه باركينج للمطاعم والكافيهات | Omnira Valet - عزز تجربة عملائك',
   description: 'خدمات فاليه باركينج احترافية للمطاعم الراقية والكافيهات الفاخرة في السعودية. عزز تجربة تناول الطعام، اجذب عملاء جدد، تميز عن المنافسين. خدمة سريعة في أوقات الذروة، سائقون مهذبون بزي موحد أنيق، أسعار تنافسية جداً، باقات مرنة (بدوام كامل أو أوقات محددة)، خدمات إضافية (غسيل سريع، ملء وقود). نخدم مطاعم الرياض، جدة، الدمام، مكة. باقات من 3,000 ريال شهرياً. استشارة وزيارة موقع مجانية!',
   keywords: [
     'فاليه باركينج للمطاعم',
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     'عقود فاليه مطاعم',
     'حل مشكلة مواقف المطاعم',
   ],
-  authors: [{ name: 'OMNIRA Restaurant Services', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/restaurants',
   },
   openGraph: {
-    title: 'خدمات الفاليه باركينج للمطاعم | OMNIRA - تجربة تناول طعام لا تُنسى',
+    title: 'خدمات الفاليه باركينج للمطاعم | Omnira Valet - تجربة تناول طعام لا تُنسى',
     description: 'عزز تجربة عملائك مع فاليه احترافي - خدمة سريعة، أسعار تنافسية، باقات مرنة',
     url: 'https://omnira.skywaveads.com/services/restaurants',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-restaurants.jpg',
       width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'فاليه احترافي للمطاعم | OMNIRA',
+    title: 'فاليه احترافي للمطاعم | Omnira Valet',
     description: 'خدمة سريعة، أسعار منافسة، باقات مرنة - عزز تجربة عملائك',
     images: ['https://omnira.skywaveads.com/og-restaurants.jpg'],
   },

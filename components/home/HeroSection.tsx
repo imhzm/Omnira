@@ -171,7 +171,7 @@ const HeroSection = () => {
                   <div className="text-center text-white backdrop-blur-sm bg-black/30 p-12 rounded-3xl">
                     <div className="text-8xl mb-6 animate-bounce">🚗</div>
                     <p className="text-3xl font-black mb-2">خدمات صف السيارات الفاخرة</p>
-                    <p className="text-xl font-bold text-gold-primary">OMNIRA - أومنيرا</p>
+                    <p className="text-xl font-bold text-gold-primary">Omnira Valet</p>
                   </div>
                 </div>
               )}
@@ -219,7 +219,7 @@ const HeroSection = () => {
                   transform: 'translate(-50%, -50%)',
                   objectFit: 'cover',
                 }}
-                title="OMNIRA Valet Parking KSA"
+                title="Omnira Valet Parking KSA"
               />
             </div>
             

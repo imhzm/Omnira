@@ -46,7 +46,7 @@ const Footer = () => {
                 
                 <Image
                   src="/logo.png"
-                  alt="OMNIRA - أومنيرا"
+                  alt="Omnira Valet"
                   width={126}
                   height={35}
                   className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-105 transition-all duration-500 animate-float"
@@ -159,7 +159,7 @@ const Footer = () => {
         <div className="border-t-2 border-sage-primary/20 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-brown-dark text-sm font-medium">
-              © {currentYear} <span className="text-sage-primary font-bold">OMNIRA</span> Company Holding. جميع الحقوق محفوظة
+              © {currentYear} <span className="text-sage-primary font-bold">Omnira Valet</span>. جميع الحقوق محفوظة
             </p>
             <p className="text-brown-medium text-sm">
               السجل التجاري: <span className="text-sage-primary font-bold">7051975600</span>

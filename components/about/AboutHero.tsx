@@ -17,7 +17,7 @@ const AboutHero = () => {
       <div className="absolute inset-0 z-0">
         <Image
           src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070"
-          alt="فريق عمل أومنيرا المحترف"
+          alt="فريق عمل أومنيرا فاليه المحترف"
           fill
           sizes="100vw"
           className="object-cover opacity-10"

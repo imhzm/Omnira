@@ -6,8 +6,8 @@ import ContactForm from '@/components/contact/ContactForm';
 import ContactInfo from '@/components/contact/ContactInfo';
 
 export const metadata: Metadata = {
-  title: 'اتصل بنا | OMNIRA - تواصل معنا لخدمات صف السيارات والفاليه باركينج',
-  description: 'تواصل مع أومنيرا لخدمات صف السيارات والفاليه باركينج في السعودية. خدمة عملاء 24/7، دعم فني، استشارات مجانية، عروض أسعار فورية. اتصل الآن، راسلنا عبر WhatsApp، أو املأ النموذج. مكتبنا في الرياض - حي الروضة. نخدم جميع مدن المملكة. نسعد بخدمتك!',
+  title: 'اتصل بنا | Omnira Valet - تواصل معنا لخدمات صف السيارات والفاليه باركينج',
+  description: 'تواصل مع أومنيرا فاليه لخدمات صف السيارات والفاليه باركينج في السعودية. خدمة عملاء 24/7، دعم فني، استشارات مجانية، عروض أسعار فورية. اتصل الآن، راسلنا عبر WhatsApp، أو املأ النموذج. مكتبنا في الرياض - حي الروضة. نخدم جميع مدن المملكة. نسعد بخدمتك!',
   keywords: [
     'اتصل بنا',
     'contact us',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'تواصل معنا الآن',
     'رقم الهاتف',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'اتصل بنا | OMNIRA - خدمة عملاء 24/7 ودعم فني متواصل',
+    title: 'اتصل بنا | Omnira Valet - خدمة عملاء 24/7 ودعم فني متواصل',
     description: 'تواصل معنا: هاتف، واتساب، بريد إلكتروني. خدمة عملاء 24/7 واستشارات مجانية',
     url: 'https://omnira.skywaveads.com/contact',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-contact.jpg',
       width: 1200,
       height: 630,
-      alt: 'تواصل مع أومنيرا',
+      alt: 'تواصل مع أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'اتصل بنا | OMNIRA',
+    title: 'اتصل بنا | Omnira Valet',
     description: 'خدمة عملاء 24/7 - تواصل معنا الآن للحصول على استشارة مجانية',
     images: ['https://omnira.skywaveads.com/og-contact.jpg'],
   },

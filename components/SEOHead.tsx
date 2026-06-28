@@ -19,7 +19,7 @@ export default function SEOHead({
   schema,
   keywords = [],
 }: SEOHeadProps) {
-  const fullTitle = title.includes('OMNIRA') ? title : `${title} | OMNIRA - أومنيرا`;
+  const fullTitle = title.includes('Omnira Valet') ? title : `${title} | Omnira Valet`;
   const url = canonical ? `${siteConfig.url}${canonical}` : siteConfig.url;
   const image = ogImage || siteConfig.ogImage;
 
@@ -73,7 +73,7 @@ export default function SEOHead({
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-      <meta name="apple-mobile-web-app-title" content="OMNIRA" />
+      <meta name="apple-mobile-web-app-title" content="Omnira Valet" />
       
       {/* Schema.org JSON-LD */}
       {schema && (

@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمة الفاليه VIP الفاخرة لكبار الشخصيات | OMNIRA - السرية والتميز المطلق',
+  title: 'خدمة الفاليه VIP الفاخرة لكبار الشخصيات | Omnira Valet - السرية والتميز المطلق',
   description: 'خدمة فاليه VIP فاخرة حصرية لكبار الشخصيات، رجال الأعمال، المشاهير، والدبلوماسيين في السعودية. سرية مطلقة واتفاقيات NDA موقعة، سائقون متخصصون مع فحص خلفية شامل، أولوية قصوى بدون أي انتظار، مواقف مخصصة آمنة مراقبة 24/7، خدمة شخصية مصممة حسب تفضيلاتك، خبرة في جميع السيارات الفاخرة والكلاسيكية، خدمات إضافية راقية (تهيئة، تنظيف، صيانة)، متاح 24/7 متى احتجت. نخدم الرياض، جدة، الدمام. تسعير حسب الطلب. استشارة خاصة وسرية.',
   keywords: [
     'خدمة VIP فاخرة',
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     'خدمات راقية للشخصيات',
     'حماية خصوصية VIP',
   ],
-  authors: [{ name: 'OMNIRA VIP Services', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/vip',
   },
   openGraph: {
-    title: 'خدمة VIP الفاخرة لكبار الشخصيات | OMNIRA - التميز والسرية',
+    title: 'خدمة VIP الفاخرة لكبار الشخصيات | Omnira Valet - التميز والسرية',
     description: 'خدمة حصرية فاخرة - سرية مطلقة، سائقون متخصصون، أولوية قصوى - للشخصيات المميزة',
     url: 'https://omnira.skywaveads.com/services/vip',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-vip.jpg',
       width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'خدمة VIP فاخرة حصرية | OMNIRA',
+    title: 'خدمة VIP فاخرة حصرية | Omnira Valet',
     description: 'سرية مطلقة، سائقون متخصصون، خدمة شخصية - للشخصيات المميزة فقط',
     images: ['https://omnira.skywaveads.com/og-vip.jpg'],
   },

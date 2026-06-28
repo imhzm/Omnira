@@ -64,7 +64,7 @@ const Header = () => {
               
               <Image
                 src="/logo.png"
-                alt="OMNIRA - أومنيرا"
+                alt="Omnira Valet"
                 width={126}
                 height={35}
                 className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-110 transition-all duration-500"

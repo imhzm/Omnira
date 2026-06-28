@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'خدمات مساندة للمواقف | OMNIRA - صيانة ونظافة وأمن ودعم فني 24/7',
+  title: 'خدمات مساندة للمواقف | Omnira Valet - صيانة ونظافة وأمن ودعم فني 24/7',
   description: 'خدمات مساندة متكاملة لتشغيل مواقف السيارات في السعودية: صيانة دورية، نظافة مستمرة، أمن وحراسة، دعم فني 24/7، إدارة الطوارئ، إضاءة، لافتات إرشادية، وخدمة عملاء. حلول شاملة لتحقيق تجربة سلسة وآمنة. للمراكز التجارية، الفنادق، المستشفيات، والشركات. نخدم جميع مدن المملكة. اطلب عرض سعر!',
   keywords: [
     'خدمات مساندة',
@@ -25,28 +25,28 @@ export const metadata: Metadata = {
     'خدمات مواقف شاملة',
     'parking support',
   ],
-  authors: [{ name: 'OMNIRA Company Holding' }],
+  authors: [{ name: 'Omnira Valet' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/support-services',
   },
   openGraph: {
-    title: 'خدمات مساندة للمواقف | OMNIRA - صيانة ونظافة وأمن متكامل',
+    title: 'خدمات مساندة للمواقف | Omnira Valet - صيانة ونظافة وأمن متكامل',
     description: 'خدمات شاملة: صيانة دورية، نظافة مستمرة، أمن وحراسة، دعم فني 24/7، إدارة الطوارئ',
     url: 'https://omnira.skywaveads.com/services/support-services',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-support-services.jpg',
       width: 1200,
       height: 630,
-      alt: 'خدمات مساندة للمواقف من أومنيرا',
+      alt: 'خدمات مساندة للمواقف من أومنيرا فاليه',
     }],
     locale: 'ar_SA',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'خدمات مساندة للمواقف | OMNIRA',
+    title: 'خدمات مساندة للمواقف | Omnira Valet',
     description: 'صيانة، نظافة، أمن، ودعم فني 24/7 - حلول شاملة لمواقف آمنة ونظيفة',
     images: ['https://omnira.skywaveads.com/og-support-services.jpg'],
   },
@@ -64,7 +64,7 @@ export default function SupportServicesPage() {
     
     overview: {
       title: 'دعم شامل لعمليات مواقف السيارات',
-      description: `موقف السيارات الناجح يحتاج لأكثر من مجرد مساحات وقوف وأنظمة تقنية. يحتاج لمجموعة متكاملة من الخدمات المساندة التي تضمن تشغيلاً سلساً، بيئة نظيفة وآمنة، وتجربة إيجابية للمستخدمين. في أومنيرا، نقدم حزمة شاملة من الخدمات المساندة التي تغطي كل جانب من جوانب تشغيل موقف السيارات بكفاءة واحترافية.
+      description: `موقف السيارات الناجح يحتاج لأكثر من مجرد مساحات وقوف وأنظمة تقنية. يحتاج لمجموعة متكاملة من الخدمات المساندة التي تضمن تشغيلاً سلساً، بيئة نظيفة وآمنة، وتجربة إيجابية للمستخدمين. في أومنيرا فاليه، نقدم حزمة شاملة من الخدمات المساندة التي تغطي كل جانب من جوانب تشغيل موقف السيارات بكفاءة واحترافية.
 
 خدماتنا المساندة مصممة لتكون متكاملة ومتناسقة، تعمل معاً لتحقيق هدف واحد: موقف نظيف، آمن، مضاء جيداً، يعمل بسلاسة دون انقطاع. نوفر فرق صيانة مدربة، عمال نظافة محترفين، حراس أمن، كهربائيين، مهندسي صيانة معدات، ودعم فني على مدار الساعة.
 

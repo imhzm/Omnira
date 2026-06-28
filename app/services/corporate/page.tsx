@@ -5,7 +5,7 @@ import ServiceDetailHero from '@/components/services/ServiceDetailHero';
 import ServiceContent from '@/components/services/ServiceContent';
 
 export const metadata: Metadata = {
-  title: 'حلول إدارة المواقف للشركات والمقرات الرئيسية | OMNIRA - وفر وقت موظفيك واهتم بعملائك',
+  title: 'حلول إدارة المواقف للشركات والمقرات الرئيسية | Omnira Valet - وفر وقت موظفيك واهتم بعملائك',
   description: 'حلول متكاملة لإدارة مواقف الشركات والأبراج المكتبية في السعودية. وفر 30 دقيقة يومياً لكل موظف، انطباع احترافي للعملاء والزوار، عقود سنوية مرنة بأسعار تفضيلية، خدمة VIP للإدارة العليا، نظام اشتراكات للموظفين، إدارة زوار الشركة، تقارير شهرية تفصيلية، تكامل مع أنظمة الأمن، تطبيق جوال للطلب المسبق. نخدم شركات الرياض، جدة، الدمام. باقات من 8,000 ريال شهرياً. خصومات للعقود طويلة الأجل. ROI مثبت في 6 أشهر!',
   keywords: [
     'إدارة مواقف الشركات',
@@ -25,16 +25,16 @@ export const metadata: Metadata = {
     'باقات مواقف مرنة',
     'خصومات عقود طويلة',
   ],
-  authors: [{ name: 'OMNIRA Corporate Solutions', url: 'https://omnira.skywaveads.com' }],
+  authors: [{ name: 'Omnira Valet', url: 'https://omnira.skywaveads.com' }],
   metadataBase: new URL('https://omnira.skywaveads.com'),
   alternates: {
     canonical: '/services/corporate',
   },
   openGraph: {
-    title: 'حلول إدارة المواقف للشركات | OMNIRA - استثمار في إنتاجية فريقك',
+    title: 'حلول إدارة المواقف للشركات | Omnira Valet - استثمار في إنتاجية فريقك',
     description: 'وفر 30 دقيقة يومياً - عقود مرنة، خدمة VIP، اشتراكات موظفين، تقارير تفصيلية',
     url: 'https://omnira.skywaveads.com/services/corporate',
-    siteName: 'OMNIRA',
+    siteName: 'Omnira Valet',
     images: [{
       url: 'https://omnira.skywaveads.com/og-corporate.jpg',
       width: 1200,
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'حلول مواقف احترافية للشركات | OMNIRA',
+    title: 'حلول مواقف احترافية للشركات | Omnira Valet',
     description: 'عقود مرنة، VIP للإدارة، اشتراكات موظفين - وفر وقت فريقك',
     images: ['https://omnira.skywaveads.com/og-corporate.jpg'],
   },
