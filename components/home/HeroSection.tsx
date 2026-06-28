@@ -238,8 +238,8 @@ const HeroSection = () => {
           </div>
         )}
         {/* Enhanced Gradient Overlays - أغمق لإبراز الخط العملاق المملوء بالصورة */}
-        <div className="absolute inset-0 bg-black/55 z-30"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-black/45 via-black/20 to-black/75 z-30"></div>
+        <div className="absolute inset-0 bg-black/68 z-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/80 z-30"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/8 via-transparent to-gold-primary/8 z-30"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C]/80 via-transparent to-transparent z-30"></div>
         {/* Animated Mesh Gradient */}
@@ -331,6 +331,8 @@ const HeroSection = () => {
                   backgroundPosition: 'center 35%',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
+                  WebkitTextStroke: '1.5px rgba(201,162,74,0.5)',
+                  filter: 'drop-shadow(0 8px 30px rgba(0,0,0,0.9))',
                 }}
               >
                 الفخامة
