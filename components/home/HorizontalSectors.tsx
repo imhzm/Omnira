@@ -31,7 +31,8 @@ export default function HorizontalSectors() {
         </div>
       </div>
 
-      <div className="mt-12 flex snap-x snap-mandatory gap-5 overflow-x-auto px-[6vw] pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+      <div className="relative mt-12">
+        <div className="flex snap-x snap-mandatory gap-5 overflow-x-auto px-[6vw] pb-4 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {sectors.map((s, i) => (
           <Link
             key={s.title}
@@ -57,8 +58,11 @@ export default function HorizontalSectors() {
             </div>
           </Link>
         ))}
-        {/* trailing spacer so the last card can settle away from the edge */}
-        <div className="w-[6vw] shrink-0" aria-hidden />
+          {/* trailing spacer so the last card can settle away from the edge */}
+          <div className="w-[6vw] shrink-0" aria-hidden />
+        </div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-[7vw] bg-gradient-to-l from-[#0A0A0C] to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-[7vw] bg-gradient-to-r from-[#0A0A0C] to-transparent" />
       </div>
     </section>
   );

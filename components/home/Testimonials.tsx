@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Quote } from 'lucide-react';
 import Image from '@/components/ui/BlurImage';
 
 const testimonials = [
@@ -48,13 +49,17 @@ const Testimonials = () => {
   const t = testimonials[i];
 
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]">
+    <section className="relative overflow-hidden bg-[#0A0A0C] py-28 lg:py-40">
+      {/* faint atmospheric glow */}
+      <div className="pointer-events-none absolute inset-x-0 top-1/2 -translate-y-1/2 mx-auto h-[420px] max-w-3xl bg-[radial-gradient(ellipse_at_center,rgba(201,162,74,0.07),transparent_70%)]" />
       <div className="container-custom relative z-10">
         <div className="mx-auto max-w-4xl text-center">
-          <span className="mb-12 flex items-center justify-center gap-4 text-[11px] font-medium tracking-[0.4em] text-gold-primary/90">
+          <span className="mb-8 flex items-center justify-center gap-4 text-[11px] font-medium tracking-[0.4em] text-gold-primary/90">
             <span className="h-px w-12 bg-gold-primary/50" />
             قالوا عنّا
           </span>
+
+          <Quote className="mx-auto mb-8 h-9 w-9 text-gold-primary/35" aria-hidden />
 
           <AnimatePresence mode="wait">
             <motion.blockquote
@@ -63,13 +68,15 @@ const Testimonials = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -22 }}
               transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
-              className="font-extralight leading-[1.5] text-white text-2xl sm:text-3xl lg:text-[2.6rem]"
+              className="min-h-[7.5rem] font-extralight leading-[1.5] text-white text-2xl sm:text-3xl lg:text-[2.5rem]"
             >
-              ”{t.text}“
+              {t.text}
             </motion.blockquote>
           </AnimatePresence>
 
-          <div className="mt-14 flex items-center justify-center gap-4">
+          <div className="mx-auto mt-10 h-px w-16 bg-white/10" />
+
+          <div className="mt-10 flex items-center justify-center gap-4">
             <div className="relative h-12 w-12 overflow-hidden rounded-full">
               <Image src={t.image} alt={t.name} fill sizes="48px" className="object-cover" />
             </div>
