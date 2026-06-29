@@ -86,9 +86,11 @@ export default function SlideNav() {
       {slides.map((s, i) => (
         <button
           key={s.id}
-          onClick={() =>
-            s.el.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
+          onClick={() => {
+            const lenis = window.__lenis;
+            if (lenis) lenis.scrollTo(s.el, { duration: 1.1 });
+            else s.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }}
           className="group relative flex items-center justify-end py-1"
           aria-label={s.label}
           aria-current={i === active}
