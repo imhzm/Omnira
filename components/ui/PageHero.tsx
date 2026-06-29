@@ -32,8 +32,8 @@ export default function PageHero({
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/55 to-[#0A0A0C]/40" />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/45 to-[#0A0A0C]/25" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/55" />
       </div>
 
       <div className="container-custom relative z-10">
@@ -67,13 +67,24 @@ export default function PageHero({
           {subtitle && (
             <motion.p
               variants={fade}
-              className="mt-8 max-w-lg text-base font-light leading-relaxed text-white/55 md:text-lg"
+              className="mt-8 max-w-lg text-base font-light leading-relaxed text-white/65 md:text-lg"
             >
               {subtitle}
             </motion.p>
           )}
         </motion.div>
       </div>
+
+      {/* scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 1 }}
+        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
+      >
+        <span className="text-[10px] tracking-[0.3em] text-white/35">تصفّح</span>
+        <span className="h-12 w-px bg-gradient-to-b from-gold-primary/70 to-transparent" />
+      </motion.div>
     </section>
   );
 }
