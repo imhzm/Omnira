@@ -1,147 +1,91 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { Facebook, Twitter, Instagram, Linkedin, MessageCircle, Mail, MapPin } from 'lucide-react';
+import { Instagram, Linkedin, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
-  const currentYear = new Date().getFullYear();
+  const year = new Date().getFullYear();
 
-  const footerLinks = {
-    services: [
-      { name: 'إدارة وتشغيل المواقف', href: '/services/parking-management' },
-      { name: 'خدمات الفاليه باركينج', href: '/services/valet-parking' },
-      { name: 'التقنيات المتقدمة', href: '/services/advanced-technology' },
-      { name: 'المنظمين المحترفين', href: '/services/professional-organizers' },
-      { name: 'الاستشارات', href: '/services/consultation' },
-    ],
-    moreServices: [
-      { name: 'جولف كار', href: '/services/golf-cart' },
-      { name: 'خدمات مساندة', href: '/services/support-services' },
-      { name: 'غسيل السيارات', href: '/services/car-wash' },
-    ],
-    company: [
-      { name: 'من نحن', href: '/about' },
-      { name: 'الأسعار', href: '/pricing' },
-      { name: 'المدن', href: '/locations' },
-      { name: 'اتصل بنا', href: '/contact' },
-    ],
-  };
+  const columns = [
+    {
+      title: 'الخدمات',
+      links: [
+        { name: 'فاليه باركينج', href: '/services/valet-parking' },
+        { name: 'إدارة المواقف', href: '/services/parking-management' },
+        { name: 'التقنيات المتقدمة', href: '/services/advanced-technology' },
+        { name: 'المنظمون المحترفون', href: '/services/professional-organizers' },
+      ],
+    },
+    {
+      title: 'الشركة',
+      links: [
+        { name: 'من نحن', href: '/about' },
+        { name: 'الأسعار', href: '/pricing' },
+        { name: 'المدن', href: '/locations' },
+        { name: 'اتصل بنا', href: '/contact' },
+      ],
+    },
+  ];
 
   return (
-    <footer className="bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] border-t border-white/10 relative overflow-hidden">
-      <div className="container-custom py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Company Info */}
-          <div>
-            <div className="mb-6 h-10 flex items-center group">
-              <div className="relative">
-                {/* Shadow Glow Effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/30 via-gold-primary/20 to-gold-primary/30 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="absolute inset-0 bg-gold-primary/20 blur-md scale-105 animate-pulse"></div>
-                
-                <Image
-                  src="/logo.png"
-                  alt="Omnira Valet"
-                  width={126}
-                  height={35}
-                  className="object-contain w-auto h-full relative z-10 drop-shadow-[0_4px_12px_rgba(218,165,32,0.4)] group-hover:drop-shadow-[0_8px_24px_rgba(218,165,32,0.6)] group-hover:scale-105 transition-all duration-500 animate-float"
-                />
-              </div>
-            </div>
-            <p className="text-brown-text text-sm mb-6 leading-relaxed">
-              شركة سعودية رائدة في <span className="text-sage-primary font-bold">خدمات صف السيارات</span>. نساهم في تحقيق <span className="text-sunset-golden font-bold">رؤية 2030</span>
+    <footer className="relative border-t border-white/10 bg-[#0A0A0C]">
+      <div className="container-custom py-20 lg:py-28">
+        <div className="grid grid-cols-1 gap-14 lg:grid-cols-12">
+          {/* brand */}
+          <div className="lg:col-span-5">
+            <Image
+              src="/logo.png"
+              alt="Omnira Valet"
+              width={220}
+              height={62}
+              className="h-12 w-auto object-contain"
+            />
+            <p className="mt-7 max-w-sm text-sm font-light leading-relaxed text-white/50">
+              خدمة صفّ السيارات الفاخرة في المملكة — نصنع من لحظة الوصول تجربةً لا
+              تُنسى.
             </p>
-            <div className="flex space-x-3 space-x-reverse">
-              <a href="#" className="group p-3 rounded-xl bg-sage-primary/10 text-sage-primary hover:bg-sage-primary hover:text-white transition-all duration-300" aria-label="Facebook">
-                <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            <div className="mt-8 flex items-center gap-3">
+              <a href="#" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition-colors duration-300 hover:border-gold-primary hover:text-gold-primary">
+                <Instagram className="h-4 w-4" />
               </a>
-              <a href="#" className="group p-3 rounded-xl bg-accents-sky/10 text-accents-sky hover:bg-accents-sky hover:text-white transition-all duration-300" aria-label="Twitter">
-                <Twitter className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <a href="#" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition-colors duration-300 hover:border-gold-primary hover:text-gold-primary">
+                <Linkedin className="h-4 w-4" />
               </a>
-              <a href="#" className="group p-3 rounded-xl bg-sunset-golden/10 text-sunset-golden hover:bg-sunset-golden hover:text-white transition-all duration-300" aria-label="Instagram">
-                <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
-              </a>
-              <a href="#" className="group p-3 rounded-xl bg-accents-emerald/10 text-accents-emerald hover:bg-accents-emerald hover:text-white transition-all duration-300" aria-label="LinkedIn">
-                <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <a href="https://wa.me/966XXXXXXXXX" aria-label="WhatsApp" className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-white/60 transition-colors duration-300 hover:border-gold-primary hover:text-gold-primary">
+                <MessageCircle className="h-4 w-4" />
               </a>
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-sage-primary font-black text-lg mb-6">خدماتنا</h4>
-            <ul className="space-y-2">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-brown-text hover:text-sage-primary transition-all duration-300 text-sm font-medium group inline-flex items-center"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform">←</span>
-                    <span className="mr-2">{link.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {columns.map((c) => (
+            <div key={c.title} className="lg:col-span-2">
+              <h4 className="mb-5 text-[11px] font-medium tracking-[0.25em] text-gold-primary/80">
+                {c.title}
+              </h4>
+              <ul className="space-y-3">
+                {c.links.map((l) => (
+                  <li key={l.name}>
+                    <Link href={l.href} className="text-sm text-white/55 transition-colors duration-300 hover:text-white">
+                      {l.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
 
-          {/* More Services */}
-          <div>
-            <h4 className="text-sage-primary font-black text-lg mb-6">خدمات أخرى</h4>
-            <ul className="space-y-2">
-              {footerLinks.moreServices.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-brown-text hover:text-sage-primary transition-all duration-300 text-sm font-medium group inline-flex items-center"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform">←</span>
-                    <span className="mr-2">{link.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-            <h4 className="text-sage-primary font-black text-lg mb-6 mt-8">الشركة</h4>
-            <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-brown-text hover:text-sage-primary transition-all duration-300 text-sm font-medium group inline-flex items-center"
-                  >
-                    <span className="group-hover:translate-x-1 transition-transform">←</span>
-                    <span className="mr-2">{link.name}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="text-sage-primary font-black text-lg mb-6">تواصل معنا</h4>
-            <ul className="space-y-4">
-              <li className="flex items-start space-x-3 space-x-reverse group">
-                <div className="p-2 rounded-lg bg-sage-primary/10 group-hover:bg-sage-primary transition-colors">
-                  <MapPin className="w-4 h-4 text-sage-primary group-hover:text-white flex-shrink-0 transition-colors" />
-                </div>
-                <span className="text-brown-text text-sm">
-                  عبدالرحمن الشعيبي، حي الروضة<br />
-                  الرياض 12311، السعودية
-                </span>
-              </li>
-              <li className="flex items-center space-x-3 space-x-reverse group">
-                <div className="p-2 rounded-lg bg-accents-emerald/10 group-hover:bg-accents-emerald transition-colors">
-                  <MessageCircle className="w-4 h-4 text-accents-emerald group-hover:text-white flex-shrink-0 transition-colors" />
-                </div>
-                <a href="https://wa.me/966XXXXXXXXX" target="_blank" rel="noopener noreferrer" className="text-brown-text hover:text-sage-primary text-sm transition-colors">
-                  واتساب: +966 XX XXX XXXX
+          <div className="lg:col-span-3">
+            <h4 className="mb-5 text-[11px] font-medium tracking-[0.25em] text-gold-primary/80">
+              تواصل
+            </h4>
+            <ul className="space-y-4 text-sm text-white/55">
+              <li>الرياض، حي الروضة — المملكة العربية السعودية</li>
+              <li>
+                <a href="https://wa.me/966XXXXXXXXX" dir="ltr" className="transition-colors duration-300 hover:text-white">
+                  +966 XX XXX XXXX
                 </a>
               </li>
-              <li className="flex items-center space-x-3 space-x-reverse group">
-                <div className="p-2 rounded-lg bg-accents-sky/10 group-hover:bg-accents-sky transition-colors">
-                  <Mail className="w-4 h-4 text-accents-sky group-hover:text-white flex-shrink-0 transition-colors" />
-                </div>
-                <a href="mailto:info@omnira.sa" className="text-brown-text hover:text-sage-primary text-sm transition-colors">
+              <li>
+                <a href="mailto:info@omnira.sa" className="transition-colors duration-300 hover:text-white">
                   info@omnira.sa
                 </a>
               </li>
@@ -149,39 +93,14 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 mt-12 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-brown-dark text-sm font-medium">
-              © {currentYear} <span className="text-sage-primary font-bold">Omnira Valet</span>. جميع الحقوق محفوظة
-            </p>
-            <p className="text-brown-medium text-sm">
-              السجل التجاري: <span className="text-sage-primary font-bold">7051975600</span>
-            </p>
-          </div>
-          <div className="mt-6 pt-6 border-t border-sage-primary/10 text-center">
-            <p className="text-brown-medium text-sm">
-              تم التصميم بكل حب <span className="text-sunset-golden">❤️</span> بواسطة 
-              <a
-                href="https://www.skywaveads.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sage-primary hover:text-sage-medium font-bold mx-1 transition-colors"
-              >
-                Sky Wave
-              </a>
-              —
-              <a
-                href="https://wa.me/201067894321"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-accents-emerald hover:text-accents-emerald/80 font-medium mr-1 transition-colors"
-              >
-                <MessageCircle className="w-3 h-3" />
-                <span>+201067894321</span>
-              </a>
-            </p>
-          </div>
+        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row">
+          <p>© {year} Omnira Valet — السجل التجاري 7051975600</p>
+          <p className="flex items-center gap-1.5">
+            صُمّم بواسطة
+            <a href="https://www.skywaveads.com" target="_blank" rel="noopener noreferrer" className="text-white/60 transition-colors duration-300 hover:text-gold-primary">
+              Sky Wave
+            </a>
+          </p>
         </div>
       </div>
     </footer>

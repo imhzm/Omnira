@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Phone } from 'lucide-react';
-import { useState } from 'react';
 
 interface ServiceDetailHeroProps {
   data: {
@@ -14,93 +12,74 @@ interface ServiceDetailHeroProps {
   };
 }
 
+const fade = {
+  hidden: { opacity: 0, y: 26 },
+  show: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 0.61, 0.36, 1] } },
+};
+
 const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
-  const [imgError, setImgError] = useState(false);
-  const FALLBACK_HERO = 'https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=1920';
   return (
-    <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden pt-20 bg-gradient-to-br from-sage-soft via-[#0A0A0C] to-beige-light">
-      <div className="absolute inset-0 z-0">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C] pt-20">
+      <div className="absolute inset-0">
         <Image
-          src={imgError ? FALLBACK_HERO : data.heroImage}
+          src={data.heroImage}
           alt={data.title}
           fill
-          sizes="100vw"
-          className="object-cover opacity-15"
           priority
-          onError={() => setImgError(true)}
+          sizes="100vw"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-beige-light/95 via-[#0A0A0C]/90 to-beige-light/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/55 to-[#0A0A0C]/40" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/70" />
       </div>
 
-      <div className="container-custom relative z-10 py-24">
+      <div className="container-custom relative z-10">
         <motion.div
-          initial={{ opacity: 1 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-5xl mx-auto"
+          initial="hidden"
+          animate="show"
+          variants={{ show: { transition: { staggerChildren: 0.15, delayChildren: 0.15 } } }}
+          className="max-w-3xl"
         >
-          {/* Breadcrumb */}
-          <div className="flex items-center space-x-3 space-x-reverse text-sm mb-8">
-            <Link href="/" className="text-brown-dark hover:text-sage-primary transition-colors font-medium">
-              الرئيسية
-            </Link>
-            <span className="text-brown-text">/</span>
-            <Link href="/services" className="text-brown-dark hover:text-sage-primary transition-colors font-medium">
-              الخدمات
-            </Link>
-            <span className="text-brown-text">/</span>
-            <span className="text-sage-primary font-bold">{data.title}</span>
-          </div>
+          <motion.div variants={fade} className="mb-8 flex items-center gap-2 text-xs text-white/45">
+            <Link href="/" className="transition-colors duration-300 hover:text-white">الرئيسية</Link>
+            <span>/</span>
+            <Link href="/services" className="transition-colors duration-300 hover:text-white">الخدمات</Link>
+            <span>/</span>
+            <span className="text-gold-primary/80">{data.title}</span>
+          </motion.div>
 
-          {/* Badge */}
-          <div className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-sage-primary/30 mb-6">
-            <div className="w-2 h-2 bg-sage-primary rounded-full animate-pulse"></div>
-            <span className="text-sage-primary font-bold text-sm">خدمة احترافية</span>
-          </div>
+          <motion.h1
+            variants={fade}
+            className="font-extralight leading-[1.1] text-white text-4xl sm:text-6xl lg:text-7xl"
+          >
+            {data.title}
+          </motion.h1>
 
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-6 leading-[0.95]">
-            <span className="gold-shine-effect">{data.title}</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl text-brown-dark font-medium mb-10 leading-relaxed max-w-3xl">
+          <motion.p
+            variants={fade}
+            className="mt-8 max-w-xl text-base font-light leading-relaxed text-white/55 md:text-lg"
+          >
             {data.subtitle}
-          </p>
+          </motion.p>
 
-          {/* Features Pills */}
-          <div className="flex flex-wrap gap-3 mb-10">
-            <div className="glass-effect px-5 py-2 rounded-xl border border-sage-primary/20 text-brown-dark font-semibold text-sm">
-              ✅ تأمين شامل
-            </div>
-            <div className="glass-effect px-5 py-2 rounded-xl border border-sage-primary/20 text-brown-dark font-semibold text-sm">
-              ✅ فريق محترف
-            </div>
-            <div className="glass-effect px-5 py-2 rounded-xl border border-sage-primary/20 text-brown-dark font-semibold text-sm">
-              ✅ خدمة 24/7
-            </div>
-            <div className="glass-effect px-5 py-2 rounded-xl border border-sage-primary/20 text-brown-dark font-semibold text-sm">
-              ✅ أسعار تنافسية
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/contact"
-              className="btn-gold px-10 py-5 text-lg font-bold inline-flex items-center justify-center space-x-3 space-x-reverse group transition-all duration-500"
-            >
-              <span>احجز الآن</span>
-              <ArrowRight className="w-6 h-6 group-hover:-translate-x-1 transition-transform duration-500" />
+          <motion.div variants={fade} className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
+            <Link href="/contact" className="group inline-flex items-center gap-3 text-base text-white">
+              <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
+                احجز الخدمة
+              </span>
+              <span className="text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5">
+                ←
+              </span>
             </Link>
-            
             <a
               href="https://wa.me/966XXXXXXXXX"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-10 py-5 text-lg font-bold border-2 border-sage-primary text-brown-dark bg-[#141418]/80 backdrop-blur-sm rounded-2xl hover:bg-sage-primary hover:text-[#0A0A0C] transition-all inline-flex items-center justify-center space-x-3 space-x-reverse group"
+              className="text-base text-white/55 transition-colors duration-300 hover:text-white"
             >
-              <Phone className="w-6 h-6 group-hover:rotate-12 transition-transform" />
-              <span>واتساب فوري</span>
+              واتساب فوري
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>
