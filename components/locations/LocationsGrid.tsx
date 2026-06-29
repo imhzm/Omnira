@@ -127,12 +127,12 @@ const LocationsGrid = () => {
                       
                       {/* أيقونة الموقع */}
                       <div className="relative flex flex-col items-center text-center space-y-3">
-                        <div className="w-12 h-12 rounded-full bg-sage-primary/10 flex items-center justify-center group-hover:bg-sage-primary/20 transition-colors">
-                          <MapPin className="w-6 h-6 text-sage-primary" />
+                        <div className="w-12 h-12 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center transition-colors">
+                          <MapPin className="w-6 h-6 text-gold-primary" />
                         </div>
-                        
+
                         {/* اسم المدينة */}
-                        <h4 className="font-bold text-brown-dark group-hover:text-sage-primary transition-colors">
+                        <h4 className="font-medium text-white group-hover:text-sage-primary transition-colors">
                           {city}
                         </h4>
                       </div>

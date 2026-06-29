@@ -108,10 +108,10 @@ const BenefitsSection = ({ benefits }: any) => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="p-10 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-sage-primary transition-all group"
             >
-              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center mb-6 transition-transform border border-sage-primary/30">
-                <CheckCircle className="w-8 h-8 text-sage-primary" />
+              <div className="w-16 h-16 rounded-2xl bg-white/[0.04] flex items-center justify-center mb-6 transition-transform border border-white/10">
+                <CheckCircle className="w-8 h-8 text-gold-primary" />
               </div>
-              <h3 className="text-2xl font-semibold mb-4 text-brown-dark">{benefit.title}</h3>
+              <h3 className="text-2xl font-medium mb-4 text-brown-dark">{benefit.title}</h3>
               <p className="text-brown-text leading-relaxed text-base">{benefit.description}</p>
             </motion.div>
           ))}
@@ -184,7 +184,7 @@ const ProcessSection = ({ process }: any) => {
               >
                 <div className="flex flex-col lg:flex-row items-center gap-8">
                   <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-lg`}>
-                    <h3 className="text-2xl font-semibold mb-3 text-sage-primary">{step.title}</h3>
+                    <h3 className="text-2xl font-medium mb-3 text-sage-primary">{step.title}</h3>
                     <p className="text-brown-dark leading-relaxed">{step.description}</p>
                   </div>
 
@@ -234,7 +234,7 @@ const ClientsSection = ({ clients }: any) => {
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 text-center hover:border-sage-primary transition-all group"
             >
-              <p className="text-brown-dark font-bold group-hover:text-sage-primary transition-colors">{client}</p>
+              <p className="text-brown-dark font-medium group-hover:text-sage-primary transition-colors">{client}</p>
             </motion.div>
           ))}
         </div>
@@ -274,7 +274,7 @@ const FAQSection = ({ faqs }: any) => {
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full p-6 text-right flex items-center justify-between hover:bg-sage-primary/10 transition-colors"
               >
-                <span className="text-lg font-bold text-brown-dark">{faq.question}</span>
+                <span className="text-lg font-medium text-brown-dark">{faq.question}</span>
                 <ChevronDown
                   className={`w-5 h-5 text-gold-primary transition-transform ${
                     openIndex === index ? 'rotate-180' : ''

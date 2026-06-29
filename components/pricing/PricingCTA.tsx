@@ -89,7 +89,7 @@ export default function PricingCTA() {
           </div>
 
           <div className="mt-12">
-            <h4 className="text-xl font-bold text-white mb-2">تحتاج إلى مساعدة في اختيار الباقة المناسبة؟</h4>
+            <h4 className="text-xl font-medium text-white mb-2">تحتاج إلى مساعدة في اختيار الباقة المناسبة؟</h4>
             <p className="text-[#C8B58A] mb-6">
               فريق خدمة العملاء لدينا متاح على مدار الساعة للإجابة على جميع استفساراتك
             </p>

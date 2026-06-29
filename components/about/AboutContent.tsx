@@ -79,8 +79,8 @@ const VisionMissionSection = () => {
             transition={{ duration: 0.2 }}
             className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all"
           >
-            <div className="w-16 h-16 rounded-full bg-sage-primary/10 flex items-center justify-center mb-6">
-              <Target className="w-8 h-8 text-sage-primary" />
+            <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6">
+              <Target className="w-8 h-8 text-gold-primary" />
             </div>
             <h3 className="text-3xl font-medium mb-4 text-sage-primary">رؤيتنا</h3>
             <p className="text-brown-dark text-lg leading-relaxed">
@@ -96,8 +96,8 @@ const VisionMissionSection = () => {
             transition={{ duration: 0.2, delay: 0 }}
             className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all"
           >
-            <div className="w-16 h-16 rounded-full bg-sage-primary/10 flex items-center justify-center mb-6">
-              <Award className="w-8 h-8 text-sage-primary" />
+            <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6">
+              <Award className="w-8 h-8 text-gold-primary" />
             </div>
             <h3 className="text-3xl font-medium mb-4 text-sage-primary">رسالتنا</h3>
             <p className="text-brown-dark text-lg leading-relaxed">
@@ -253,7 +253,7 @@ const TeamSection = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-sage-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
               </div>
-              <h3 className="text-xl font-bold text-sage-primary mb-2 text-center">
+              <h3 className="text-xl font-medium text-sage-primary mb-2 text-center">
                 {index === 0 ? 'فريق الإدارة' : index === 1 ? 'فريق العمليات' : 'فريق خدمة العملاء'}
               </h3>
               <p className="text-brown-text text-center">محترفون في مجالهم</p>

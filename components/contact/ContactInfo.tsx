@@ -64,8 +64,8 @@ const ContactInfo = () => {
             >
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center transition-transform duration-300 border border-sage-primary/30">
-                    <Icon className="w-7 h-7 text-sage-primary" />
+                  <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center transition-transform duration-300">
+                    <Icon className="w-7 h-7 text-gold-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
@@ -140,7 +140,7 @@ const ContactInfo = () => {
         </div>
         
         {/* Footer Info */}
-        <div className="bg-gradient-to-r from-beige-light to-[#0E0E11] p-4 border-t border-white/10">
+        <div className="bg-white/[0.03] p-4 border-t border-white/10">
           <div className="flex items-center justify-between text-sm">
             <div className="flex items-center space-x-2 space-x-reverse text-brown-dark">
               <span className="font-bold">الإحداثيات:</span>
