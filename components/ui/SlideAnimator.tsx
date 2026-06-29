@@ -69,7 +69,7 @@ export default function SlideAnimator() {
     const seen = new Set<Element>();
     const collect = () => {
       (Array.from(main.querySelectorAll('section')) as HTMLElement[])
-        .filter((s) => !s.parentElement?.closest('section'))
+        .filter((s) => !s.parentElement?.closest('section') && !s.hasAttribute('data-no-reveal'))
         .forEach((s) => {
           if (!seen.has(s)) {
             seen.add(s);

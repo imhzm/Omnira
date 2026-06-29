@@ -1,62 +1,32 @@
 /* ===========================================================
-   Presentation / Slide-style scrolling  (applied site-wide)
-   Each top-level <section> behaves like a full slide that the
-   page snaps to as you scroll. Desktop only; mobile stays natural.
+   Cinematic free-flow scrolling (no scroll-snap).
+   The reference sites scroll smoothly & continuously, not
+   slide-by-slide — Lenis (in SmoothScroll.tsx) drives the
+   buttery inertia; sections keep their natural height with
+   generous spacing. Reveal animations come from SlideAnimator.
    =========================================================== */
 
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto; /* Lenis owns smooth scrolling */
 }
 
-@media (min-width: 1024px) {
-  html {
-    scroll-snap-type: y proximity;
-  }
-
-  /* top-level sections become the "slides" */
-  main section:not(section section) {
-    scroll-snap-align: start;
-    scroll-snap-stop: normal;
-    scroll-margin-top: 5rem;   /* clear the fixed header */
-    min-height: 100vh;         /* short sections fill the viewport like a slide */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-  }
-  /* in-flow children (mx-auto containers) must keep full width inside the flex column */
-  main section:not(section section) > * {
-    width: 100%;
-  }
-
-  /* heroes already center themselves — keep them intact */
-  main section.min-h-screen {
-    min-height: 100vh;
-  }
-}
-
-/* Respect users who prefer no motion */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-    scroll-snap-type: none;
-  }
-  main section:not(section section) {
-    min-height: 0;
-    display: block;
   }
 }
 
-/* ---- cinematic motion ---- */
-@keyframes kenburns {
-  0%   { transform: scale(1.03); }
-  100% { transform: scale(1.18); }
+/* Lenis smooth-scroll base styles */
+html.lenis,
+html.lenis body {
+  height: auto;
 }
-.kenburns-active {
-  animation: kenburns 8000ms ease-out both;
-  will-change: transform;
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .kenburns-active { animation: none; }
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
 }

@@ -13,9 +13,12 @@ const FloatingElements = dynamic(() => import("@/components/ui/FloatingElements"
 const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
 const SlideNav = dynamic(() => import("@/components/ui/SlideNav"), { ssr: false });
 const SlideAnimator = dynamic(() => import("@/components/ui/SlideAnimator"), { ssr: false });
+const SmoothScroll = dynamic(() => import("@/components/ui/SmoothScroll"), { ssr: false });
 
 const arabicFont = localFont({
   src: [
+    { path: "../public/fonts/Cairo-ExtraLight.ttf", weight: "200", style: "normal" },
+    { path: "../public/fonts/Cairo-Light.ttf", weight: "300", style: "normal" },
     { path: "../public/fonts/Cairo-Regular.ttf", weight: "400", style: "normal" },
     { path: "../public/fonts/Cairo-Medium.ttf", weight: "500", style: "normal" },
     { path: "../public/fonts/Cairo-SemiBold.ttf", weight: "600", style: "normal" },
@@ -163,6 +166,7 @@ export default function RootLayout({
         <ScrollToTop />
         <SlideNav />
         <SlideAnimator />
+        <SmoothScroll />
       </body>
     </html>
   );
