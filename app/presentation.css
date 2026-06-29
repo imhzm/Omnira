@@ -1,35 +1,17 @@
 /* ===========================================================
-   Block presentation: each top-level <section> is a full-screen
-   block. Lenis (SmoothScroll.tsx) drives buttery smooth scroll
-   and gently settles onto the nearest block. Reveal animations
-   come from SlideAnimator. Desktop only; mobile flows naturally.
+   Cinematic scrolling. Lenis (SmoothScroll.tsx) drives buttery
+   smooth scroll + gentle block snap-on-settle. Sections that
+   should be full-screen carry their own `min-h-screen` class —
+   content sections keep their natural height (no forced gaps).
    =========================================================== */
 
 html {
   scroll-behavior: auto; /* Lenis owns smooth scrolling */
 }
 
-@media (min-width: 1024px) {
-  main section:not(section section) {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-  }
-  /* mx-auto containers must keep full width inside the flex column */
-  main section:not(section section) > * {
-    width: 100%;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
-  }
-  main section:not(section section) {
-    min-height: 0;
-    display: block;
   }
 }
 

@@ -60,7 +60,7 @@ export default function ConsultationPage() {
   const serviceData = {
     title: 'استشارات ما قبل التطوير والبناء',
     subtitle: 'دراسات متخصصة وحلول فعّالة لتخطيط وتصميم مواقف السيارات',
-    heroImage: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070',
+    heroImage: '/images/smart-parking.jpg',
     
     overview: {
       title: 'استشارات هندسية احترافية لمواقف ناجحة',
@@ -102,32 +102,32 @@ export default function ConsultationPage() {
       {
         title: 'دراسات الجدوى الشاملة',
         description: 'تحليل دقيق للموقع والطلب، تقييم الجدوى المالية، تحليل المنافسين، وتحديد أفضل نموذج تشغيل. نقدم توقعات واقعية للعوائد على مدى 10-20 سنة، مع تحليل حساسية للسيناريوهات المختلفة وتقييم شامل للمخاطر.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'التصميم المعماري والهندسي',
         description: 'تصاميم معمارية وهندسية كاملة: المخططات الأرضية، القطاعات، الواجهات، التفاصيل الإنشائية، أنظمة الصرف، الإضاءة، التهوية، مكافحة الحريق، والكهروميكانيك. متوافقة مع SBC ومعايير NFPA. نستخدم BIM للنمذجة ثلاثية الأبعاد.',
-        image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2031',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'دراسات حركة المرور',
         description: 'تحليل تفصيلي لحركة المرور الحالية والمستقبلية، تحديد السعة المطلوبة، تصميم نقاط الدخول والخروج المثلى، تخطيط مسارات الحركة، وتقييم التأثير على الشوارع المحيطة. نستخدم برامج محاكاة متقدمة.',
-        image: 'https://images.unsplash.com/photo-1449024540548-94f5d5a59230?q=80&w=2069',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'تخطيط الأنظمة التقنية',
         description: 'تحديد الأنظمة التقنية المناسبة: ANPR، أنظمة الإرشاد، أنظمة الدفع، المراقبة، التحكم بالإضاءة. نقدم مواصفات تقنية مفصلة، نختار الموردين، ونضمن تكامل الأنظمة. خبرتنا تغطي جميع التقنيات الحديثة.',
-        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'استراتيجيات التشغيل',
         description: 'تطوير خطة تشغيل متكاملة: نموذج التشغيل الأمثل، هيكل الأسعار، احتياجات الموارد البشرية، إجراءات العمل، ومعايير الخدمة. نساعدك في اختيار الشريك التشغيلي المناسب أو بناء فريقك الخاص.',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'مرافقة حتى التشغيل',
         description: 'لا نتركك بعد التصميم. نتابع معك خلال مراحل البناء للتأكد من تنفيذ التصميم بدقة، نشرف على تركيب الأنظمة، نساعد في التشغيل التجريبي، ونقدم التدريب للفريق. دعم كامل حتى بدء التشغيل الناجح.',
-        image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

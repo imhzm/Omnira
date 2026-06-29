@@ -62,7 +62,7 @@ export default function CorporatePage() {
   const serviceData = {
     title: 'حلول صف السيارات للشركات',
     subtitle: 'باقات مخصصة للمقرات الرئيسية والمكاتب الكبرى مع عقود مرنة',
-    heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070',
+    heroImage: '/images/hero/hero-4.jpg',
     
     overview: {
       title: 'حلول احترافية مصممة لبيئة الأعمال',
@@ -100,32 +100,32 @@ export default function CorporatePage() {
       {
         title: 'عقود سنوية مخصصة',
         description: 'باقات شاملة بأسعار تفضيلية وشروط مرنة',
-        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'خدمة VIP للإدارة العليا',
         description: 'مواقف مخصصة، استقبال خاص، سرية تامة',
-        image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'نظام اشتراكات للموظفين',
         description: 'بطاقات شهرية بخصومات خاصة للموظفين',
-        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'إدارة زوار الشركة',
         description: 'تسجيل وتتبع سيارات الضيوف والعملاء',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'تقارير شهرية تفصيلية',
         description: 'إحصائيات وبيانات لاتخاذ قرارات مستنيرة',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'دعم وصيانة مستمرة',
         description: 'فريق دعم متخصص وصيانة دورية',
-        image: 'https://images.unsplash.com/photo-1556740738-b6a63e27c4df?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

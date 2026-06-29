@@ -61,7 +61,7 @@ export default function ParkingManagementPage() {
   const serviceData = {
     title: 'إدارة وتشغيل المواقف',
     subtitle: 'تشغيل مواقف السيارات بكفاءة واحترافية وفق أعلى المعايير',
-    heroImage: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=2070',
+    heroImage: '/images/services/parking-management.jpg',
     icon: 'Building2',
     
     overview: {
@@ -110,32 +110,32 @@ export default function ParkingManagementPage() {
       {
         title: 'أنظمة دخول وخروج ذكية',
         description: 'نستخدم أحدث أنظمة التحكم في الدخول والخروج بتقنيات RFID، ANPR (التعرف التلقائي على لوحات الأرقام), وأنظمة الباركود، مما يضمن تدفقاً سلساً وسريعاً للمركبات دون ازدحام أو تأخير.',
-        image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'إدارة الموارد البشرية',
         description: 'فريق عمل محترف ومدرب بشكل مستمر على أفضل ممارسات إدارة المواقف، خدمة العملاء، والتعامل مع الحالات الطارئة. نوفر عدد الموظفين المناسب بناءً على حجم وطبيعة الموقف.',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'أنظمة إرشاد السيارات',
         description: 'تقنية Parking Guidance System تساعد السائقين على إيجاد الأماكن الفارغة بسرعة من خلال مستشعرات ذكية ولوحات إرشادية إلكترونية، مما يوفر الوقت ويقلل الانبعاثات.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'أنظمة الدفع الإلكتروني',
         description: 'نوفر خيارات دفع متعددة ومرنة تشمل الدفع النقدي، البطاقات الائتمانية، مدى، Apple Pay، والدفع عبر التطبيقات، لتسهيل عملية الدفع على المستخدمين.',
-        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'نظام المراقبة والأمن',
         description: 'أنظمة مراقبة بالفيديو عالية الدقة (HD/4K) تغطي جميع أنحاء الموقف، مع مركز مراقبة متقدم يعمل على مدار الساعة لضمان أقصى درجات الأمان.',
-        image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'صيانة دورية وطارئة',
         description: 'خطط صيانة منتظمة لجميع المعدات والأنظمة، مع فريق صيانة جاهز للاستجابة الفورية لأي أعطال أو مشاكل تقنية قد تحدث.',
-        image: 'https://images.unsplash.com/photo-1581092918484-8313e5e912c6?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

@@ -62,7 +62,7 @@ export default function MallsPage() {
   const serviceData = {
     title: 'إدارة مواقف المراكز التجارية',
     subtitle: 'حلول ذكية ومتطورة لإدارة المواقف وزيادة رضا المتسوقين',
-    heroImage: 'https://images.unsplash.com/photo-1519567241046-7f570eee3ce6?q=80&w=2071',
+    heroImage: '/images/testimonials/mall.jpg',
     
     overview: {
       title: 'نظام إدارة مواقف ذكي يحول التحدي إلى ميزة تنافسية',
@@ -100,32 +100,32 @@ export default function MallsPage() {
       {
         title: 'نظام توجيه ذكي',
         description: 'شاشات LED تعرض المواقف المتاحة في كل طابق ومنطقة',
-        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'تطبيق جوال متكامل',
         description: 'حجز مسبق، توجيه للموقف، دفع إلكتروني',
-        image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'نظام دفع متعدد',
         description: 'نقدي، بطاقات، محافظ رقمية، اشتراكات',
-        image: 'https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'مراقبة وأمن متقدم',
         description: 'كاميرات، دوريات، استجابة فورية',
-        image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'فريق إدارة محترف',
         description: 'مشرفون وموظفون مدربون على مدار الساعة',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'تقارير تحليلية شاملة',
         description: 'إحصائيات مفصلة لاتخاذ قرارات مبنية على البيانات',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

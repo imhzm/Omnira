@@ -62,7 +62,7 @@ export default function EventsPage() {
   const serviceData = {
     title: 'خدمات صف السيارات للفعاليات والمناسبات',
     subtitle: 'حلول احترافية متكاملة لجميع أنواع الفعاليات من الحفلات إلى المؤتمرات الكبرى',
-    heroImage: 'https://images.unsplash.com/photo-1511578314322-379afb476865?q=80&w=2069',
+    heroImage: '/images/services/events-service.jpg',
     
     overview: {
       title: 'خدمة صف سيارات استثنائية تليق بفعاليتك الخاصة',
@@ -104,32 +104,32 @@ export default function EventsPage() {
       {
         title: 'تخطيط مسبق احترافي',
         description: 'نقوم بزيارة الموقع قبل الفعالية لدراسة التدفق المروري، تحديد مواقع الإيقاف، ووضع خطة تشغيلية مفصلة تضمن أعلى كفاءة ممكنة.',
-        image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'فريق كبير ومرن',
         description: 'نوفر العدد المطلوب من السائقين والمنظمين حسب حجم الفعالية، مع إمكانية التوسع السريع إذا لزم الأمر.',
-        image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'نظام إلكتروني متقدم',
         description: 'تطبيق خاص للفعاليات يتتبع جميع السيارات، يدير التذاكر الإلكترونية، ويوفر تقارير فورية عن الأداء والتدفق.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'خدمة VIP فاخرة',
         description: 'مسارات خاصة، استقبال مخصص، وسائقين متخصصين للضيوف المميزين والشخصيات الهامة.',
-        image: 'https://images.unsplash.com/photo-1549294413-26f195200c16?q=80&w=2070',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'تنسيق كامل مع المنظمين',
         description: 'فريقنا يعمل بتنسيق تام مع منظمي الفعالية والأمن لضمان التكامل السلس مع خطة الفعالية الشاملة.',
-        image: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'خدمات إضافية متنوعة',
         description: 'غسيل سري، ملء وقود، صيانة سريعة، وأي خدمات قيمة مضافة تعزز تجربة الضيوف.',
-        image: 'https://images.unsplash.com/photo-1607860108855-64acf2078ed9?q=80&w=2071',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

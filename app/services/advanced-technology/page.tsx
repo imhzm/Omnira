@@ -61,7 +61,7 @@ export default function AdvancedTechnologyPage() {
   const serviceData = {
     title: 'تقنيات متقدمة لإدارة المواقف',
     subtitle: 'توفير أحدث الأنظمة والتقنيات لتنظيم وتشغيل المواقف بسهولة وفعالية',
-    heroImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034',
+    heroImage: '/images/services/advanced-technology.jpg',
     
     overview: {
       title: 'ثورة تقنية في إدارة مواقف السيارات',
@@ -105,32 +105,32 @@ export default function AdvancedTechnologyPage() {
       {
         title: 'نظام التعرف على لوحات الأرقام (ANPR)',
         description: 'تقنية Automatic Number Plate Recognition تستخدم كاميرات عالية الدقة وخوارزميات ذكاء اصطناعي للتعرف التلقائي على لوحات السيارات. يسمح بدخول وخروج سلس دون توقف، يسجل جميع الحركات، ويمكن ربطه بأنظمة الدفع للشحن التلقائي. دقة التعرف تصل إلى 99.5% حتى في ظروف الإضاءة المنخفضة.',
-        image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'نظام إرشاد السيارات الذكي (PGS)',
         description: 'Parking Guidance System يستخدم مستشعرات بالموجات فوق الصوتية أو الأشعة تحت الحمراء فوق كل موقف لاكتشاف الأماكن الشاغرة والمشغولة. تظهر المعلومات على لوحات LED ديناميكية تساعد السائقين على إيجاد أماكن فارغة بسرعة، مما يوفر الوقت ويقلل الازدحام والانبعاثات بنسبة 35%.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'منصة إدارة سحابية متكاملة',
         description: 'نظام إدارة شامل قائم على السحابة يمكن الوصول إليه من أي جهاز. يوفر لوحة تحكم واحدة لمراقبة جميع العمليات، إدارة المستخدمين، تكوين الأسعار، إصدار التقارير، ومراقبة الكاميرات. يدعم إدارة مواقف متعددة من مكان واحد، مع تطبيقات جوال لنظامي iOS و Android.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'أنظمة دفع متعددة ومرنة',
         description: 'نوفر حلول دفع متكاملة تشمل: آلات الدفع الذاتي بالنقد والبطاقات، نقاط الدفع المدمجة مع نظام POS، الدفع عبر التطبيق، الدفع بكود QR، والدفع التلقائي من خلال ANPR. جميع المعاملات مشفرة ومتوافقة مع معايير PCI DSS للأمان.',
-        image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=2070',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'إنترنت الأشياء (IoT) والمستشعرات الذكية',
         description: 'شبكة متكاملة من المستشعرات الذكية لمراقبة كل جانب من جوانب الموقف: مستشعرات إشغال المواقف، مستشعرات الإضاءة للتشغيل التلقائي، مستشعرات الحرارة والدخان للسلامة، ومستشعرات تدفق الحركة. جميع البيانات تُجمع وتُحلل في الوقت الفعلي لتحسين الأداء.',
-        image: 'https://images.unsplash.com/photo-1558346547-4439467bd1d5?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'تحليلات الأعمال والتقارير المتقدمة',
         description: 'نظام تحليلات متقدم يستخدم تقنيات Big Data و Machine Learning لتقديم رؤى عميقة. يولد تقارير تفصيلية عن معدلات الإشغال، الإيرادات، سلوك المستخدمين، أوقات الذروة، ومتوسط مدة الوقوف. يساعدك على اتخاذ قرارات استراتيجية مبنية على البيانات.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

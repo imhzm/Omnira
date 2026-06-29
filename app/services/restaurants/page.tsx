@@ -62,7 +62,7 @@ export default function RestaurantsPage() {
   const serviceData = {
     title: 'خدمات صف السيارات للمطاعم',
     subtitle: 'عزز تجربة عملائك مع خدمة فاليه احترافية',
-    heroImage: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=2070',
+    heroImage: '/images/services/restaurants-service.jpg',
     
     overview: {
       title: 'خدمة فاليه تحول تجربة تناول الطعام',
@@ -100,32 +100,32 @@ export default function RestaurantsPage() {
       {
         title: 'خدمة سريعة',
         description: 'فريق مدرب على الكفاءة في أوقات الذروة',
-        image: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'زي موحد أنيق',
         description: 'يعكس هوية مطعمك',
-        image: 'https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'أسعار تنافسية',
         description: 'باقات مرنة تناسب ميزانيتك',
-        image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=2026',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'حجز مسبق',
         description: 'عبر التطبيق أو الموقع',
-        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'خدمات إضافية',
         description: 'غسيل وتهيئة السيارة',
-        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'دعم تسويقي',
         description: 'مساعدة في الترويج للخدمة',
-        image: 'https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=2074',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

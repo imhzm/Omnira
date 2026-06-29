@@ -62,7 +62,7 @@ export default function HotelsPage() {
   const serviceData = {
     title: 'خدمات صف السيارات للفنادق والمنتجعات',
     subtitle: 'حلول فاخرة متكاملة لصناعة الضيافة - خدمة 24/7 تليق بضيوفك المميزين',
-    heroImage: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=2070',
+    heroImage: '/images/services/hotels-service.jpg',
     
     overview: {
       title: 'خدمة فاليه فندقية تعكس مستوى الرقي والضيافة',
@@ -104,32 +104,32 @@ export default function HotelsPage() {
       {
         title: 'فريق محترف متخصص في الضيافة',
         description: 'سائقونا ليسوا مجرد سائقين؛ بل هم سفراء ضيافة مدربون على أعلى المعايير الفندقية. يخضعون لبرامج تدريبية مكثفة تشمل خدمة العملاء الراقية، لغة الجسد الإيجابية، التعامل مع مختلف الثقافات، والبروتوكولات الخاصة بالشخصيات المهمة.',
-        image: 'https://images.unsplash.com/photo-1540574163026-643ea20ade25?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'تكامل مع أنظمة إدارة الفندق (PMS)',
         description: 'نظامنا يتصل مباشرة بأنظمة إدارة الفندق الرئيسية مثل Opera، Fidelio، وغيرها. يسمح هذا بتبادل المعلومات الفوري، تنسيق طلبات السيارات، وإصدار فواتير موحدة على حساب الضيف.',
-        image: 'https://images.unsplash.com/photo-1551836022-deb4988cc6c0?q=80&w=2071',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'زي موحد أنيق يتماشى مع هوية الفندق',
         description: 'نوفر زياً رسمياً موحداً عالي الجودة. يمكننا تخصيص الزي ليحمل شعار الفندق وألوانه، بحيث يبدو فريقنا كجزء لا يتجزأ من طاقم الفندق.',
-        image: 'https://images.unsplash.com/photo-1617274582605-0056261208ca?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'خدمة VIP ممتازة لكبار الشخصيات',
         description: 'بروتوكولات خاصة للشخصيات المهمة تشمل: استقبال خاص، سائقين متخصصين، سرية تامة، ومواقف مخصصة في أماكن آمنة ومراقبة. نتعامل مع كل ضيف VIP بأعلى مستوى من الاحترافية والسرية.',
-        image: 'https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?q=80&w=2072',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'تطبيق جوال للضيوف ولإدارة الفندق',
         description: 'يمكن للضيوف طلب سياراتهم عبر التطبيق من غرفهم، بينما تحصل الإدارة على لوحة تحكم شاملة لمراقبة الأداء، التدفق، والإحصائيات الفورية.',
-        image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'تقارير تحليلية مفصلة',
         description: 'نقدم تقارير يومية، أسبوعية، وشهرية شاملة تتضمن: عدد السيارات، أوقات الذروة، متوسط وقت الانتظار، تقييمات الضيوف، وأي ملاحظات أو حوادث. تساعد هذه التقارير في تحسين الخدمة باستمرار.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

@@ -62,7 +62,7 @@ export default function VIPPage() {
   const serviceData = {
     title: 'خدمة VIP الفاخرة',
     subtitle: 'تجربة استثنائية للعملاء المميزين',
-    heroImage: 'https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=2070',
+    heroImage: '/images/hero/hero-2.jpg',
     
     overview: {
       title: 'الرفاهية القصوى في خدمة صف السيارات',
@@ -79,12 +79,12 @@ export default function VIPPage() {
     ],
 
     features: [
-      { title: 'سائقون متخصصون VIP', description: 'تدريب خاص وخبرة عالية', image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071' },
-      { title: 'سرية وخصوصية تامة', description: 'بروتوكولات أمنية صارمة', image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?q=80&w=2070' },
-      { title: 'مواقف مخصصة آمنة', description: 'مناطق خاصة مراقبة 24/7', image: 'https://images.unsplash.com/photo-1590674899484-d5640e854abe?q=80&w=2074' },
-      { title: 'خدمة بدون انتظار', description: 'استجابة فورية دائماً', image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070' },
-      { title: 'عناية بالسيارات الفاخرة', description: 'خبرة في جميع الماركات', image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070' },
-      { title: 'خدمات إضافية راقية', description: 'تهيئة، تنظيف، صيانة', image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074' },
+      { title: 'سائقون متخصصون VIP', description: 'تدريب خاص وخبرة عالية', image: '/images/valet-service.jpg' },
+      { title: 'سرية وخصوصية تامة', description: 'بروتوكولات أمنية صارمة', image: '/images/professional-team.jpg' },
+      { title: 'مواقف مخصصة آمنة', description: 'مناطق خاصة مراقبة 24/7', image: '/images/services/advanced-technology.jpg' },
+      { title: 'خدمة بدون انتظار', description: 'استجابة فورية دائماً', image: '/images/smart-parking.jpg' },
+      { title: 'عناية بالسيارات الفاخرة', description: 'خبرة في جميع الماركات', image: '/images/services/parking-management.jpg' },
+      { title: 'خدمات إضافية راقية', description: 'تهيئة، تنظيف، صيانة', image: '/images/valet-hotel.jpg' },
     ],
 
     process: [

@@ -62,7 +62,7 @@ export default function HospitalsPage() {
   const serviceData = {
     title: 'خدمات صف السيارات للمستشفيات',
     subtitle: 'خدمة حساسة ومدروسة لبيئة الرعاية الصحية مع أولوية للطوارئ',
-    heroImage: 'https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?q=80&w=2072',
+    heroImage: '/images/services/parking-management.jpg',
     
     overview: {
       title: 'خدمة فاليه تفهم حساسية بيئة الرعاية الصحية',
@@ -100,32 +100,32 @@ export default function HospitalsPage() {
       {
         title: 'بروتوكول طوارئ خاص',
         description: 'استجابة فورية للحالات الطارئة مع أولوية قصوى',
-        image: 'https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'فريق متعاطف ومدرب',
         description: 'تدريب خاص على التعامل مع المرضى والحساسية',
-        image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'دعم لذوي الاحتياجات الخاصة',
         description: 'مساعدة إضافية لكبار السن والكراسي المتحركة',
-        image: 'https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'تنسيق مع الطوارئ',
         description: 'تواصل مباشر مع قسم الطوارئ للحالات العاجلة',
-        image: 'https://images.unsplash.com/photo-1504813184591-01572f98c85f?q=80&w=2071',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'نظام استدعاء سريع',
         description: 'استرجاع فوري للسيارات عند الحاجة',
-        image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'نظافة وتعقيم',
         description: 'معايير نظافة عالية تتماشى مع البيئة الطبية',
-        image: 'https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

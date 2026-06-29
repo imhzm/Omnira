@@ -60,7 +60,7 @@ export default function SupportServicesPage() {
   const serviceData = {
     title: 'خدمات مساندة',
     subtitle: 'دعم متكامل لتشغيل المواقف وتحقيق تجربة سلسة للمستخدمين',
-    heroImage: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070',
+    heroImage: '/images/services/advanced-technology.jpg',
     
     overview: {
       title: 'دعم شامل لعمليات مواقف السيارات',
@@ -102,32 +102,32 @@ export default function SupportServicesPage() {
       {
         title: 'خدمات النظافة الشاملة',
         description: 'فريق نظافة محترف يعمل يومياً: كنس وغسيل الأرضيات، تنظيف الجدران، إزالة القمامة، تنظيف المصاعد والسلالم، تفريغ صناديق القمامة، إزالة البقع الزيتية، وتنظيف الحمامات إن وجدت. نستخدم معدات ومنظفات احترافية صديقة للبيئة.',
-        image: 'https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=2070',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'الصيانة الوقائية والإصلاحات',
         description: 'برنامج صيانة دورية شامل: فحص وصيانة البوابات والحواجز، صيانة أنظمة الدفع، فحص الإضاءة واستبدال اللمبات التالفة، صيانة أنظمة التهوية، فحص المصاعد، إصلاح الأرضيات والعلامات، وصيانة أنظمة إطفاء الحريق.',
-        image: 'https://images.unsplash.com/photo-1581092918484-8313e5e912c6?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'خدمات الأمن والمراقبة',
         description: 'حراس أمن مدربون بدوام كامل أو جزئي، دوريات منتظمة، مراقبة كاميرات، التحكم بالدخول، الاستجابة للحوادث، ومساعدة العملاء. جميع حراسنا مرخصون ومدربون على الإسعافات الأولية والطوارئ.',
-        image: 'https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'الدعم الفني 24/7',
         description: 'فريق دعم فني على مدار الساعة لمعالجة أي أعطال في الأنظمة: بوابات معطلة، أعطال أنظمة الدفع، مشاكل الإضاءة، أعطال المصاعد، وغيرها. استجابة سريعة خلال ساعة واحدة للطوارئ. خط ساخن متاح دائماً.',
-        image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'إدارة النفايات',
         description: 'تجميع وتصريف النفايات بشكل يومي أو أسبوعي، توفير حاويات قمامة كافية، إعادة تدوير حيثما أمكن، والتأكد من نظافة مناطق القمامة. نتبع ممارسات إدارة نفايات مستدامة.',
-        image: 'https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?q=80&w=2070',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'مساعدة العملاء',
         description: 'نقطة خدمة عملاء مركزية لمساعدة الزوار: استفسارات عامة، الإبلاغ عن مشاكل، مساعدة ذوي الاحتياجات، استدعاء جولف كار، وتوجيه العملاء. موظفون ودودون يتحدثون لغات متعددة.',
-        image: 'https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 

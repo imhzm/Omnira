@@ -148,7 +148,7 @@ export default function ValetParkingPage() {
   const serviceData = {
     title: 'تقديم خدمات الفاليه باركينج',
     subtitle: 'استقبال المركبات وإيقافها بعناية لضمان راحة العملاء',
-    heroImage: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070',
+    heroImage: '/images/services/valet-parking.jpg',
     
     overview: {
       title: 'خدمة فاليه باركينج احترافية تليق بعملائك',
@@ -192,32 +192,32 @@ export default function ValetParkingPage() {
       {
         title: 'سائقون محترفون ومدربون',
         description: 'فريقنا يخضع لبرنامج تدريبي مكثف يشمل مهارات القيادة المتقدمة، بروتوكولات السلامة، خدمة العملاء الراقية، والتعامل مع السيارات الفاخرة والرياضية. كل سائق يتمتع برخصة قيادة سارية، سجل قيادة نظيف، وخبرة لا تقل عن 3 سنوات.',
-        image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=2071',
+        image: '/images/valet-service.jpg',
       },
       {
         title: 'زي موحد احترافي',
         description: 'سائقونا يرتدون زياً موحداً أنيقاً ومهنياً يعكس مستوى الخدمة الراقية. يمكننا تخصيص الزي ليتماشى مع هوية منشأتك البصرية إذا رغبت في ذلك.',
-        image: 'https://images.unsplash.com/photo-1556157382-97eda2f9e2bf?q=80&w=2070',
+        image: '/images/professional-team.jpg',
       },
       {
         title: 'نظام تذاكر إلكتروني',
         description: 'نستخدم نظام تذاكر إلكتروني متقدم مع أكواد QR فريدة لكل سيارة. يمكن للعميل استرجاع سيارته بسهولة عبر مسح الكود أو عبر التطبيق، مما يلغي الحاجة للتذاكر الورقية.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070',
+        image: '/images/services/advanced-technology.jpg',
       },
       {
         title: 'تطبيق جوال للعملاء',
         description: 'نوفر تطبيق جوال يسمح للعملاء بطلب سياراتهم مسبقاً قبل النزول، تتبع موقع السيارة، والدفع إلكترونياً. التطبيق متاح لأنظمة iOS و Android.',
-        image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070',
+        image: '/images/smart-parking.jpg',
       },
       {
         title: 'خدمات إضافية اختيارية',
         description: 'نقدم خدمات قيمة مضافة مثل: غسيل سريع للسيارة، ملء الوقود، فحص ضغط الإطارات، وحتى شحن السيارات الكهربائية إذا كانت البنية التحتية متوفرة.',
-        image: 'https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?q=80&w=2074',
+        image: '/images/services/parking-management.jpg',
       },
       {
         title: 'تأمين شامل وحماية كاملة',
         description: 'نوفر تأميناً شاملاً من شركات تأمين معتمدة يغطي جميع المخاطر المحتملة. كما نستخدم كاميرات توثيق لحالة السيارة عند الاستلام والتسليم.',
-        image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?q=80&w=2070',
+        image: '/images/valet-hotel.jpg',
       },
     ],
 
