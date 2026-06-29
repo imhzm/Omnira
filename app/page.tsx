@@ -19,23 +19,11 @@ const EditorialManifesto = dynamic(() => import("@/components/home/EditorialMani
   ssr: true,
 });
 
-const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), { 
+const AtmosphericStatement = dynamic(() => import("@/components/home/AtmosphericStatement"), {
   ssr: true,
-  loading: () => <div className="h-screen" />
 });
 
-// Below fold - Lazy load without SSR for faster initial load
-const FeaturesSection = dynamic(() => import("@/components/home/FeaturesSection"), { 
-  ssr: false,
-  loading: () => <div className="h-96" />
-});
-
-const HowItWorksSection = dynamic(() => import("@/components/home/HowItWorksSection"), { 
-  ssr: false,
-  loading: () => <div className="h-96" />
-});
-
-const Testimonials = dynamic(() => import("@/components/home/Testimonials"), { 
+const Testimonials = dynamic(() => import("@/components/home/Testimonials"), {
   ssr: false,
   loading: () => <div className="h-96" />
 });
@@ -138,12 +126,10 @@ export default function Home() {
       <main className="min-h-screen bg-[#0E0E11]">
         <Header />
         <HeroSection />
-        <GiantSectors />
         <EditorialManifesto />
+        <GiantSectors />
         <BeyondServices />
-        <WhyChooseUs />
-        <FeaturesSection />
-        <HowItWorksSection />
+        <AtmosphericStatement />
         <Testimonials />
         <CTASection />
         <Footer />

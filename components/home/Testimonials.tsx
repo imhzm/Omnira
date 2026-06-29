@@ -1,149 +1,97 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
-import { Star, Quote } from 'lucide-react';
+
+const testimonials = [
+  {
+    name: 'محمد العلي',
+    position: 'مدير عام فندق الرياض الكبير',
+    image: '/images/people/person-3.jpg',
+    text: 'خدمة استثنائية. فريق أومنيرا فاليه أصبح جزءاً أساسياً من تجربة الضيافة في فندقنا — ضيوفنا يشيدون دائماً بمستوى الهدوء والرقي.',
+  },
+  {
+    name: 'سارة القحطاني',
+    position: 'مالكة مطعم النخبة',
+    image: '/images/people/person-2.jpg',
+    text: 'منذ أن بدأنا العمل معهم، تحوّلت لحظة وصول عملائنا إلى انطباع أول لا يُنسى. احترافية وأناقة في كل تفصيلة.',
+  },
+  {
+    name: 'خالد السالم',
+    position: 'منسّق فعاليات كبرى',
+    image: '/images/people/person-6.jpg',
+    text: 'أدار فريقهم وصول مئات السيارات في حفلٍ بـ ٣٠٠ ضيف بسلاسة تامة. تخطيط دقيق وفريق راقٍ — أنصح بهم بثقة.',
+  },
+  {
+    name: 'نورة العتيبي',
+    position: 'مديرة علاقات عامة',
+    image: '/images/people/person-4.jpg',
+    text: 'استقبلنا وفداً دولياً عبر خدمة VIP. السرّية والاحترافية والاهتمام بالتفاصيل كانت على أعلى مستوى.',
+  },
+  {
+    name: 'عبدالله الدوسري',
+    position: 'صاحب مجمع تجاري',
+    image: '/images/people/person-5.jpg',
+    text: 'النظام الذكي الذي قدّموه غيّر تجربة التسوّق في مجمعنا — انخفض الازدحام والزوار يجدون مواقفهم بسهولة.',
+  },
+];
 
 const Testimonials = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true });
+  const [i, setI] = useState(0);
 
-  const testimonials = [
-    {
-      name: 'محمد العلي',
-      position: 'مدير عام فندق الرياض الكبير',
-      image: '/images/people/person-3.jpg',
-      rating: 5,
-      text: 'خدمة استثنائية! فريق أومنيرا فاليه محترف جداً وملتزم. ضيوفنا يشيدون دائماً بمستوى الخدمة السريعة والراقية. أصبحوا جزءاً أساسياً من تجربة الضيافة في فندقنا.',
-    },
-    {
-      name: 'سارة القحطاني',
-      position: 'مالكة مطعم النخبة',
-      image: '/images/people/person-2.jpg',
-      rating: 5,
-      text: 'تحول كبير في تجربة عملائنا! منذ أن بدأنا العمل مع أومنيرا فاليه، زاد رضا العملاء بشكل ملحوظ. الخدمة السريعة والأسعار المعقولة جعلتهم الخيار الأمثل.',
-    },
-    {
-      name: 'خالد السالم',
-      position: 'منسق فعاليات كبرى',
-      image: '/images/people/person-6.jpg',
-      rating: 5,
-      text: 'نظمنا حفل زفاف بـ 300 ضيف وكان فريق أومنيرا فاليه رائعاً! تخطيط مسبق ممتاز، سائقون مهذبون، ونظام إلكتروني سهّل كل شيء. أنصح بهم بشدة!',
-    },
-    {
-      name: 'فهد المطيري',
-      position: 'مدير مركز الأعمال',
-      image: '/images/people/person-1.jpg',
-      rating: 5,
-      text: 'عقدنا معهم سنوياً لإدارة موقف المركز. الخدمة احترافية، التقارير الشهرية مفصلة، والأسعار تنافسية. علاقة شراكة حقيقية.',
-    },
-    {
-      name: 'نورة العتيبي',
-      position: 'مديرة علاقات عامة',
-      image: '/images/people/person-4.jpg',
-      rating: 5,
-      text: 'استخدمنا خدمة VIP لاستقبال وفد دولي. السرية، الاحترافية، والاهتمام بالتفاصيل كان على أعلى مستوى. شكراً أومنيرا فاليه!',
-    },
-    {
-      name: 'عبدالله الدوسري',
-      position: 'صاحب مجمع تجاري',
-      image: '/images/people/person-5.jpg',
-      rating: 5,
-      text: 'النظام الذكي الذي قدموه غيّر تجربة التسوق في مجمعنا. الزوار يجدون مواقف بسهولة والازدحام انخفض بنسبة 40%. استثمار يستحق!',
-    },
-  ];
+  useEffect(() => {
+    const t = setInterval(() => setI((p) => (p + 1) % testimonials.length), 6500);
+    return () => clearInterval(t);
+  }, []);
+
+  const t = testimonials[i];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C] relative overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]">
       <div className="container-custom relative z-10">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8"
-          >
-            <Star className="w-5 h-5 text-sunset-golden fill-sunset-golden" />
-            <span className="text-sage-primary font-bold text-sm">آراء عملائنا</span>
-          </motion.div>
+        <div className="mx-auto max-w-4xl text-center">
+          <span className="mb-12 flex items-center justify-center gap-4 text-[11px] font-medium tracking-[0.4em] text-gold-primary/90">
+            <span className="h-px w-12 bg-gold-primary/50" />
+            قالوا عنّا
+          </span>
 
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6">
-            <span className="gold-shine-effect">ماذا يقول عملاؤنا</span>
-          </h2>
-          <p className="text-brown-dark text-lg md:text-xl max-w-3xl mx-auto font-medium">
-            <span className="text-sage-primary font-bold">ثقة عملائنا</span> و<span className="text-sunset-golden font-bold">رضاهم</span> هي أكبر إنجازاتنا
-          </p>
-        </motion.div>
-
-        {/* Testimonials Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 relative"
+          <AnimatePresence mode="wait">
+            <motion.blockquote
+              key={i}
+              initial={{ opacity: 0, y: 26 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -22 }}
+              transition={{ duration: 0.7, ease: [0.22, 0.61, 0.36, 1] }}
+              className="font-extralight leading-[1.5] text-white text-2xl sm:text-3xl lg:text-[2.6rem]"
             >
-              {/* Quote Icon */}
-              <div className="absolute top-6 left-6 w-14 h-14 rounded-2xl bg-sage-primary/10 flex items-center justify-center group-hover:scale-110 group-hover:rotate-6 transition-all">
-                <Quote className="w-7 h-7 text-sage-primary/40" />
-              </div>
+              ”{t.text}“
+            </motion.blockquote>
+          </AnimatePresence>
 
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-sunset-golden text-sunset-golden" />
-                ))}
-              </div>
+          <div className="mt-14 flex items-center justify-center gap-4">
+            <div className="relative h-12 w-12 overflow-hidden rounded-full">
+              <Image src={t.image} alt={t.name} fill sizes="48px" className="object-cover" />
+            </div>
+            <div className="text-right">
+              <div className="font-medium text-white">{t.name}</div>
+              <div className="text-sm text-white/50">{t.position}</div>
+            </div>
+          </div>
 
-              {/* Text */}
-              <p className="text-brown-text leading-relaxed mb-6 relative z-10">
-                &ldquo;{testimonial.text}&rdquo;
-              </p>
-
-              {/* Author */}
-              <div className="flex items-center gap-4 pt-6 border-t border-beige-medium">
-                <div className="relative w-12 h-12 rounded-full overflow-hidden">
-                  <Image
-                    src={testimonial.image}
-                    alt={testimonial.name}
-                    fill
-                    sizes="48px"
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <div className="font-bold text-brown-dark">{testimonial.name}</div>
-                  <div className="text-sm text-brown-medium">{testimonial.position}</div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
+          <div className="mt-10 flex items-center justify-center gap-2">
+            {testimonials.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setI(idx)}
+                aria-label={`الانتقال للتقييم ${idx + 1}`}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  idx === i ? 'w-8 bg-gold-primary' : 'w-1.5 bg-white/20 hover:bg-white/40'
+                }`}
+              />
+            ))}
+          </div>
         </div>
-
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="text-center mt-16"
-        >
-          <p className="text-brown-dark text-lg mb-6 font-medium">
-            انضم إلى <span className="text-sage-primary font-bold">أكثر من 200 عميل</span> راضٍ عن خدماتنا
-          </p>
-          <a href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] px-10 py-5 text-lg font-black rounded-2xl hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105 transition-all">
-            <span>احجز استشارة مجانية</span>
-            <span className="group-hover:-translate-x-2 transition-transform">←</span>
-          </a>
-        </motion.div>
       </div>
     </section>
   );

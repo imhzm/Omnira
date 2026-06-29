@@ -1,110 +1,64 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Phone, Mail, MessageCircle, ArrowLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
+import ParallaxImage from '@/components/ui/ParallaxImage';
+
+const fade = {
+  hidden: { opacity: 0, y: 26 },
+  show: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 0.61, 0.36, 1] } },
+};
 
 const CTASection = () => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
-
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/valet-hotel.jpg"
-          alt="اتصل بنا"
-          fill
-          sizes="100vw"
-          className="object-cover opacity-5"
-          unoptimized
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11]/50 to-[#0A0A0C]"></div>
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]">
+      <div className="absolute inset-0">
+        <ParallaxImage src="/images/atmos/atmos-3.jpg" alt="سيارة فاخرة سوداء" strength={70} />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/65 to-[#0A0A0C]/45" />
       </div>
 
       <div className="container-custom relative z-10">
-        <div className="max-w-5xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8"
-            >
-              <span className="text-sage-primary font-bold text-sm">تواصل معنا اليوم</span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6"
-            >
-              <span className="gold-shine-effect">جاهز للبدء؟</span>
-            </motion.h2>
-            
-            <motion.p
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.2 }}
-              className="text-xl md:text-2xl text-brown-dark font-medium mb-12 max-w-3xl mx-auto"
-            >
-              احجز خدمة <span className="text-sage-primary font-bold">صف السيارات الاحترافية</span> الآن واستمتع بتجربة <span className="text-sunset-golden font-bold">استثنائية</span>
-            </motion.p>
-
-            {/* CTA Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
-            >
-              <Link href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] px-10 py-5 text-lg font-black rounded-2xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500">
-                <span>احجز الآن</span>
-                <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-500" />
-              </Link>
-              <Link href="/pricing" className="inline-flex items-center justify-center space-x-2 space-x-reverse px-10 py-5 text-lg font-bold border-2 border-sage-primary text-sage-primary rounded-2xl hover:bg-sage-primary hover:text-white hover:shadow-xl transition-all">
-                <span>اطلب عرض سعر</span>
-              </Link>
-            </motion.div>
-          </div>
-
-          {/* Contact Cards */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+        <motion.div
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-100px' }}
+          variants={{ show: { transition: { staggerChildren: 0.16, delayChildren: 0.1 } } }}
+          className="max-w-3xl"
+        >
+          <motion.span
+            variants={fade}
+            className="mb-9 flex items-center gap-4 text-[11px] font-medium tracking-[0.4em] text-gold-primary/90"
           >
-            <a href="tel:+966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Phone className="w-8 h-8 text-sage-primary" />
-              </div>
-              <h3 className="font-black mb-2 text-brown-dark text-lg">اتصل بنا</h3>
-              <p className="text-sage-primary font-bold" dir="ltr">+966 XX XXX XXXX</p>
-            </a>
-            
-            <a href="https://wa.me/966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-accents-emerald/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <MessageCircle className="w-8 h-8 text-accents-emerald" />
-              </div>
-              <h3 className="font-black mb-2 text-brown-dark text-lg">واتساب</h3>
-              <p className="text-accents-emerald font-bold">راسلنا الآن</p>
-            </a>
-            
-            <a href="mailto:info@omnira.sa" className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 rounded-2xl bg-accents-sky/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Mail className="w-8 h-8 text-accents-sky" />
-              </div>
-              <h3 className="font-black mb-2 text-brown-dark text-lg">البريد الإلكتروني</h3>
-              <p className="text-accents-sky font-bold">info@omnira.sa</p>
+            <span className="h-px w-12 bg-gold-primary/50" />
+            ابدأ التجربة
+          </motion.span>
+
+          <motion.h2
+            variants={fade}
+            className="font-extralight leading-[1.1] text-white text-4xl sm:text-6xl lg:text-7xl"
+          >
+            وصولٌ يليق
+            <br />
+            بـ<span className="font-light text-gold-light">ضيوفك</span>.
+          </motion.h2>
+
+          <motion.div variants={fade} className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
+            <Link href="/contact" className="group inline-flex items-center gap-3 text-base text-white">
+              <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
+                احجز خدمتك
+              </span>
+              <span className="text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5">
+                ←
+              </span>
+            </Link>
+            <a
+              href="https://wa.me/966XXXXXXXXX"
+              className="text-base text-white/55 transition-colors duration-300 hover:text-white"
+            >
+              تواصل عبر واتساب
             </a>
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
