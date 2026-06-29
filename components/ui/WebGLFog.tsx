@@ -37,6 +37,7 @@ export default function WebGLFog({ className = '' }: { className?: string }) {
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    if (window.innerWidth < 768) return; // skip the heavy shader on phones
     const canvas = ref.current;
     if (!canvas) return;
     const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: false });

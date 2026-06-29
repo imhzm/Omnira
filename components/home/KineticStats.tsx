@@ -33,7 +33,7 @@ function Counter({ to, dp = 0 }: { to: number; dp?: number }) {
 
 export default function KineticStats() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]">
+    <section className="relative overflow-hidden bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 gap-y-16 sm:grid-cols-2 lg:grid-cols-4 lg:gap-x-8">
           {stats.map((s, i) => (
