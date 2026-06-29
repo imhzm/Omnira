@@ -1,6 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -10,10 +11,24 @@ const fade = {
 };
 
 const HeroSection = () => {
+  const ref = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
+  const bgScale = useTransform(scrollYProgress, [0, 1], [1, 1.22]);
+  const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '14%']);
+  const contentY = useTransform(scrollYProgress, [0, 1], [0, -90]);
+  const contentOpacity = useTransform(scrollYProgress, [0, 0.7], [1, 0]);
+
   return (
-    <section data-no-reveal className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]">
-      {/* atmospheric background — a single quiet cinematic frame */}
-      <div className="absolute inset-0">
+    <section
+      ref={ref}
+      data-no-reveal
+      className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]"
+    >
+      {/* atmospheric background — scrubs with scroll */}
+      <motion.div style={{ scale: bgScale, y: bgY }} className="absolute inset-0">
         <Image
           src="/images/atmos/atmos-1.jpg"
           alt="سيارة فاخرة سوداء في خدمة الفاليه وسط الضباب"
@@ -24,10 +39,10 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/55 to-[#0A0A0C]/35" />
         <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/75" />
-      </div>
+      </motion.div>
 
-      {/* minimal content */}
-      <div className="container-custom relative z-10">
+      {/* minimal content — drifts up + fades on scroll */}
+      <motion.div style={{ y: contentY, opacity: contentOpacity }} className="container-custom relative z-10">
         <motion.div
           initial="hidden"
           animate="show"
@@ -75,7 +90,7 @@ const HeroSection = () => {
             </Link>
           </motion.div>
         </motion.div>
-      </div>
+      </motion.div>
 
       {/* scroll hint */}
       <motion.div
