@@ -104,7 +104,7 @@ const TestimonialCard = ({ testimonial, index, isInView }: TestimonialCardProps)
       transition={{ duration: 0.2, delay: 0 }}
       className="group"
     >
-      <div className="relative p-8 rounded-2xl bg-gradient-dark border border-gold-primary/20 hover:border-gold-primary transition-all duration-300 h-full">
+      <div className="relative p-8 rounded-2xl bg-gradient-dark border border-white/10 hover:border-gold-primary transition-all duration-300 h-full">
         {/* Quote Icon */}
         <div className="absolute top-6 left-6 opacity-10">
           <Quote className="w-16 h-16 text-gold-primary" />

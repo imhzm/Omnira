@@ -44,12 +44,6 @@ const WhyChooseUs = () => {
 
   return (
     <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-accents-emerald/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 -right-20 w-96 h-96 bg-gold-light/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-      </div>
-
       <div className="container-custom relative z-10">
         {/* Header */}
         <motion.div
@@ -61,7 +55,7 @@ const WhyChooseUs = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8"
           >
             <span className="text-sage-primary font-bold text-sm">لماذا نحن؟</span>
           </motion.div>
@@ -84,7 +78,7 @@ const WhyChooseUs = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
+                className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
               >
                 {/* Icon Container */}
                 <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all">
@@ -111,19 +105,19 @@ const WhyChooseUs = () => {
           className="mt-16"
         >
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            <div className="glass-effect p-8 rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+            <div className="glass-effect p-8 rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
               <div className="text-5xl font-black mb-2 bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">99.9%</div>
               <div className="text-brown-text font-medium">معدل رضا العملاء</div>
             </div>
-            <div className="glass-effect p-8 rounded-3xl border-2 border-accents-emerald/20 hover:border-accents-emerald hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+            <div className="glass-effect p-8 rounded-3xl border border-white/10 hover:border-accents-emerald hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
               <div className="text-5xl font-black mb-2 bg-gradient-to-r from-accents-emerald to-sage-primary bg-clip-text text-transparent">5,000+</div>
               <div className="text-brown-text font-medium">سيارة مخدومة شهرياً</div>
             </div>
-            <div className="glass-effect p-8 rounded-3xl border-2 border-accents-sky/20 hover:border-accents-sky hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+            <div className="glass-effect p-8 rounded-3xl border border-white/10 hover:border-accents-sky hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
               <div className="text-5xl font-black mb-2 bg-gradient-to-r from-accents-sky to-sage-primary bg-clip-text text-transparent">200+</div>
               <div className="text-brown-text font-medium">عميل راضٍ</div>
             </div>
-            <div className="glass-effect p-8 rounded-3xl border-2 border-sunset-golden/20 hover:border-sunset-golden hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
+            <div className="glass-effect p-8 rounded-3xl border border-white/10 hover:border-sunset-golden hover:shadow-xl hover:scale-105 transition-all duration-300 text-center">
               <div className="text-5xl font-black mb-2 bg-gradient-to-r from-sunset-golden to-sage-primary bg-clip-text text-transparent">24/7</div>
               <div className="text-brown-text font-medium">خدمة متواصلة</div>
             </div>

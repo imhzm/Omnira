@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Sparkles, Shield, Clock, TrendingDown, CheckCircle2, Star } from 'lucide-react';
+import { Shield, Clock, TrendingDown, CheckCircle2, Star } from 'lucide-react';
 
 const PricingHero = () => {
   const features = [
@@ -27,13 +27,6 @@ const PricingHero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0C]/95 via-beige-light/90 to-[#0A0A0C]/95"></div>
       </div>
 
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute top-20 left-10 w-96 h-96 bg-sage-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 right-10 w-96 h-96 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 left-1/3 w-96 h-96 bg-gold-primary/20 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
-
       <div className="container-custom relative z-10 py-20">
         <motion.div
           initial={{ opacity: 1 }}
@@ -46,11 +39,10 @@ const PricingHero = () => {
             initial={{ opacity: 1 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8 group hover:border-sage-primary transition-all"
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8 group hover:border-sage-primary transition-all"
           >
             <Star className="w-5 h-5 text-sunset-golden animate-pulse" />
             <span className="text-sage-primary font-bold text-sm">عرض خاص: خصم 10% على العقود السنوية</span>
-            <Sparkles className="w-4 h-4 text-sunset-golden" />
           </motion.div>
 
           {/* Main Title */}
@@ -90,7 +82,7 @@ const PricingHero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  className="glass-effect p-6 rounded-2xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-xl hover:scale-105 transition-all duration-300 group"
+                  className="glass-effect p-6 rounded-2xl border border-white/10 hover:border-sage-primary hover:shadow-xl hover:scale-105 transition-all duration-300 group"
                 >
                   <Icon className="w-8 h-8 text-sage-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
                   <p className="text-brown-dark font-bold text-sm">{feature.text}</p>

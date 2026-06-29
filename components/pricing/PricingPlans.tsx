@@ -78,7 +78,7 @@ const PricingPlans = () => {
               className={`relative p-8 md:p-10 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
                 plan.popular
                   ? 'bg-gradient-to-br from-[#141418] via-sage-50 to-[#141418] border-2 border-sage-primary shadow-xl shadow-sage-primary/20'
-                  : 'bg-[#141418]/90 backdrop-blur-md border-2 border-sage-primary/30 hover:border-sage-primary'
+                  : 'bg-[#141418]/90 backdrop-blur-md border border-white/10 hover:border-sage-primary'
               }`}
             >
               {plan.badge && (
@@ -125,7 +125,7 @@ const PricingPlans = () => {
               </div>
 
               {plan.extras.length > 0 && (
-                <div className="border-t-2 border-sage-primary/20 pt-6 mb-6">
+                <div className="border-t border-white/10 pt-6 mb-6">
                   <p className="text-base font-black mb-4 text-sage-primary flex items-center space-x-2 space-x-reverse">
                     <span>✨</span>
                     <span>إضافات متاحة:</span>

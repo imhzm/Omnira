@@ -201,7 +201,7 @@ const StatCard = ({ stat, index, isInView }: StatCardProps) => {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 8, repeat: Infinity, ease: 'linear' }}
-              className="absolute inset-0 border-2 border-gold-primary/30 rounded-2xl"
+              className="absolute inset-0 border border-white/10 rounded-2xl"
             ></motion.div>
           </motion.div>
 

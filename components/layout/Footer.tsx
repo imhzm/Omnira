@@ -27,13 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] border-t-2 border-sage-primary/30 relative overflow-hidden">
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-5">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gold-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-      </div>
-
+    <footer className="bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] border-t border-white/10 relative overflow-hidden">
       <div className="container-custom py-16 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Company Info */}
@@ -156,7 +150,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t-2 border-sage-primary/20 mt-12 pt-8">
+        <div className="border-t border-white/10 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-brown-dark text-sm font-medium">
               © {currentYear} <span className="text-sage-primary font-bold">Omnira Valet</span>. جميع الحقوق محفوظة

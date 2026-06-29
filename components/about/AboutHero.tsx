@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Building2, Users, Award, Sparkles, Target, Heart } from 'lucide-react';
+import { Building2, Users, Award, Target, Heart } from 'lucide-react';
 
 const AboutHero = () => {
   const highlights = [
@@ -26,13 +26,6 @@ const AboutHero = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0E0E11]/95 via-beige-light/90 to-[#0E0E11]/95"></div>
       </div>
 
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-sage-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 -right-20 w-96 h-96 bg-gold-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-10 left-1/2 w-96 h-96 bg-gold-rose/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
-
       <div className="container-custom relative z-10 py-24">
         <motion.div
           initial={{ opacity: 1 }}
@@ -45,11 +38,10 @@ const AboutHero = () => {
             initial={{ opacity: 1 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.1 }}
-            className="inline-flex items-center space-x-3 space-x-reverse glass-effect px-8 py-4 rounded-full border-2 border-sage-primary/30 mb-10 group hover:border-sage-primary transition-all"
+            className="inline-flex items-center space-x-3 space-x-reverse glass-effect px-8 py-4 rounded-full border border-white/10 mb-10 group hover:border-sage-primary transition-all"
           >
             <Target className="w-5 h-5 text-sage-primary animate-pulse" />
             <span className="text-sage-primary font-black text-base">رؤية 2030 • ابتكار • تميز</span>
-            <Sparkles className="w-5 h-5 text-sunset-golden animate-pulse" />
           </motion.div>
 
           {/* Main Title */}
@@ -88,7 +80,7 @@ const AboutHero = () => {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.5 + index * 0.1 }}
-                  className="glass-effect p-8 rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+                  className="glass-effect p-8 rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
                 >
                   <Icon className={`w-10 h-10 ${item.color} mx-auto mb-4 group-hover:scale-110 transition-transform`} />
                   <p className="text-brown-dark font-bold text-sm">{item.text}</p>

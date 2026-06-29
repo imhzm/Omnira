@@ -77,7 +77,7 @@ const VisionMissionSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2 }}
-            className="p-8 rounded-3xl bg-gradient-to-br from-[#141418] to-sage-50 border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all"
+            className="p-8 rounded-3xl bg-gradient-to-br from-[#141418] to-sage-50 border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all"
           >
             <div className="w-16 h-16 rounded-full bg-sage-primary/10 flex items-center justify-center mb-6">
               <Target className="w-8 h-8 text-sage-primary" />
@@ -94,7 +94,7 @@ const VisionMissionSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2, delay: 0 }}
-            className="p-8 rounded-3xl bg-gradient-to-br from-[#141418] to-sage-50 border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all"
+            className="p-8 rounded-3xl bg-gradient-to-br from-[#141418] to-sage-50 border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all"
           >
             <div className="w-16 h-16 rounded-full bg-sage-primary/10 flex items-center justify-center mb-6">
               <Award className="w-8 h-8 text-sage-primary" />
@@ -169,7 +169,7 @@ const ValuesSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+                className="p-6 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
               >
                 <Icon className="w-12 h-12 text-sage-primary mb-4 group-hover:scale-110 transition-transform" />
                 <h3 className="text-xl font-bold mb-2 text-brown-dark">{value.title}</h3>
@@ -204,7 +204,7 @@ const StatsSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center glass-effect p-8 rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="text-center glass-effect p-8 rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
             >
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">{stat.value}</div>
               <div className="text-brown-text font-medium">{stat.label}</div>
@@ -243,7 +243,7 @@ const TeamSection = () => {
               transition={{ duration: 0.2, delay: 0 }}
               className="group"
             >
-              <div className="relative h-64 mb-4 rounded-3xl overflow-hidden border-2 border-sage-primary/20 group-hover:border-sage-primary transition-all">
+              <div className="relative h-64 mb-4 rounded-3xl overflow-hidden border border-white/10 group-hover:border-sage-primary transition-all">
                 <Image
                   src={index === 0 ? '/images/people/person-3.jpg' : index === 1 ? '/images/people/person-1.jpg' : '/images/people/person-4.jpg'}
                   alt="عضو فريق"

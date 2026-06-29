@@ -43,12 +43,6 @@ const HowItWorksSection = () => {
 
   return (
     <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute top-0 left-0 w-96 h-96 bg-gold-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold-rose/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-      </div>
-
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -60,7 +54,7 @@ const HowItWorksSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8"
           >
             <span className="text-sage-primary font-bold text-sm">4 خطوات سهلة</span>
           </motion.div>
@@ -139,9 +133,9 @@ const StepCard = ({ step, index, isInView }: StepCardProps) => {
         </div>
 
         {/* Content */}
-        <div className="relative p-6 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 group-hover:border-sage-primary transition-all duration-300 hover:shadow-2xl">
+        <div className="relative p-6 rounded-3xl bg-[#141418] border border-white/10 group-hover:border-sage-primary transition-all duration-300 hover:shadow-2xl">
           {/* Icon */}
-          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-sage-primary/10 border-2 border-sage-primary/30 mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all">
+          <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-sage-primary/10 border border-white/10 mb-4 group-hover:scale-110 group-hover:rotate-6 transition-all">
             <Icon className="w-7 h-7 text-sage-primary" />
           </div>
 

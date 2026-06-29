@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Phone, ChevronDown, Sparkles } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 
@@ -49,7 +49,7 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-[#0E0E11]/95 backdrop-blur-xl shadow-2xl border-b-2 border-sage-primary/30'
+          ? 'bg-[#0E0E11]/95 backdrop-blur-xl shadow-2xl border-b border-white/10'
           : 'bg-[#0E0E11]/90 backdrop-blur-lg shadow-lg border-b border-sage-primary/20'
       }`}
     >
@@ -94,9 +94,6 @@ const Header = () => {
                         : 'text-brown-dark hover:text-sage-primary'
                     }`}
                   >
-                    {isActive && (
-                      <Sparkles className="w-4 h-4 text-gold-primary animate-pulse absolute -top-1 -right-1" />
-                    )}
                     <span className="relative z-10">{item.name}</span>
                     {Icon && <Icon className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />}
                     
@@ -111,12 +108,12 @@ const Header = () => {
                   
                   {/* Mega Menu للخدمات */}
                   {item.hasSubmenu && showServicesMenu && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-[#141418]/98 backdrop-blur-xl shadow-2xl rounded-2xl border-2 border-sage-primary/30 p-6 animate-slideDown z-[100]">
+                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-[#141418]/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-white/10 p-6 animate-slideDown z-[100]">
                       {/* السهم في الأعلى */}
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#141418] rotate-45 border-t-2 border-l-2 border-sage-primary/30"></div>
                       
                       {/* العنوان */}
-                      <div className="mb-4 pb-3 border-b-2 border-sage-primary/20">
+                      <div className="mb-4 pb-3 border-b border-white/10">
                         <h3 className="text-lg font-black text-brown-dark flex items-center space-x-2 space-x-reverse">
                           <span className="w-2 h-2 bg-gold-primary rounded-full animate-pulse"></span>
                           <span>خدماتنا المميزة</span>
@@ -129,7 +126,7 @@ const Header = () => {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center space-x-3 space-x-reverse p-4 rounded-xl hover:bg-gradient-to-r hover:from-sage-primary/10 hover:to-gold-primary/10 transition-all duration-300 group border-2 border-transparent hover:border-sage-primary/20 animate-fadeInUp"
+                            className="flex items-center space-x-3 space-x-reverse p-4 rounded-xl hover:bg-gradient-to-r hover:from-sage-primary/10 hover:to-gold-primary/10 transition-all duration-300 group border border-transparent hover:border-sage-primary/20 animate-fadeInUp"
                             onClick={() => setShowServicesMenu(false)}
                             style={{ animationDelay: `${idx * 100}ms`, opacity: 0 }}
                           >

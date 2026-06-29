@@ -67,7 +67,7 @@ const OverviewSection = ({ data }: any) => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="bg-[#141418]/80 backdrop-blur-md p-10 md:p-16 rounded-3xl border-2 border-sage-primary/20 shadow-2xl"
+          className="bg-[#141418]/80 backdrop-blur-md p-10 md:p-16 rounded-3xl border border-white/10 shadow-2xl"
         >
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-10 gold-shine-effect leading-[0.95]">{data.title}</h2>
           <div className="text-brown-dark text-lg leading-loose space-y-6 whitespace-pre-line">
@@ -106,7 +106,7 @@ const BenefitsSection = ({ benefits }: any) => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-[#141418]/90 backdrop-blur-md border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all group"
+              className="p-8 rounded-2xl bg-[#141418]/90 backdrop-blur-md border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all group"
             >
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform border border-sage-primary/30">
                 <CheckCircle className="w-8 h-8 text-sage-primary" />
@@ -183,7 +183,7 @@ const ProcessSection = ({ process }: any) => {
                 className="relative"
               >
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-6 md:p-8 rounded-2xl bg-[#141418]/80 backdrop-blur-md border-2 border-sage-primary/20 shadow-lg`}>
+                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-6 md:p-8 rounded-2xl bg-[#141418]/80 backdrop-blur-md border border-white/10 shadow-lg`}>
                     <h3 className="text-2xl font-black mb-3 text-sage-primary">{step.title}</h3>
                     <p className="text-brown-dark leading-relaxed">{step.description}</p>
                   </div>
@@ -232,7 +232,7 @@ const ClientsSection = ({ clients }: any) => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="p-6 rounded-2xl bg-gradient-to-br from-sage-primary/10 to-sage-soft border-2 border-sage-primary/20 text-center hover:border-sage-primary hover:shadow-lg hover:scale-105 transition-all group"
+              className="p-6 rounded-2xl bg-gradient-to-br from-sage-primary/10 to-sage-soft border border-white/10 text-center hover:border-sage-primary hover:shadow-lg hover:scale-105 transition-all group"
             >
               <p className="text-brown-dark font-bold group-hover:text-sage-primary transition-colors">{client}</p>
             </motion.div>
@@ -268,7 +268,7 @@ const FAQSection = ({ faqs }: any) => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="border-2 border-sage-primary/30 rounded-xl overflow-hidden bg-[#141418]/80 backdrop-blur-sm"
+              className="border border-white/10 rounded-xl overflow-hidden bg-[#141418]/80 backdrop-blur-sm"
             >
               <button
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}

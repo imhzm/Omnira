@@ -72,13 +72,6 @@ const ServicesSection = () => {
 
   return (
     <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11] to-[#0A0A0C] relative overflow-hidden">
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-10">
-        <div className="absolute top-20 -left-20 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 -right-20 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-gold-rose/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
-
       <div className="container-custom relative z-10">
         {/* Section Header */}
         <motion.div
@@ -90,7 +83,7 @@ const ServicesSection = () => {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+            className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8"
           >
             <span className="text-sage-primary font-bold text-sm">خدمات متكاملة</span>
           </motion.div>
@@ -142,7 +135,7 @@ const ServiceCard = ({ service, index, isInView }: ServiceCardProps) => {
       transition={{ duration: 0.2, delay: 0 }}
     >
       <Link href={service.href}>
-        <div className="h-full group cursor-pointer bg-[#141418] rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
+        <div className="h-full group cursor-pointer bg-[#141418] rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
           {/* Image */}
           <div className="relative h-56 overflow-hidden">
             <Image

@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Phone, Mail, MessageCircle, ArrowLeft, Sparkles } from 'lucide-react';
+import { Phone, Mail, MessageCircle, ArrowLeft } from 'lucide-react';
 
 const CTASection = () => {
   const ref = useRef(null);
@@ -26,13 +26,6 @@ const CTASection = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A0A0C] via-[#0E0E11]/50 to-[#0A0A0C]"></div>
       </div>
 
-      {/* Animated Blobs */}
-      <div className="absolute inset-0 z-0 opacity-20">
-        <div className="absolute -top-20 -left-20 w-96 h-96 bg-sage-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute -top-20 -right-20 w-96 h-96 bg-sunset-golden/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-gold-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-      </div>
-
       <div className="container-custom relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
@@ -40,9 +33,8 @@ const CTASection = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border-2 border-sage-primary/30 mb-8"
+              className="inline-flex items-center space-x-2 space-x-reverse glass-effect px-6 py-3 rounded-full border border-white/10 mb-8"
             >
-              <Sparkles className="w-5 h-5 text-sage-primary animate-pulse" />
               <span className="text-sage-primary font-bold text-sm">تواصل معنا اليوم</span>
             </motion.div>
 
@@ -88,7 +80,7 @@ const CTASection = () => {
             transition={{ delay: 0.4 }}
             className="grid grid-cols-1 md:grid-cols-3 gap-6"
           >
-            <a href="tel:+966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <a href="tel:+966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-sage-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Phone className="w-8 h-8 text-sage-primary" />
               </div>
@@ -96,7 +88,7 @@ const CTASection = () => {
               <p className="text-sage-primary font-bold" dir="ltr">+966 XX XXX XXXX</p>
             </a>
             
-            <a href="https://wa.me/966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <a href="https://wa.me/966XXXXXXXXX" className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-accents-emerald/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <MessageCircle className="w-8 h-8 text-accents-emerald" />
               </div>
@@ -104,7 +96,7 @@ const CTASection = () => {
               <p className="text-accents-emerald font-bold">راسلنا الآن</p>
             </a>
             
-            <a href="mailto:info@omnira.sa" className="group p-8 rounded-3xl bg-[#141418] border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
+            <a href="mailto:info@omnira.sa" className="group p-8 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300">
               <div className="w-16 h-16 rounded-2xl bg-accents-sky/10 flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
                 <Mail className="w-8 h-8 text-accents-sky" />
               </div>

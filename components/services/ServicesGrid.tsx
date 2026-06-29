@@ -90,7 +90,7 @@ const ServicesGrid = () => {
         transition={{ duration: 0.2, delay: 0 }}
       >
         <Link href={`/services/${service.slug}`}>
-          <div className="h-full group cursor-pointer bg-[#141418] rounded-3xl border-2 border-sage-primary/20 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
+          <div className="h-full group cursor-pointer bg-[#141418] rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
             <div className="relative h-56 overflow-hidden">
               <Image
                 src={imgError ? FALLBACK_IMG : service.image}
