@@ -75,7 +75,7 @@ const LocationsGrid = () => {
           className="max-w-4xl mx-auto mb-16"
         >
           <div className="p-8 rounded-2xl bg-[#141418] border-2 border-beige-medium shadow-sm">
-            <h2 className="text-3xl font-bold mb-6 text-sage-primary text-center">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 text-sage-primary text-center">
               تواصل معنا في أي مدينة
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -155,7 +155,7 @@ const LocationsGrid = () => {
           className="mt-20 text-center"
         >
           <div className="p-12 rounded-2xl bg-[#141418] border-2 border-beige-medium shadow-sm">
-            <h2 className="text-4xl font-bold mb-4 gold-shine-effect">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4 gold-shine-effect">
               لم تجد مدينتك؟
             </h2>
             <p className="text-brown-text text-lg mb-8 max-w-2xl mx-auto">

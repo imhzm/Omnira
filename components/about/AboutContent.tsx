@@ -47,7 +47,7 @@ const StorySection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-4xl font-bold mb-6 gold-shine-effect">قصتنا</h2>
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">قصتنا</h2>
             <div className="space-y-4 text-brown-text leading-relaxed">
               <p>
                 تأسست <span className="text-sage-primary font-bold">أومنيرا فاليه (Omnira Valet)</span> برؤية واضحة:
@@ -161,7 +161,7 @@ const ValuesSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 gold-shine-effect">قيمنا</h2>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 gold-shine-effect leading-[0.95]">قيمنا</h2>
           <p className="text-brown-text text-lg">المبادئ التي نؤمن بها ونعمل وفقها</p>
         </motion.div>
 
@@ -233,7 +233,7 @@ const TeamSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold mb-4 gold-shine-effect">فريقنا</h2>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 gold-shine-effect leading-[0.95]">فريقنا</h2>
           <p className="text-brown-text text-lg max-w-2xl mx-auto">
             فريق متخصص من الخبراء الملتزمين بتقديم أفضل خدمة لعملائنا
           </p>

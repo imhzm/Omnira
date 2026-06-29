@@ -59,7 +59,7 @@ const TestimonialsSection = () => {
           transition={{ duration: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4">
             <span className="gold-shine-effect">آراء عملائنا</span>
           </h2>
           <p className="text-brown-text text-lg max-w-2xl mx-auto">

@@ -85,7 +85,7 @@ const StatsSection = () => {
             <span className="text-gold-primary font-semibold">إنجازاتنا المميزة</span>
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4">
             <span className="heading-gradient">أرقام تتحدث عن نفسها</span>
           </h2>
           

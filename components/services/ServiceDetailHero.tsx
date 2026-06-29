@@ -58,7 +58,7 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
             <span className="text-sage-primary font-bold text-sm">خدمة احترافية</span>
           </div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black mb-6 leading-[0.95]">
             <span className="gold-shine-effect">{data.title}</span>
           </h1>
 

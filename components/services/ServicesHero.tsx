@@ -62,7 +62,7 @@ const ServicesHero = () => {
             initial={{ opacity: 1 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-5xl md:text-6xl lg:text-7xl font-black mb-8 leading-tight"
+            className="text-5xl sm:text-7xl lg:text-8xl font-black mb-8 leading-[0.95]"
           >
             <span className="gold-shine-effect block">خدماتنا المتميزة</span>
           </motion.h1>

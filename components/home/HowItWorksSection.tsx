@@ -65,7 +65,7 @@ const HowItWorksSection = () => {
             <span className="text-sage-primary font-bold text-sm">4 خطوات سهلة</span>
           </motion.div>
 
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6">
             <span className="gold-shine-effect">كيف تعمل الخدمة؟</span>
           </h2>
           <p className="text-brown-dark text-lg md:text-xl max-w-3xl mx-auto font-medium">

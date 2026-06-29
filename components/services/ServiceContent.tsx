@@ -69,7 +69,7 @@ const OverviewSection = ({ data }: any) => {
           transition={{ duration: 0.6 }}
           className="bg-[#141418]/80 backdrop-blur-md p-10 md:p-16 rounded-3xl border-2 border-sage-primary/20 shadow-2xl"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-10 gold-shine-effect">{data.title}</h2>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-10 gold-shine-effect leading-[0.95]">{data.title}</h2>
           <div className="text-brown-dark text-lg leading-loose space-y-6 whitespace-pre-line">
             {data.description}
           </div>
@@ -91,7 +91,7 @@ const BenefitsSection = ({ benefits }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 gold-shine-effect">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             الفوائد والمزايا
           </h2>
           <p className="text-brown-dark text-xl max-w-3xl mx-auto font-medium">
@@ -133,7 +133,7 @@ const FeaturesSection = ({ features }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 gold-shine-effect">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             المميزات التقنية
           </h2>
           <p className="text-brown-dark text-xl max-w-3xl mx-auto font-medium">
@@ -163,7 +163,7 @@ const ProcessSection = ({ process }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 gold-shine-effect">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             كيف نعمل؟
           </h2>
           <p className="text-brown-dark text-xl font-medium">عملية واضحة ومنظمة من البداية للنهاية</p>
@@ -219,7 +219,7 @@ const ClientsSection = ({ clients }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-black mb-6 gold-shine-effect">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             من نخدم؟
           </h2>
           <p className="text-brown-dark text-xl font-medium">نخدم مجموعة متنوعة من العملاء في مختلف القطاعات</p>
@@ -256,7 +256,7 @@ const FAQSection = ({ faqs }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gold-shine-effect">
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 gold-shine-effect leading-[0.95]">
             الأسئلة الشائعة
           </h2>
         </motion.div>

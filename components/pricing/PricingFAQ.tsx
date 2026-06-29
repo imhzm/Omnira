@@ -45,7 +45,7 @@ const PricingFAQ = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold mb-4 gold-shine-effect">أسئلة شائعة حول الأسعار</h2>
+          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4 gold-shine-effect">أسئلة شائعة حول الأسعار</h2>
         </motion.div>
 
         <div className="space-y-4">

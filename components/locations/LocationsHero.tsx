@@ -33,7 +33,7 @@ const LocationsHero = () => {
             <span className="text-sage-dark font-semibold">نخدم جميع أنحاء المملكة</span>
           </motion.div>
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black leading-[0.95] mb-6">
             <span className="gold-shine-effect block">المدن التي نخدمها</span>
           </h1>
 

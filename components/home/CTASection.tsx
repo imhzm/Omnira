@@ -50,7 +50,7 @@ const CTASection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.1 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-black mb-6"
+              className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6"
             >
               <span className="gold-shine-effect">جاهز للبدء؟</span>
             </motion.h2>

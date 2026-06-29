@@ -31,7 +31,7 @@ const ContactHero = () => {
             <span className="text-sage-primary font-semibold text-sm">متاحون 24/7</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-black mb-6">
+          <h1 className="text-5xl sm:text-7xl lg:text-8xl font-black leading-[0.95] mb-6">
             <span className="gold-shine-effect">تواصل معنا</span>
           </h1>
           
