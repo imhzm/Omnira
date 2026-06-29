@@ -16,8 +16,7 @@ const Header = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      
-      // Calculate scroll progress
+
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollTop = window.scrollY;
@@ -25,60 +24,62 @@ const Header = () => {
       setScrollProgress(Math.min(progress, 100));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileMenuOpen]);
+
   const navItems = [
-    { name: 'الرئيسية', href: '/', icon: null },
-    { name: 'من نحن', href: '/about', icon: null },
-    { name: 'خدماتنا', href: '/services', icon: ChevronDown, hasSubmenu: true },
-    { name: 'المدن', href: '/locations', icon: null },
-    { name: 'الأسعار', href: '/pricing', icon: null },
-    { name: 'اتصل بنا', href: '/contact', icon: null },
+    { name: 'الرئيسية', href: '/', hasSubmenu: false },
+    { name: 'من نحن', href: '/about', hasSubmenu: false },
+    { name: 'خدماتنا', href: '/services', hasSubmenu: true },
+    { name: 'المدن', href: '/locations', hasSubmenu: false },
+    { name: 'الأسعار', href: '/pricing', hasSubmenu: false },
+    { name: 'اتصل بنا', href: '/contact', hasSubmenu: false },
   ];
 
   const servicesMenu = [
-    { name: 'فاليه باركينج', href: '/services/valet-parking', emoji: '🚗' },
-    { name: 'إدارة المواقف', href: '/services/parking-management', emoji: '🅿️' },
-    { name: 'تقنيات متقدمة', href: '/services/advanced-technology', emoji: '🤖' },
-    { name: 'خدمات VIP', href: '/services/vip', emoji: '⭐' },
+    { name: 'فاليه باركينج', href: '/services/valet-parking' },
+    { name: 'إدارة المواقف', href: '/services/parking-management' },
+    { name: 'تقنيات متقدمة', href: '/services/advanced-technology' },
+    { name: 'خدمات VIP', href: '/services/vip' },
   ];
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
+        isScrolled || isMobileMenuOpen
           ? 'bg-[#0A0A0C]/80 backdrop-blur-xl border-b border-white/10'
           : 'bg-transparent'
       }`}
     >
       <div className="container-custom relative">
-        <div className="flex items-center justify-between h-20 relative">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <Link href="/" className="group flex items-center h-full py-2 relative">
-            <div className="relative">
-              {/* Shadow Glow Effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-gold-primary/40 via-gold-primary/25 to-gold-primary/40 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="absolute inset-0 bg-gold-primary/15 blur-md scale-105"></div>
-
-              <Image
-                src="/logo.png"
-                alt="Omnira Valet"
-                width={300}
-                height={84}
-                className="object-contain w-auto h-12 md:h-16 relative z-10 drop-shadow-[0_3px_14px_rgba(201,162,74,0.6)] group-hover:drop-shadow-[0_8px_24px_rgba(201,162,74,0.85)] group-hover:scale-105 transition-all duration-500"
-                priority
-              />
-            </div>
+          <Link href="/" className="group flex items-center h-full py-3" aria-label="أومنيرا فاليه">
+            <Image
+              src="/logo.png"
+              alt="Omnira Valet"
+              width={300}
+              height={84}
+              className="object-contain w-auto h-11 md:h-14 drop-shadow-[0_2px_10px_rgba(201,162,74,0.35)] transition-transform duration-500 group-hover:scale-[1.04]"
+              priority
+            />
           </Link>
 
-          {/* Desktop Navigation - احترافي جداً */}
-          <nav className="hidden lg:flex items-center space-x-1 space-x-reverse">
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
             {navItems.map((item) => {
-              const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
-              const Icon = item.icon;
-              
+              const isActive =
+                pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+
               return (
                 <div
                   key={item.name}
@@ -88,47 +89,48 @@ const Header = () => {
                 >
                   <Link
                     href={item.href}
-                    className={`relative px-5 py-3 font-bold transition-all duration-300 group flex items-center space-x-1 space-x-reverse rounded-xl ${
-                      isActive 
-                        ? 'text-sage-primary bg-sage-primary/10' 
-                        : 'text-brown-dark hover:text-sage-primary'
+                    className={`group relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 ${
+                      isActive ? 'text-white' : 'text-white/60 hover:text-white'
                     }`}
                   >
-                    <span className="relative z-10">{item.name}</span>
-                    {Icon && <Icon className="w-4 h-4 group-hover:rotate-180 transition-transform duration-300" />}
-                    
-                    {/* Hover Background with animation */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-sage-primary/10 via-sage-primary/5 to-sage-primary/10 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-gradient"></div>
-                    
-                    {/* Active & Hover indicator */}
-                    <span className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[3px] bg-gradient-to-r from-sage-primary via-gold-primary to-sunset-golden rounded-full transition-all duration-300 ${
-                      isActive ? 'w-3/4' : 'w-0 group-hover:w-3/4'
-                    }`}></span>
+                    <span>{item.name}</span>
+                    {item.hasSubmenu && (
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                    )}
+                    {/* thin gold underline */}
+                    <span
+                      className={`pointer-events-none absolute -bottom-0.5 right-4 left-4 h-px bg-gold-primary transition-transform duration-300 origin-right ${
+                        isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                      }`}
+                    />
                   </Link>
-                  
-                  {/* Mega Menu للخدمات */}
+
+                  {/* Services Mega Menu */}
                   {item.hasSubmenu && showServicesMenu && (
-                    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-4 w-80 bg-[#141418]/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-white/10 p-6 animate-slideDown z-[100]">
-                      {/* السهم في الأعلى */}
-                      <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#141418] rotate-45 border-t-2 border-l-2 border-sage-primary/30"></div>
-                      
-                      {/* العنوان */}
+                    <div className="absolute top-full right-1/2 translate-x-1/2 mt-3 w-72 bg-[#0E0E11]/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-white/10 p-5 animate-slideDown z-[100]">
                       <div className="mb-3 pb-3 border-b border-white/10">
-                        <h3 className="text-[11px] font-medium tracking-[0.2em] text-gold-primary/70">خدماتنا</h3>
+                        <h3 className="text-[11px] font-medium tracking-[0.25em] text-gold-primary/70">
+                          خدماتنا
+                        </h3>
                       </div>
-                      
-                      {/* القائمة */}
-                      <div className="space-y-2">
+                      <div className="space-y-1">
                         {servicesMenu.map((service, idx) => (
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl transition-colors duration-300 group hover:bg-white/5 animate-fadeInUp"
+                            className="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl transition-colors duration-300 group hover:bg-white/[0.04] animate-fadeInUp"
                             onClick={() => setShowServicesMenu(false)}
-                            style={{ animationDelay: `${idx * 100}ms`, opacity: 0 }}
+                            style={{ animationDelay: `${idx * 60}ms`, opacity: 0 }}
                           >
-                            <span className="text-sm font-medium text-white/70 group-hover:text-white transition-colors duration-300">{service.name}</span>
-                            <svg className="w-4 h-4 text-gold-primary opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <span className="text-sm font-medium text-white/65 group-hover:text-white transition-colors duration-300">
+                              {service.name}
+                            </span>
+                            <svg
+                              className="w-4 h-4 text-gold-primary opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
                           </Link>
@@ -141,57 +143,58 @@ const Header = () => {
             })}
           </nav>
 
-          {/* CTA Button المطور */}
-          <div className="hidden lg:flex items-center space-x-4 space-x-reverse">
-            {/* Phone Icon */}
-            <a 
-              href="tel:+966XXXXXXXXX" 
-              className="relative p-3 text-sage-primary hover:text-sage-medium transition-all duration-300 group"
+          {/* CTA */}
+          <div className="hidden lg:flex items-center gap-3">
+            <a
+              href="tel:+966XXXXXXXXX"
+              className="p-2.5 text-white/55 hover:text-gold-primary transition-colors duration-300"
               aria-label="اتصل بنا"
             >
-              <div className="absolute inset-0 bg-sage-primary/10 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <Phone className="w-5 h-5 relative z-10 group-hover:scale-110 group-hover:rotate-12 transition-all duration-300" />
+              <Phone className="w-5 h-5" />
             </a>
-            {/* CTA Button */}
-            <Link 
-              href="/contact" 
-              className="group inline-flex items-center justify-center space-x-2 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] px-8 py-3 text-sm font-black rounded-xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500"
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-2 rounded-full bg-gold-primary px-7 py-2.5 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
             >
               <span>احجز الآن</span>
-              <span className="group-hover:-translate-x-0.5 transition-transform duration-500">←</span>
+              <span className="transition-transform duration-300 group-hover:-translate-x-0.5">←</span>
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden text-brown-dark p-2"
-            aria-label="Toggle menu"
+            className="lg:hidden p-2 text-white"
+            aria-label="القائمة"
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu المطور */}
+      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden bg-[#141418]/98 backdrop-blur-xl border-t border-sage-primary/20 shadow-2xl">
-          <nav className="container-custom py-6 space-y-2">
-            {navItems.map((item, index) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="block py-4 px-4 text-brown-dark font-semibold hover:text-sage-primary transition-all duration-300 rounded-xl relative group overflow-hidden"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <div className="absolute inset-0 bg-sage-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <span className="relative z-10">{item.name}</span>
-                <div className="absolute right-4 top-1/2 -translate-y-1/2 w-0 h-[3px] bg-gradient-to-r from-sage-primary to-sunset-golden group-hover:w-8 transition-all duration-300 rounded-full"></div>
-              </Link>
-            ))}
+        <div className="lg:hidden border-t border-white/10 bg-[#0A0A0C]/95 backdrop-blur-xl">
+          <nav className="container-custom py-6 space-y-1">
+            {navItems.map((item) => {
+              const isActive =
+                pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+              return (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={`block py-3.5 text-base font-medium transition-colors duration-300 ${
+                    isActive ? 'text-gold-primary' : 'text-white/70 hover:text-white'
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              );
+            })}
             <Link
               href="/contact"
-              className="block mt-6 text-center bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] py-4 font-black rounded-xl hover:shadow-2xl hover:shadow-sage-primary/30 transition-all"
+              className="mt-5 block rounded-full bg-gold-primary py-3.5 text-center text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               احجز الآن
@@ -199,11 +202,11 @@ const Header = () => {
           </nav>
         </div>
       )}
-      
-      {/* Scroll Progress Bar */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-sage-primary/20 to-transparent">
-        <div 
-          className="h-full bg-gradient-to-r from-sage-primary via-gold-primary to-sunset-golden transition-all duration-300 shadow-lg shadow-gold-primary/50"
+
+      {/* Scroll Progress */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-transparent">
+        <div
+          className="h-full bg-gold-primary/70 transition-[width] duration-150"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
