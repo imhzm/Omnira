@@ -24,7 +24,7 @@ export default function PricingCTA() {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-r from-black-primary to-[#141418]">
+    <section className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] text-white mb-6">
@@ -50,8 +50,8 @@ export default function PricingCTA() {
             </a>
           </div>
 
-          <div className="mt-12 p-8 bg-[#141418]/60 backdrop-blur-sm rounded-xl border border-[#C9A24A]/25">
-            <h3 className="text-2xl font-bold text-white mb-4">ابقَ على اطلاع بأحدث العروض</h3>
+          <div className="mt-12 p-10 bg-white/[0.03] backdrop-blur-sm rounded-xl border border-white/10">
+            <h3 className="text-2xl font-medium text-white mb-4">ابقَ على اطلاع بأحدث العروض</h3>
             <p className="text-gray-300 mb-6">
               سجل بريدك الإلكتروني للحصول على آخر العروض والخصومات الخاصة
             </p>

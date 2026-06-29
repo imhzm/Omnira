@@ -60,16 +60,16 @@ const ContactInfo = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-6 rounded-2xl bg-[#0E0E11]/90 backdrop-blur-md border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:shadow-sage-primary/10 transition-all duration-300 group"
+              className="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-sage-primary transition-all duration-300 group"
             >
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 border border-sage-primary/30">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-sage-primary/20 to-sage-medium/10 flex items-center justify-center transition-transform duration-300 border border-sage-primary/30">
                     <Icon className="w-7 h-7 text-sage-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-bold mb-3 text-brown-dark">{item.title}</h3>
+                  <h3 className="text-xl font-medium mb-3 text-brown-dark">{item.title}</h3>
                   {item.link ? (
                     <a
                       href={item.link}
@@ -100,7 +100,7 @@ const ContactInfo = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.5 }}
-        className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl hover:shadow-sage-primary/20 transition-all duration-300"
+        className="rounded-2xl overflow-hidden border border-white/10 transition-all duration-300"
       >
         {/* Header */}
         <div className="bg-gradient-to-r from-sage-primary to-sage-medium p-4 flex items-center justify-between">

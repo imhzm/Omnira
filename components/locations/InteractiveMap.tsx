@@ -140,7 +140,7 @@ export default function InteractiveMap() {
   }
 
   return (
-    <section className="py-16 bg-[#0E0E11]">
+    <section className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] text-center mb-8 text-[#F5ECDB]">
           خدماتنا تغطي جميع مدن المملكة
@@ -207,7 +207,7 @@ export default function InteractiveMap() {
           
           {/* قائمة المدن */}
           <div className="w-full lg:w-1/3 bg-beige-light rounded-lg p-6 shadow-lg">
-            <h3 className="text-2xl font-bold mb-4 text-brown-dark">
+            <h3 className="text-2xl font-medium mb-4 text-brown-dark">
               {selectedRegion ? `مدن ${selectedRegion.name}` : 'اختر منطقة من الخريطة'}
             </h3>
             

@@ -9,7 +9,7 @@ import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
 
 const AboutContent = () => {
   return (
-    <div className="bg-[#0E0E11]">
+    <div className="bg-[#0A0A0C]">
       <StorySection />
       <VisionMissionSection />
       <ValuesSection />
@@ -24,7 +24,7 @@ const StorySection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0E0E11] via-beige-light to-[#0E0E11]">
+    <section ref={ref} className="bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -70,19 +70,19 @@ const VisionMissionSection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0E0E11] via-sage-50 to-[#0E0E11]">
+    <section ref={ref} className="bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2 }}
-            className="p-8 rounded-3xl bg-gradient-to-br from-[#141418] to-sage-50 border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all"
+            className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all"
           >
             <div className="w-16 h-16 rounded-full bg-sage-primary/10 flex items-center justify-center mb-6">
               <Target className="w-8 h-8 text-sage-primary" />
             </div>
-            <h3 className="text-3xl font-bold mb-4 text-sage-primary">رؤيتنا</h3>
+            <h3 className="text-3xl font-medium mb-4 text-sage-primary">رؤيتنا</h3>
             <p className="text-brown-dark text-lg leading-relaxed">
               أن نكون الخيار الأول لخدمات صف السيارات في المملكة والمنطقة، ونضع معايير 
               جديدة للاحترافية والجودة في هذا القطاع. نسعى للمساهمة في تحقيق أهداف 
@@ -94,12 +94,12 @@ const VisionMissionSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2, delay: 0 }}
-            className="p-8 rounded-3xl bg-gradient-to-br from-[#141418] to-sage-50 border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all"
+            className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all"
           >
             <div className="w-16 h-16 rounded-full bg-sage-primary/10 flex items-center justify-center mb-6">
               <Award className="w-8 h-8 text-sage-primary" />
             </div>
-            <h3 className="text-3xl font-bold mb-4 text-sage-primary">رسالتنا</h3>
+            <h3 className="text-3xl font-medium mb-4 text-sage-primary">رسالتنا</h3>
             <p className="text-brown-dark text-lg leading-relaxed">
               تقديم خدمات صف سيارات استثنائية تجمع بين التكنولوجيا المتقدمة، الفريق المحترف، 
               والاهتمام بأدق التفاصيل لضمان تجربة مميزة لعملائنا وضيوفهم.
@@ -149,7 +149,7 @@ const ValuesSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0E0E11] via-beige-light to-[#0E0E11]">
+    <section ref={ref} className="bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -169,10 +169,10 @@ const ValuesSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-6 rounded-3xl bg-[#141418] border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300 group"
+                className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all duration-300 group"
               >
                 <Icon className="w-12 h-12 text-sage-primary mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold mb-2 text-brown-dark">{value.title}</h3>
+                <h3 className="text-xl font-medium mb-2 text-brown-dark">{value.title}</h3>
                 <p className="text-brown-text leading-relaxed">{value.description}</p>
               </motion.div>
             );
@@ -195,7 +195,7 @@ const StatsSection = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-sage-50 via-[#0E0E11] to-sage-50">
+    <section ref={ref} className="bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
@@ -204,7 +204,7 @@ const StatsSection = () => {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="text-center glass-effect p-8 rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="text-center glass-effect p-10 rounded-3xl border border-white/10 hover:border-sage-primary transition-all duration-300"
             >
               <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">{stat.value}</div>
               <div className="text-brown-text font-medium">{stat.label}</div>
@@ -221,7 +221,7 @@ const TeamSection = () => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0E0E11] via-beige-light to-[#0E0E11]">
+    <section ref={ref} className="bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

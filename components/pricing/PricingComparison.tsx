@@ -123,7 +123,7 @@ export default function PricingComparison() {
         </div>
 
         {/* جدول المقارنة */}
-        <div className="bg-[#141418] rounded-xl shadow-lg overflow-hidden border border-[#222229]">
+        <div className="bg-white/[0.03] rounded-xl overflow-hidden border border-white/10">
           <div className="overflow-x-auto">
             <table className="w-full">
               <thead>

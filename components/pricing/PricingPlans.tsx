@@ -56,7 +56,7 @@ const PricingPlans = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C]">
+    <section ref={ref} className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -75,10 +75,10 @@ const PricingPlans = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.2, delay: 0 }}
-              className={`relative p-8 md:p-10 rounded-3xl transition-all duration-300 hover:scale-105 hover:shadow-2xl ${
+              className={`relative p-10 md:p-12 rounded-3xl transition-all duration-300 ${
                 plan.popular
-                  ? 'bg-gradient-to-br from-[#141418] via-sage-50 to-[#141418] border-2 border-sage-primary shadow-xl shadow-sage-primary/20'
-                  : 'bg-[#141418]/90 backdrop-blur-md border border-white/10 hover:border-sage-primary'
+                  ? 'bg-white/[0.03] border border-white/10'
+                  : 'bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-sage-primary'
               }`}
             >
               {plan.badge && (
@@ -94,7 +94,7 @@ const PricingPlans = () => {
               )}
 
               <div className="text-center mb-8">
-                <h3 className={`text-3xl font-black mb-3 ${
+                <h3 className={`text-3xl font-semibold mb-3 ${
                   plan.popular ? 'gold-shine-effect' : 'text-sage-primary'
                 }`}>
                   {plan.name}

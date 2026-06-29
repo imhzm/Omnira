@@ -90,7 +90,7 @@ const ServicesGrid = () => {
         transition={{ duration: 0.2, delay: 0 }}
       >
         <Link href={`/services/${service.slug}`}>
-          <div className="h-full group cursor-pointer bg-[#141418] rounded-3xl border border-white/10 hover:border-sage-primary hover:shadow-2xl transition-all duration-300 overflow-hidden">
+          <div className="h-full group cursor-pointer bg-white/[0.03] rounded-3xl border border-white/10 hover:border-sage-primary transition-all duration-300 overflow-hidden">
             <div className="relative h-56 overflow-hidden">
               <Image
                 src={imgError ? FALLBACK_IMG : service.image}
@@ -103,13 +103,13 @@ const ServicesGrid = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-sage-primary/60 to-transparent"></div>
               
               {/* Floating Icon */}
-              <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#1A1A20] rounded-2xl shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+              <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#1A1A20] rounded-2xl shadow-xl flex items-center justify-center transition-transform">
                 <Icon className="w-8 h-8 text-sage-primary" />
               </div>
             </div>
 
-            <div className="p-6">
-              <h3 className="text-xl font-bold mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
+            <div className="p-8">
+              <h3 className="text-xl font-medium mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
                 {service.title}
               </h3>
               
@@ -140,7 +140,7 @@ const ServicesGrid = () => {
   };
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-b from-[#0A0A0C] via-beige-light to-[#0A0A0C]">
+    <section ref={ref} className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {

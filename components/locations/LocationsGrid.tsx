@@ -66,7 +66,7 @@ const LocationsGrid = () => {
   ];
 
   return (
-    <section ref={ref} className="section-padding bg-gradient-to-b from-[#0E0E11] via-beige-light to-[#0E0E11]">
+    <section ref={ref} className="section-padding py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom">
         {/* معلومات الاتصال العامة */}
         <motion.div
@@ -74,7 +74,7 @@ const LocationsGrid = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="max-w-4xl mx-auto mb-16"
         >
-          <div className="p-8 rounded-2xl bg-[#141418] border border-white/10 shadow-sm">
+          <div className="p-10 rounded-2xl bg-white/[0.03] border border-white/10">
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 text-sage-primary text-center">
               تواصل معنا في أي مدينة
             </h2>
@@ -121,7 +121,7 @@ const LocationsGrid = () => {
                     whileHover={{ scale: 1.05, y: -5 }}
                     className="group relative"
                   >
-                    <div className="relative p-6 rounded-xl bg-[#141418] border border-white/10 hover:border-sage-primary transition-all duration-300 overflow-hidden shadow-sm hover:shadow-xl">
+                    <div className="relative p-8 rounded-xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all duration-300 overflow-hidden">
                       {/* تأثير الخلفية عند Hover */}
                       <div className="absolute inset-0 bg-gradient-luxury opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                       
@@ -154,7 +154,7 @@ const LocationsGrid = () => {
           transition={{ delay: 1 }}
           className="mt-20 text-center"
         >
-          <div className="p-12 rounded-2xl bg-[#141418] border border-white/10 shadow-sm">
+          <div className="p-14 rounded-2xl bg-white/[0.03] border border-white/10">
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4 gold-shine-effect">
               لم تجد مدينتك؟
             </h2>
