@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import Image from 'next/image';
+import Image from '@/components/ui/BlurImage';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
 

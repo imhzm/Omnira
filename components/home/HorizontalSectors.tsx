@@ -3,7 +3,7 @@
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
+import Image from '@/components/ui/BlurImage';
 import { ArrowLeft } from 'lucide-react';
 
 const sectors = [

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
+import Image from '@/components/ui/BlurImage';
 
 const fade = {
   hidden: { opacity: 0, y: 26 },

@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import Image from 'next/image';
+import Image from '@/components/ui/BlurImage';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Background image that drifts slower than the scroll → real depth/parallax.
