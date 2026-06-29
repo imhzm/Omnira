@@ -105,9 +105,6 @@ export const metadata: Metadata = {
     description: 'شركة سعودية رائدة في خدمات صف السيارات الاحترافية',
     images: ['/favicon.png'],
   },
-  verification: {
-    google: 'your-google-verification-code',
-  },
 };
 
 export default function RootLayout({
