@@ -10,20 +10,10 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY;
-      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setScrollProgress(Math.min(progress, 100));
-    };
-
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -202,14 +192,6 @@ const Header = () => {
           </nav>
         </div>
       )}
-
-      {/* Scroll Progress */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-transparent">
-        <div
-          className="h-full bg-gold-primary/70 transition-[width] duration-150"
-          style={{ width: `${scrollProgress}%` }}
-        />
-      </div>
     </header>
   );
 };

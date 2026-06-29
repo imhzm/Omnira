@@ -8,23 +8,17 @@ export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    const toggle = () => setIsVisible(window.scrollY > 600);
+    window.addEventListener('scroll', toggle, { passive: true });
+    return () => window.removeEventListener('scroll', toggle);
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth',
-    });
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { duration: 1.1 });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (
@@ -32,39 +26,14 @@ export default function ScrollToTop() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 group"
-          initial={{ scale: 0, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          exit={{ scale: 0, opacity: 0 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          transition={{ type: 'spring', stiffness: 260, damping: 20 }}
+          aria-label="العودة للأعلى"
+          className="fixed bottom-8 right-8 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#0E0E11]/80 text-white/70 backdrop-blur-md transition-colors duration-300 hover:border-gold-primary hover:text-gold-primary"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 12 }}
+          transition={{ duration: 0.3 }}
         >
-          {/* Glow Effect */}
-          <div className="absolute inset-0 bg-sage-primary rounded-full blur-xl opacity-50 group-hover:opacity-75 animate-pulse transition-opacity" />
-          
-          {/* Button Base */}
-          <div className="relative bg-gradient-to-br from-sage-primary to-sage-dark hover:from-sage-medium hover:to-sage-primary p-4 rounded-full shadow-2xl transition-all duration-300 border-2 border-white/30 backdrop-blur-sm">
-            <ArrowUp className="w-6 h-6 text-white" strokeWidth={2.5} />
-          </div>
-
-          {/* Tooltip */}
-          <motion.div
-            className="absolute bottom-full right-0 mb-2 bg-[#0E0E11]/95 backdrop-blur-md text-white px-3 py-1.5 rounded-lg shadow-xl whitespace-nowrap opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity"
-            initial={{ y: 10, opacity: 0 }}
-            whileHover={{ y: 0, opacity: 1 }}
-          >
-            <span className="text-sm font-medium">العودة للأعلى</span>
-            <div className="absolute top-full right-4 w-2 h-2 bg-[#0E0E11]/95 rotate-45 -mt-1" />
-          </motion.div>
-
-          {/* Animated Ring */}
-          <motion.div
-            className="absolute inset-0 rounded-full border-2 border-sage-light"
-            initial={{ scale: 1, opacity: 0.5 }}
-            animate={{ scale: 1.5, opacity: 0 }}
-            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeOut' }}
-          />
+          <ArrowUp className="h-5 w-5" />
         </motion.button>
       )}
     </AnimatePresence>

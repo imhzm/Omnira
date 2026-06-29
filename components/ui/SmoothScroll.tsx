@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Lenis from 'lenis';
 
 declare global {
@@ -11,6 +12,18 @@ declare global {
 
 // Buttery inertial smooth scrolling + professional block snap-on-settle.
 export default function SmoothScroll() {
+  const pathname = usePathname();
+
+  // Reset to top on route change (Lenis keeps the previous scroll position otherwise).
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    if (window.__lenis) {
+      window.__lenis.scrollTo(0, { immediate: true });
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname]);
+
   useEffect(() => {
     if (typeof window === 'undefined') return;
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;

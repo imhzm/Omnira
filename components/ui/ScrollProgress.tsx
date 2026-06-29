@@ -12,11 +12,8 @@ export default function ScrollProgress() {
 
   return (
     <motion.div
-      className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold-primary via-gold-light to-gold-primary origin-left z-[9999]"
+      className="fixed top-0 left-0 right-0 h-px bg-gold-primary origin-left z-[9999]"
       style={{ scaleX }}
-    >
-      {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gold-primary blur-md opacity-50"></div>
-    </motion.div>
+    />
   );
 }

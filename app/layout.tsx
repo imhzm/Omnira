@@ -10,7 +10,6 @@ import ScrollProgress from "@/components/ui/ScrollProgress";
 import IntroLoader from "@/components/ui/IntroLoader";
 
 const WhatsAppButton = dynamic(() => import("@/components/layout/WhatsAppButton"), { ssr: false });
-const FloatingElements = dynamic(() => import("@/components/ui/FloatingElements"), { ssr: false });
 const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
 const SlideNav = dynamic(() => import("@/components/ui/SlideNav"), { ssr: false });
 const SlideAnimator = dynamic(() => import("@/components/ui/SlideAnimator"), { ssr: false });
@@ -162,7 +161,6 @@ export default function RootLayout({
       <body className={`${arabicFont.variable} ${englishFont.variable} antialiased`}>
         <IntroLoader />
         <ScrollProgress />
-        <FloatingElements />
         {children}
         <WhatsAppButton />
         <ScrollToTop />
