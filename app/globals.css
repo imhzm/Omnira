@@ -80,6 +80,12 @@
 
   html {
     scroll-behavior: auto;
+    scroll-padding-top: 5.5rem;
+  }
+
+  /* keep section tops clear of the fixed header on anchor jumps */
+  section[id] {
+    scroll-margin-top: 5.5rem;
   }
 
   /* شريط تمرير راقٍ (سطح المكتب فقط) */

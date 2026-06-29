@@ -88,7 +88,8 @@ export default function SlideNav() {
           key={s.id}
           onClick={() => {
             const lenis = window.__lenis;
-            if (lenis) lenis.scrollTo(s.el, { duration: 1.1 });
+            // offset for the fixed ~80px header so the section top isn't hidden
+            if (lenis) lenis.scrollTo(s.el, { duration: 1.1, offset: -88 });
             else s.el.scrollIntoView({ behavior: 'smooth', block: 'start' });
           }}
           className="group relative flex items-center justify-end py-1"
