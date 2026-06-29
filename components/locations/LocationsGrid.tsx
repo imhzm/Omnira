@@ -3,7 +3,17 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
+import Link from 'next/link';
 import { MapPin, Phone, Mail } from 'lucide-react';
+
+// المدن التي لها صفحات هبوط مخصصة
+const cityPageSlugs: Record<string, string> = {
+  'الرياض': 'riyadh',
+  'جدة': 'jeddah',
+  'الدمام': 'dammam',
+  'مكة المكرمة': 'makkah',
+  'المدينة المنورة': 'madinah',
+};
 
 const LocationsGrid = () => {
   const ref = useRef(null);
@@ -75,7 +85,7 @@ const LocationsGrid = () => {
           className="max-w-4xl mx-auto mb-16"
         >
           <div className="p-10 rounded-2xl bg-white/[0.03] border border-white/10">
-            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 text-sage-primary text-center">
+            <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 gold-shine-effect text-center">
               تواصل معنا في أي مدينة
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -112,36 +122,36 @@ const LocationsGrid = () => {
 
               {/* شبكة المدن */}
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                {region.cities.map((city, cityIndex) => (
-                  <motion.div
-                    key={cityIndex}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.4, delay: (regionIndex * 0.1) + (cityIndex * 0.03) }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                    className="group relative"
-                  >
-                    <div className="relative p-8 rounded-xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all duration-300 overflow-hidden">
-                      {/* تأثير الخلفية عند Hover */}
+                {region.cities.map((city, cityIndex) => {
+                  const slug = cityPageSlugs[city];
+                  const card = (
+                    <div className={`relative p-8 rounded-xl bg-white/[0.03] border transition-all duration-300 overflow-hidden ${slug ? 'border-gold-primary/30 hover:border-gold-primary' : 'border-white/10 hover:border-white/25'}`}>
                       <div className="absolute inset-0 bg-gradient-luxury opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                      
-                      {/* أيقونة الموقع */}
                       <div className="relative flex flex-col items-center text-center space-y-3">
                         <div className="w-12 h-12 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center transition-colors">
                           <MapPin className="w-6 h-6 text-gold-primary" />
                         </div>
-
-                        {/* اسم المدينة */}
-                        <h4 className="font-medium text-white group-hover:text-sage-primary transition-colors">
+                        <h4 className="font-medium text-white group-hover:text-gold-primary transition-colors">
                           {city}
                         </h4>
+                        {slug && <span className="text-[11px] text-gold-primary/70">عرض الصفحة ←</span>}
                       </div>
-
-                      {/* خط سفلي متحرك */}
                       <div className="absolute bottom-0 right-0 left-0 h-1 bg-gradient-luxury transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></div>
                     </div>
-                  </motion.div>
-                ))}
+                  );
+                  return (
+                    <motion.div
+                      key={cityIndex}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ duration: 0.4, delay: (regionIndex * 0.1) + (cityIndex * 0.03) }}
+                      whileHover={{ scale: 1.05, y: -5 }}
+                      className="group relative"
+                    >
+                      {slug ? <Link href={`/locations/${slug}`} className="block">{card}</Link> : card}
+                    </motion.div>
+                  );
+                })}
               </div>
             </motion.div>
           ))}

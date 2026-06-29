@@ -1,28 +1,24 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 
 export const metadata: Metadata = {
   title: 'خريطة الموقع | أومنيرا فاليه - تصفح كافة صفحات وخدمات أومنيرا فاليه',
-  description: 'تصفح خريطة موقع أومنيرا فاليه وابحث بسهولة عن الخدمات والصفحات التي تحتاجها. خدمات فاليه باركينج، إدارة المواقف، وحلول صف السيارات المتكاملة في الرياض، جدة، والدمام.',
-  robots: {
-    index: true,
-    follow: true,
-  },
-  alternates: {
-    canonical: '/sitemap',
-  },
+  description:
+    'تصفح خريطة موقع أومنيرا فاليه وابحث بسهولة عن الخدمات والصفحات التي تحتاجها. خدمات فاليه باركينج، إدارة المواقف، وحلول صف السيارات المتكاملة في الرياض، جدة، والدمام.',
+  robots: { index: true, follow: true },
+  alternates: { canonical: '/sitemap' },
 };
 
-// بيانات خريطة الموقع
 const sitemapData = {
   mainPages: [
     { name: 'الرئيسية', url: '/' },
     { name: 'من نحن', url: '/about' },
     { name: 'الخدمات', url: '/services' },
     { name: 'الباقات والأسعار', url: '/pricing' },
-    { name: 'المواقع', url: '/locations' },
+    { name: 'المدن', url: '/locations' },
     { name: 'اتصل بنا', url: '/contact' },
   ],
   services: [
@@ -53,90 +49,52 @@ const sitemapData = {
   ],
 };
 
+function LinkGroup({ title, items }: { title: string; items: { name: string; url: string }[] }) {
+  return (
+    <div className="mb-16">
+      <h2 className="mb-7 flex items-center gap-3 text-[12px] font-medium tracking-[0.25em] text-gold-primary/80">
+        <span className="h-px w-10 bg-gold-primary/50" />
+        {title}
+      </h2>
+      <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {items.map((page) => (
+          <li key={page.url}>
+            <Link
+              href={page.url}
+              className="group flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.03] px-5 py-4 transition-colors duration-300 hover:border-gold-primary/40"
+            >
+              <span className="text-sm text-white/70 transition-colors group-hover:text-white">{page.name}</span>
+              <ArrowLeft className="h-4 w-4 text-gold-primary opacity-0 -translate-x-1 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0" />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function SitemapPage() {
   return (
-    <>
-      <main className="min-h-screen bg-[#0E0E11]">
-        <Header />
-        
-        <section className="py-12 sm:py-16 lg:py-20 px-4 container mx-auto">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-3xl sm:text-4xl font-bold mb-8 text-black-primary text-center">
-              خريطة الموقع
-            </h1>
-            <p className="text-lg text-[#C8B58A] mb-12 text-center">
-              استكشف جميع صفحات وخدمات أومنيرا فاليه من خلال هذه الخريطة التفاعلية للموقع
+    <main className="min-h-screen bg-[#0A0A0C]">
+      <Header />
+
+      <section className="container-custom pb-24 pt-36">
+        <div className="mx-auto max-w-5xl">
+          <div className="mb-16 text-center">
+            <h1 className="text-4xl font-extralight gold-shine-effect sm:text-6xl">خريطة الموقع</h1>
+            <p className="mt-6 text-lg font-light text-white/55">
+              تصفّح جميع صفحات وخدمات أومنيرا فاليه بسهولة
             </p>
-            
-            {/* الصفحات الرئيسية */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-6 text-gold-primary border-r-4 border-gold-primary pr-3">
-                الصفحات الرئيسية
-              </h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {sitemapData.mainPages.map((page) => (
-                  <li key={page.url} className="border border-gray-200 rounded-lg hover:shadow-md transition duration-300">
-                    <Link href={page.url} className="block p-4 text-black-primary hover:text-gold-primary">
-                      {page.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            {/* الخدمات */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-6 text-gold-primary border-r-4 border-gold-primary pr-3">
-                خدماتنا
-              </h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {sitemapData.services.map((page) => (
-                  <li key={page.url} className="border border-gray-200 rounded-lg hover:shadow-md transition duration-300">
-                    <Link href={page.url} className="block p-4 text-black-primary hover:text-gold-primary">
-                      {page.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            {/* قطاعات العملاء */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-6 text-gold-primary border-r-4 border-gold-primary pr-3">
-                قطاعات العملاء
-              </h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {sitemapData.clientSectors.map((page) => (
-                  <li key={page.url} className="border border-gray-200 rounded-lg hover:shadow-md transition duration-300">
-                    <Link href={page.url} className="block p-4 text-black-primary hover:text-gold-primary">
-                      {page.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
-            {/* المواقع */}
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-6 text-gold-primary border-r-4 border-gold-primary pr-3">
-                مدن المملكة
-              </h2>
-              <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {sitemapData.locations.map((page) => (
-                  <li key={page.url} className="border border-gray-200 rounded-lg hover:shadow-md transition duration-300">
-                    <Link href={page.url} className="block p-4 text-black-primary hover:text-gold-primary">
-                      {page.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            
           </div>
-        </section>
-        
-        <Footer />
-      </main>
-    </>
+
+          <LinkGroup title="الصفحات الرئيسية" items={sitemapData.mainPages} />
+          <LinkGroup title="خدماتنا" items={sitemapData.services} />
+          <LinkGroup title="قطاعات العملاء" items={sitemapData.clientSectors} />
+          <LinkGroup title="المدن" items={sitemapData.locations} />
+        </div>
+      </section>
+
+      <Footer />
+    </main>
   );
 }
