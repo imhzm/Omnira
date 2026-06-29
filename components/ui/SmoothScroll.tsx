@@ -37,7 +37,10 @@ export default function SmoothScroll() {
 
     const blocks = () =>
       (Array.from(document.querySelectorAll('main section')) as HTMLElement[]).filter(
-        (s) => !s.parentElement?.closest('section') && s.offsetHeight > 200
+        (s) =>
+          !s.parentElement?.closest('section') &&
+          s.offsetHeight > 200 &&
+          s.offsetHeight < window.innerHeight * 1.6
       );
 
     const onScroll = () => {

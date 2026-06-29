@@ -11,7 +11,7 @@ const BeyondServices = dynamic(() => import("@/components/home/BeyondServices"),
   ssr: true,
 });
 
-const GiantSectors = dynamic(() => import("@/components/home/GiantSectors"), {
+const HorizontalSectors = dynamic(() => import("@/components/home/HorizontalSectors"), {
   ssr: true,
 });
 
@@ -127,7 +127,7 @@ export default function Home() {
         <Header />
         <HeroSection />
         <EditorialManifesto />
-        <GiantSectors />
+        <HorizontalSectors />
         <BeyondServices />
         <AtmosphericStatement />
         <Testimonials />
