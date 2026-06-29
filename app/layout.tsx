@@ -20,6 +20,8 @@ const arabicFont = localFont({
     { path: "../public/fonts/Cairo-Medium.ttf", weight: "500", style: "normal" },
     { path: "../public/fonts/Cairo-SemiBold.ttf", weight: "600", style: "normal" },
     { path: "../public/fonts/Cairo-Bold.ttf", weight: "700", style: "normal" },
+    { path: "../public/fonts/Cairo-ExtraBold.ttf", weight: "800", style: "normal" },
+    { path: "../public/fonts/Cairo-Black.ttf", weight: "900", style: "normal" },
   ],
   variable: "--font-ibm-plex",
   display: "swap",

@@ -307,33 +307,24 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-2xl border-2 border-gold-primary/0 group-hover:border-gold-primary/80 transition-all duration-500"></div>
           </div>
 
-          {/* Main Heading - giant, image-filled (FIND-style) */}
-          <h1 className="font-black leading-[0.82] tracking-tight mb-8">
+          {/* Main Heading - clean & elegant (smooth Cairo) */}
+          <h1 className="leading-[0.95] mb-8">
             <span className="block overflow-hidden pb-1">
               <motion.span
-                initial={{ y: '120%' }}
+                initial={{ y: '110%' }}
                 animate={{ y: '0%' }}
                 transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 0.61, 0.36, 1] }}
-                className="block text-white/85 text-3xl sm:text-5xl lg:text-6xl drop-shadow-xl"
+                className="block font-bold text-white/90 text-3xl sm:text-5xl lg:text-6xl drop-shadow-lg"
               >
                 نُعيد تعريف
               </motion.span>
             </span>
             <span className="block pb-2">
               <motion.span
-                initial={{ opacity: 0, y: 44 }}
+                initial={{ opacity: 0, y: 42 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.22, 0.61, 0.36, 1] }}
-                className="block bg-clip-text text-transparent text-[19vw] sm:text-[15vw] lg:text-[12rem] leading-[0.95]"
-                style={{
-                  backgroundImage: 'url(/images/hero/hero-3.jpg)',
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  WebkitTextStroke: '1.5px rgba(201,162,74,0.55)',
-                  filter: 'drop-shadow(0 8px 30px rgba(0,0,0,0.9))',
-                }}
+                transition={{ duration: 0.95, delay: 0.32, ease: [0.22, 0.61, 0.36, 1] }}
+                className="block font-black text-[19vw] sm:text-[15vw] lg:text-[11rem] leading-[0.98] bg-gradient-to-b from-gold-light via-gold-primary to-gold-dark bg-clip-text text-transparent drop-shadow-[0_6px_26px_rgba(201,162,74,0.22)]"
               >
                 الفخامة
               </motion.span>
