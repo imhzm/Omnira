@@ -35,8 +35,8 @@ const ContactForm = () => {
     >
       <div className="bg-white/[0.03] backdrop-blur-md p-10 md:p-10 rounded-3xl border border-white/10">
         <div className="mb-8">
-          <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-3 gold-shine-effect">أرسل لنا رسالة</h2>
-          <p className="text-brown-text text-base">املأ النموذج وسنتواصل معك خلال 24 ساعة</p>
+          <h2 className="text-2xl lg:text-3xl font-medium mb-3 text-white">أرسل لنا رسالة</h2>
+          <p className="text-white/50 text-base">املأ النموذج وسنتواصل معك خلال 24 ساعة</p>
         </div>
         
         <form onSubmit={handleSubmit} className="space-y-6">

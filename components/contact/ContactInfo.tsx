@@ -45,8 +45,8 @@ const ContactInfo = () => {
       className="space-y-6"
     >
       <div className="mb-8">
-        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4 gold-shine-effect">معلومات التواصل</h2>
-        <p className="text-brown-dark text-lg leading-relaxed">
+        <h2 className="text-2xl lg:text-3xl font-medium mb-4 text-white">معلومات التواصل</h2>
+        <p className="text-white/55 text-lg leading-relaxed">
           يسعدنا تواصلك معنا عبر أي من القنوات التالية. فريقنا جاهز لخدمتك على مدار الساعة.
         </p>
       </div>
