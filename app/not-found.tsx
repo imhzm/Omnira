@@ -32,15 +32,15 @@ export default function NotFound() {
     <>
       <Header />
       
-      <div className="min-h-[70vh] py-20 bg-gradient-to-b from-beige-light via-[#0E0E11] to-beige-light flex items-center justify-center px-4">
+      <div className="min-h-[80vh] py-32 bg-[#0A0A0C] flex items-center justify-center px-4">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-9xl font-black mb-4">
+          <h1 className="text-8xl md:text-9xl font-extralight mb-6">
             <span className="gold-shine-effect">404</span>
           </h1>
-          <h2 className="text-4xl font-bold mb-6 text-brown-dark">
+          <h2 className="text-3xl md:text-4xl font-medium mb-6 text-white">
             الصفحة غير موجودة
           </h2>
-          <p className="text-xl text-brown-text mb-8">
+          <p className="text-lg text-white/55 mb-10 max-w-xl mx-auto leading-relaxed">
             عذراً، الصفحة التي تبحث عنها غير موجودة أو تم نقلها. يمكنك تجربة أحد الروابط التالية.
           </p>
           
@@ -50,7 +50,7 @@ export default function NotFound() {
               <Link
                 key={page.href}
                 href={page.href}
-                className="btn-gold flex items-center space-x-2 space-x-reverse px-6 py-3 text-base"
+                className="btn-gold flex items-center gap-2 px-6 py-3 text-sm"
               >
                 {page.icon}
                 <span>{page.title}</span>
@@ -59,14 +59,14 @@ export default function NotFound() {
           </div>
           
           {/* الخدمات الشائعة */}
-          <div className="mt-8">
-            <h3 className="text-lg font-bold text-brown-dark mb-4">خدماتنا الشائعة:</h3>
-            <div className="flex flex-wrap justify-center gap-3">
+          <div className="mt-12">
+            <h3 className="text-[11px] font-medium tracking-[0.25em] text-gold-primary/70 mb-5">خدماتنا الشائعة</h3>
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3">
               {popularServices.map((service) => (
                 <Link
                   key={service.href}
                   href={service.href}
-                  className="text-brown-text hover:text-gold-primary underline underline-offset-4 mx-2"
+                  className="text-sm text-white/55 hover:text-white transition-colors duration-300"
                 >
                   {service.title}
                 </Link>

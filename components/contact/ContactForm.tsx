@@ -41,7 +41,7 @@ const ContactForm = () => {
         
         <form onSubmit={handleSubmit} className="space-y-6">
           <div>
-            <label className="block text-brown-dark font-bold mb-3 text-sm">الاسم الكامل *</label>
+            <label className="block text-white/70 font-medium mb-3 text-sm">الاسم الكامل *</label>
             <input
               type="text"
               name="name"
@@ -54,7 +54,7 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-brown-dark font-bold mb-3 text-sm">البريد الإلكتروني *</label>
+            <label className="block text-white/70 font-medium mb-3 text-sm">البريد الإلكتروني *</label>
             <input
               type="email"
               name="email"
@@ -67,7 +67,7 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-brown-dark font-bold mb-3 text-sm">رقم الجوال *</label>
+            <label className="block text-white/70 font-medium mb-3 text-sm">رقم الجوال *</label>
             <input
               type="tel"
               name="phone"
@@ -80,7 +80,7 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-brown-dark font-bold mb-3 text-sm">نوع الخدمة</label>
+            <label className="block text-white/70 font-medium mb-3 text-sm">نوع الخدمة</label>
             <select
               name="service"
               value={formData.service}
@@ -100,7 +100,7 @@ const ContactForm = () => {
           </div>
 
           <div>
-            <label className="block text-brown-dark font-bold mb-3 text-sm">الرسالة *</label>
+            <label className="block text-white/70 font-medium mb-3 text-sm">الرسالة *</label>
             <textarea
               name="message"
               required
@@ -114,9 +114,9 @@ const ContactForm = () => {
 
           <button
             type="submit"
-            className="btn-gold w-full py-5 text-lg font-bold inline-flex items-center justify-center space-x-3 space-x-reverse group hover:scale-[1.02] transition-transform"
+            className="btn-gold w-full py-4 text-base gap-3 group"
           >
-            <Send className="w-6 h-6 group-hover:rotate-12 transition-transform" />
+            <Send className="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1" />
             <span>إرسال الرسالة</span>
           </button>
         </form>
