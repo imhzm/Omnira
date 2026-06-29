@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import Image from 'next/image';
 import Particles from '@/components/ui/Particles';
+import WebGLFog from '@/components/ui/WebGLFog';
 
 const fade = {
   hidden: { opacity: 0, y: 26 },
@@ -42,8 +43,9 @@ const HeroSection = () => {
         <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/75" />
       </motion.div>
 
-      {/* drifting gold dust */}
-      <Particles className="absolute inset-0 z-[1]" />
+      {/* volumetric gold fog (WebGL) + drifting dust */}
+      <WebGLFog className="absolute inset-0 z-[1] opacity-70 mix-blend-screen" />
+      <Particles className="absolute inset-0 z-[2]" />
 
       {/* minimal content — drifts up + fades on scroll */}
       <motion.div style={{ y: contentY, opacity: contentOpacity }} className="container-custom relative z-10">
