@@ -11,7 +11,7 @@ interface ServiceContentProps {
   data: any;
 }
 
-const FALLBACK_IMG = 'https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=2070';
+const FALLBACK_IMG = '/images/services/valet-parking.jpg';
 
 const ServiceContent = ({ data }: ServiceContentProps) => {
   return (

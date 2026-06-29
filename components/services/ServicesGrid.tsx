@@ -7,7 +7,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Building2, CarFront, Cpu, Users, FileText, Cable, Headphones, Droplets, ArrowLeft } from 'lucide-react';
 
-const FALLBACK_IMG = 'https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&w=2070';
+const FALLBACK_IMG = '/images/services/valet-parking.jpg';
 
 const ServicesGrid = () => {
   const ref = useRef(null);
