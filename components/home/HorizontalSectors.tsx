@@ -46,10 +46,11 @@ export default function HorizontalSectors() {
         <motion.div
           ref={trackRef}
           style={{ x }}
+          dir="ltr"
           className="flex items-center gap-5 pl-[6vw] pr-[6vw]"
         >
           {/* intro text panel */}
-          <div className="w-[80vw] shrink-0 pl-2 sm:w-[44vw] lg:w-[32vw]">
+          <div dir="rtl" className="w-[80vw] shrink-0 pr-2 sm:w-[44vw] lg:w-[32vw]">
             <span className="mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/90">
               <span className="h-px w-10 bg-gold-primary/60" />
               القطاعات
@@ -69,6 +70,7 @@ export default function HorizontalSectors() {
             <Link
               key={s.title}
               href={s.href}
+              dir="rtl"
               className="group relative h-[68vh] w-[82vw] shrink-0 overflow-hidden rounded-2xl border border-white/10 sm:w-[58vw] lg:w-[44vw]"
             >
               <Image
