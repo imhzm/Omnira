@@ -22,6 +22,11 @@ html {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: stretch;
+  }
+  /* in-flow children (mx-auto containers) must keep full width inside the flex column */
+  main section:not(section section) > * {
+    width: 100%;
   }
 
   /* heroes already center themselves — keep them intact */
