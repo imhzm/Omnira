@@ -23,6 +23,10 @@ const AtmosphericStatement = dynamic(() => import("@/components/home/Atmospheric
   ssr: true,
 });
 
+const KineticStats = dynamic(() => import("@/components/home/KineticStats"), {
+  ssr: true,
+});
+
 const Testimonials = dynamic(() => import("@/components/home/Testimonials"), {
   ssr: false,
   loading: () => <div className="h-96" />
@@ -129,6 +133,7 @@ export default function Home() {
         <EditorialManifesto />
         <HorizontalSectors />
         <BeyondServices />
+        <KineticStats />
         <AtmosphericStatement />
         <Testimonials />
         <CTASection />
