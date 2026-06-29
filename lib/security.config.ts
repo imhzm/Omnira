@@ -221,6 +221,6 @@ export function generateSecurityPolicyText(): string {
 - اختبارات اختراق منتظمة
 
 ## الإبلاغ عن الثغرات الأمنية
-إذا اكتشفت ثغرة أمنية في موقعنا، يرجى الإبلاغ عنها على security@omnira.sa
+إذا اكتشفت ثغرة أمنية في موقعنا، يرجى الإبلاغ عنها على info@omniravalet.com
   `;
 }

@@ -27,8 +27,8 @@ const ContactInfo = () => {
     {
       icon: Mail,
       title: 'البريد الإلكتروني',
-      details: ['info@omnira.sa', 'support@omnira.sa'],
-      link: 'mailto:info@omnira.sa',
+      details: ['info@omniravalet.com'],
+      link: 'mailto:info@omniravalet.com',
     },
     {
       icon: Clock,

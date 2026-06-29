@@ -9,8 +9,8 @@ export const contactConfig = {
     secondary: '+966500000001', // رقم بديل (اختياري)
   },
   email: {
-    info: 'info@omnira.sa',
-    support: 'support@omnira.sa',
+    info: 'info@omniravalet.com',
+    support: 'info@omniravalet.com',
   },
   social: {
     instagram: 'https://instagram.com/omnira',

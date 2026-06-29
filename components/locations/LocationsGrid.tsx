@@ -85,7 +85,7 @@ const LocationsGrid = () => {
               </div>
               <div className="flex items-center justify-center space-x-3 space-x-reverse">
                 <Mail className="w-5 h-5 text-sage-primary" />
-                <span className="text-brown-text">info@omnira.sa</span>
+                <span className="text-brown-text">info@omniravalet.com</span>
               </div>
               <div className="flex items-center justify-center space-x-3 space-x-reverse">
                 <MapPin className="w-5 h-5 text-sage-primary" />

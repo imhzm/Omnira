@@ -17,7 +17,7 @@ export const localBusinessSchema = {
 
   // معلومات التواصل
   telephone: '+966XXXXXXXXX',
-  email: 'info@omnira.sa',
+  email: 'info@omniravalet.com',
   
   // العنوان الرئيسي في السعودية
   address: {

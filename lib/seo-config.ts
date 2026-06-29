@@ -20,8 +20,8 @@ export const siteConfig = {
   },
   contact: {
     phone: '+966XXXXXXXXX',
-    email: 'info@omnira.sa',
-    supportEmail: 'support@omnira.sa',
+    email: 'info@omniravalet.com',
+    supportEmail: 'info@omniravalet.com',
   },
   openingHours: 'Mo-Su 00:00-24:00',
   priceRange: '$$',
