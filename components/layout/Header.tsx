@@ -113,11 +113,8 @@ const Header = () => {
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-[#141418] rotate-45 border-t-2 border-l-2 border-sage-primary/30"></div>
                       
                       {/* العنوان */}
-                      <div className="mb-4 pb-3 border-b border-white/10">
-                        <h3 className="text-lg font-black text-brown-dark flex items-center space-x-2 space-x-reverse">
-                          <span className="w-2 h-2 bg-gold-primary rounded-full animate-pulse"></span>
-                          <span>خدماتنا المميزة</span>
-                        </h3>
+                      <div className="mb-3 pb-3 border-b border-white/10">
+                        <h3 className="text-[11px] font-medium tracking-[0.2em] text-gold-primary/70">خدماتنا</h3>
                       </div>
                       
                       {/* القائمة */}
@@ -126,15 +123,12 @@ const Header = () => {
                           <Link
                             key={service.href}
                             href={service.href}
-                            className="flex items-center space-x-3 space-x-reverse p-4 rounded-xl hover:bg-gradient-to-r hover:from-sage-primary/10 hover:to-gold-primary/10 transition-all duration-300 group border border-transparent hover:border-sage-primary/20 animate-fadeInUp"
+                            className="flex items-center justify-between gap-3 px-4 py-3 rounded-xl transition-colors duration-300 group hover:bg-white/5 animate-fadeInUp"
                             onClick={() => setShowServicesMenu(false)}
                             style={{ animationDelay: `${idx * 100}ms`, opacity: 0 }}
                           >
-                            <div className="flex-shrink-0 w-10 h-10 bg-sage-primary/10 rounded-xl flex items-center justify-center group-hover:bg-sage-primary/20 group-hover:scale-110 transition-all duration-300">
-                              <span className="text-2xl">{service.emoji}</span>
-                            </div>
-                            <span className="font-bold text-brown-dark group-hover:text-sage-primary transition-colors duration-300 flex-1 text-right">{service.name}</span>
-                            <svg className="w-5 h-5 text-sage-primary opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <span className="text-sm font-medium text-white/70 group-hover:text-white transition-colors duration-300">{service.name}</span>
+                            <svg className="w-4 h-4 text-gold-primary opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
                           </Link>
