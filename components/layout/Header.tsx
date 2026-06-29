@@ -49,8 +49,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled
-          ? 'bg-[#0E0E11]/95 backdrop-blur-xl shadow-2xl border-b border-white/10'
-          : 'bg-[#0E0E11]/90 backdrop-blur-lg shadow-lg border-b border-sage-primary/20'
+          ? 'bg-[#0A0A0C]/80 backdrop-blur-xl border-b border-white/10'
+          : 'bg-transparent'
       }`}
     >
       <div className="container-custom relative">

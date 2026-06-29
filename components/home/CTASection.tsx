@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ParallaxImage from '@/components/ui/ParallaxImage';
+import Particles from '@/components/ui/Particles';
 
 const fade = {
   hidden: { opacity: 0, y: 26 },
@@ -16,6 +17,8 @@ const CTASection = () => {
         <ParallaxImage src="/images/atmos/atmos-3.jpg" alt="سيارة فاخرة سوداء" strength={70} />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/65 to-[#0A0A0C]/45" />
       </div>
+
+      <Particles className="absolute inset-0 z-[1]" />
 
       <div className="container-custom relative z-10">
         <motion.div

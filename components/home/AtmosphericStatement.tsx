@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import ParallaxImage from '@/components/ui/ParallaxImage';
+import WebGLFog from '@/components/ui/WebGLFog';
+import Particles from '@/components/ui/Particles';
 
 // A quiet full-bleed atmospheric block — one calm line over a cinematic frame.
 export default function AtmosphericStatement() {
@@ -11,6 +13,9 @@ export default function AtmosphericStatement() {
         <ParallaxImage src="/images/atmos/atmos-2.jpg" alt="مدخل فندق فاخر في الضباب" strength={90} />
         <div className="absolute inset-0 bg-[#0A0A0C]/72" />
       </div>
+
+      <WebGLFog className="absolute inset-0 z-[1] opacity-45 mix-blend-screen" />
+      <Particles className="absolute inset-0 z-[1]" />
 
       <div className="container-custom relative z-10 text-center">
         <motion.span
