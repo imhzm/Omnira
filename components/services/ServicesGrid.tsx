@@ -100,7 +100,7 @@ const ServicesGrid = () => {
                 className="object-cover group-hover:scale-110 transition-transform duration-500"
                 onError={() => setImgError(true)}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-sage-primary/60 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C]/80 to-transparent"></div>
               
               {/* Floating Icon */}
               <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#1A1A20] rounded-2xl shadow-xl flex items-center justify-center transition-transform">
@@ -128,7 +128,7 @@ const ServicesGrid = () => {
                 ))}
               </div>
 
-              <div className="flex items-center text-sage-primary group-hover:gap-3 gap-2 transition-all font-bold">
+              <div className="flex items-center text-sage-primary group-hover:gap-3 gap-2 transition-all font-medium">
                 <span className="text-sm">اعرف المزيد</span>
                 <ArrowLeft className="w-4 h-4 group-hover:-translate-x-2 transition-transform" />
               </div>

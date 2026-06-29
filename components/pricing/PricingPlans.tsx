@@ -61,7 +61,7 @@ const PricingPlans = () => {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="mb-16 text-center text-white/50 text-base lg:text-lg"
+          className="mb-16 text-center text-white/65 text-base lg:text-lg"
         >
           جميع الباقات تشمل تأميناً شاملاً، فريقاً محترفاً، ونظام تتبّع إلكتروني.
         </motion.p>
@@ -87,11 +87,11 @@ const PricingPlans = () => {
 
               <div className="mb-9">
                 <h3 className="mb-3 text-2xl font-medium text-white">{plan.name}</h3>
-                <p className="mb-7 text-sm leading-relaxed text-white/45">{plan.description}</p>
+                <p className="mb-7 text-sm leading-relaxed text-white/65">{plan.description}</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-6xl font-extralight text-gold-light">{plan.price}</span>
-                  <span className="text-lg font-light text-white/50">ريال</span>
-                  <span className="text-sm text-white/40">/ {plan.period}</span>
+                  <span className="text-lg font-light text-white/60">ريال</span>
+                  <span className="text-sm text-white/55">/ {plan.period}</span>
                 </div>
               </div>
 
@@ -110,7 +110,7 @@ const PricingPlans = () => {
                     إضافات متاحة
                   </p>
                   {plan.extras.map((extra, i) => (
-                    <p key={i} className="text-sm text-white/45">{extra}</p>
+                    <p key={i} className="text-sm text-white/60">{extra}</p>
                   ))}
                 </div>
               )}
@@ -132,7 +132,7 @@ const PricingPlans = () => {
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.3 }}
-          className="mt-14 text-center text-sm text-white/40"
+          className="mt-14 text-center text-sm text-white/55"
         >
           للحصول على عرض سعر مخصّص، يسعدنا تواصلك معنا.
         </motion.p>

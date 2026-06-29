@@ -102,7 +102,7 @@ export default function SlideNav() {
           <span
             className={`block rounded-full border transition-all duration-300 ${
               i === active
-                ? 'w-3.5 h-3.5 bg-gold-primary border-gold-primary shadow-[0_0_12px_rgba(201,162,74,0.85)]'
+                ? 'w-3.5 h-3.5 bg-gold-primary border-gold-primary shadow-[0_0_6px_rgba(201,162,74,0.4)]'
                 : 'w-2.5 h-2.5 bg-transparent border-gold-primary/50 group-hover:bg-gold-primary/60'
             }`}
           />

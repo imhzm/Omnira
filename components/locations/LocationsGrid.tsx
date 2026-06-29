@@ -170,7 +170,7 @@ const LocationsGrid = () => {
               </a>
               <a
                 href="tel:+966XXXXXXXXX"
-                className="px-10 py-4 text-lg border border-sage-primary text-sage-dark rounded-lg hover:bg-sage-primary hover:text-[#0A0A0C] transition-all inline-flex items-center justify-center"
+                className="px-10 py-4 text-lg border border-gold-primary/40 text-gold-primary rounded-lg hover:bg-sage-primary hover:text-[#0A0A0C] transition-all inline-flex items-center justify-center"
               >
                 <Phone className="w-5 h-5 ml-2" />
                 <span>+966 XX XXX XXXX</span>

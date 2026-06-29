@@ -151,7 +151,7 @@ export default function InteractiveMap() {
 
         <div className="flex flex-col lg:flex-row gap-8 justify-between">
           {/* الخريطة التفاعلية */}
-          <div className="relative w-full lg:w-2/3 h-[600px] bg-beige-light rounded-lg overflow-hidden shadow-lg">
+          <div className="relative w-full lg:w-2/3 h-[420px] sm:h-[600px] bg-white/[0.03] border border-white/10 rounded-lg overflow-hidden">
             {/* صورة خريطة السعودية كخلفية */}
             <svg 
               viewBox="0 0 100 100" 
@@ -175,6 +175,8 @@ export default function InteractiveMap() {
                   stroke={hoveredRegion?.id === region.id || selectedRegion?.id === region.id ? '#E8D6A8' : 'transparent'}
                   strokeWidth="2"
                   cursor="pointer"
+                  role="button"
+                  aria-label={region.name}
                   className="transition-all duration-300 ease-in-out hover:opacity-90"
                   onClick={() => setSelectedRegion(region)}
                   onMouseEnter={() => setHoveredRegion(region)}
@@ -206,7 +208,7 @@ export default function InteractiveMap() {
           </div>
           
           {/* قائمة المدن */}
-          <div className="w-full lg:w-1/3 bg-beige-light rounded-lg p-6 shadow-lg">
+          <div className="w-full lg:w-1/3 bg-white/[0.03] border border-white/10 rounded-lg p-6 shadow-lg">
             <h3 className="text-2xl font-medium mb-4 text-brown-dark">
               {selectedRegion ? `مدن ${selectedRegion.name}` : 'اختر منطقة من الخريطة'}
             </h3>
@@ -240,15 +242,20 @@ export default function InteractiveMap() {
                   اختر منطقة من الخريطة لعرض المدن التي نخدمها فيها.
                 </p>
                 <div className="mt-6">
-                  <h4 className="font-bold mb-2">المناطق الرئيسية:</h4>
+                  <h4 className="font-medium mb-2">المناطق الرئيسية:</h4>
                   <ul className="grid grid-cols-2 gap-2">
                     {saudiRegions.slice(0, 8).map((region) => (
-                      <li 
-                        key={region.id} 
-                        className="cursor-pointer hover:text-gold-primary"
-                        onClick={() => setSelectedRegion(region)}
+                      <li
+                        key={region.id}
+                        aria-label={region.name}
                       >
-                        {region.name}
+                        <button
+                          type="button"
+                          onClick={() => setSelectedRegion(region)}
+                          className="w-full text-right cursor-pointer text-white/70 hover:text-gold-primary transition-colors"
+                        >
+                          {region.name}
+                        </button>
                       </li>
                     ))}
                   </ul>

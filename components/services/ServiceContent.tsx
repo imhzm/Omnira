@@ -171,7 +171,7 @@ const ProcessSection = ({ process }: any) => {
 
         <div className="relative">
           {/* Vertical Line */}
-          <div className="hidden lg:block absolute right-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-sage-primary via-sage-medium to-sage-primary rounded-full"></div>
+          <div className="hidden lg:block absolute right-1/2 top-0 bottom-0 w-1 bg-white/10 rounded-full"></div>
 
           <div className="space-y-12">
             {process.map((step: any, index: number) => (
@@ -183,14 +183,14 @@ const ProcessSection = ({ process }: any) => {
                 className="relative"
               >
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 shadow-lg`}>
+                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10`}>
                     <h3 className="text-2xl font-medium mb-3 text-sage-primary">{step.title}</h3>
                     <p className="text-brown-dark leading-relaxed">{step.description}</p>
                   </div>
 
                   {/* Circle */}
                   <div className="relative w-20 h-20 flex-shrink-0 lg:order-1">
-                    <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sage-medium rounded-full shadow-xl shadow-sage-primary/30"></div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-sage-primary to-sage-medium rounded-full"></div>
                     <div className="absolute inset-1 bg-[#0A0A0C] rounded-full flex items-center justify-center">
                       <span className="text-3xl font-black text-sage-primary">{step.step}</span>
                     </div>
@@ -249,7 +249,7 @@ const FAQSection = ({ faqs }: any) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="section-padding py-28 lg:py-40 bg-black-primary">
+    <section ref={ref} className="section-padding py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

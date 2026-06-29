@@ -157,7 +157,7 @@ export default function PricingComparison() {
                         {plan.features[feature as Feature] ? (
                           <Check className="text-[#C9A24A] w-6 h-6 mx-auto" />
                         ) : (
-                          <X className="text-[#8A6E2F] w-6 h-6 mx-auto" />
+                          <X className="text-white/30 w-6 h-6 mx-auto" />
                         )}
                       </td>
                     ))}

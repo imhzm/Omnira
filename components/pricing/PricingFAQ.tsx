@@ -70,7 +70,7 @@ const PricingFAQ = () => {
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-6 bg-white/[0.02]">
-                  <p className="text-white/45 leading-relaxed">{faq.answer}</p>
+                  <p className="text-white/65 leading-relaxed">{faq.answer}</p>
                 </div>
               )}
             </motion.div>
@@ -83,7 +83,7 @@ const PricingFAQ = () => {
           transition={{ delay: 0.8 }}
           className="mt-12 text-center"
         >
-          <p className="text-white/45 mb-6">لديك استفسارات أخرى؟</p>
+          <p className="text-white/65 mb-6">لديك استفسارات أخرى؟</p>
           <a
             href="/contact"
             className="btn-gold px-8 py-4 inline-flex items-center space-x-2 space-x-reverse"
