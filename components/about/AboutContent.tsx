@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Image from 'next/image';
+import ParallaxImage from '@/components/ui/ParallaxImage';
 import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
 
 const AboutContent = () => {
@@ -32,13 +33,7 @@ const StorySection = () => {
             transition={{ duration: 0.8 }}
           >
             <div className="relative h-96 rounded-2xl overflow-hidden">
-              <Image
-                src="/images/hero/hero-5.jpg"
-                alt="مقر شركة أومنيرا فاليه"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
+              <ParallaxImage src="/images/hero/hero-5.jpg" alt="مقر شركة أومنيرا فاليه" strength={55} />
             </div>
           </motion.div>
 

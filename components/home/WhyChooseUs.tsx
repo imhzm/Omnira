@@ -47,7 +47,7 @@ const WhyChooseUs = () => {
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-accents-emerald/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute top-40 -right-20 w-96 h-96 bg-accents-sky/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute top-40 -right-20 w-96 h-96 bg-gold-light/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="container-custom relative z-10">

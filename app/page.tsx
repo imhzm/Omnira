@@ -15,6 +15,10 @@ const GiantSectors = dynamic(() => import("@/components/home/GiantSectors"), {
   ssr: true,
 });
 
+const EditorialManifesto = dynamic(() => import("@/components/home/EditorialManifesto"), {
+  ssr: true,
+});
+
 const WhyChooseUs = dynamic(() => import("@/components/home/WhyChooseUs"), { 
   ssr: true,
   loading: () => <div className="h-screen" />
@@ -135,6 +139,7 @@ export default function Home() {
         <Header />
         <HeroSection />
         <GiantSectors />
+        <EditorialManifesto />
         <BeyondServices />
         <WhyChooseUs />
         <FeaturesSection />

@@ -53,7 +53,7 @@ export default function WhatsAppButton() {
               {/* Call Option */}
               <motion.button
                 onClick={handleCallClick}
-                className="group flex items-center gap-3 bg-gradient-to-r from-sage-primary to-sage-medium hover:from-sage-medium hover:to-sage-light text-white px-5 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 min-w-[200px]"
+                className="group flex items-center gap-3 bg-gradient-to-r from-sage-primary to-sage-medium hover:from-sage-medium hover:to-sage-light text-[#0A0A0C] px-5 py-3 rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 min-w-[200px]"
                 whileHover={{ scale: 1.05, x: -5 }}
                 whileTap={{ scale: 0.95 }}
               >

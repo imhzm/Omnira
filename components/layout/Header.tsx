@@ -164,7 +164,7 @@ const Header = () => {
             {/* CTA Button */}
             <Link 
               href="/contact" 
-              className="group inline-flex items-center justify-center space-x-2 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-8 py-3 text-sm font-black rounded-xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500"
+              className="group inline-flex items-center justify-center space-x-2 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] px-8 py-3 text-sm font-black rounded-xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500"
             >
               <span>احجز الآن</span>
               <span className="group-hover:-translate-x-0.5 transition-transform duration-500">←</span>
@@ -200,7 +200,7 @@ const Header = () => {
             ))}
             <Link
               href="/contact"
-              className="block mt-6 text-center bg-gradient-to-r from-sage-primary to-sage-medium text-white py-4 font-black rounded-xl hover:shadow-2xl hover:shadow-sage-primary/30 transition-all"
+              className="block mt-6 text-center bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] py-4 font-black rounded-xl hover:shadow-2xl hover:shadow-sage-primary/30 transition-all"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               احجز الآن

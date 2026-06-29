@@ -60,7 +60,7 @@ const Testimonials = () => {
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-10">
         <div className="absolute top-20 -left-20 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-accents-sky/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-gold-light/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -145,7 +145,7 @@ const Testimonials = () => {
           <p className="text-brown-dark text-lg mb-6 font-medium">
             انضم إلى <span className="text-sage-primary font-bold">أكثر من 200 عميل</span> راضٍ عن خدماتنا
           </p>
-          <a href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-10 py-5 text-lg font-black rounded-2xl hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105 transition-all">
+          <a href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] px-10 py-5 text-lg font-black rounded-2xl hover:shadow-2xl hover:shadow-sage-primary/30 hover:scale-105 transition-all">
             <span>احجز استشارة مجانية</span>
             <span className="group-hover:-translate-x-2 transition-transform">←</span>
           </a>

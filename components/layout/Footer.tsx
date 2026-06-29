@@ -31,7 +31,7 @@ const Footer = () => {
       {/* Animated Blobs */}
       <div className="absolute inset-0 z-0 opacity-5">
         <div className="absolute -top-40 -left-40 w-96 h-96 bg-sage-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-sunset-golden/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-gold-primary/40 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
       <div className="container-custom py-16 relative z-10">

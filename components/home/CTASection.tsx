@@ -30,7 +30,7 @@ const CTASection = () => {
       <div className="absolute inset-0 z-0 opacity-20">
         <div className="absolute -top-20 -left-20 w-96 h-96 bg-sage-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
         <div className="absolute -top-20 -right-20 w-96 h-96 bg-sunset-golden/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-        <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-accents-mint/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+        <div className="absolute -bottom-20 left-1/2 w-96 h-96 bg-gold-primary/30 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
       </div>
 
       <div className="container-custom relative z-10">
@@ -71,7 +71,7 @@ const CTASection = () => {
               transition={{ delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
             >
-              <Link href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-white px-10 py-5 text-lg font-black rounded-2xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500">
+              <Link href="/contact" className="group inline-flex items-center justify-center space-x-3 space-x-reverse bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] px-10 py-5 text-lg font-black rounded-2xl hover:shadow-lg hover:shadow-sage-primary/20 transition-all duration-500">
                 <span>احجز الآن</span>
                 <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-500" />
               </Link>
