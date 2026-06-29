@@ -142,7 +142,7 @@ export default function InteractiveMap() {
   return (
     <section className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] text-center mb-8 text-[#F5ECDB]">
+        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] text-center mb-8 gold-shine-effect">
           خدماتنا تغطي جميع مدن المملكة
         </h2>
         <p className="text-lg text-center text-[#C8B58A] max-w-3xl mx-auto mb-12">

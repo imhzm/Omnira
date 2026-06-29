@@ -18,10 +18,14 @@ export default function HorizontalSectors() {
   const ref = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
   const [dist, setDist] = useState(0);
+  const [simple, setSimple] = useState(false);
 
   useEffect(() => {
     const measure = () => {
       if (trackRef.current) setDist(Math.max(0, trackRef.current.scrollWidth - window.innerWidth));
+      setSimple(
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches || window.innerWidth < 768
+      );
     };
     measure();
     const t = setTimeout(measure, 800);
@@ -34,6 +38,45 @@ export default function HorizontalSectors() {
 
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
   const x = useTransform(scrollYProgress, [0, 1], [0, -dist]);
+
+  // Mobile / reduced-motion: no scroll-jacking — a calm vertical stack instead.
+  if (simple) {
+    return (
+      <section data-no-reveal className="bg-[#0A0A0C] py-24">
+        <div className="container-custom">
+          <span className="mb-6 flex items-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/90">
+            <span className="h-px w-10 bg-gold-primary/60" />
+            القطاعات
+          </span>
+          <h2 className="font-extralight leading-[1.1] text-white text-4xl sm:text-5xl">
+            أينما كان وصولك،{' '}
+            <span className="text-gold-light">نحن هناك.</span>
+          </h2>
+          <div className="mt-10 space-y-5">
+            {sectors.map((s, i) => (
+              <Link
+                key={s.title}
+                href={s.href}
+                className="group relative block h-72 w-full overflow-hidden rounded-2xl border border-white/10"
+              >
+                <Image src={s.img} alt={s.title} fill sizes="100vw" className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/25 to-transparent" />
+                <div className="absolute inset-x-0 bottom-0 p-7">
+                  <span className="font-mono text-sm text-gold-primary/70">0{i + 1}</span>
+                  <h3 className="mt-1 font-black text-white text-3xl">{s.title}</h3>
+                  <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/65">{s.desc}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm text-gold-primary">
+                    اعرف المزيد
+                    <ArrowLeft className="h-4 w-4" />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section
