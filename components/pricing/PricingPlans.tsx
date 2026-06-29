@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import Link from 'next/link';
-import { Check, Star, ArrowLeft } from 'lucide-react';
+import { Check, ArrowLeft } from 'lucide-react';
 
 const PricingPlans = () => {
   const ref = useRef(null);
@@ -18,19 +18,19 @@ const PricingPlans = () => {
       description: 'مثالية للمناسبات والفعاليات الخاصة والمؤتمرات',
       popular: false,
       features: [
-        '👥 فريق من 8 سائقين محترفين',
-        '⏰ خدمة لمدة 8 ساعات كاملة',
-        '🎫 نظام تذاكر إلكتروني متقدم',
-        '🛡️ تأمين شامل على جميع السيارات',
-        '👔 زي موحد احترافي فاخر',
-        '📊 مشرف موقع متخصص',
-        '📱 تطبيق تتبع فوري',
+        'فريق من 8 سائقين محترفين',
+        'خدمة لمدة 8 ساعات كاملة',
+        'نظام تذاكر إلكتروني متقدم',
+        'تأمين شامل على جميع السيارات',
+        'زيّ موحّد احترافي فاخر',
+        'مشرف موقع متخصص',
+        'تطبيق تتبّع فوري',
       ],
       extras: [
-        '🕑 300 ريال لكل ساعة إضافية',
-        '❌ 200 ريال رسوم إلغاء (إن وجدت)',
+        '300 ريال لكل ساعة إضافية',
+        '200 ريال رسوم إلغاء (إن وُجدت)',
       ],
-      badge: '🎉 فعاليات',
+      badge: null as string | null,
     },
     {
       name: 'باقة المنشآت الشهرية',
@@ -39,135 +39,103 @@ const PricingPlans = () => {
       description: 'للمطاعم، الفنادق، المراكز التجارية والمستشفيات',
       popular: true,
       features: [
-        '👥 فريق دائم مخصص لمنشأتك',
-        '⏰ خدمة مستمرة طوال الشهر',
-        '📊 نظام إدارة متكامل وذكي',
-        '📈 تقارير شهرية تفصيلية',
-        '🛡️ تأمين شامل ممتد',
-        '👔 زي موحد بهوية منشأتك',
-        '👨‍💼 مشرف ميداني متفرغ',
-        '📞 دعم فني 24/7',
-        '📱 تطبيق خاص للإدارة',
-        '📝 عقد مرن قابل للتجديد',
+        'فريق دائم مخصص لمنشأتك',
+        'خدمة مستمرة طوال الشهر',
+        'نظام إدارة متكامل وذكي',
+        'تقارير شهرية تفصيلية',
+        'تأمين شامل ممتد',
+        'زيّ موحّد بهوية منشأتك',
+        'مشرف ميداني متفرّغ',
+        'دعم فني 24/7',
+        'تطبيق خاص للإدارة',
+        'عقد مرن قابل للتجديد',
       ],
-      extras: [],
-      badge: '⭐ الأكثر طلباً',
+      extras: [] as string[],
+      badge: 'الأكثر طلباً',
     },
   ];
 
   return (
     <section ref={ref} className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          className="text-center mb-16"
+          className="mb-16 text-center text-white/50 text-base lg:text-lg"
         >
-          <p className="text-brown-text text-lg mb-4">
-            جميع الباقات تشمل تأميناً شاملاً وفريقاً محترفاً ونظام تتبع إلكتروني
-          </p>
-        </motion.div>
+          جميع الباقات تشمل تأميناً شاملاً، فريقاً محترفاً، ونظام تتبّع إلكتروني.
+        </motion.p>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {plans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.2, delay: 0 }}
-              className={`relative p-10 md:p-12 rounded-3xl transition-all duration-300 ${
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className={`relative rounded-3xl p-10 md:p-12 transition-colors duration-300 ${
                 plan.popular
-                  ? 'bg-white/[0.03] border border-white/10'
-                  : 'bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-sage-primary'
+                  ? 'bg-white/[0.04] border border-gold-primary/30'
+                  : 'bg-white/[0.03] border border-white/10 hover:border-white/20'
               }`}
             >
               {plan.badge && (
-                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 z-10">
-                  <div className={`px-6 py-2 rounded-full font-bold text-sm shadow-lg ${
-                    plan.popular
-                      ? 'bg-gradient-to-r from-accent-amber to-sunset-golden text-[#0A0A0C] animate-pulseSoft'
-                      : 'bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C]'
-                  }`}>
-                    <span>{plan.badge}</span>
-                  </div>
+                <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold-primary px-5 py-1.5 text-xs font-medium text-[#0A0A0C]">
+                  {plan.badge}
                 </div>
               )}
 
-              <div className="text-center mb-8">
-                <h3 className={`text-3xl font-semibold mb-3 ${
-                  plan.popular ? 'gold-shine-effect' : 'text-sage-primary'
-                }`}>
-                  {plan.name}
-                </h3>
-                <p className="text-brown-text mb-6 leading-relaxed">
-                  {plan.description}
-                </p>
-                <div className="mb-2">
-                  <span className="text-6xl font-black bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">
-                    {plan.price}
-                  </span>
-                  {plan.price !== 'حسب الطلب' && (
-                    <span className="text-2xl text-brown-dark font-bold"> ريال</span>
-                  )}
+              <div className="mb-9">
+                <h3 className="mb-3 text-2xl font-medium text-white">{plan.name}</h3>
+                <p className="mb-7 text-sm leading-relaxed text-white/45">{plan.description}</p>
+                <div className="flex items-baseline gap-2">
+                  <span className="text-6xl font-extralight text-gold-light">{plan.price}</span>
+                  <span className="text-lg font-light text-white/50">ريال</span>
+                  <span className="text-sm text-white/40">/ {plan.period}</span>
                 </div>
-                {plan.period && (
-                  <p className="text-base text-brown-text font-medium bg-sage-50 px-4 py-2 rounded-full inline-block">{plan.period}</p>
-                )}
               </div>
 
-              <div className="space-y-3 mb-8">
+              <div className="mb-9 space-y-4 border-t border-white/10 pt-8">
                 {plan.features.map((feature, i) => (
-                  <div key={i} className="flex items-start space-x-3 space-x-reverse p-3 rounded-xl hover:bg-sage-50 transition-colors group">
-                    <Check className="w-5 h-5 flex-shrink-0 mt-0.5 text-sage-primary group-hover:scale-125 transition-transform" />
-                    <span className="text-brown-dark font-medium text-base">{feature}</span>
+                  <div key={i} className="flex items-start gap-3">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold-primary" />
+                    <span className="text-sm leading-relaxed text-white/70">{feature}</span>
                   </div>
                 ))}
               </div>
 
               {plan.extras.length > 0 && (
-                <div className="border-t border-white/10 pt-6 mb-6">
-                  <p className="text-base font-black mb-4 text-sage-primary flex items-center space-x-2 space-x-reverse">
-                    <span>✨</span>
-                    <span>إضافات متاحة:</span>
+                <div className="mb-9 space-y-2 border-t border-white/10 pt-6">
+                  <p className="mb-3 text-[11px] font-medium tracking-[0.2em] text-gold-primary/70">
+                    إضافات متاحة
                   </p>
-                  <div className="space-y-2">
-                    {plan.extras.map((extra, i) => (
-                      <p key={i} className="text-sm text-brown-dark bg-[#1A1A20] px-4 py-2 rounded-lg border border-accent-amber/20">
-                        {extra}
-                      </p>
-                    ))}
-                  </div>
+                  {plan.extras.map((extra, i) => (
+                    <p key={i} className="text-sm text-white/45">{extra}</p>
+                  ))}
                 </div>
               )}
 
               <Link
                 href="/contact"
-                className={`block w-full py-5 rounded-2xl text-center font-black text-lg transition-all duration-500 shadow-lg group ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-sage-primary to-sage-medium text-[#0A0A0C] hover:shadow-xl hover:shadow-sage-primary/20'
-                    : 'bg-sage-primary text-[#0A0A0C] hover:bg-sage-600 hover:shadow-lg'
-                }`}
+                className="group inline-flex items-center gap-3 text-base text-white"
               >
-                <span className="inline-flex items-center space-x-2 space-x-reverse">
-                  <span>{plan.price === 'حسب الطلب' ? 'اطلب عرض سعر' : 'احجز الآن'}</span>
-                  <ArrowLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform duration-500" />
+                <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
+                  احجز الآن
                 </span>
+                <ArrowLeft className="h-5 w-5 text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5" />
               </Link>
             </motion.div>
           ))}
         </div>
 
-        {/* Note */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ delay: 0 }}
-          className="mt-12 text-center"
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ delay: 0.3 }}
+          className="mt-14 text-center text-sm text-white/40"
         >
-          <p className="text-brown-text text-sm">
-            للمزيد من التفاصيل أو للحصول على عرض سعر مخصص، يرجى التواصل معنا
-          </p>
-        </motion.div>
+          للحصول على عرض سعر مخصّص، يسعدنا تواصلك معنا.
+        </motion.p>
       </div>
     </section>
   );
