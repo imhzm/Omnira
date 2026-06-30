@@ -8,6 +8,7 @@ import { pricingData } from '@/lib/static-content';
 import { getOGImage } from '@/lib/og-images';
 import PricingComparison from '@/components/pricing/PricingComparison';
 import PricingCTA from '@/components/pricing/PricingCTA';
+import CinematicBreak from '@/components/ui/CinematicBreak';
 
 export const metadata: Metadata = {
   title: 'الأسعار والباقات | Omnira Valet - باقات صف السيارات والفاليه باركينج بأسعار تنافسية',
@@ -98,6 +99,10 @@ export default function PricingPage() {
         <PricingHero />
         <PricingPlans />
         <PricingComparison />
+        <CinematicBreak image="/images/atmos/atmos-1.jpg" kicker="قيمة حقيقية">
+          استثمارٌ في تجربة وصول
+          <span className="text-gold-light"> تُحدِث الفرق</span>.
+        </CinematicBreak>
         <PricingFAQ />
         <PricingCTA />
         <Footer />

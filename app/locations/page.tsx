@@ -6,6 +6,7 @@ import LocationsGrid from '@/components/locations/LocationsGrid';
 import dynamic from 'next/dynamic';
 import { generateFAQSchema } from '@/lib/schemas';
 import { getOGImage } from '@/lib/og-images';
+import CinematicBreak from '@/components/ui/CinematicBreak';
 
 // استيراد مكون الخريطة التفاعلية بشكل ديناميكي لتفادي مشاكل الترميز على الخادم
 const InteractiveMap = dynamic(
@@ -129,6 +130,10 @@ export default function LocationsPage() {
         <Header />
         <LocationsHero />
         <InteractiveMap />
+        <CinematicBreak image="/images/atmos/atmos-3.jpg" kicker="حضورنا">
+          أينما كنت في المملكة،
+          <span className="text-gold-light"> نحن أقرب مما تظن</span>.
+        </CinematicBreak>
         <LocationsGrid />
         <Footer />
       </main>

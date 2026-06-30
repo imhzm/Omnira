@@ -8,6 +8,7 @@ import { getOGImage } from '@/lib/og-images';
 import { RichContent, PageType } from '@/lib/seo-content';
 import { RelatedLinks, ContentCategory, SidebarLinks } from '@/lib/internal-links';
 import { generateFAQSchema } from '@/lib/schemas';
+import CinematicBreak from '@/components/ui/CinematicBreak';
 
 export const metadata: Metadata = {
   title: 'خدماتنا الاحترافية | أومنيرا فاليه - 8 حلول متكاملة لإدارة وصف السيارات في السعودية',
@@ -147,7 +148,12 @@ export default function ServicesPage() {
         <Header />
         <ServicesHero />
         <ServicesGrid />
-        
+
+        <CinematicBreak image="/images/atmos/atmos-1.jpg" kicker="خدماتنا">
+          من الاستقبال إلى المغادرة،
+          <span className="text-gold-light"> نحن في كل تفصيلة</span>.
+        </CinematicBreak>
+
         {/* قسم المحتوى الغني للسيو */}
         <section className="py-16 bg-beige-light">
           <div className="container mx-auto px-4">
