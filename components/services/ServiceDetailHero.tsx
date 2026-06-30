@@ -3,6 +3,8 @@
 import { motion } from 'framer-motion';
 import Image from '@/components/ui/BlurImage';
 import Link from 'next/link';
+import Particles from '@/components/ui/Particles';
+import WebGLFog from '@/components/ui/WebGLFog';
 
 interface ServiceDetailHeroProps {
   data: {
@@ -29,9 +31,13 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/55 to-[#0A0A0C]/40" />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/45 to-[#0A0A0C]/25" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/55" />
       </div>
+
+      {/* cinematic depth — matches the home hero */}
+      <WebGLFog className="absolute inset-0 z-[1] opacity-50 mix-blend-screen" />
+      <Particles className="absolute inset-0 z-[2]" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -82,6 +88,21 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
           </motion.div>
         </motion.div>
       </div>
+
+      {/* scroll cue */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.1, duration: 1 }}
+        className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
+      >
+        <span className="text-[10px] tracking-[0.3em] text-white/35">تصفّح</span>
+        <motion.span
+          animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="h-10 w-px origin-top bg-gradient-to-b from-gold-primary/80 to-transparent"
+        />
+      </motion.div>
     </section>
   );
 };

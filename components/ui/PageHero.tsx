@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion';
 import Image from '@/components/ui/BlurImage';
+import Particles from '@/components/ui/Particles';
+import WebGLFog from '@/components/ui/WebGLFog';
 
 const fade = {
   hidden: { opacity: 0, y: 26 },
@@ -35,6 +37,10 @@ export default function PageHero({
         <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/45 to-[#0A0A0C]/25" />
         <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/55" />
       </div>
+
+      {/* cinematic depth — matches the home hero */}
+      <WebGLFog className="absolute inset-0 z-[1] opacity-50 mix-blend-screen" />
+      <Particles className="absolute inset-0 z-[2]" />
 
       <div className="container-custom relative z-10">
         <motion.div
@@ -83,7 +89,11 @@ export default function PageHero({
         className="absolute bottom-8 left-1/2 z-10 flex -translate-x-1/2 flex-col items-center gap-2"
       >
         <span className="text-[10px] tracking-[0.3em] text-white/35">تصفّح</span>
-        <span className="h-12 w-px bg-gradient-to-b from-gold-primary/70 to-transparent" />
+        <motion.span
+          animate={{ scaleY: [0.4, 1, 0.4], opacity: [0.4, 1, 0.4] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          className="h-10 w-px origin-top bg-gradient-to-b from-gold-primary/80 to-transparent"
+        />
       </motion.div>
     </section>
   );
