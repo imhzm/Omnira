@@ -13,9 +13,10 @@ export const contactConfig = {
     support: 'info@omniravalet.com',
   },
   social: {
-    instagram: 'https://instagram.com/omnira',
-    twitter: 'https://twitter.com/omnira',
-    linkedin: 'https://linkedin.com/company/omnira',
+    facebook: 'https://www.facebook.com/omniravalet/',
+    twitter: 'https://x.com/elorepariss',
+    tiktok: 'https://www.tiktok.com/@omniravalet',
+    youtube: 'https://www.youtube.com/@Omniravalet',
   },
   location: {
     address: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7، الرياض',

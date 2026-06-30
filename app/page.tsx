@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     title: 'Omnira Valet | خدمات صف السيارات الاحترافية',
     description: 'شركة سعودية رائدة في الفاليه باركينج وإدارة المواقف الذكية',
     images: [getOGImage('home').url],
-    creator: '@omnira_sa',
+    creator: '@elorepariss',
   },
   robots: {
     index: true,

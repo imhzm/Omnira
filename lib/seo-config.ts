@@ -5,10 +5,10 @@ export const siteConfig = {
   url: 'https://omniravalet.com',
   ogImage: 'https://omniravalet.com/og-image.jpg',
   links: {
-    twitter: 'https://twitter.com/omnira_sa',
-    facebook: 'https://facebook.com/omnira.sa',
-    instagram: 'https://instagram.com/omnira.sa',
-    linkedin: 'https://linkedin.com/company/omnira',
+    facebook: 'https://www.facebook.com/omniravalet/',
+    twitter: 'https://x.com/elorepariss',
+    tiktok: 'https://www.tiktok.com/@omniravalet',
+    youtube: 'https://www.youtube.com/@Omniravalet',
   },
   creator: 'Omnira Valet',
   registrationNumber: '7051975600',
@@ -94,10 +94,10 @@ export const jsonLdOrganization = {
     { '@type': 'Country', name: 'المملكة العربية السعودية' },
   ],
   sameAs: [
-    siteConfig.links.twitter,
     siteConfig.links.facebook,
-    siteConfig.links.instagram,
-    siteConfig.links.linkedin,
+    siteConfig.links.twitter,
+    siteConfig.links.tiktok,
+    siteConfig.links.youtube,
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',

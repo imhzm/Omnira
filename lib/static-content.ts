@@ -217,10 +217,10 @@ export const companySchema = {
   "url": "https://omniravalet.com",
   "logo": "https://omniravalet.com/logo.png",
   "sameAs": [
-    "https://www.facebook.com/omnira.sa",
-    "https://twitter.com/omnira_sa",
-    "https://www.instagram.com/omnira.sa",
-    "https://www.linkedin.com/company/omnira",
+    "https://www.facebook.com/omniravalet/",
+    "https://x.com/elorepariss",
+    "https://www.tiktok.com/@omniravalet",
+    "https://www.youtube.com/@Omniravalet"
   ],
   "contactPoint": {
     "@type": "ContactPoint",

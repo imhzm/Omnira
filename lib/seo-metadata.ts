@@ -91,8 +91,8 @@ export function generateMetadata({
       title,
       description,
       images: [ogImage],
-      creator: '@omnira_sa',
-      site: '@omnira_sa',
+      creator: '@elorepariss',
+      site: '@elorepariss',
     },
     robots: noindex
       ? {

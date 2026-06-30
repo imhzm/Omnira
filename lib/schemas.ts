@@ -145,11 +145,10 @@ export const localBusinessSchema = {
   
   // روابط التواصل الاجتماعي
   sameAs: [
-    'https://www.facebook.com/omnira',
-    'https://www.twitter.com/omnira',
-    'https://www.instagram.com/omnira',
-    'https://www.linkedin.com/company/omnira',
-    'https://www.youtube.com/omnira'
+    'https://www.facebook.com/omniravalet/',
+    'https://x.com/elorepariss',
+    'https://www.tiktok.com/@omniravalet',
+    'https://www.youtube.com/@Omniravalet'
   ],
 
   // معلومات الشركة
@@ -196,10 +195,10 @@ export const organizationSchema = {
   },
 
   sameAs: [
-    'https://www.facebook.com/omnira',
-    'https://www.twitter.com/omnira',
-    'https://www.instagram.com/omnira',
-    'https://www.linkedin.com/company/omnira'
+    'https://www.facebook.com/omniravalet/',
+    'https://x.com/elorepariss',
+    'https://www.tiktok.com/@omniravalet',
+    'https://www.youtube.com/@Omniravalet'
   ]
 };
 
