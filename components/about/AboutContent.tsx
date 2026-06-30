@@ -6,6 +6,7 @@ import { useRef, useState, useEffect } from 'react';
 import Image from '@/components/ui/BlurImage';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
+import CinematicBreak from '@/components/ui/CinematicBreak';
 
 function CountUp({ value, active }: { value: string; active: boolean }) {
   const [display, setDisplay] = useState('0');
@@ -39,6 +40,10 @@ const AboutContent = () => {
     <div className="bg-[#0A0A0C]">
       <StorySection />
       <VisionMissionSection />
+      <CinematicBreak image="/images/atmos/atmos-3.jpg" kicker="فلسفتنا">
+        التفاصيل الصغيرة هي ما يصنع
+        <span className="text-gold-light"> الفخامة الحقيقية</span>.
+      </CinematicBreak>
       <ValuesSection />
       <StatsSection />
       <TeamSection />

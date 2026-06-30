@@ -7,6 +7,7 @@ import Image from '@/components/ui/BlurImage';
 import { CheckCircle, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { generateFAQSchema } from '@/lib/schemas';
+import CinematicBreak from '@/components/ui/CinematicBreak';
 
 interface ServiceContentProps {
   data: any;
@@ -20,6 +21,10 @@ const ServiceContent = ({ data }: ServiceContentProps) => {
       <OverviewSection data={data.overview} />
       <BenefitsSection benefits={data.benefits} />
       <FeaturesSection features={data.features} />
+      <CinematicBreak image="/images/atmos/atmos-2.jpg" kicker="التزامنا">
+        كل تفصيلة مدروسة — لتجربة وصول
+        <span className="text-gold-light"> لا تشوبها شائبة</span>.
+      </CinematicBreak>
       <ProcessSection process={data.process} />
       <ClientsSection clients={data.clients} />
       <FAQSection faqs={data.faqs} />
