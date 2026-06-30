@@ -13,9 +13,9 @@ export const siteConfig = {
   creator: 'Omnira Valet',
   registrationNumber: '7051975600',
   address: {
-    streetAddress: 'عبدالرحمن الشعيبي، حي الروضة',
+    streetAddress: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7',
     addressLocality: 'الرياض',
-    postalCode: '12311',
+    postalCode: '13519',
     addressCountry: 'SA',
   },
   contact: {
@@ -82,8 +82,8 @@ export const jsonLdOrganization = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '24.7136',
-    longitude: '46.6753',
+    latitude: '24.7649',
+    longitude: '46.6390',
   },
   areaServed: [
     { '@type': 'City', name: 'الرياض' },

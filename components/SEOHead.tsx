@@ -64,8 +64,8 @@ export default function SEOHead({
       <meta name="language" content="Arabic" />
       <meta name="geo.region" content="SA" />
       <meta name="geo.placename" content="Riyadh" />
-      <meta name="geo.position" content="24.7136;46.6753" />
-      <meta name="ICBM" content="24.7136, 46.6753" />
+      <meta name="geo.position" content="24.7649;46.6390" />
+      <meta name="ICBM" content="24.7649, 46.6390" />
       
       {/* Mobile */}
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />

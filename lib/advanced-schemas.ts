@@ -38,10 +38,10 @@ export const geoLocationSchema = {
   },
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: '24.7136',
-    longitude: '46.6753',
+    latitude: '24.7649',
+    longitude: '46.6390',
   },
-  hasMap: 'https://www.google.com/maps?q=24.7136,46.6753',
+  hasMap: 'https://www.google.com/maps/search/?api=1&query=King+Abdullah+Financial+District+Riyadh',
   openingHoursSpecification: {
     '@type': 'OpeningHoursSpecification',
     dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],

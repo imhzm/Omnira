@@ -22,10 +22,10 @@ export const localBusinessSchema = {
   // العنوان الرئيسي في السعودية
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'شارع الملك فهد',
+    streetAddress: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7',
     addressLocality: 'الرياض',
     addressRegion: 'الرياض',
-    postalCode: '12345',
+    postalCode: '13519',
     addressCountry: 'SA'
   },
 
@@ -66,8 +66,8 @@ export const localBusinessSchema = {
   // الإحداثيات الجغرافية (الرياض)
   geo: {
     '@type': 'GeoCoordinates',
-    latitude: 24.7136,
-    longitude: 46.6753
+    latitude: 24.7649,
+    longitude: 46.6390
   },
 
   // ساعات العمل

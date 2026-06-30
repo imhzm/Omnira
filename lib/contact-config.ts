@@ -18,7 +18,7 @@ export const contactConfig = {
     linkedin: 'https://linkedin.com/company/omnira',
   },
   location: {
-    address: 'الرياض، المملكة العربية السعودية',
+    address: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7، الرياض',
     city: 'الرياض',
     country: 'المملكة العربية السعودية',
   },

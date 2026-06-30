@@ -231,10 +231,10 @@ export const companySchema = {
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "حي الروضة",
+    "streetAddress": "مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7",
     "addressLocality": "الرياض",
     "addressRegion": "الرياض",
-    "postalCode": "12345",
+    "postalCode": "13519",
     "addressCountry": "SA"
   },
   "foundingDate": "2019",

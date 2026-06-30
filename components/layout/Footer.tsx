@@ -78,7 +78,7 @@ const Footer = () => {
               تواصل
             </h4>
             <ul className="space-y-4 text-sm text-white/55">
-              <li>الرياض، حي الروضة — المملكة العربية السعودية</li>
+              <li>مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7 — الرياض</li>
               <li>
                 <a href="https://wa.me/966XXXXXXXXX" dir="ltr" className="transition-colors duration-300 hover:text-white">
                   +966 XX XXX XXXX

@@ -55,7 +55,7 @@ const StorySection = () => {
               </p>
               <p>
                 <strong className="text-sage-primary">السجل التجاري:</strong> 7051975600<br/>
-                <strong className="text-sage-primary">المقر الرئيسي:</strong> الرياض، المملكة العربية السعودية
+                <strong className="text-sage-primary">المقر الرئيسي:</strong> مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7، الرياض
               </p>
             </div>
           </motion.div>

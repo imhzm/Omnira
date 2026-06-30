@@ -3,14 +3,15 @@
 import { motion } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 
+const KAFD_MAP_LINK = 'https://www.google.com/maps/search/?api=1&query=King+Abdullah+Financial+District+Riyadh';
+
 const ContactInfo = () => {
   const contactItems = [
     {
       icon: MapPin,
       title: 'العنوان',
-      details: ['POMF+3FG روضة، الرياض السعودية', 'حي الروضة، الرياض 12311', 'المملكة العربية السعودية'],
-      coordinates: '24°43\'57.7"N 46°46\'25.4"E',
-      mapLink: 'https://maps.app.goo.gl/BpyJj4V4sjPssrbf9',
+      details: ['مركز الملك عبدالله المالي (KAFD)', 'المنطقة 4، قطعة 4.07، المستوى 7', 'الرياض، المملكة العربية السعودية'],
+      link: KAFD_MAP_LINK,
     },
     {
       icon: Phone,
@@ -108,11 +109,11 @@ const ContactInfo = () => {
             <MapPin className="w-5 h-5 text-gold-primary" />
             <div>
               <h3 className="text-white font-medium text-base">موقعنا على الخريطة</h3>
-              <p className="text-white/45 text-sm">حي الروضة، الرياض</p>
+              <p className="text-white/45 text-sm">مركز الملك عبدالله المالي (KAFD)، الرياض</p>
             </div>
           </div>
           <a
-            href="https://maps.app.goo.gl/BpyJj4V4sjPssrbf9"
+            href={KAFD_MAP_LINK}
             target="_blank"
             rel="noopener noreferrer"
             className="border border-white/15 hover:border-gold-primary text-white/70 hover:text-gold-primary px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 space-x-reverse"
@@ -123,32 +124,32 @@ const ContactInfo = () => {
             </svg>
           </a>
         </div>
-        
+
         {/* Map */}
         <div className="relative h-96 bg-[#141418]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.0989!2d46.773722!3d24.73269!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDQzJzU3LjciTiA0NsKwNDYnMjUuNCJF!5e0!3m2!1sar!2ssa!4v1234567890"
+            src="https://maps.google.com/maps?q=King%20Abdullah%20Financial%20District%20Riyadh&t=&z=14&ie=UTF8&iwloc=&output=embed"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="موقع أومنيرا فاليه على الخريطة"
+            title="موقع أومنيرا فاليه - مركز الملك عبدالله المالي (KAFD)"
             className="absolute inset-0"
           />
         </div>
-        
+
         {/* Footer Info */}
         <div className="bg-white/[0.03] p-4 border-t border-white/10">
-          <div className="flex items-center justify-between text-sm">
+          <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
             <div className="flex items-center space-x-2 space-x-reverse text-brown-dark">
-              <span className="font-bold">الإحداثيات:</span>
-              <span className="font-mono text-sage-primary">24°43&apos;57.7&quot;N 46°46&apos;25.4&quot;E</span>
+              <span className="font-bold">العنوان:</span>
+              <span className="text-sage-primary">KAFD — المنطقة 4، قطعة 4.07، المستوى 7</span>
             </div>
             <div className="flex items-center space-x-2 space-x-reverse text-brown-text">
               <MapPin className="w-4 h-4" />
-              <span>حي الروضة، الرياض 12311</span>
+              <span>الرياض، المملكة العربية السعودية</span>
             </div>
           </div>
         </div>
