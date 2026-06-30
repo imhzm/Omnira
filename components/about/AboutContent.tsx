@@ -2,10 +2,37 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Image from '@/components/ui/BlurImage';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
+
+function CountUp({ value, active }: { value: string; active: boolean }) {
+  const [display, setDisplay] = useState('0');
+  useEffect(() => {
+    if (!active) return;
+    const m = value.match(/^([\d.,]+)(.*)$/);
+    const numStr = (m?.[1] || '0').replace(/,/g, '');
+    const suffix = m?.[2] || '';
+    const target = parseFloat(numStr) || 0;
+    const decimals = numStr.includes('.') ? numStr.split('.')[1].length : 0;
+    const fmt = (n: number) =>
+      (decimals > 0 ? n.toFixed(decimals) : Math.round(n).toLocaleString('en-US')) + suffix;
+    let raf = 0;
+    let startT = 0;
+    const dur = 1600;
+    const tick = (t: number) => {
+      if (!startT) startT = t;
+      const p = Math.min(1, (t - startT) / dur);
+      setDisplay(fmt(target * (1 - Math.pow(1 - p, 3))));
+      if (p < 1) raf = requestAnimationFrame(tick);
+      else setDisplay(fmt(target));
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [active, value]);
+  return <>{display}</>;
+}
 
 const AboutContent = () => {
   return (
@@ -42,6 +69,10 @@ const StorySection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
+            <div className="mb-5 flex items-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+              <span className="h-px w-10 bg-gold-primary/50" />
+              البداية
+            </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">قصتنا</h2>
             <div className="space-y-4 text-brown-text leading-relaxed">
               <p>
@@ -156,6 +187,10 @@ const ValuesSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            ما يحرّكنا
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 gold-shine-effect leading-[0.95]">قيمنا</h2>
           <p className="text-brown-text text-lg">المبادئ التي نؤمن بها ونعمل وفقها</p>
         </motion.div>
@@ -197,6 +232,10 @@ const StatsSection = () => {
   return (
     <section ref={ref} className="bg-[#0A0A0C] py-28 lg:py-40">
       <div className="container-custom">
+        <div className="mb-14 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+          <span className="h-px w-10 bg-gold-primary/50" />
+          بالأرقام
+        </div>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
@@ -206,7 +245,9 @@ const StatsSection = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="text-center glass-effect p-10 rounded-3xl border border-white/10 hover:border-sage-primary transition-all duration-300"
             >
-              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">{stat.value}</div>
+              <div className="text-5xl font-bold mb-2 bg-gradient-to-r from-sage-primary to-sage-medium bg-clip-text text-transparent">
+                <CountUp value={stat.value} active={isInView} />
+              </div>
               <div className="text-brown-text font-medium">{stat.label}</div>
             </motion.div>
           ))}
@@ -228,6 +269,10 @@ const TeamSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            الأشخاص
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 gold-shine-effect leading-[0.95]">فريقنا</h2>
           <p className="text-brown-text text-lg max-w-2xl mx-auto">
             فريق متخصص من الخبراء الملتزمين بتقديم أفضل خدمة لعملائنا

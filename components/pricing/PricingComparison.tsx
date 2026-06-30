@@ -97,6 +97,10 @@ export default function PricingComparison() {
     <section className="py-16 bg-[#0A0A0C]">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            المقارنة
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] gold-shine-effect mb-4">
             قارن بين باقاتنا
           </h2>

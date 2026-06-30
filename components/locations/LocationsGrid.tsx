@@ -85,6 +85,10 @@ const LocationsGrid = () => {
           className="max-w-4xl mx-auto mb-16"
         >
           <div className="p-10 rounded-2xl bg-white/[0.03] border border-white/10">
+            <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+              <span className="h-px w-10 bg-gold-primary/50" />
+              أينما كنت
+            </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-6 gold-shine-effect text-center">
               تواصل معنا في أي مدينة
             </h2>
@@ -165,6 +169,10 @@ const LocationsGrid = () => {
           className="mt-20 text-center"
         >
           <div className="p-14 rounded-2xl bg-white/[0.03] border border-white/10">
+            <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+              <span className="h-px w-10 bg-gold-primary/50" />
+              التوسّع
+            </div>
             <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] mb-4 gold-shine-effect">
               لم تجد مدينتك؟
             </h2>

@@ -70,6 +70,10 @@ const OverviewSection = ({ data }: any) => {
           transition={{ duration: 0.6 }}
           className="bg-white/[0.03] backdrop-blur-md p-12 md:p-16 rounded-3xl border border-white/10"
         >
+          <div className="mb-5 flex items-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            نظرة عامة
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-10 gold-shine-effect leading-[0.95]">{data.title}</h2>
           <div className="text-brown-dark text-lg leading-loose space-y-6 whitespace-pre-line">
             {data.description}
@@ -92,6 +96,10 @@ const BenefitsSection = ({ benefits }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            لماذا أومنيرا
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             الفوائد والمزايا
           </h2>
@@ -134,6 +142,10 @@ const FeaturesSection = ({ features }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-20"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            التقنية
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             المميزات التقنية
           </h2>
@@ -164,6 +176,10 @@ const ProcessSection = ({ process }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-20"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            منهجيتنا
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             كيف نعمل؟
           </h2>
@@ -220,6 +236,10 @@ const ClientsSection = ({ clients }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-16"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            عملاؤنا
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-6 gold-shine-effect leading-[0.95]">
             من نخدم؟
           </h2>
@@ -264,6 +284,10 @@ const FAQSection = ({ faqs }: any) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           className="text-center mb-12"
         >
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            استفسارات
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black mb-4 gold-shine-effect leading-[0.95]">
             الأسئلة الشائعة
           </h2>

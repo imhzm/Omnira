@@ -27,6 +27,10 @@ export default function PricingCTA() {
     <section className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
+          <div className="mb-5 flex items-center justify-center gap-3 text-[11px] font-medium tracking-[0.3em] text-gold-primary/80">
+            <span className="h-px w-10 bg-gold-primary/50" />
+            حسب طلبك
+          </div>
           <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black leading-[0.95] gold-shine-effect mb-6">
             باقة مخصصة لاحتياجاتك
           </h2>
