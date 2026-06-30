@@ -129,10 +129,11 @@ const LocationsGrid = () => {
                 {region.cities.map((city, cityIndex) => {
                   const slug = cityPageSlugs[city];
                   const card = (
-                    <div className={`relative p-8 rounded-xl bg-white/[0.03] border transition-all duration-300 overflow-hidden ${slug ? 'border-gold-primary/30 hover:border-gold-primary' : 'border-white/10 hover:border-white/25'}`}>
+                    <div className={`group relative p-8 rounded-xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border transition-all duration-500 overflow-hidden hover:-translate-y-1.5 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] ${slug ? 'border-gold-primary/30 hover:border-gold-primary/40' : 'border-white/10 hover:border-gold-primary/40'}`}>
+                      <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                       <div className="absolute inset-0 bg-gradient-luxury opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                       <div className="relative flex flex-col items-center text-center space-y-3">
-                        <div className="w-12 h-12 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center transition-colors">
+                        <div className="w-12 h-12 rounded-full border border-gold-primary/25 bg-gold-primary/10 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                           <MapPin className="w-6 h-6 text-gold-primary" />
                         </div>
                         <h4 className="font-medium text-white group-hover:text-gold-primary transition-colors">

@@ -73,12 +73,13 @@ const PricingPlans = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className={`relative rounded-3xl p-10 md:p-12 transition-colors duration-300 ${
+              className={`group relative overflow-hidden rounded-3xl p-10 md:p-12 bg-gradient-to-b from-white/[0.07] to-white/[0.015] transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] ${
                 plan.popular
-                  ? 'bg-white/[0.04] border border-gold-primary/30'
-                  : 'bg-white/[0.03] border border-white/10 hover:border-white/20'
+                  ? 'border border-gold-primary/30'
+                  : 'border border-white/10'
               }`}
             >
+              <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               {plan.badge && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gold-primary px-5 py-1.5 text-xs font-medium text-[#0A0A0C]">
                   {plan.badge}

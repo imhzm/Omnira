@@ -108,13 +108,14 @@ const VisionMissionSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2 }}
-            className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all"
+            className="group relative overflow-hidden p-10 rounded-3xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
           >
-            <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6">
+            <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="w-16 h-16 rounded-full border border-gold-primary/25 bg-gold-primary/10 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110">
               <Target className="w-8 h-8 text-gold-primary" />
             </div>
             <h3 className="text-3xl font-medium mb-4 text-sage-primary">رؤيتنا</h3>
-            <p className="text-brown-dark text-lg leading-relaxed">
+            <p className="text-white/60 text-lg leading-relaxed">
               أن نكون الخيار الأول لخدمات صف السيارات في المملكة والمنطقة، ونضع معايير 
               جديدة للاحترافية والجودة في هذا القطاع. نسعى للمساهمة في تحقيق أهداف 
               <span className="text-sunset-golden font-semibold">رؤية المملكة 2030</span> من خلال تقديم خدمات متطورة تدعم قطاع الضيافة والسياحة.
@@ -125,13 +126,14 @@ const VisionMissionSection = () => {
             initial={{ opacity: 0, y: 50 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.2, delay: 0 }}
-            className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all"
+            className="group relative overflow-hidden p-10 rounded-3xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
           >
-            <div className="w-16 h-16 rounded-full bg-white/[0.04] border border-white/10 flex items-center justify-center mb-6">
+            <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+            <div className="w-16 h-16 rounded-full border border-gold-primary/25 bg-gold-primary/10 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110">
               <Award className="w-8 h-8 text-gold-primary" />
             </div>
             <h3 className="text-3xl font-medium mb-4 text-sage-primary">رسالتنا</h3>
-            <p className="text-brown-dark text-lg leading-relaxed">
+            <p className="text-white/60 text-lg leading-relaxed">
               تقديم خدمات صف سيارات استثنائية تجمع بين التكنولوجيا المتقدمة، الفريق المحترف، 
               والاهتمام بأدق التفاصيل لضمان تجربة مميزة لعملائنا وضيوفهم.
             </p>
@@ -204,11 +206,12 @@ const ValuesSection = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="p-8 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-sage-primary transition-all duration-300 group"
+                className="group relative overflow-hidden p-8 rounded-3xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
               >
-                <Icon className="w-12 h-12 text-sage-primary mb-4 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-medium mb-2 text-brown-dark">{value.title}</h3>
-                <p className="text-brown-text leading-relaxed">{value.description}</p>
+                <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                <Icon className="w-12 h-12 text-gold-primary mb-4 group-hover:scale-110 transition-transform duration-500" />
+                <h3 className="text-xl font-medium mb-2 text-white">{value.title}</h3>
+                <p className="text-white/60 leading-relaxed">{value.description}</p>
               </motion.div>
             );
           })}

@@ -90,7 +90,8 @@ const ServicesGrid = () => {
         transition={{ duration: 0.2, delay: 0 }}
       >
         <Link href={`/services/${service.slug}`}>
-          <div className="h-full group cursor-pointer bg-white/[0.03] rounded-3xl border border-white/10 hover:border-sage-primary transition-all duration-300 overflow-hidden">
+          <div className="relative h-full group cursor-pointer bg-gradient-to-b from-white/[0.07] to-white/[0.015] rounded-3xl border border-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)] overflow-hidden">
+            <span className="pointer-events-none absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             <div className="relative h-56 overflow-hidden">
               <Image
                 src={imgError ? FALLBACK_IMG : service.image}
@@ -103,17 +104,17 @@ const ServicesGrid = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C]/80 to-transparent"></div>
               
               {/* Floating Icon */}
-              <div className="absolute bottom-4 right-4 w-16 h-16 bg-[#1A1A20] rounded-2xl shadow-xl flex items-center justify-center transition-transform">
-                <Icon className="w-8 h-8 text-sage-primary" />
+              <div className="absolute bottom-4 right-4 w-16 h-16 bg-gold-primary/10 border border-gold-primary/25 rounded-2xl shadow-xl flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
+                <Icon className="w-8 h-8 text-gold-primary" />
               </div>
             </div>
 
             <div className="p-8">
-              <h3 className="text-xl font-medium mb-3 text-brown-dark group-hover:text-sage-primary transition-colors">
+              <h3 className="text-xl font-medium mb-3 text-white group-hover:text-sage-primary transition-colors">
                 {service.title}
               </h3>
-              
-              <p className="text-brown-text mb-4 leading-relaxed">
+
+              <p className="text-white/60 mb-4 leading-relaxed">
                 {service.shortDesc}
               </p>
 

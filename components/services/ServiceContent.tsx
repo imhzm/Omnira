@@ -115,13 +115,14 @@ const BenefitsSection = ({ benefits }: any) => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-10 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-sage-primary transition-all group"
+              className="relative overflow-hidden group p-10 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] backdrop-blur-md border border-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
             >
-              <div className="w-16 h-16 rounded-2xl bg-white/[0.04] flex items-center justify-center mb-6 transition-transform border border-white/10">
+              <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <div className="w-16 h-16 rounded-2xl bg-gold-primary/10 flex items-center justify-center mb-6 transition-transform duration-500 group-hover:scale-110 border border-gold-primary/25">
                 <CheckCircle className="w-8 h-8 text-gold-primary" />
               </div>
-              <h3 className="text-2xl font-medium mb-4 text-brown-dark">{benefit.title}</h3>
-              <p className="text-brown-text leading-relaxed text-base">{benefit.description}</p>
+              <h3 className="text-2xl font-medium mb-4 text-white">{benefit.title}</h3>
+              <p className="text-white/60 leading-relaxed text-base">{benefit.description}</p>
             </motion.div>
           ))}
         </div>
@@ -200,9 +201,10 @@ const ProcessSection = ({ process }: any) => {
                 className="relative"
               >
                 <div className="flex flex-col lg:flex-row items-center gap-8">
-                  <div className={`flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10`}>
+                  <div className={`relative overflow-hidden group flex-1 ${index % 2 === 0 ? 'lg:text-left' : 'lg:text-right lg:order-2'} p-8 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] backdrop-blur-md border border-white/10 transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]`}>
+                    <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     <h3 className="text-2xl font-medium mb-3 text-sage-primary">{step.title}</h3>
-                    <p className="text-brown-dark leading-relaxed">{step.description}</p>
+                    <p className="text-white/60 leading-relaxed">{step.description}</p>
                   </div>
 
                   {/* Circle */}
@@ -253,9 +255,10 @@ const ClientsSection = ({ clients }: any) => {
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.4, delay: index * 0.05 }}
-              className="p-8 rounded-2xl bg-white/[0.03] border border-white/10 text-center hover:border-sage-primary transition-all group"
+              className="relative overflow-hidden group p-8 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] border border-white/10 text-center transition-all duration-500 hover:-translate-y-1.5 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
             >
-              <p className="text-brown-dark font-medium group-hover:text-sage-primary transition-colors">{client}</p>
+              <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+              <p className="text-white font-medium group-hover:text-sage-primary transition-colors">{client}</p>
             </motion.div>
           ))}
         </div>
