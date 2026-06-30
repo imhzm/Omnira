@@ -33,7 +33,7 @@ const ContactForm = () => {
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="bg-white/[0.03] backdrop-blur-md p-10 md:p-10 rounded-3xl border border-white/10">
+      <div className="bg-gradient-to-b from-white/[0.06] to-white/[0.015] backdrop-blur-md p-10 md:p-10 rounded-3xl border border-white/10">
         <div className="mb-8">
           <h2 className="text-2xl lg:text-3xl font-medium mb-3 text-white">أرسل لنا رسالة</h2>
           <p className="text-white/50 text-base">املأ النموذج وسنتواصل معك خلال 24 ساعة</p>

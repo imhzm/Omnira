@@ -61,29 +61,30 @@ const ContactInfo = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md border border-white/10 hover:border-sage-primary transition-all duration-300 group"
+              className="group relative overflow-hidden p-8 rounded-2xl bg-gradient-to-b from-white/[0.07] to-white/[0.015] backdrop-blur-md border border-white/10 transition-all duration-500 hover:-translate-y-1 hover:border-gold-primary/40 hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
             >
+              <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-primary to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
               <div className="flex items-start space-x-4 space-x-reverse">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 rounded-2xl bg-white/[0.04] border border-white/10 flex items-center justify-center transition-transform duration-300">
+                  <div className="w-14 h-14 rounded-2xl bg-gold-primary/10 border border-gold-primary/25 flex items-center justify-center transition-transform duration-500 group-hover:scale-110">
                     <Icon className="w-7 h-7 text-gold-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-medium mb-3 text-brown-dark">{item.title}</h3>
+                  <h3 className="text-xl font-medium mb-3 text-white">{item.title}</h3>
                   {item.link ? (
                     <a
                       href={item.link}
                       target={item.link.startsWith('http') ? '_blank' : undefined}
                       rel={item.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                      className="text-brown-dark hover:text-sage-primary transition-colors font-medium"
+                      className="text-white/70 hover:text-gold-primary transition-colors font-medium"
                     >
                       {item.details.map((detail, i) => (
                         <div key={i}>{detail}</div>
                       ))}
                     </a>
                   ) : (
-                    <div className="text-brown-dark font-medium">
+                    <div className="text-white/70 font-medium">
                       {item.details.map((detail, i) => (
                         <div key={i}>{detail}</div>
                       ))}
