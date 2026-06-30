@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { generateFAQSchema } from '@/lib/schemas';
 
 const PricingFAQ = () => {
   const ref = useRef(null);
@@ -38,7 +39,12 @@ const PricingFAQ = () => {
   ];
 
   return (
-    <section ref={ref} className="py-28 lg:py-40 bg-[#0A0A0C]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+      />
+      <section ref={ref} className="py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -92,7 +98,8 @@ const PricingFAQ = () => {
           </a>
         </motion.div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 

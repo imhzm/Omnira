@@ -6,6 +6,7 @@ import { useRef } from 'react';
 import Image from '@/components/ui/BlurImage';
 import { CheckCircle, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { generateFAQSchema } from '@/lib/schemas';
 
 interface ServiceContentProps {
   data: any;
@@ -249,7 +250,14 @@ const FAQSection = ({ faqs }: any) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section ref={ref} className="section-padding py-28 lg:py-40 bg-[#0A0A0C]">
+    <>
+      {faqs?.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(generateFAQSchema(faqs)) }}
+        />
+      )}
+      <section ref={ref} className="section-padding py-28 lg:py-40 bg-[#0A0A0C]">
       <div className="container-custom max-w-4xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -290,7 +298,8 @@ const FAQSection = ({ faqs }: any) => {
           ))}
         </div>
       </div>
-    </section>
+      </section>
+    </>
   );
 };
 
