@@ -26,14 +26,10 @@ User-agent: Slurp
 Allow: /
 Crawl-delay: 1
 
-# خرائط الموقع
+# خريطة الموقع
 Sitemap: https://omniravalet.com/sitemap.xml
-Sitemap: https://omniravalet.com/sitemap-services.xml
-Sitemap: https://omniravalet.com/sitemap-locations.xml
-Sitemap: https://omniravalet.com/sitemap-images.xml
 
 # حظر ملفات القوالب
-Disallow: /*.json$
 Disallow: /*.md$
 Disallow: /*.tsx$
 Disallow: /*.ts$

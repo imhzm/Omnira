@@ -105,6 +105,10 @@ const Footer = () => {
 
         <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 md:flex-row">
           <p>© {year} Omnira Valet — السجل التجاري 7051975600</p>
+          <div className="flex items-center gap-5">
+            <Link href="/privacy" className="transition-colors duration-300 hover:text-white">سياسة الخصوصية</Link>
+            <Link href="/terms" className="transition-colors duration-300 hover:text-white">الشروط والأحكام</Link>
+          </div>
           <p className="flex items-center gap-1.5">
             صُمّم بواسطة
             <a href="https://www.skywaveads.com" target="_blank" rel="noopener noreferrer" className="text-white/60 transition-colors duration-300 hover:text-gold-primary">

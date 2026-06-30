@@ -112,6 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { slug: 'events', lastMod: currentDate },
     { slug: 'hospitals', lastMod: lastMonth },
     { slug: 'corporate', lastMod: lastMonth },
+    { slug: 'vip', lastMod: currentDate },
   ];
   
   const sectorPages = sectors.map((sector) => ({
