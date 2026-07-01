@@ -195,7 +195,6 @@ const config: Config = {
           'sans-serif'
         ],
         english: [
-          'var(--font-inter)', 
           'Inter',
           '-apple-system',
           'BlinkMacSystemFont',

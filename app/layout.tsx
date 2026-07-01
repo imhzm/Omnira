@@ -18,28 +18,18 @@ const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr
 
 const arabicFont = localFont({
   src: [
-    { path: "../public/fonts/Cairo-ExtraLight.ttf", weight: "200", style: "normal" },
-    { path: "../public/fonts/Cairo-Light.ttf", weight: "300", style: "normal" },
-    { path: "../public/fonts/Cairo-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../public/fonts/Cairo-Medium.ttf", weight: "500", style: "normal" },
-    { path: "../public/fonts/Cairo-SemiBold.ttf", weight: "600", style: "normal" },
-    { path: "../public/fonts/Cairo-Bold.ttf", weight: "700", style: "normal" },
-    { path: "../public/fonts/Cairo-ExtraBold.ttf", weight: "800", style: "normal" },
-    { path: "../public/fonts/Cairo-Black.ttf", weight: "900", style: "normal" },
+    { path: "../public/fonts/Cairo-ExtraLight.woff2", weight: "200", style: "normal" },
+    { path: "../public/fonts/Cairo-Light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/Cairo-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/Cairo-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/Cairo-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/Cairo-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/Cairo-ExtraBold.woff2", weight: "800", style: "normal" },
+    { path: "../public/fonts/Cairo-Black.woff2", weight: "900", style: "normal" },
   ],
   variable: "--font-ibm-plex",
   display: "swap",
   fallback: ["Cairo", "system-ui", "Tahoma"],
-});
-
-const englishFont = localFont({
-  src: [
-    { path: "../public/fonts/Arial-Regular.ttf", weight: "400", style: "normal" },
-    { path: "../public/fonts/Arial-Bold.ttf", weight: "700", style: "normal" },
-  ],
-  variable: "--font-inter",
-  display: "swap",
-  fallback: ["Arial", "system-ui", "Segoe UI"],
 });
 
 export const metadata: Metadata = {
@@ -156,7 +146,7 @@ export default function RootLayout({
         {/* Circular Favicon Script */}
         <script src="/circular-favicon.js" async defer />
       </head>
-      <body className={`${arabicFont.variable} ${englishFont.variable} antialiased`}>
+      <body className={`${arabicFont.variable} antialiased`}>
         <IntroLoader />
         <ScrollProgress />
         {children}
