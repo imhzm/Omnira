@@ -10,7 +10,7 @@ const ContactInfo = () => {
     {
       icon: MapPin,
       title: 'العنوان',
-      details: ['مركز الملك عبدالله المالي (KAFD)', 'المنطقة 4، قطعة 4.07، المستوى 7', 'الرياض، المملكة العربية السعودية'],
+      details: ['مركز الملك عبدالله المالي (KAFD)', 'المنطقة 4 · قطعة 4.07 · المستوى 7', 'الرياض، المملكة العربية السعودية'],
       link: KAFD_MAP_LINK,
     },
     {
@@ -146,7 +146,7 @@ const ContactInfo = () => {
           <div className="flex flex-wrap items-center justify-between gap-2 text-sm">
             <div className="flex items-center space-x-2 space-x-reverse text-brown-dark">
               <span className="font-bold">العنوان:</span>
-              <span className="text-sage-primary">KAFD — المنطقة 4، قطعة 4.07، المستوى 7</span>
+              <span className="text-sage-primary">KAFD · المنطقة 4 · قطعة 4.07 · المستوى 7</span>
             </div>
             <div className="flex items-center space-x-2 space-x-reverse text-brown-text">
               <MapPin className="w-4 h-4" />
