@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
+import Magnetic from '@/components/ui/Magnetic';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -142,13 +143,15 @@ const Header = () => {
             >
               <Phone className="w-5 h-5" />
             </a>
-            <Link
-              href="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-gold-primary px-7 py-2.5 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
-            >
-              <span>احجز الآن</span>
-              <span className="transition-transform duration-300 group-hover:-translate-x-0.5">←</span>
-            </Link>
+            <Magnetic strength={0.4}>
+              <Link
+                href="/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-gold-primary px-7 py-2.5 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
+              >
+                <span>احجز الآن</span>
+                <span className="transition-transform duration-300 group-hover:-translate-x-0.5">←</span>
+              </Link>
+            </Magnetic>
           </div>
 
           {/* Mobile Menu Button */}

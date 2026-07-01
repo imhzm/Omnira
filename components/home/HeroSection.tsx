@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from '@/components/ui/BlurImage';
 import Particles from '@/components/ui/Particles';
 import WebGLFog from '@/components/ui/WebGLFog';
+import Magnetic from '@/components/ui/Magnetic';
 
 const fade = {
   hidden: { opacity: 0, y: 26 },
@@ -90,14 +91,16 @@ const HeroSection = () => {
           </motion.p>
 
           <motion.div variants={fade} className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
-            <Link href="/contact" className="group inline-flex items-center gap-3 text-base text-white">
-              <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
-                احجز الخدمة
-              </span>
-              <span className="text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5">
-                ←
-              </span>
-            </Link>
+            <Magnetic strength={0.5}>
+              <Link href="/contact" className="group inline-flex items-center gap-3 text-base text-white">
+                <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
+                  احجز الخدمة
+                </span>
+                <span className="text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5">
+                  ←
+                </span>
+              </Link>
+            </Magnetic>
             <Link
               href="/services"
               className="text-base text-white/55 transition-colors duration-300 hover:text-white"
