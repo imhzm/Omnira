@@ -26,6 +26,7 @@ const Footer = () => {
         { name: 'من نحن', href: '/about' },
         { name: 'الأسعار', href: '/pricing' },
         { name: 'المدن', href: '/locations' },
+        { name: 'المقالات', href: '/blog' },
         { name: 'اتصل بنا', href: '/contact' },
       ],
     },

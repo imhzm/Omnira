@@ -124,10 +124,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   
   
+  const blogPages = [
+    { url: `${baseUrl}/blog`, lastModified: currentDate, changeFrequency: 'weekly' as const, priority: 0.7 },
+    { url: `${baseUrl}/blog/benefits-of-valet-parking`, lastModified: lastMonth, changeFrequency: 'monthly' as const, priority: 0.6 },
+    { url: `${baseUrl}/blog/modern-parking-technologies`, lastModified: lastMonth, changeFrequency: 'monthly' as const, priority: 0.6 },
+  ];
+
   return [
-    ...mainPages, 
-    ...servicePages, 
-    ...locationPages, 
+    ...mainPages,
+    ...servicePages,
+    ...locationPages,
     ...sectorPages,
+    ...blogPages,
   ];
 }

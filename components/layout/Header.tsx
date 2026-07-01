@@ -33,6 +33,7 @@ const Header = () => {
     { name: 'خدماتنا', href: '/services', hasSubmenu: true },
     { name: 'المدن', href: '/locations', hasSubmenu: false },
     { name: 'الأسعار', href: '/pricing', hasSubmenu: false },
+    { name: 'المقالات', href: '/blog', hasSubmenu: false },
     { name: 'اتصل بنا', href: '/contact', hasSubmenu: false },
   ];
 
