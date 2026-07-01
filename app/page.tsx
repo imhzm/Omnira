@@ -31,6 +31,10 @@ const GalleryMarquee = dynamic(() => import("@/components/home/GalleryMarquee"),
   ssr: true,
 });
 
+const ScrollRevealStatement = dynamic(() => import("@/components/home/ScrollRevealStatement"), {
+  ssr: true,
+});
+
 const Testimonials = dynamic(() => import("@/components/home/Testimonials"), {
   ssr: false,
   loading: () => <div className="h-96" />
@@ -135,6 +139,7 @@ export default function Home() {
         <BeyondServices />
         <GalleryMarquee />
         <KineticStats />
+        <ScrollRevealStatement />
         <AtmosphericStatement />
         <Testimonials />
         <CTASection />
