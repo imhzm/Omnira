@@ -1,5 +1,15 @@
 'use client';
 
+import { useRef } from 'react';
+import {
+  motion,
+  useScroll,
+  useVelocity,
+  useSpring,
+  useTransform,
+  useMotionValue,
+  useAnimationFrame,
+} from 'framer-motion';
 import Image from '@/components/ui/BlurImage';
 
 const images = [
@@ -15,8 +25,32 @@ const images = [
   '/images/services/advanced-technology.jpg',
 ];
 
+const wrap = (min: number, max: number, v: number) => {
+  const range = max - min;
+  return ((((v - min) % range) + range) % range) + min;
+};
+
 export default function GalleryMarquee() {
+  const baseX = useMotionValue(0);
+  const { scrollY } = useScroll();
+  const scrollVelocity = useVelocity(scrollY);
+  const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 4], { clamp: false });
+  const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
+  const directionFactor = useRef(1);
+  const baseVelocity = -3; // % of row per second (idle drift)
+
+  useAnimationFrame((_t, delta) => {
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
+    // scroll direction steers the marquee; scroll speed accelerates it
+    if (velocityFactor.get() < 0) directionFactor.current = -1;
+    else if (velocityFactor.get() > 0) directionFactor.current = 1;
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+    baseX.set(baseX.get() + moveBy);
+  });
+
   const row = [...images, ...images];
+
   return (
     <section className="overflow-hidden bg-[#0A0A0C] py-24 lg:py-32">
       <div className="container-custom mb-14">
@@ -29,9 +63,8 @@ export default function GalleryMarquee() {
         </h2>
       </div>
 
-      {/* edge fades */}
       <div dir="ltr" className="relative">
-        <div className="marquee-track flex w-max gap-5">
+        <motion.div style={{ x }} className="flex w-max gap-5">
           {row.map((src, i) => (
             <div
               key={i}
@@ -41,7 +74,7 @@ export default function GalleryMarquee() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C]/50 to-transparent" />
             </div>
           ))}
-        </div>
+        </motion.div>
         <div className="pointer-events-none absolute inset-y-0 right-0 w-[10vw] bg-gradient-to-l from-[#0A0A0C] to-transparent" />
         <div className="pointer-events-none absolute inset-y-0 left-0 w-[10vw] bg-gradient-to-r from-[#0A0A0C] to-transparent" />
       </div>

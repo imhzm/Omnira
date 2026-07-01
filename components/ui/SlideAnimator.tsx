@@ -38,13 +38,13 @@ export default function SlideAnimator() {
         try {
           el.animate(
             [
-              { opacity: 0, transform: 'translateY(48px)' },
-              { opacity: 1, transform: 'translateY(0)' },
+              { opacity: 0, transform: 'translateY(70px) scale(0.965)', filter: 'blur(7px)' },
+              { opacity: 1, transform: 'translateY(0) scale(1)', filter: 'blur(0px)' },
             ],
             {
-              duration: 720,
-              delay: Math.min(i * 110, 880),
-              easing: 'cubic-bezier(0.2, 0.7, 0.2, 1)',
+              duration: 950,
+              delay: Math.min(i * 130, 1000),
+              easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
               fill: 'backwards',
             }
           );
