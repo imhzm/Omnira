@@ -5,6 +5,8 @@ import { ArrowRight, Calendar, User } from 'lucide-react';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Image from '@/components/ui/BlurImage';
+import ReadingProgress from '@/components/blog/ReadingProgress';
+import ShareButtons from '@/components/blog/ShareButtons';
 import { staticArticles } from '@/lib/static-content';
 import { generateArticleSchema } from '@/lib/seo-config';
 
@@ -70,6 +72,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
+      <ReadingProgress />
       <main className="min-h-screen bg-[#0A0A0C]">
         <Header />
 
@@ -112,6 +115,9 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                 </span>
               ))}
             </div>
+
+            {/* share */}
+            <ShareButtons title={a.title} slug={a.slug} />
 
             {/* CTA */}
             <div className="mt-14 rounded-3xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.015] p-10 text-center">
