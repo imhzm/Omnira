@@ -27,6 +27,10 @@ const KineticStats = dynamic(() => import("@/components/home/KineticStats"), {
   ssr: true,
 });
 
+const GalleryMarquee = dynamic(() => import("@/components/home/GalleryMarquee"), {
+  ssr: true,
+});
+
 const Testimonials = dynamic(() => import("@/components/home/Testimonials"), {
   ssr: false,
   loading: () => <div className="h-96" />
@@ -129,6 +133,7 @@ export default function Home() {
         <EditorialManifesto />
         <HorizontalSectors />
         <BeyondServices />
+        <GalleryMarquee />
         <KineticStats />
         <AtmosphericStatement />
         <Testimonials />

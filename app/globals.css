@@ -420,6 +420,55 @@
     animation: fadeInUp 0.3s ease-out forwards;
   }
 
+  /* Custom cursor (desktop) */
+  @media (pointer: fine) {
+    .cc-on, .cc-on * { cursor: none !important; }
+  }
+  .cc-ring, .cc-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99998;
+    transform: translate(-100px, -100px);
+    will-change: transform;
+  }
+  .cc-ring {
+    width: 34px;
+    height: 34px;
+    margin: -17px 0 0 -17px;
+    border: 1px solid rgba(201, 162, 74, 0.7);
+    border-radius: 9999px;
+    transition: width .3s ease, height .3s ease, margin .3s ease, background-color .3s ease, border-color .3s ease, opacity .3s ease;
+  }
+  .cc-ring.cc-hover {
+    width: 56px;
+    height: 56px;
+    margin: -28px 0 0 -28px;
+    background: rgba(201, 162, 74, 0.12);
+    border-color: rgba(201, 162, 74, 0.9);
+  }
+  .cc-dot {
+    width: 6px;
+    height: 6px;
+    margin: -3px 0 0 -3px;
+    background: #C9A24A;
+    border-radius: 9999px;
+    transition: opacity .3s ease;
+  }
+
+  /* Gallery marquee */
+  .marquee-track {
+    animation: marquee 44s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
   /* Respect reduced motion */
   @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {

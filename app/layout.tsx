@@ -14,6 +14,7 @@ const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: 
 const SlideNav = dynamic(() => import("@/components/ui/SlideNav"), { ssr: false });
 const SlideAnimator = dynamic(() => import("@/components/ui/SlideAnimator"), { ssr: false });
 const SmoothScroll = dynamic(() => import("@/components/ui/SmoothScroll"), { ssr: false });
+const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
 
 const arabicFont = localFont({
   src: [
@@ -164,6 +165,7 @@ export default function RootLayout({
         <SlideNav />
         <SlideAnimator />
         <SmoothScroll />
+        <CustomCursor />
       </body>
     </html>
   );
