@@ -24,8 +24,34 @@ function formatDate(d: string) {
 }
 
 export default function BlogPage() {
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'مقالات أومنيرا فاليه',
+    url: 'https://omniravalet.com/blog',
+    inLanguage: 'ar',
+    publisher: { '@type': 'Organization', name: 'Omnira Valet', logo: 'https://omniravalet.com/logo.png' },
+    blogPost: staticArticles.map((a) => ({
+      '@type': 'BlogPosting',
+      headline: a.title,
+      url: `https://omniravalet.com/blog/${a.slug}`,
+      datePublished: a.publishDate,
+      image: `https://omniravalet.com${a.image}`,
+      author: { '@type': 'Organization', name: a.author },
+    })),
+  };
+  const breadcrumb = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'الرئيسية', item: 'https://omniravalet.com/' },
+      { '@type': 'ListItem', position: 2, name: 'المقالات', item: 'https://omniravalet.com/blog' },
+    ],
+  };
   return (
     <main className="min-h-screen bg-[#0A0A0C]">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <Header />
       <section className="container-custom pb-24 pt-36">
         <div className="mb-16 text-center">

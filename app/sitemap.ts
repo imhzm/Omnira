@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next';
+import { staticArticles } from '@/lib/static-content';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://omniravalet.com';
@@ -125,9 +126,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   
   const blogPages = [
+    { url: `${baseUrl}/portfolio`, lastModified: currentDate, changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: `${baseUrl}/blog`, lastModified: currentDate, changeFrequency: 'weekly' as const, priority: 0.7 },
-    { url: `${baseUrl}/blog/benefits-of-valet-parking`, lastModified: lastMonth, changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: `${baseUrl}/blog/modern-parking-technologies`, lastModified: lastMonth, changeFrequency: 'monthly' as const, priority: 0.6 },
+    ...staticArticles.map((a) => ({
+      url: `${baseUrl}/blog/${a.slug}`,
+      lastModified: new Date(a.publishDate),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    })),
   ];
 
   return [

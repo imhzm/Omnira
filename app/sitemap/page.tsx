@@ -17,6 +17,8 @@ const sitemapData = {
     { name: 'الرئيسية', url: '/' },
     { name: 'من نحن', url: '/about' },
     { name: 'الخدمات', url: '/services' },
+    { name: 'أعمالنا', url: '/portfolio' },
+    { name: 'المقالات', url: '/blog' },
     { name: 'الباقات والأسعار', url: '/pricing' },
     { name: 'المدن', url: '/locations' },
     { name: 'اتصل بنا', url: '/contact' },

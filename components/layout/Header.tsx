@@ -31,6 +31,7 @@ const Header = () => {
     { name: 'الرئيسية', href: '/', hasSubmenu: false },
     { name: 'من نحن', href: '/about', hasSubmenu: false },
     { name: 'خدماتنا', href: '/services', hasSubmenu: true },
+    { name: 'أعمالنا', href: '/portfolio', hasSubmenu: false },
     { name: 'المدن', href: '/locations', hasSubmenu: false },
     { name: 'الأسعار', href: '/pricing', hasSubmenu: false },
     { name: 'المقالات', href: '/blog', hasSubmenu: false },

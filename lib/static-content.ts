@@ -2,6 +2,7 @@
  * محتوى ثابت للموقع لدعم السيو والبيانات المهيكلة
  * لا يتطلب قاعدة بيانات - يتم تخزين البيانات مباشرة في الملفات
  */
+import { extraArticles } from './blog-articles';
 
 // مقالات ثابتة
 export const staticArticles = [
@@ -53,6 +54,7 @@ export const staticArticles = [
     tags: ['تقنيات المواقف', 'ANPR', 'إنترنت الأشياء', 'تجربة العملاء'],
     image: '/images/smart-parking.jpg',
   },
+  ...extraArticles,
 ];
 
 // الأسئلة الشائعة للصفحات المختلفة
@@ -307,12 +309,101 @@ export const pricingData = [
   },
 ];
 
+// أعمال ومشاريع مختارة (Portfolio)
+export const staticProjects = [
+  {
+    id: 'project-1',
+    title: 'فندق فاخر — واجهة الرياض',
+    category: 'الفنادق',
+    location: 'الرياض',
+    year: '2024',
+    summary: 'تشغيل خدمة فاليه باركينج على مدار الساعة لفندق خمس نجوم، مع فريق مخصّص وزيّ يعكس هوية الفندق.',
+    stats: [
+      { label: 'سيارة يوميًا', value: '320+' },
+      { label: 'فريق مخصّص', value: '18' },
+      { label: 'رضا الضيوف', value: '98%' },
+    ],
+    image: '/images/hero/hero-1.jpg',
+  },
+  {
+    id: 'project-2',
+    title: 'سلسلة مطاعم راقية',
+    category: 'المطاعم',
+    location: 'جدة',
+    year: '2024',
+    summary: 'حلّ صف سيارات ذكي لثلاثة فروع في مناطق مزدحمة، رفع الطاقة الاستيعابية وقلّص زمن الانتظار.',
+    stats: [
+      { label: 'فروع مُدارة', value: '3' },
+      { label: 'تقليص الانتظار', value: '40%' },
+      { label: 'ذروة مسائية', value: '150 سيارة' },
+    ],
+    image: '/images/services/restaurants-service.jpg',
+  },
+  {
+    id: 'project-3',
+    title: 'حفل افتتاح كبير',
+    category: 'الفعاليات',
+    location: 'الرياض',
+    year: '2023',
+    summary: 'إدارة وصول أكثر من 400 ضيف في أمسية واحدة بخطة تشغيلية دقيقة وفريق تنظيم وأجهزة اتصال.',
+    stats: [
+      { label: 'ضيوف الأمسية', value: '400+' },
+      { label: 'مدة التشغيل', value: '6 ساعات' },
+      { label: 'حوادث', value: '0' },
+    ],
+    image: '/images/services/events-service.jpg',
+  },
+  {
+    id: 'project-4',
+    title: 'مركز تجاري رئيسي',
+    category: 'المراكز التجارية',
+    location: 'الدمام',
+    year: '2023',
+    summary: 'إدارة وتشغيل مواقف المركز بنظام إرشاد إلكتروني قلّل الازدحام في أوقات الذروة وأيام العطلات.',
+    stats: [
+      { label: 'سعة الموقف', value: '1,200' },
+      { label: 'خفض الازدحام', value: '35%' },
+      { label: 'تشغيل', value: '24/7' },
+    ],
+    image: '/images/atmos/atmos-2.jpg',
+  },
+  {
+    id: 'project-5',
+    title: 'مؤتمر أعمال دولي',
+    category: 'الفعاليات',
+    location: 'الرياض',
+    year: '2024',
+    summary: 'خدمة فاليه واستقبال لوفود دولية عبر بروتوكول VIP يضمن الخصوصية والانسيابية طوال أيام المؤتمر.',
+    stats: [
+      { label: 'أيام التشغيل', value: '3' },
+      { label: 'مركبات VIP', value: '90+' },
+      { label: 'بروتوكول', value: 'VIP' },
+    ],
+    image: '/images/hero/hero-4.jpg',
+  },
+  {
+    id: 'project-6',
+    title: 'استقبال وفد خاص',
+    category: 'خدمات VIP',
+    location: 'الرياض',
+    year: '2024',
+    summary: 'خدمة صف سيارات راقية لوفدٍ رفيع المستوى، بسائقين مختارين وتدريب خاص على التعامل مع السيارات الفارهة.',
+    stats: [
+      { label: 'سرّية تامة', value: '100%' },
+      { label: 'سائقون منتقون', value: '12' },
+      { label: 'سيارات فارهة', value: '✓' },
+    ],
+    image: '/images/hero/hero-2.jpg',
+  },
+];
+
 const staticContent = {
   staticArticles,
   staticFAQs,
   staticTestimonials,
   staticClientServices,
   staticServices,
+  staticProjects,
   companySchema,
   statisticsData,
   pricingData

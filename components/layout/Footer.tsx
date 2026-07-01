@@ -24,6 +24,7 @@ const Footer = () => {
       title: 'الشركة',
       links: [
         { name: 'من نحن', href: '/about' },
+        { name: 'أعمالنا', href: '/portfolio' },
         { name: 'الأسعار', href: '/pricing' },
         { name: 'المدن', href: '/locations' },
         { name: 'المقالات', href: '/blog' },

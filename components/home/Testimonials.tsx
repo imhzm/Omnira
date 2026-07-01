@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Quote } from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 import Image from '@/components/ui/BlurImage';
 
 const testimonials = [
@@ -74,7 +74,13 @@ const Testimonials = () => {
             </motion.blockquote>
           </AnimatePresence>
 
-          <div className="mx-auto mt-10 h-px w-16 bg-white/10" />
+          <div className="mt-10 flex items-center justify-center gap-1.5">
+            {Array.from({ length: 5 }).map((_, s) => (
+              <Star key={s} className="h-4 w-4 fill-gold-primary text-gold-primary" aria-hidden />
+            ))}
+          </div>
+
+          <div className="mx-auto mt-8 h-px w-16 bg-white/10" />
 
           <div className="mt-10 flex items-center justify-center gap-4">
             <div className="relative h-12 w-12 overflow-hidden rounded-full">
