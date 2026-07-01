@@ -137,7 +137,7 @@ const Header = () => {
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+966XXXXXXXXX"
+              href="tel:+966551962033"
               className="p-2.5 text-white/55 hover:text-gold-primary transition-colors duration-300"
               aria-label="اتصل بنا"
             >

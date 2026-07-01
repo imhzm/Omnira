@@ -47,7 +47,7 @@ export default function PricingCTA() {
               <ChevronLeft className="w-5 h-5" />
             </Link>
             <a
-              href="tel:+966500000000"
+              href="tel:+966551962033"
               className="px-8 py-4 rounded-full border border-gold-primary/40 text-gold-primary font-medium text-base hover:bg-gold-primary hover:text-[#0A0A0C] transition-all duration-300"
             >
               اتصل بنا مباشرة

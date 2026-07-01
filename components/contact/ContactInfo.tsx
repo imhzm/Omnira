@@ -16,14 +16,14 @@ const ContactInfo = () => {
     {
       icon: Phone,
       title: 'الهاتف',
-      details: ['+966 XX XXX XXXX', '+966 5X XXX XXXX'],
-      link: 'tel:+966XXXXXXXXX',
+      details: ['+966 55 196 2033'],
+      link: 'tel:+966551962033',
     },
     {
       icon: MessageCircle,
       title: 'واتساب',
-      details: ['+966 5X XXX XXXX'],
-      link: 'https://wa.me/966XXXXXXXXX',
+      details: ['+966 55 196 2033'],
+      link: 'https://wa.me/966551962033',
     },
     {
       icon: Mail,

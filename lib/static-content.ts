@@ -224,7 +224,7 @@ export const companySchema = {
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+966XXXXXXXXX",
+    "telephone": "+966551962033",
     "contactType": "customer service",
     "availableLanguage": ["Arabic", "English"],
     "areaServed": "SA"

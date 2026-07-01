@@ -1,12 +1,12 @@
 // معلومات الاتصال - Contact Information
 export const contactConfig = {
   whatsapp: {
-    number: '+966500000000', // رقم الواتساب - يجب تحديثه برقم الشركة الفعلي
+    number: '966551962033', // wa.me — digits only, no + and no leading 0
     defaultMessage: 'مرحباً، أود الاستفسار عن خدمات أومنيرا فاليه',
   },
   phone: {
-    primary: '+966500000000', // الرقم الرئيسي
-    secondary: '+966500000001', // رقم بديل (اختياري)
+    primary: '+966551962033', // الرقم الرئيسي (تنسيق دولي للـ tel:)
+    secondary: '+966551962033',
   },
   email: {
     info: 'info@omniravalet.com',

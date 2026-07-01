@@ -95,7 +95,7 @@ const LocationsGrid = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="flex items-center justify-center space-x-3 space-x-reverse">
                 <Phone className="w-5 h-5 text-sage-primary" />
-                <span className="text-brown-text">+966 XX XXX XXXX</span>
+                <span className="text-brown-text">+966 55 196 2033</span>
               </div>
               <div className="flex items-center justify-center space-x-3 space-x-reverse">
                 <Mail className="w-5 h-5 text-sage-primary" />
@@ -188,11 +188,11 @@ const LocationsGrid = () => {
                 اتصل بنا الآن
               </a>
               <a
-                href="tel:+966XXXXXXXXX"
+                href="tel:+966551962033"
                 className="px-10 py-4 text-lg border border-gold-primary/40 text-gold-primary rounded-lg hover:bg-sage-primary hover:text-[#0A0A0C] transition-all inline-flex items-center justify-center"
               >
                 <Phone className="w-5 h-5 ml-2" />
-                <span>+966 XX XXX XXXX</span>
+                <span>+966 55 196 2033</span>
               </a>
             </div>
           </div>

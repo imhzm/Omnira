@@ -78,7 +78,7 @@ const ServiceDetailHero = ({ data }: ServiceDetailHeroProps) => {
               </span>
             </Link>
             <a
-              href="https://wa.me/966XXXXXXXXX"
+              href="https://wa.me/966551962033"
               target="_blank"
               rel="noopener noreferrer"
               className="text-base text-white/55 transition-colors duration-300 hover:text-white"

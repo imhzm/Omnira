@@ -16,7 +16,7 @@ export const localBusinessSchema = {
   ],
 
   // معلومات التواصل
-  telephone: '+966XXXXXXXXX',
+  telephone: '+966551962033',
   email: 'info@omniravalet.com',
   
   // العنوان الرئيسي في السعودية
@@ -173,14 +173,14 @@ export const organizationSchema = {
   contactPoint: [
     {
       '@type': 'ContactPoint',
-      telephone: '+966XXXXXXXXX',
+      telephone: '+966551962033',
       contactType: 'Customer Service',
       areaServed: 'SA',
       availableLanguage: ['Arabic', 'English']
     },
     {
       '@type': 'ContactPoint',
-      telephone: '+966XXXXXXXXX',
+      telephone: '+966551962033',
       contactType: 'Sales',
       areaServed: 'SA',
       availableLanguage: ['Arabic', 'English']

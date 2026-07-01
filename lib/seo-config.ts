@@ -19,7 +19,7 @@ export const siteConfig = {
     addressCountry: 'SA',
   },
   contact: {
-    phone: '+966XXXXXXXXX',
+    phone: '+966551962033',
     email: 'info@omniravalet.com',
     supportEmail: 'info@omniravalet.com',
   },

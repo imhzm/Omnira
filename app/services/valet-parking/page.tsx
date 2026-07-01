@@ -76,7 +76,7 @@ export default function ValetParkingPage() {
       "logo": "https://omniravalet.com/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+966XXXXXXXXX",
+        "telephone": "+966551962033",
         "contactType": "customer service",
         "areaServed": "SA",
         "availableLanguage": ["Arabic", "English"]
