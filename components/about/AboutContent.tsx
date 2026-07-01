@@ -7,6 +7,7 @@ import Image from '@/components/ui/BlurImage';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import { Award, Users, Target, Heart, Lightbulb, Shield } from 'lucide-react';
 import CinematicBreak from '@/components/ui/CinematicBreak';
+import RevealMask from '@/components/ui/RevealMask';
 
 function CountUp({ value, active }: { value: string; active: boolean }) {
   const [display, setDisplay] = useState('0');
@@ -64,9 +65,9 @@ const StorySection = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="relative h-96 rounded-2xl overflow-hidden">
+            <RevealMask className="relative h-96 rounded-2xl overflow-hidden">
               <ParallaxImage src="/images/hero/hero-5.jpg" alt="مقر شركة أومنيرا فاليه" strength={55} />
-            </div>
+            </RevealMask>
           </motion.div>
 
           <motion.div

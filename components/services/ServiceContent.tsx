@@ -8,6 +8,7 @@ import { CheckCircle, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
 import { generateFAQSchema } from '@/lib/schemas';
 import CinematicBreak from '@/components/ui/CinematicBreak';
+import RevealMask from '@/components/ui/RevealMask';
 
 interface ServiceContentProps {
   data: any;
@@ -43,7 +44,7 @@ const FeatureItem = ({ feature, index, isInView }: { feature: any; index: number
       className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-8 items-center`}
     >
       <div className="flex-1">
-        <div className="relative h-64 rounded-xl overflow-hidden">
+        <RevealMask className="relative h-64 rounded-xl overflow-hidden">
           <Image
             src={imgError ? FALLBACK_IMG : feature.image}
             alt={feature.title}
@@ -52,7 +53,7 @@ const FeatureItem = ({ feature, index, isInView }: { feature: any; index: number
             className="object-cover"
             onError={() => setImgError(true)}
           />
-        </div>
+        </RevealMask>
       </div>
       <div className="flex-1">
         <h3 className="text-3xl font-semibold mb-4 text-sage-primary">{feature.title}</h3>
