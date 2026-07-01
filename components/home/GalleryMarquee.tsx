@@ -30,8 +30,8 @@ export default function GalleryMarquee() {
       </div>
 
       {/* edge fades */}
-      <div className="relative">
-        <div dir="ltr" className="marquee-track flex w-max gap-5">
+      <div dir="ltr" className="relative">
+        <div className="marquee-track flex w-max gap-5">
           {row.map((src, i) => (
             <div
               key={i}
