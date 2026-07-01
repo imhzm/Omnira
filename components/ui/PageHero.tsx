@@ -10,6 +10,11 @@ const fade = {
   show: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 0.61, 0.36, 1] } },
 };
 
+const lineReveal = {
+  hidden: { y: '115%' },
+  show: { y: 0, transition: { duration: 1.1, ease: [0.22, 0.61, 0.36, 1] } },
+};
+
 export default function PageHero({
   kicker,
   title,
@@ -57,18 +62,20 @@ export default function PageHero({
             {kicker}
           </motion.span>
 
-          <motion.h1
-            variants={fade}
-            className="font-extralight leading-[1.1] text-white text-4xl sm:text-6xl lg:text-7xl"
-          >
-            {title}
-            {accent && (
-              <>
-                {' '}
-                <span className="font-light text-gold-light">{accent}</span>
-              </>
-            )}
-          </motion.h1>
+          <motion.div variants={{ show: {} }} className="overflow-hidden pb-[0.12em]">
+            <motion.h1
+              variants={lineReveal}
+              className="font-extralight leading-[1.1] text-white text-4xl sm:text-6xl lg:text-7xl"
+            >
+              {title}
+              {accent && (
+                <>
+                  {' '}
+                  <span className="font-light text-gold-light">{accent}</span>
+                </>
+              )}
+            </motion.h1>
+          </motion.div>
 
           {subtitle && (
             <motion.p

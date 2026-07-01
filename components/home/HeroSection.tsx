@@ -12,6 +12,11 @@ const fade = {
   show: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 0.61, 0.36, 1] } },
 };
 
+const lineReveal = {
+  hidden: { y: '115%' },
+  show: { y: 0, transition: { duration: 1.1, ease: [0.22, 0.61, 0.36, 1] } },
+};
+
 const HeroSection = () => {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
@@ -64,12 +69,17 @@ const HeroSection = () => {
           </motion.span>
 
           <motion.h1
-            variants={fade}
+            variants={{ show: { transition: { staggerChildren: 0.12 } } }}
             className="font-extralight leading-[1.12] text-white text-[2.7rem] sm:text-6xl lg:text-[5.5rem]"
           >
-            نُعيد تعريف
-            <br />
-            لحظة <span className="font-light text-gold-light">الوصول</span>
+            <span className="block overflow-hidden pb-[0.12em]">
+              <motion.span variants={lineReveal} className="block">نُعيد تعريف</motion.span>
+            </span>
+            <span className="block overflow-hidden pb-[0.12em]">
+              <motion.span variants={lineReveal} className="block">
+                لحظة <span className="font-light text-gold-light">الوصول</span>
+              </motion.span>
+            </span>
           </motion.h1>
 
           <motion.p
