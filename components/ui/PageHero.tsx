@@ -39,8 +39,8 @@ export default function PageHero({
           sizes="100vw"
           className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/45 to-[#0A0A0C]/25" />
-        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/65 to-[#0A0A0C]/40" />
+        <div className="absolute inset-0 bg-gradient-to-l from-transparent to-[#0A0A0C]/80" />
       </div>
 
       {/* cinematic depth — matches the home hero */}
@@ -65,7 +65,7 @@ export default function PageHero({
           <motion.div variants={{ show: {} }} className="overflow-hidden pb-[0.12em]">
             <motion.h1
               variants={lineReveal}
-              className="font-extralight leading-[1.1] text-white text-4xl sm:text-6xl lg:text-7xl"
+              className="font-extralight leading-[1.1] text-white text-4xl sm:text-6xl lg:text-7xl [text-shadow:0_2px_28px_rgba(0,0,0,0.6)]"
             >
               {title}
               {accent && (

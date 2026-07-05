@@ -67,9 +67,9 @@ export default function BeyondServices() {
                 <div className="absolute inset-0 transition-transform duration-700 group-hover:scale-[1.04]">
                   <ParallaxImage src={it.img} alt={it.title} strength={45} />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/35 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/60 to-[#0A0A0C]/10" />
                 <div className="absolute inset-x-0 bottom-0 p-7 lg:p-8">
-                  <h3 className="mb-3 text-2xl font-black text-white lg:text-3xl">{it.title}</h3>
+                  <h3 className="mb-3 text-2xl font-black text-white lg:text-3xl [text-shadow:0_2px_18px_rgba(0,0,0,0.65)]">{it.title}</h3>
                   <p className="mb-5 max-w-xs text-sm leading-relaxed text-white/70 lg:text-base">
                     {it.desc}
                   </p>

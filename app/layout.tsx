@@ -16,20 +16,23 @@ const SlideAnimator = dynamic(() => import("@/components/ui/SlideAnimator"), { s
 const SmoothScroll = dynamic(() => import("@/components/ui/SmoothScroll"), { ssr: false });
 const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
 
+// IBM Plex Sans Arabic — the professional Arabic typeface (refined, editorial, luxury-grade).
+// Weights 800/900 intentionally map to the Bold file so `font-black` headings render
+// the true Bold cut instead of an ugly browser-synthesized bold.
 const arabicFont = localFont({
   src: [
-    { path: "../public/fonts/Cairo-ExtraLight.woff2", weight: "200", style: "normal" },
-    { path: "../public/fonts/Cairo-Light.woff2", weight: "300", style: "normal" },
-    { path: "../public/fonts/Cairo-Regular.woff2", weight: "400", style: "normal" },
-    { path: "../public/fonts/Cairo-Medium.woff2", weight: "500", style: "normal" },
-    { path: "../public/fonts/Cairo-SemiBold.woff2", weight: "600", style: "normal" },
-    { path: "../public/fonts/Cairo-Bold.woff2", weight: "700", style: "normal" },
-    { path: "../public/fonts/Cairo-ExtraBold.woff2", weight: "800", style: "normal" },
-    { path: "../public/fonts/Cairo-Black.woff2", weight: "900", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-ExtraLight.woff2", weight: "200", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-Light.woff2", weight: "300", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-Regular.woff2", weight: "400", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-Medium.woff2", weight: "500", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-SemiBold.woff2", weight: "600", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-Bold.woff2", weight: "700", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-Bold.woff2", weight: "800", style: "normal" },
+    { path: "../public/fonts/IBMPlexSansArabic-Bold.woff2", weight: "900", style: "normal" },
   ],
   variable: "--font-ibm-plex",
   display: "swap",
-  fallback: ["Cairo", "system-ui", "Tahoma"],
+  fallback: ["IBM Plex Sans Arabic", "system-ui", "Tahoma"],
 });
 
 export const metadata: Metadata = {

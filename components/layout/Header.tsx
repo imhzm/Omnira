@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
@@ -11,7 +11,31 @@ const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const pathname = usePathname();
+
+  // hover-intent: open instantly, close with a small forgiving delay
+  const openMenu = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setShowServicesMenu(true);
+  };
+  const scheduleClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    closeTimer.current = setTimeout(() => setShowServicesMenu(false), 200);
+  };
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current) clearTimeout(closeTimer.current);
+    };
+  }, []);
+
+  // close menus on route change
+  useEffect(() => {
+    setShowServicesMenu(false);
+    setIsMobileMenuOpen(false);
+    setMobileServicesOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -77,8 +101,8 @@ const Header = () => {
                 <div
                   key={item.name}
                   className="relative"
-                  onMouseEnter={() => item.hasSubmenu && setShowServicesMenu(true)}
-                  onMouseLeave={() => item.hasSubmenu && setShowServicesMenu(false)}
+                  onMouseEnter={() => item.hasSubmenu && openMenu()}
+                  onMouseLeave={() => item.hasSubmenu && scheduleClose()}
                 >
                   <Link
                     href={item.href}
@@ -98,9 +122,14 @@ const Header = () => {
                     />
                   </Link>
 
-                  {/* Services Mega Menu */}
+                  {/* Services Mega Menu — pt-3 acts as a hover bridge (NO margin gap, it kills the menu) */}
                   {item.hasSubmenu && showServicesMenu && (
-                    <div className="absolute top-full right-1/2 translate-x-1/2 mt-3 w-72 bg-[#0E0E11]/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-white/10 p-5 animate-slideDown z-[100]">
+                    <div
+                      className="absolute top-full right-1/2 z-[100] w-72 translate-x-1/2 pt-3"
+                      onMouseEnter={openMenu}
+                      onMouseLeave={scheduleClose}
+                    >
+                    <div className="bg-[#0E0E11]/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-white/10 p-5 animate-slideDown">
                       <div className="mb-3 pb-3 border-b border-white/10">
                         <h3 className="text-[11px] font-medium tracking-[0.25em] text-gold-primary/70">
                           خدماتنا
@@ -129,6 +158,7 @@ const Header = () => {
                           </Link>
                         ))}
                       </div>
+                    </div>
                     </div>
                   )}
                 </div>
@@ -174,6 +204,58 @@ const Header = () => {
             {navItems.map((item) => {
               const isActive =
                 pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href));
+
+              // خدماتنا — expandable accordion on mobile
+              if (item.hasSubmenu) {
+                return (
+                  <div key={item.name}>
+                    <div className="flex items-center justify-between">
+                      <Link
+                        href={item.href}
+                        className={`flex-1 py-3.5 text-base font-medium transition-colors duration-300 ${
+                          isActive ? 'text-gold-primary' : 'text-white/70 hover:text-white'
+                        }`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                      <button
+                        onClick={() => setMobileServicesOpen((v) => !v)}
+                        aria-label="فتح قائمة الخدمات"
+                        aria-expanded={mobileServicesOpen}
+                        className="p-3 text-white/60"
+                      >
+                        <ChevronDown
+                          className={`h-5 w-5 transition-transform duration-300 ${
+                            mobileServicesOpen ? 'rotate-180 text-gold-primary' : ''
+                          }`}
+                        />
+                      </button>
+                    </div>
+                    <div
+                      className={`grid transition-[grid-template-rows] duration-300 ${
+                        mobileServicesOpen ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'
+                      }`}
+                    >
+                      <div className="overflow-hidden">
+                        <div className="mb-2 space-y-1 rounded-xl border border-white/10 bg-white/[0.03] p-2">
+                          {servicesMenu.map((service) => (
+                            <Link
+                              key={service.href}
+                              href={service.href}
+                              className="block rounded-lg px-4 py-3 text-sm text-white/65 transition-colors duration-300 hover:bg-white/[0.05] hover:text-white"
+                              onClick={() => setIsMobileMenuOpen(false)}
+                            >
+                              {service.name}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
               return (
                 <Link
                   key={item.name}

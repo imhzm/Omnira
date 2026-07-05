@@ -46,10 +46,10 @@ export default function HorizontalSectors() {
               sizes="(max-width: 640px) 78vw, (max-width: 1024px) 48vw, 34vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/25 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0C] via-[#0A0A0C]/55 to-[#0A0A0C]/10" />
             <div className="absolute inset-x-0 bottom-0 p-8 lg:p-10">
               <span className="font-mono text-sm text-gold-primary/70">0{i + 1}</span>
-              <h3 className="mt-2 font-black text-white text-4xl lg:text-5xl">{s.title}</h3>
+              <h3 className="mt-2 font-black text-white text-4xl lg:text-5xl [text-shadow:0_2px_18px_rgba(0,0,0,0.65)]">{s.title}</h3>
               <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/65">{s.desc}</p>
               <span className="mt-5 inline-flex items-center gap-2 text-sm text-gold-primary transition-all duration-300 group-hover:gap-3">
                 اعرف المزيد
