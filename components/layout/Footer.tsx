@@ -90,7 +90,7 @@ const Footer = () => {
               تواصل
             </h4>
             <ul className="space-y-4 text-sm text-white/55">
-              <li>مركز الملك عبدالله المالي (KAFD) · المنطقة 4 · قطعة 4.07 · المستوى 7 · الرياض</li>
+              <li>مركز الملك عبدالله المالي (KAFD) · المنطقة 4 · مبنى 4.07 · الدور 7 · الرياض</li>
               <li>
                 <a href="https://wa.me/966551962033" dir="ltr" className="transition-colors duration-300 hover:text-white">
                   +966 55 196 2033

@@ -13,7 +13,7 @@ export const siteConfig = {
   creator: 'Omnira Valet',
   registrationNumber: '7051975600',
   address: {
-    streetAddress: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7',
+    streetAddress: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، مبنى 4.07، الدور 7',
     addressLocality: 'الرياض',
     postalCode: '13519',
     addressCountry: 'SA',

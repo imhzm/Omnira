@@ -22,7 +22,7 @@ export const localBusinessSchema = {
   // العنوان الرئيسي في السعودية
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7',
+    streetAddress: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، مبنى 4.07، الدور 7',
     addressLocality: 'الرياض',
     addressRegion: 'الرياض',
     postalCode: '13519',

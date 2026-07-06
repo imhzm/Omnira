@@ -19,7 +19,7 @@ export const contactConfig = {
     youtube: 'https://www.youtube.com/@Omniravalet',
   },
   location: {
-    address: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، قطعة 4.07، المستوى 7، الرياض',
+    address: 'مركز الملك عبدالله المالي (KAFD)، المنطقة 4، مبنى 4.07، الدور 7، الرياض',
     city: 'الرياض',
     country: 'المملكة العربية السعودية',
   },
