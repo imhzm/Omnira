@@ -181,17 +181,14 @@ const config: Config = {
         'gradient-mesh': 'radial-gradient(at 40% 20%, #C9A24A 0%, transparent 50%), radial-gradient(at 80% 80%, #E0C273 0%, transparent 50%), radial-gradient(at 0% 50%, #8A6E2F 0%, transparent 50%)',
       },
       fontFamily: {
+        // WARNING: every var() here MUST be defined (app/layout.tsx localFont.variable).
+        // An undefined var() invalidates the whole font-family declaration and the
+        // browser silently falls back to the UA default font.
         arabic: [
-          'var(--font-ibm-plex)', 
-          'var(--font-almarai)', 
+          'var(--font-ibm-plex)',
           'IBM Plex Sans Arabic',
-          'Almarai',
-          'Tajawal',
-          'Cairo',
-          '-apple-system',
-          'BlinkMacSystemFont',
           'Segoe UI',
-          'Arial',
+          'Tahoma',
           'sans-serif'
         ],
         english: [
