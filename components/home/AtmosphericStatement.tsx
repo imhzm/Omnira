@@ -11,10 +11,12 @@ export default function AtmosphericStatement() {
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#0A0A0C]">
       <div className="absolute inset-0">
         <ParallaxImage src="/images/atmos/atmos-2.jpg" alt="مدخل فندق فاخر في الضباب" strength={90} />
-        <div className="absolute inset-0 bg-[#0A0A0C]/72" />
+        <div className="absolute inset-0 bg-[#0A0A0C]/80" />
+        {/* focused scrim behind the statement so it stays readable over bright fog */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_55%_45%_at_center,rgba(10,10,12,0.72),transparent_100%)]" />
       </div>
 
-      <WebGLFog className="absolute inset-0 z-[1] opacity-45 mix-blend-screen" />
+      <WebGLFog className="absolute inset-0 z-[1] opacity-25 mix-blend-screen" />
       <Particles className="absolute inset-0 z-[1]" />
 
       <div className="container-custom relative z-10 text-center">
@@ -32,7 +34,7 @@ export default function AtmosphericStatement() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-120px' }}
           transition={{ duration: 1.1, ease: [0.22, 0.61, 0.36, 1] }}
-          className="mx-auto max-w-4xl font-extralight leading-[1.45] text-white text-2xl sm:text-4xl lg:text-5xl"
+          className="mx-auto max-w-4xl font-extralight leading-[1.45] text-white text-2xl sm:text-4xl lg:text-5xl [text-shadow:0_2px_26px_rgba(0,0,0,0.75)]"
         >
           في عالمٍ يتسارع، نمنح ضيوفك
           <span className="text-gold-light"> لحظة سكون </span>
