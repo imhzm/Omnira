@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { checkPassword, issueSession, SESSION_COOKIE, sessionCookieOptions } from '@/lib/leads/auth';
+import { checkPassword, issueSession, isSameOrigin, SESSION_COOKIE, sessionCookieOptions } from '@/lib/leads/auth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -15,6 +15,9 @@ function tooMany(ip: string): boolean {
 }
 
 export async function POST(req: NextRequest) {
+  if (!isSameOrigin(req)) {
+    return NextResponse.json({ ok: false, error: 'bad_origin' }, { status: 403 });
+  }
   const ip = (req.headers.get('x-forwarded-for') || 'unknown').split(',')[0].trim();
   if (tooMany(ip)) {
     return NextResponse.json({ ok: false, error: 'too_many_attempts' }, { status: 429 });

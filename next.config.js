@@ -37,39 +37,34 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
   },
   async headers() {
+    const securityHeaders = [
+      { key: 'X-DNS-Prefetch-Control', value: 'on' },
+      { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
+      { key: 'X-Content-Type-Options', value: 'nosniff' },
+      { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+      { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=(), browsing-topics=()' },
+      { key: 'Strict-Transport-Security', value: 'max-age=31536000' },
+      { key: 'Content-Security-Policy', value: "frame-ancestors 'self'; upgrade-insecure-requests" },
+    ];
+    const noStore = [
+      { key: 'Cache-Control', value: 'no-store, no-cache, must-revalidate, proxy-revalidate' },
+      { key: 'X-Robots-Tag', value: 'noindex, nofollow' },
+    ];
     return [
       {
         source: '/:all*(svg|jpg|jpeg|png|webp|avif|gif|ico)',
         locale: false,
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
       {
         source: '/_next/static/:path*',
-        headers: [
-          {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, immutable',
-          },
-        ],
+        headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }],
       },
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-DNS-Prefetch-Control',
-            value: 'on',
-          },
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
-          },
-        ],
-      },
+      // رؤوس الأمان لكل الصفحات
+      { source: '/:path*', headers: securityHeaders },
+      // لوحة التحكم والـAPI: منع التخزين المؤقت + منع الفهرسة (بيانات خاصة)
+      { source: '/dashboard/:path*', headers: noStore },
+      { source: '/api/:path*', headers: noStore },
     ];
   },
 }

@@ -81,6 +81,7 @@ export default function DashboardClient({
   const [statusFilter, setStatusFilter] = useState<LeadStatus | 'all'>('all');
   const [serviceFilter, setServiceFilter] = useState<string>('all');
   const [sortBy, setSortBy] = useState<SortKey>('newest');
+  const [dateRange, setDateRange] = useState<'all' | 'today' | '7d' | '30d'>('all');
   const [selected, setSelected] = useState<Lead | null>(null);
   const [refreshing, setRefreshing] = useState(false);
   const [noteDraft, setNoteDraft] = useState('');
@@ -183,12 +184,25 @@ export default function DashboardClient({
     return { days, maxDay, byService, bySource, conversion };
   }, [leads, stats]);
 
+  // phone → count (لكشف الأرقام المكررة)
+  const phoneCounts = useMemo(() => {
+    const m = new Map<string, number>();
+    leads.forEach((l) => m.set(l.phone, (m.get(l.phone) || 0) + 1));
+    return m;
+  }, [leads]);
+
   // ===== filtered + sorted =====
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
+    const now = new Date();
+    let rangeStart = 0;
+    if (dateRange === 'today') rangeStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
+    else if (dateRange === '7d') rangeStart = now.getTime() - 7 * 864e5;
+    else if (dateRange === '30d') rangeStart = now.getTime() - 30 * 864e5;
     const list = leads.filter((l) => {
       if (statusFilter !== 'all' && l.status !== statusFilter) return false;
       if (serviceFilter !== 'all' && (l.service || 'unspecified') !== serviceFilter) return false;
+      if (rangeStart && new Date(l.createdAt).getTime() < rangeStart) return false;
       if (!q) return true;
       return (
         l.name.toLowerCase().includes(q) ||
@@ -209,7 +223,7 @@ export default function DashboardClient({
       }
     });
     return list;
-  }, [leads, query, statusFilter, serviceFilter, sortBy]);
+  }, [leads, query, statusFilter, serviceFilter, sortBy, dateRange]);
 
   const serviceOptions = useMemo(() => {
     const set = new Set<string>();
@@ -344,6 +358,17 @@ export default function DashboardClient({
               />
             </div>
             <div className="flex flex-wrap items-center gap-2">
+              <div className="flex items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1">
+                {([['all', 'الكل'], ['today', 'اليوم'], ['7d', '٧ أيام'], ['30d', '٣٠ يوم']] as const).map(([v, l]) => (
+                  <button
+                    key={v}
+                    onClick={() => setDateRange(v)}
+                    className={`rounded-full px-3 py-1.5 text-xs transition-colors ${dateRange === v ? 'bg-gold-primary/15 text-gold-light' : 'text-white/45 hover:text-white'}`}
+                  >
+                    {l}
+                  </button>
+                ))}
+              </div>
               <select
                 value={serviceFilter}
                 onChange={(e) => setServiceFilter(e.target.value)}
@@ -409,6 +434,9 @@ export default function DashboardClient({
                       <div className="flex items-center gap-2 font-medium text-white">
                         {l.priority === 'high' && <Flame className="h-3.5 w-3.5 text-red-400" />}
                         {l.name}
+                        {(phoneCounts.get(l.phone) || 0) > 1 && (
+                          <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[10px] text-amber-300" title="رقم مكرّر">مكرّر</span>
+                        )}
                       </div>
                     </td>
                     <td className="px-4 py-4" dir="ltr"><span className="text-white/70">{l.phone}</span></td>
@@ -457,6 +485,11 @@ export default function DashboardClient({
               <a href={selected.email ? `mailto:${selected.email}` : undefined} className={`flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs ${selected.email ? 'text-white/70 hover:border-blue-500/40' : 'pointer-events-none opacity-40'}`}><Mail className="h-4 w-4 text-blue-300" /> بريد</a>
             </div>
 
+            {(phoneCounts.get(selected.phone) || 0) > 1 && (
+              <div className="mb-4 flex items-center gap-2 rounded-xl border border-amber-500/25 bg-amber-500/10 px-4 py-2.5 text-xs text-amber-300">
+                <span>⚠</span> هذا الرقم قدّم {phoneCounts.get(selected.phone)} طلبات — عميل متكرّر.
+              </div>
+            )}
             <dl className="mb-6 space-y-3 text-sm">
               <Field label="الجوال"><span dir="ltr">{selected.phone}</span></Field>
               {selected.email && <Field label="البريد">{selected.email}</Field>}

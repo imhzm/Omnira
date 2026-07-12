@@ -1,5 +1,6 @@
 import crypto from 'crypto';
 import { cookies } from 'next/headers';
+import type { NextRequest } from 'next/server';
 
 /**
  * مصادقة الداشبورد — كوكي جلسة موقّعة بـHMAC (بدون أي اعتماديات خارجية).
@@ -79,4 +80,19 @@ export const sessionCookieOptions = {
 /** حارس للاستخدام داخل route handlers/مكونات الخادم */
 export function isAuthed(): boolean {
   return verifySession(cookies().get(SESSION_COOKIE)?.value);
+}
+
+/**
+ * فحص المصدر (CSRF) — يرفض الطلبات المغيّرة القادمة من أصل مختلف.
+ * يسمح بغياب رأس Origin (طلبات نفس-الأصل، أدوات الخادم) ويقارن المضيف فقط
+ * (آمن خلف بروكسي nginx حيث قد يختلف البروتوكول الداخلي).
+ */
+export function isSameOrigin(req: NextRequest): boolean {
+  const origin = req.headers.get('origin');
+  if (!origin) return true;
+  try {
+    return new URL(origin).host === req.headers.get('host');
+  } catch {
+    return false;
+  }
 }

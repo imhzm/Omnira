@@ -1,12 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { updateLeadSchema } from '@/lib/leads/types';
 import { updateLead, deleteLead } from '@/lib/leads/store';
-import { isAuthed } from '@/lib/leads/auth';
+import { isAuthed, isSameOrigin } from '@/lib/leads/auth';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+  if (!isSameOrigin(req)) {
+    return NextResponse.json({ ok: false, error: 'bad_origin' }, { status: 403 });
+  }
   if (!isAuthed()) {
     return NextResponse.json({ ok: false, error: 'unauthorized' }, { status: 401 });
   }
@@ -28,7 +31,10 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json({ ok: true, lead });
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(req: NextRequest, { params }: { params: { id: string } }) {
+  if (!isSameOrigin(req)) {
+    return NextResponse.json({ ok: false, error: 'bad_origin' }, { status: 403 });
+  }
   if (!isAuthed()) {
     return NextResponse.json({ ok: false, error: 'unauthorized' }, { status: 401 });
   }
