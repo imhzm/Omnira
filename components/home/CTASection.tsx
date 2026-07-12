@@ -1,9 +1,9 @@
 'use client';
 
-import Link from 'next/link';
 import { motion } from 'framer-motion';
 import ParallaxImage from '@/components/ui/ParallaxImage';
 import Particles from '@/components/ui/Particles';
+import { useQuoteModal } from '@/lib/quote-modal-store';
 
 const fade = {
   hidden: { opacity: 0, y: 26 },
@@ -11,6 +11,7 @@ const fade = {
 };
 
 const CTASection = () => {
+  const openQuote = useQuoteModal((s) => s.openQuote);
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-[#0A0A0C]">
       <div className="absolute inset-0">
@@ -46,14 +47,14 @@ const CTASection = () => {
           </motion.h2>
 
           <motion.div variants={fade} className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-5">
-            <Link href="/contact" className="group inline-flex items-center gap-3 text-base text-white">
+            <button onClick={() => openQuote({ source: 'cta-home' })} className="group inline-flex items-center gap-3 text-base text-white">
               <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
                 احجز خدمتك
               </span>
               <span className="text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5">
                 ←
               </span>
-            </Link>
+            </button>
             <a
               href="https://wa.me/966551962033"
               className="text-base text-white/55 transition-colors duration-300 hover:text-white"

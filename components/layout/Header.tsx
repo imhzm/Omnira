@@ -6,8 +6,10 @@ import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Magnetic from '@/components/ui/Magnetic';
+import { useQuoteModal } from '@/lib/quote-modal-store';
 
 const Header = () => {
+  const openQuote = useQuoteModal((s) => s.openQuote);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showServicesMenu, setShowServicesMenu] = useState(false);
@@ -176,13 +178,13 @@ const Header = () => {
               <Phone className="w-5 h-5" />
             </a>
             <Magnetic strength={0.4}>
-              <Link
-                href="/contact"
+              <button
+                onClick={() => openQuote({ source: 'header' })}
                 className="group inline-flex items-center gap-2 rounded-full bg-gold-primary px-7 py-2.5 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
               >
                 <span>احجز الآن</span>
                 <span className="transition-transform duration-300 group-hover:-translate-x-0.5">←</span>
-              </Link>
+              </button>
             </Magnetic>
           </div>
 
@@ -269,13 +271,12 @@ const Header = () => {
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              className="mt-5 block rounded-full bg-gold-primary py-3.5 text-center text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
-              onClick={() => setIsMobileMenuOpen(false)}
+            <button
+              onClick={() => { setIsMobileMenuOpen(false); openQuote({ source: 'header-mobile' }); }}
+              className="mt-5 block w-full rounded-full bg-gold-primary py-3.5 text-center text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
             >
               احجز الآن
-            </Link>
+            </button>
           </nav>
         </div>
       )}

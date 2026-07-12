@@ -15,6 +15,7 @@ const SlideNav = dynamic(() => import("@/components/ui/SlideNav"), { ssr: false 
 const SlideAnimator = dynamic(() => import("@/components/ui/SlideAnimator"), { ssr: false });
 const SmoothScroll = dynamic(() => import("@/components/ui/SmoothScroll"), { ssr: false });
 const CustomCursor = dynamic(() => import("@/components/ui/CustomCursor"), { ssr: false });
+const QuoteModal = dynamic(() => import("@/components/ui/QuoteModal"), { ssr: false });
 
 // IBM Plex Sans Arabic — the professional Arabic typeface (refined, editorial, luxury-grade).
 // Weights 800/900 intentionally map to the Bold file so `font-black` headings render
@@ -159,6 +160,7 @@ export default function RootLayout({
         <SlideAnimator />
         <SmoothScroll />
         <CustomCursor />
+        <QuoteModal />
       </body>
     </html>
   );

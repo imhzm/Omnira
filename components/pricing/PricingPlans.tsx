@@ -3,12 +3,13 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import Link from 'next/link';
 import { Check, ArrowLeft } from 'lucide-react';
+import { useQuoteModal } from '@/lib/quote-modal-store';
 
 const PricingPlans = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
+  const openQuote = useQuoteModal((s) => s.openQuote);
 
   const plans = [
     {
@@ -31,6 +32,7 @@ const PricingPlans = () => {
         '200 ريال رسوم إلغاء (إن وُجدت)',
       ],
       badge: null as string | null,
+      serviceKey: 'professional-organizers',
     },
     {
       name: 'باقة المنشآت الشهرية',
@@ -52,6 +54,7 @@ const PricingPlans = () => {
       ],
       extras: [] as string[],
       badge: 'الأكثر طلباً',
+      serviceKey: 'parking-management',
     },
   ];
 
@@ -116,15 +119,15 @@ const PricingPlans = () => {
                 </div>
               )}
 
-              <Link
-                href="/contact"
+              <button
+                onClick={() => openQuote({ source: 'pricing', service: plan.serviceKey, note: `مهتم بـ${plan.name}` })}
                 className="group inline-flex items-center gap-3 text-base text-white"
               >
                 <span className="border-b border-gold-primary/50 pb-1 transition-colors duration-300 group-hover:border-gold-primary">
                   احجز الآن
                 </span>
                 <ArrowLeft className="h-5 w-5 text-gold-primary transition-transform duration-300 group-hover:-translate-x-1.5" />
-              </Link>
+              </button>
             </motion.div>
           ))}
         </div>
