@@ -22,6 +22,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# leads data store (persisted outside git; survives deploys)
+/data
+
 # local env files
 .env*.local
 .env
