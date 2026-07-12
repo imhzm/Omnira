@@ -73,3 +73,10 @@ export const updateLeadSchema = z.object({
   addNote: z.string().trim().min(1).max(2000).optional(),
 });
 export type UpdateLeadInput = z.infer<typeof updateLeadSchema>;
+
+export interface LeadStats {
+  total: number;
+  today: number;
+  week: number;
+  byStatus: Record<LeadStatus, number>;
+}

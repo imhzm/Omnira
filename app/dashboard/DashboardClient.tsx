@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import type { Lead, LeadStatus, LeadStats } from '@/lib/leads/types';
 import { LEAD_STATUSES, STATUS_LABEL_AR } from '@/lib/leads/types';
+// NOTE: types only — never import from lib/leads/store here (pulls fs into the client bundle)
 
 const SERVICE_LABEL: Record<string, string> = {
   'parking-management': 'إدارة وتشغيل المواقف',

@@ -1,7 +1,7 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import crypto from 'crypto';
-import type { Lead, LeadStatus, CreateLeadInput, UpdateLeadInput } from './types';
+import type { Lead, LeadStatus, LeadStats, CreateLeadInput, UpdateLeadInput } from './types';
 
 /**
  * مخزن ليدز بسيط ومتين قائم على ملف JSON (بدون قاعدة بيانات).
@@ -119,13 +119,6 @@ export async function deleteLead(id: string): Promise<boolean> {
     await writeRaw(next);
     return true;
   });
-}
-
-export interface LeadStats {
-  total: number;
-  today: number;
-  week: number;
-  byStatus: Record<LeadStatus, number>;
 }
 
 export function computeStats(leads: Lead[]): LeadStats {
