@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createLeadSchema } from '@/lib/leads/types';
 import { createLead, listLeads } from '@/lib/leads/store';
 import { isAuthed } from '@/lib/leads/auth';
+import { notifyNewLead } from '@/lib/leads/notify';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -53,11 +54,14 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ ok: true });
   }
 
-  await createLead(parsed.data, {
+  const lead = await createLead(parsed.data, {
     referrer: req.headers.get('referer') || undefined,
     userAgent: req.headers.get('user-agent') || undefined,
     ip,
   });
+
+  // تنبيه فوري (تليجرام إن كان مضبوطًا) — لا يؤثر على نجاح الحفظ
+  await notifyNewLead(lead).catch(() => {});
 
   return NextResponse.json({ ok: true });
 }

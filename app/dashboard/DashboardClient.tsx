@@ -4,7 +4,7 @@ import { useMemo, useState, useCallback, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import {
   Search, RefreshCw, Download, LogOut, Phone, MessageCircle, Mail, Star,
-  Trash2, X, Users, Sparkles, CalendarDays, Trophy, Flame, StickyNote,
+  Trash2, X, Users, Sparkles, CalendarDays, Trophy, Flame, StickyNote, TrendingUp, ArrowDownUp,
 } from 'lucide-react';
 import type { Lead, LeadStatus, LeadStats } from '@/lib/leads/types';
 import { LEAD_STATUSES, STATUS_LABEL_AR } from '@/lib/leads/types';
@@ -21,6 +21,12 @@ const SERVICE_LABEL: Record<string, string> = {
   'car-wash': 'غسيل السيارات',
 };
 
+const SOURCE_LABEL: Record<string, string> = {
+  contact: 'نموذج التواصل',
+  hero: 'الواجهة الرئيسية',
+  pricing: 'صفحة الأسعار',
+};
+
 const STATUS_STYLE: Record<LeadStatus, string> = {
   new: 'bg-gold-primary/15 text-gold-light border-gold-primary/30',
   contacted: 'bg-blue-500/15 text-blue-300 border-blue-500/30',
@@ -28,6 +34,14 @@ const STATUS_STYLE: Record<LeadStatus, string> = {
   won: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
   lost: 'bg-white/5 text-white/40 border-white/10',
   archived: 'bg-white/5 text-white/35 border-white/10',
+};
+
+type SortKey = 'newest' | 'oldest' | 'name' | 'priority';
+const SORT_LABEL: Record<SortKey, string> = {
+  newest: 'الأحدث أولًا',
+  oldest: 'الأقدم أولًا',
+  name: 'الاسم (أ-ي)',
+  priority: 'الأولوية',
 };
 
 function waLink(phone: string, name: string): string {
@@ -41,17 +55,16 @@ function waLink(phone: string, name: string): string {
 
 function fmtDate(iso: string): string {
   try {
-    return new Date(iso).toLocaleString('ar-EG', {
-      day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
-    });
+    return new Date(iso).toLocaleString('ar-EG', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' });
   } catch {
     return iso;
   }
 }
-
 function serviceLabel(s?: string) {
-  if (!s) return '—';
-  return SERVICE_LABEL[s] || s;
+  return s ? SERVICE_LABEL[s] || s : '—';
+}
+function sourceLabel(s?: string) {
+  return s ? SOURCE_LABEL[s] || s : '—';
 }
 
 export default function DashboardClient({
@@ -66,24 +79,11 @@ export default function DashboardClient({
   const [stats, setStats] = useState<LeadStats>(initialStats);
   const [query, setQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState<LeadStatus | 'all'>('all');
+  const [serviceFilter, setServiceFilter] = useState<string>('all');
+  const [sortBy, setSortBy] = useState<SortKey>('newest');
   const [selected, setSelected] = useState<Lead | null>(null);
   const [refreshing, setRefreshing] = useState(false);
   const [noteDraft, setNoteDraft] = useState('');
-
-  const refresh = useCallback(async () => {
-    setRefreshing(true);
-    try {
-      const res = await fetch('/api/leads', { cache: 'no-store' });
-      if (res.status === 401) return router.replace('/dashboard/login');
-      const data = await res.json();
-      if (data.ok) {
-        setLeads(data.leads);
-        recompute(data.leads);
-      }
-    } finally {
-      setRefreshing(false);
-    }
-  }, [router]);
 
   function recompute(list: Lead[]) {
     const now = new Date();
@@ -100,7 +100,18 @@ export default function DashboardClient({
     setStats({ total: list.length, today, week, byStatus });
   }
 
-  // auto-refresh كل دقيقة
+  const refresh = useCallback(async () => {
+    setRefreshing(true);
+    try {
+      const res = await fetch('/api/leads', { cache: 'no-store' });
+      if (res.status === 401) return router.replace('/dashboard/login');
+      const data = await res.json();
+      if (data.ok) { setLeads(data.leads); recompute(data.leads); }
+    } finally {
+      setRefreshing(false);
+    }
+  }, [router]);
+
   useEffect(() => {
     const t = setInterval(refresh, 60_000);
     return () => clearInterval(t);
@@ -116,11 +127,7 @@ export default function DashboardClient({
       if (res.status === 401) return router.replace('/dashboard/login');
       const data = await res.json();
       if (data.ok) {
-        setLeads((prev) => {
-          const next = prev.map((l) => (l.id === id ? data.lead : l));
-          recompute(next);
-          return next;
-        });
+        setLeads((prev) => { const next = prev.map((l) => (l.id === id ? data.lead : l)); recompute(next); return next; });
         setSelected((s) => (s && s.id === id ? data.lead : s));
       }
     },
@@ -134,11 +141,7 @@ export default function DashboardClient({
       if (res.status === 401) return router.replace('/dashboard/login');
       const data = await res.json();
       if (data.ok) {
-        setLeads((prev) => {
-          const next = prev.filter((l) => l.id !== id);
-          recompute(next);
-          return next;
-        });
+        setLeads((prev) => { const next = prev.filter((l) => l.id !== id); recompute(next); return next; });
         setSelected(null);
       }
     },
@@ -151,10 +154,41 @@ export default function DashboardClient({
     router.refresh();
   };
 
+  // ===== analytics (over ALL leads) =====
+  const analytics = useMemo(() => {
+    const now = new Date();
+    // last 14 days
+    const days: { key: string; label: string; count: number }[] = [];
+    for (let i = 13; i >= 0; i--) {
+      const d = new Date(now.getFullYear(), now.getMonth(), now.getDate() - i);
+      days.push({ key: d.toDateString(), label: `${d.getDate()}`, count: 0 });
+    }
+    const dayIndex = new Map(days.map((d, i) => [d.key, i]));
+    const svc = new Map<string, number>();
+    const src = new Map<string, number>();
+    for (const l of leads) {
+      const k = new Date(l.createdAt).toDateString();
+      const di = dayIndex.get(k);
+      if (di !== undefined) days[di].count++;
+      const s = l.service || 'unspecified';
+      svc.set(s, (svc.get(s) || 0) + 1);
+      const so = l.source || 'unspecified';
+      src.set(so, (src.get(so) || 0) + 1);
+    }
+    const maxDay = Math.max(1, ...days.map((d) => d.count));
+    const byService = [...svc.entries()].sort((a, b) => b[1] - a[1]).slice(0, 5);
+    const bySource = [...src.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4);
+    const decided = stats.byStatus.won + stats.byStatus.lost;
+    const conversion = decided > 0 ? Math.round((stats.byStatus.won / decided) * 100) : 0;
+    return { days, maxDay, byService, bySource, conversion };
+  }, [leads, stats]);
+
+  // ===== filtered + sorted =====
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    return leads.filter((l) => {
+    const list = leads.filter((l) => {
       if (statusFilter !== 'all' && l.status !== statusFilter) return false;
+      if (serviceFilter !== 'all' && (l.service || 'unspecified') !== serviceFilter) return false;
       if (!q) return true;
       return (
         l.name.toLowerCase().includes(q) ||
@@ -164,7 +198,43 @@ export default function DashboardClient({
         serviceLabel(l.service).toLowerCase().includes(q)
       );
     });
-  }, [leads, query, statusFilter]);
+    list.sort((a, b) => {
+      switch (sortBy) {
+        case 'oldest': return a.createdAt < b.createdAt ? -1 : 1;
+        case 'name': return a.name.localeCompare(b.name, 'ar');
+        case 'priority':
+          if (a.priority !== b.priority) return a.priority === 'high' ? -1 : 1;
+          return a.createdAt < b.createdAt ? 1 : -1;
+        default: return a.createdAt < b.createdAt ? 1 : -1;
+      }
+    });
+    return list;
+  }, [leads, query, statusFilter, serviceFilter, sortBy]);
+
+  const serviceOptions = useMemo(() => {
+    const set = new Set<string>();
+    leads.forEach((l) => set.add(l.service || 'unspecified'));
+    return [...set];
+  }, [leads]);
+
+  function exportCSV() {
+    const headers = ['التاريخ', 'الاسم', 'الجوال', 'البريد', 'الخدمة', 'الحالة', 'الأولوية', 'المصدر', 'الرسالة'];
+    const cell = (v: unknown) => `"${(v == null ? '' : String(v)).replace(/"/g, '""')}"`;
+    const rows = filtered.map((l) =>
+      [
+        new Date(l.createdAt).toLocaleString('ar-EG'), l.name, l.phone, l.email || '',
+        serviceLabel(l.service), STATUS_LABEL_AR[l.status], l.priority === 'high' ? 'عالية' : 'عادية',
+        sourceLabel(l.source), (l.message || '').replace(/\r?\n/g, ' '),
+      ].map(cell).join(','),
+    );
+    const csv = '﻿' + [headers.map(cell).join(','), ...rows].join('\r\n');
+    const url = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `omnira-leads-${new Date().toISOString().slice(0, 10)}.csv`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
 
   const kpis = [
     { label: 'إجمالي الليدز', value: stats.total, icon: Users, tint: 'text-white' },
@@ -176,7 +246,6 @@ export default function DashboardClient({
 
   return (
     <div className="min-h-screen bg-[#0A0A0C] text-white" dir="rtl">
-      {/* top bar */}
       <header className="sticky top-0 z-30 border-b border-white/10 bg-[#0A0A0C]/85 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-4 sm:px-6">
           <div>
@@ -184,24 +253,15 @@ export default function DashboardClient({
             <p className="text-xs text-white/40">أومنيرا فاليه</p>
           </div>
           <div className="flex items-center gap-2">
-            <button
-              onClick={refresh}
-              className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-gold-primary/40 hover:text-white"
-            >
+            <button onClick={refresh} className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-gold-primary/40 hover:text-white">
               <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
               <span className="hidden sm:inline">تحديث</span>
             </button>
-            <a
-              href="/api/leads/export"
-              className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-gold-primary/40 hover:text-white"
-            >
+            <button onClick={exportCSV} className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-gold-primary/40 hover:text-white">
               <Download className="h-4 w-4" />
               <span className="hidden sm:inline">تصدير CSV</span>
-            </a>
-            <button
-              onClick={logout}
-              className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-red-500/40 hover:text-red-300"
-            >
+            </button>
+            <button onClick={logout} className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-red-500/40 hover:text-red-300">
               <LogOut className="h-4 w-4" />
               <span className="hidden sm:inline">خروج</span>
             </button>
@@ -223,21 +283,94 @@ export default function DashboardClient({
           ))}
         </div>
 
-        {/* controls */}
-        <div className="mt-6 flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
-          <div className="relative w-full lg:max-w-sm">
-            <Search className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/35" />
-            <input
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="بحث بالاسم، الجوال، البريد، الرسالة…"
-              className="w-full rounded-full border border-white/10 bg-white/[0.03] py-3 pr-11 pl-4 text-sm text-white placeholder:text-white/30 focus:border-gold-primary/50 focus:outline-none"
-            />
+        {/* analytics */}
+        <div className="mt-4 grid grid-cols-1 gap-3 lg:grid-cols-3">
+          {/* 14-day trend */}
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.015] p-5 lg:col-span-2">
+            <div className="mb-4 flex items-center justify-between">
+              <span className="flex items-center gap-2 text-xs text-white/50"><TrendingUp className="h-4 w-4 text-gold-primary/70" /> الليدز خلال 14 يومًا</span>
+              <span className="text-xs text-white/35">المجموع {analytics.days.reduce((s, d) => s + d.count, 0)}</span>
+            </div>
+            <div className="flex h-28 items-end gap-1.5">
+              {analytics.days.map((d, i) => (
+                <div key={i} className="group relative flex flex-1 flex-col items-center justify-end">
+                  <div
+                    className="w-full rounded-t bg-gradient-to-t from-gold-primary/40 to-gold-primary transition-all group-hover:from-gold-primary group-hover:to-gold-light"
+                    style={{ height: `${Math.max(4, (d.count / analytics.maxDay) * 100)}%` }}
+                    title={`${d.count} ليد`}
+                  />
+                  <span className="mt-1.5 text-[9px] text-white/30">{d.label}</span>
+                </div>
+              ))}
+            </div>
           </div>
+
+          {/* by service + conversion */}
+          <div className="rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.06] to-white/[0.015] p-5">
+            <div className="mb-4 flex items-center justify-between">
+              <span className="text-xs text-white/50">حسب الخدمة</span>
+              <span className="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] text-emerald-300">تحويل {analytics.conversion}%</span>
+            </div>
+            <div className="space-y-2.5">
+              {analytics.byService.length === 0 && <p className="text-xs text-white/30">لا بيانات بعد.</p>}
+              {analytics.byService.map(([svc, count]) => {
+                const pct = Math.round((count / Math.max(1, stats.total)) * 100);
+                return (
+                  <div key={svc}>
+                    <div className="mb-1 flex items-center justify-between text-[11px]">
+                      <span className="text-white/60">{svc === 'unspecified' ? 'غير محدّد' : serviceLabel(svc)}</span>
+                      <span className="text-white/40">{count}</span>
+                    </div>
+                    <div className="h-1.5 overflow-hidden rounded-full bg-white/5">
+                      <div className="h-full rounded-full bg-gold-primary/70" style={{ width: `${pct}%` }} />
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        {/* controls */}
+        <div className="mt-6 flex flex-col gap-3">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
+            <div className="relative w-full lg:max-w-sm">
+              <Search className="pointer-events-none absolute right-4 top-1/2 h-4 w-4 -translate-y-1/2 text-white/35" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="بحث بالاسم، الجوال، البريد، الرسالة…"
+                className="w-full rounded-full border border-white/10 bg-white/[0.03] py-3 pr-11 pl-4 text-sm text-white placeholder:text-white/30 focus:border-gold-primary/50 focus:outline-none"
+              />
+            </div>
+            <div className="flex flex-wrap items-center gap-2">
+              <select
+                value={serviceFilter}
+                onChange={(e) => setServiceFilter(e.target.value)}
+                className="rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 text-xs text-white/70 focus:border-gold-primary/50 focus:outline-none"
+              >
+                <option value="all">كل الخدمات</option>
+                {serviceOptions.map((s) => (
+                  <option key={s} value={s}>{s === 'unspecified' ? 'غير محدّد' : serviceLabel(s)}</option>
+                ))}
+              </select>
+              <div className="flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-2.5">
+                <ArrowDownUp className="h-3.5 w-3.5 text-white/40" />
+                <select
+                  value={sortBy}
+                  onChange={(e) => setSortBy(e.target.value as SortKey)}
+                  className="bg-transparent text-xs text-white/70 focus:outline-none"
+                >
+                  {(Object.keys(SORT_LABEL) as SortKey[]).map((k) => (
+                    <option key={k} value={k} className="bg-[#0E0E12]">{SORT_LABEL[k]}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          </div>
+
           <div className="flex flex-wrap gap-2">
-            <FilterChip active={statusFilter === 'all'} onClick={() => setStatusFilter('all')}>
-              الكل ({leads.length})
-            </FilterChip>
+            <FilterChip active={statusFilter === 'all'} onClick={() => setStatusFilter('all')}>الكل ({leads.length})</FilterChip>
             {LEAD_STATUSES.map((s) => (
               <FilterChip key={s} active={statusFilter === s} onClick={() => setStatusFilter(s)}>
                 {STATUS_LABEL_AR[s]} ({stats.byStatus[s]})
@@ -263,23 +396,12 @@ export default function DashboardClient({
               </thead>
               <tbody>
                 {filtered.length === 0 && (
-                  <tr>
-                    <td colSpan={7} className="px-4 py-16 text-center text-white/40">
-                      لا توجد ليدز مطابقة.
-                    </td>
-                  </tr>
+                  <tr><td colSpan={7} className="px-4 py-16 text-center text-white/40">لا توجد ليدز مطابقة.</td></tr>
                 )}
                 {filtered.map((l) => (
-                  <tr
-                    key={l.id}
-                    onClick={() => { setSelected(l); setNoteDraft(''); }}
-                    className="cursor-pointer border-t border-white/5 transition-colors hover:bg-white/[0.03]"
-                  >
+                  <tr key={l.id} onClick={() => { setSelected(l); setNoteDraft(''); }} className="cursor-pointer border-t border-white/5 transition-colors hover:bg-white/[0.03]">
                     <td className="px-4 py-4">
-                      <button
-                        onClick={(e) => { e.stopPropagation(); patchLead(l.id, { starred: !l.starred }); }}
-                        aria-label="تمييز"
-                      >
+                      <button onClick={(e) => { e.stopPropagation(); patchLead(l.id, { starred: !l.starred }); }} aria-label="تمييز">
                         <Star className={`h-4 w-4 ${l.starred ? 'fill-gold-primary text-gold-primary' : 'text-white/25'}`} />
                       </button>
                     </td>
@@ -289,29 +411,17 @@ export default function DashboardClient({
                         {l.name}
                       </div>
                     </td>
-                    <td className="px-4 py-4" dir="ltr">
-                      <span className="text-white/70">{l.phone}</span>
-                    </td>
+                    <td className="px-4 py-4" dir="ltr"><span className="text-white/70">{l.phone}</span></td>
                     <td className="px-4 py-4 text-white/60">{serviceLabel(l.service)}</td>
                     <td className="px-4 py-4">
-                      <span className={`inline-block rounded-full border px-3 py-1 text-[11px] ${STATUS_STYLE[l.status]}`}>
-                        {STATUS_LABEL_AR[l.status]}
-                      </span>
+                      <span className={`inline-block rounded-full border px-3 py-1 text-[11px] ${STATUS_STYLE[l.status]}`}>{STATUS_LABEL_AR[l.status]}</span>
                     </td>
                     <td className="px-4 py-4 text-white/45">{fmtDate(l.createdAt)}</td>
                     <td className="px-4 py-4">
                       <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
-                        <a href={`tel:${l.phone}`} className="rounded-lg p-2 text-white/50 hover:bg-white/5 hover:text-gold-primary" aria-label="اتصال">
-                          <Phone className="h-4 w-4" />
-                        </a>
-                        <a href={waLink(l.phone, l.name)} target="_blank" rel="noopener noreferrer" className="rounded-lg p-2 text-white/50 hover:bg-white/5 hover:text-emerald-400" aria-label="واتساب">
-                          <MessageCircle className="h-4 w-4" />
-                        </a>
-                        {l.email && (
-                          <a href={`mailto:${l.email}`} className="rounded-lg p-2 text-white/50 hover:bg-white/5 hover:text-blue-300" aria-label="بريد">
-                            <Mail className="h-4 w-4" />
-                          </a>
-                        )}
+                        <a href={`tel:${l.phone}`} className="rounded-lg p-2 text-white/50 hover:bg-white/5 hover:text-gold-primary" aria-label="اتصال"><Phone className="h-4 w-4" /></a>
+                        <a href={waLink(l.phone, l.name)} target="_blank" rel="noopener noreferrer" className="rounded-lg p-2 text-white/50 hover:bg-white/5 hover:text-emerald-400" aria-label="واتساب"><MessageCircle className="h-4 w-4" /></a>
+                        {l.email && <a href={`mailto:${l.email}`} className="rounded-lg p-2 text-white/50 hover:bg-white/5 hover:text-blue-300" aria-label="بريد"><Mail className="h-4 w-4" /></a>}
                       </div>
                     </td>
                   </tr>
@@ -327,10 +437,7 @@ export default function DashboardClient({
       {selected && (
         <div className="fixed inset-0 z-50 flex" onClick={() => setSelected(null)}>
           <div className="flex-1 bg-black/60 backdrop-blur-sm" />
-          <aside
-            className="h-full w-full max-w-md overflow-y-auto border-r border-white/10 bg-[#0E0E12] p-6 shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <aside className="h-full w-full max-w-md overflow-y-auto border-r border-white/10 bg-[#0E0E12] p-6 shadow-2xl" onClick={(e) => e.stopPropagation()}>
             <div className="mb-6 flex items-start justify-between">
               <div>
                 <div className="flex items-center gap-2">
@@ -341,33 +448,20 @@ export default function DashboardClient({
                 </div>
                 <p className="mt-1 text-xs text-white/40">وصل {fmtDate(selected.createdAt)}</p>
               </div>
-              <button onClick={() => setSelected(null)} className="rounded-lg p-2 text-white/50 hover:bg-white/5" aria-label="إغلاق">
-                <X className="h-5 w-5" />
-              </button>
+              <button onClick={() => setSelected(null)} className="rounded-lg p-2 text-white/50 hover:bg-white/5" aria-label="إغلاق"><X className="h-5 w-5" /></button>
             </div>
 
-            {/* quick actions */}
             <div className="mb-6 grid grid-cols-3 gap-2">
-              <a href={`tel:${selected.phone}`} className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs text-white/70 hover:border-gold-primary/40">
-                <Phone className="h-4 w-4 text-gold-primary" /> اتصال
-              </a>
-              <a href={waLink(selected.phone, selected.name)} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs text-white/70 hover:border-emerald-500/40">
-                <MessageCircle className="h-4 w-4 text-emerald-400" /> واتساب
-              </a>
-              <a
-                href={selected.email ? `mailto:${selected.email}` : undefined}
-                className={`flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs ${selected.email ? 'text-white/70 hover:border-blue-500/40' : 'pointer-events-none opacity-40'}`}
-              >
-                <Mail className="h-4 w-4 text-blue-300" /> بريد
-              </a>
+              <a href={`tel:${selected.phone}`} className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs text-white/70 hover:border-gold-primary/40"><Phone className="h-4 w-4 text-gold-primary" /> اتصال</a>
+              <a href={waLink(selected.phone, selected.name)} target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs text-white/70 hover:border-emerald-500/40"><MessageCircle className="h-4 w-4 text-emerald-400" /> واتساب</a>
+              <a href={selected.email ? `mailto:${selected.email}` : undefined} className={`flex flex-col items-center gap-1.5 rounded-xl border border-white/10 bg-white/[0.03] py-3 text-xs ${selected.email ? 'text-white/70 hover:border-blue-500/40' : 'pointer-events-none opacity-40'}`}><Mail className="h-4 w-4 text-blue-300" /> بريد</a>
             </div>
 
-            {/* fields */}
             <dl className="mb-6 space-y-3 text-sm">
               <Field label="الجوال"><span dir="ltr">{selected.phone}</span></Field>
               {selected.email && <Field label="البريد">{selected.email}</Field>}
               <Field label="الخدمة">{serviceLabel(selected.service)}</Field>
-              {selected.source && <Field label="المصدر">{selected.source}{selected.pagePath ? ` · ${selected.pagePath}` : ''}</Field>}
+              <Field label="المصدر">{sourceLabel(selected.source)}{selected.pagePath ? ` · ${selected.pagePath}` : ''}</Field>
               {selected.message && (
                 <div>
                   <dt className="mb-1 text-xs text-white/40">الرسالة</dt>
@@ -376,43 +470,26 @@ export default function DashboardClient({
               )}
             </dl>
 
-            {/* status */}
             <div className="mb-5">
               <label className="mb-2 block text-xs text-white/40">الحالة</label>
               <div className="flex flex-wrap gap-1.5">
                 {LEAD_STATUSES.map((s) => (
-                  <button
-                    key={s}
-                    onClick={() => patchLead(selected.id, { status: s })}
-                    className={`rounded-full border px-3 py-1.5 text-[11px] transition-colors ${
-                      selected.status === s ? STATUS_STYLE[s] : 'border-white/10 text-white/45 hover:text-white'
-                    }`}
-                  >
+                  <button key={s} onClick={() => patchLead(selected.id, { status: s })} className={`rounded-full border px-3 py-1.5 text-[11px] transition-colors ${selected.status === s ? STATUS_STYLE[s] : 'border-white/10 text-white/45 hover:text-white'}`}>
                     {STATUS_LABEL_AR[s]}
                   </button>
                 ))}
               </div>
             </div>
 
-            {/* priority */}
             <div className="mb-6 flex items-center justify-between rounded-xl border border-white/10 bg-white/[0.02] px-4 py-3">
-              <span className="flex items-center gap-2 text-sm text-white/70">
-                <Flame className="h-4 w-4 text-red-400" /> أولوية عالية
-              </span>
-              <button
-                onClick={() => patchLead(selected.id, { priority: selected.priority === 'high' ? 'normal' : 'high' })}
-                className={`relative h-6 w-11 rounded-full transition-colors ${selected.priority === 'high' ? 'bg-gold-primary' : 'bg-white/15'}`}
-                aria-label="تبديل الأولوية"
-              >
+              <span className="flex items-center gap-2 text-sm text-white/70"><Flame className="h-4 w-4 text-red-400" /> أولوية عالية</span>
+              <button onClick={() => patchLead(selected.id, { priority: selected.priority === 'high' ? 'normal' : 'high' })} className={`relative h-6 w-11 rounded-full transition-colors ${selected.priority === 'high' ? 'bg-gold-primary' : 'bg-white/15'}`} aria-label="تبديل الأولوية">
                 <span className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-all ${selected.priority === 'high' ? 'right-0.5' : 'right-[22px]'}`} />
               </button>
             </div>
 
-            {/* notes */}
             <div className="mb-6">
-              <label className="mb-2 flex items-center gap-2 text-xs text-white/40">
-                <StickyNote className="h-3.5 w-3.5" /> الملاحظات
-              </label>
+              <label className="mb-2 flex items-center gap-2 text-xs text-white/40"><StickyNote className="h-3.5 w-3.5" /> الملاحظات</label>
               <div className="space-y-2">
                 {(selected.notes || []).map((n, i) => (
                   <div key={i} className="rounded-xl border border-white/10 bg-white/[0.02] p-3 text-sm text-white/75">
@@ -420,37 +497,21 @@ export default function DashboardClient({
                     <p className="mt-1 text-[10px] text-white/35">{fmtDate(n.at)}</p>
                   </div>
                 ))}
-                {(!selected.notes || selected.notes.length === 0) && (
-                  <p className="text-xs text-white/30">لا ملاحظات بعد.</p>
-                )}
+                {(!selected.notes || selected.notes.length === 0) && <p className="text-xs text-white/30">لا ملاحظات بعد.</p>}
               </div>
               <div className="mt-3 flex gap-2">
                 <input
                   value={noteDraft}
                   onChange={(e) => setNoteDraft(e.target.value)}
-                  onKeyDown={(e) => {
-                    if (e.key === 'Enter' && noteDraft.trim()) {
-                      patchLead(selected.id, { addNote: noteDraft.trim() });
-                      setNoteDraft('');
-                    }
-                  }}
+                  onKeyDown={(e) => { if (e.key === 'Enter' && noteDraft.trim()) { patchLead(selected.id, { addNote: noteDraft.trim() }); setNoteDraft(''); } }}
                   placeholder="أضف ملاحظة…"
                   className="flex-1 rounded-xl border border-white/10 bg-[#131318] px-3 py-2.5 text-sm text-white placeholder:text-white/30 focus:border-gold-primary/50 focus:outline-none"
                 />
-                <button
-                  onClick={() => { if (noteDraft.trim()) { patchLead(selected.id, { addNote: noteDraft.trim() }); setNoteDraft(''); } }}
-                  className="rounded-xl bg-gold-primary px-4 text-sm font-medium text-[#0A0A0C] hover:bg-gold-light"
-                >
-                  إضافة
-                </button>
+                <button onClick={() => { if (noteDraft.trim()) { patchLead(selected.id, { addNote: noteDraft.trim() }); setNoteDraft(''); } }} className="rounded-xl bg-gold-primary px-4 text-sm font-medium text-[#0A0A0C] hover:bg-gold-light">إضافة</button>
               </div>
             </div>
 
-            {/* danger */}
-            <button
-              onClick={() => removeLead(selected.id)}
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-500/20 py-3 text-sm text-red-400 transition-colors hover:bg-red-500/10"
-            >
+            <button onClick={() => removeLead(selected.id)} className="flex w-full items-center justify-center gap-2 rounded-xl border border-red-500/20 py-3 text-sm text-red-400 transition-colors hover:bg-red-500/10">
               <Trash2 className="h-4 w-4" /> حذف الليد
             </button>
           </aside>
@@ -462,12 +523,7 @@ export default function DashboardClient({
 
 function FilterChip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
-    <button
-      onClick={onClick}
-      className={`rounded-full border px-3.5 py-2 text-xs transition-colors ${
-        active ? 'border-gold-primary/50 bg-gold-primary/10 text-gold-light' : 'border-white/10 text-white/50 hover:text-white'
-      }`}
-    >
+    <button onClick={onClick} className={`rounded-full border px-3.5 py-2 text-xs transition-colors ${active ? 'border-gold-primary/50 bg-gold-primary/10 text-gold-light' : 'border-white/10 text-white/50 hover:text-white'}`}>
       {children}
     </button>
   );

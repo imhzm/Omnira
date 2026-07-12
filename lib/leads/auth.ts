@@ -45,13 +45,27 @@ export function verifySession(token: string | undefined): boolean {
   }
 }
 
-/** مقارنة كلمة المرور بزمن-ثابت */
+function timingEqual(a: string, b: string): boolean {
+  const ba = Buffer.from(a);
+  const bb = Buffer.from(b);
+  return ba.length === bb.length && crypto.timingSafeEqual(ba, bb);
+}
+
+/**
+ * مقارنة كلمة المرور بزمن-ثابت.
+ * الأفضلية لـ LEADS_DASHBOARD_PASSWORD_HASH (SHA-256 hex) — يسمح بكلمات مرور
+ * تحتوي رموزًا خاصة دون مشاكل ترميز ملف البيئة، ولا يخزّن الكلمة الخام.
+ * fallback: LEADS_DASHBOARD_PASSWORD (خام) لسهولة التغيير لكلمات بسيطة.
+ */
 export function checkPassword(input: string): boolean {
-  const expected = process.env.LEADS_DASHBOARD_PASSWORD;
-  if (!expected) return false; // لا يُسمح بالدخول ما لم تُضبط كلمة المرور
-  const a = Buffer.from(String(input));
-  const b = Buffer.from(expected);
-  return a.length === b.length && crypto.timingSafeEqual(a, b);
+  const hash = process.env.LEADS_DASHBOARD_PASSWORD_HASH;
+  if (hash) {
+    const inputHash = crypto.createHash('sha256').update(String(input), 'utf8').digest('hex');
+    return timingEqual(inputHash, hash.trim().toLowerCase());
+  }
+  const raw = process.env.LEADS_DASHBOARD_PASSWORD;
+  if (raw) return timingEqual(String(input), raw);
+  return false; // لا يُسمح بالدخول ما لم تُضبط كلمة المرور
 }
 
 export const sessionCookieOptions = {
