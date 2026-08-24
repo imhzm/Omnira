@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import {
   Search, RefreshCw, Download, LogOut, Phone, MessageCircle, Mail, Star,
   Trash2, X, Users, Sparkles, CalendarDays, Trophy, Flame, StickyNote, TrendingUp, ArrowDownUp,
+  CreditCard,
 } from 'lucide-react';
 import type { Lead, LeadStatus, LeadStats } from '@/lib/leads/types';
 import { LEAD_STATUSES, STATUS_LABEL_AR } from '@/lib/leads/types';
@@ -267,6 +268,10 @@ export default function DashboardClient({
             <p className="text-xs text-white/40">أومنيرا فاليه</p>
           </div>
           <div className="flex items-center gap-2">
+            <a href="/dashboard/payments" className="flex items-center gap-2 rounded-full border border-gold-primary/40 bg-gold-primary/10 px-4 py-2 text-sm text-gold-light transition-colors hover:bg-gold-primary/20">
+              <CreditCard className="h-4 w-4" />
+              <span className="hidden sm:inline">المدفوعات</span>
+            </a>
             <button onClick={refresh} className="flex items-center gap-2 rounded-full border border-white/10 px-4 py-2 text-sm text-white/70 transition-colors hover:border-gold-primary/40 hover:text-white">
               <RefreshCw className={`h-4 w-4 ${refreshing ? 'animate-spin' : ''}`} />
               <span className="hidden sm:inline">تحديث</span>
