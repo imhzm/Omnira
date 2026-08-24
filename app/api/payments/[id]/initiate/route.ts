@@ -9,7 +9,8 @@ export const dynamic = 'force-dynamic';
 function baseUrl(req: NextRequest): string {
   const envUrl = process.env.PAYMENTS_PUBLIC_BASE_URL;
   if (envUrl) return envUrl.replace(/\/$/, '');
-  const host = req.headers.get('host') || 'omniravalet.com';
+  // خلف nginx: Host داخلي — استخدم x-forwarded-host عند توفره
+  const host = req.headers.get('x-forwarded-host') || req.headers.get('host') || 'omniravalet.com';
   const proto = req.headers.get('x-forwarded-proto') || 'https';
   return `${proto}://${host}`;
 }

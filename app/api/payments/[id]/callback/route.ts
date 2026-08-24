@@ -6,6 +6,18 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 /**
+ * الأصل العام للروابط — بيئة خلف nginx proxy يكون Host داخلي (localhost:3103)،
+ * فنعتمد PAYMENTS_PUBLIC_BASE_URL إن وُجد، وإلا x-forwarded-host/x-forwarded-proto.
+ */
+function publicOrigin(req: NextRequest): string {
+  const envUrl = process.env.PAYMENTS_PUBLIC_BASE_URL;
+  if (envUrl) return envUrl.replace(/\/$/, '');
+  const host = req.headers.get('x-forwarded-host') || req.headers.get('host') || 'omniravalet.com';
+  const proto = req.headers.get('x-forwarded-proto') || 'https';
+  return `${proto}://${host}`;
+}
+
+/**
  * رجوع البوابة: NeoLeap تعيد المتصفح إلى responseURL/errorURL مع POST
  * يحمل trandata مُشفَّر. نفك التشفير، نتحقق من trackId، ونحدّث حالة الدفع،
  * ثم نحوّل العميل لصفحة الرابط (/pay/[id]?paid=1 أو ?failed=1).
@@ -13,10 +25,10 @@ export const dynamic = 'force-dynamic';
 async function handle(req: NextRequest, { params }: { params: { id: string } }, isErrorParam: boolean) {
   const link = await getPaymentLink(params.id);
   if (!link) {
-    return NextResponse.redirect(new URL('/pay/not-found', req.url), 303);
+    return NextResponse.redirect(new URL('/pay/not-found', publicOrigin(req)), 303);
   }
 
-  const origin = new URL(req.url).origin;
+  const origin = publicOrigin(req);
   const failRedirect = NextResponse.redirect(`${origin}/pay/${link.id}?failed=1`, 303);
 
   // بعض البيئات ترسل trandata في body (POST) وبعضها في query (GET)
