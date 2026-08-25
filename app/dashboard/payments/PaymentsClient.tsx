@@ -196,8 +196,8 @@ export default function PaymentsClient({
               <CreditCard className="h-5 w-5 text-gold-primary" />
             </div>
             <div>
-              <h1 className="text-lg font-medium text-white">روابط الدفع</h1>
-              <p className="text-xs text-white/40">بوابة NeoLeap — omniravalet.com</p>
+              <h1 className="text-sm font-medium text-white">روابط وفواتير الدفع</h1>
+              <p className="text-xs text-white/40">مصرف الراجحي · مدى · Apple Pay · Visa · Mastercard</p>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -270,6 +270,13 @@ export default function PaymentsClient({
                 <input value={description} onChange={(e) => setDescription(e.target.value)}
                   placeholder="اختياري" className={inputCls} />
               </Field>
+            </div>
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-[11px] text-white/40">
+              <span>الرابط يدعم السداد الفوري عبر:</span>
+              <span className="rounded bg-white px-1.5 py-0.5 font-bold text-[#005A9C] text-[10px]">mada مدى</span>
+              <span className="rounded bg-black border border-white/20 px-1.5 py-0.5 font-bold text-white text-[10px]">Pay</span>
+              <span className="rounded bg-white px-1.5 py-0.5 font-black italic text-[#1A1F71] text-[10px]">VISA</span>
+              <span className="rounded bg-[#18181c] border border-white/10 px-1.5 py-0.5 font-semibold text-white text-[10px]">Mastercard</span>
             </div>
             <div className="mt-5 flex gap-2">
               <button type="submit" disabled={busy === '__form'}

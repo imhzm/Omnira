@@ -328,12 +328,37 @@ export default function QuoteModal() {
                     className="absolute -left-[9999px] h-0 w-0 opacity-0"
                   />
 
+                  {mode === 'pay' && (
+                    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 text-center">
+                      <p className="mb-2 text-xs text-white/50">طرق الدفع المتاحة فوراً:</p>
+                      <div className="flex flex-wrap items-center justify-center gap-2">
+                        <div className="inline-flex items-center gap-1 rounded bg-white px-2 py-0.5 shadow-sm">
+                          <span className="font-bold text-[#005A9C] text-[11px]">mada</span>
+                          <span className="text-[10px] font-bold text-[#87B827]">مدى</span>
+                        </div>
+                        <div className="inline-flex items-center rounded bg-black border border-white/20 px-2 py-0.5 text-white shadow-sm">
+                          <span className="font-bold text-[11px]">Pay</span>
+                        </div>
+                        <div className="inline-flex items-center rounded bg-white px-2 py-0.5 shadow-sm">
+                          <span className="font-black italic text-[#1A1F71] text-[11px]">VISA</span>
+                        </div>
+                        <div className="inline-flex items-center gap-1 rounded bg-[#18181c] border border-white/15 px-2 py-0.5 shadow-sm">
+                          <div className="flex -space-x-1.5 items-center">
+                            <div className="h-3 w-3 rounded-full bg-[#EB001B]"></div>
+                            <div className="h-3 w-3 rounded-full bg-[#F79E1B]/95"></div>
+                          </div>
+                          <span className="text-[9px] font-semibold text-white/90">Mastercard</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
                   {status === 'error' && <p className="text-xs text-red-400">{errorMsg}</p>}
 
                   <button
                     type="submit"
                     disabled={status === 'sending'}
-                    className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-primary py-3.5 text-sm font-semibold text-[#0A0A0C] transition-all duration-300 hover:bg-gold-light disabled:opacity-70 shadow-lg shadow-gold-primary/10 mt-2"
+                    className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-primary py-3.5 text-sm font-semibold text-[#0A0A0C] transition-all duration-300 hover:bg-gold-light disabled:opacity-70 shadow-lg shadow-gold-primary/10 mt-1"
                   >
                     {status === 'sending' ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
@@ -352,9 +377,9 @@ export default function QuoteModal() {
                   </button>
 
                   {mode === 'pay' ? (
-                    <div className="flex items-center justify-center gap-2 pt-2 text-[11px] text-white/40">
+                    <div className="flex items-center justify-center gap-1.5 pt-1 text-[11px] text-white/40">
                       <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-                      <span>دفع بنكي آمن ومشفّر · مدى / Visa / Mastercard / Apple Pay</span>
+                      <span>دفع بنكي آمن ومشفّر 100% عبر مصرف الراجحي</span>
                     </div>
                   ) : (
                     <p className="text-center text-xs text-white/35 pt-1">

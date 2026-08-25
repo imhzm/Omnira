@@ -106,25 +106,64 @@ export default function PayClient({ payment }: { payment: PublicPayment }) {
                 )}
               </div>
 
-              <button
-                onClick={startPayment}
-                disabled={loading}
-                className="flex w-full items-center justify-center gap-2 rounded-full bg-gold-primary py-4 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light disabled:opacity-60"
-              >
-                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ShieldCheck className="h-4 w-4" />}
-                {loading ? 'جارٍ التحويل لبوابة الدفع...' : 'ادفع الآن بأمان'}
-              </button>
+              <div className="space-y-2.5">
+                {/* زر أبل باي */}
+                <button
+                  onClick={startPayment}
+                  disabled={loading}
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-black border border-white/20 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:bg-neutral-900 hover:border-white/40 disabled:opacity-60 shadow-md"
+                >
+                  {loading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <span className="text-base font-bold leading-none tracking-tight">Pay</span>
+                  )}
+                  <span>{loading ? 'جارٍ التحويل...' : 'الدفع السريع عبر Apple Pay'}</span>
+                </button>
+
+                {/* زر مدى والبطاقات */}
+                <button
+                  onClick={startPayment}
+                  disabled={loading}
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl bg-gold-primary py-3.5 text-sm font-semibold text-[#0A0A0C] transition-all duration-200 hover:bg-gold-light disabled:opacity-60 shadow-lg shadow-gold-primary/10"
+                >
+                  {loading ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <ShieldCheck className="h-4 w-4" />
+                  )}
+                  <span>{loading ? 'جارٍ التحويل لبوابة الراجحي...' : 'الدفع ببطاقة مدى أو البطاقة الائتمانية'}</span>
+                </button>
+              </div>
 
               {error && <p className="mt-4 text-center text-sm text-red-400">{error}</p>}
 
-              <div className="mt-6 space-y-2 border-t border-white/5 pt-5 text-center">
-                <p className="flex items-center justify-center gap-1.5 text-xs text-white/40">
-                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> بوابة دفع معتمدة ومؤمّنة بتشفير بنكي كامل
-                </p>
-                <p className="text-[11px] leading-relaxed text-white/30">
-                  لن تشارك بيانات بطاقتك مع موقعنا إطلاقًا — المعاملة تتم على صفحة مصرف الراجحي المؤمّنة
-                  <br />
-                  مدفوعات آمنة ومشفّرة · mada / Visa / Mastercard / Apple Pay
+              {/* شريط وسائل الدفع المقبولة */}
+              <div className="mt-6 border-t border-white/10 pt-5 text-center">
+                <p className="mb-3 text-xs text-white/50">طرق الدفع المعتمدة:</p>
+                <div className="flex flex-wrap items-center justify-center gap-2">
+                  <div className="inline-flex items-center gap-1 rounded-lg bg-white px-2.5 py-1 shadow-sm">
+                    <span className="font-bold text-[#005A9C] text-xs">mada</span>
+                    <span className="text-[11px] font-bold text-[#87B827]">مدى</span>
+                  </div>
+                  <div className="inline-flex items-center rounded-lg bg-black border border-white/20 px-2.5 py-1 text-white shadow-sm">
+                    <span className="font-bold text-xs">Pay</span>
+                  </div>
+                  <div className="inline-flex items-center rounded-lg bg-white px-2.5 py-1 shadow-sm">
+                    <span className="font-black italic text-[#1A1F71] text-xs">VISA</span>
+                  </div>
+                  <div className="inline-flex items-center gap-1 rounded-lg bg-[#18181c] border border-white/15 px-2.5 py-1 shadow-sm">
+                    <div className="flex -space-x-1.5 items-center">
+                      <div className="h-3.5 w-3.5 rounded-full bg-[#EB001B]"></div>
+                      <div className="h-3.5 w-3.5 rounded-full bg-[#F79E1B]/95"></div>
+                    </div>
+                    <span className="text-[10px] font-semibold text-white/90">Mastercard</span>
+                  </div>
+                </div>
+
+                <p className="mt-4 flex items-center justify-center gap-1.5 text-[11px] text-white/40">
+                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
+                  دفع بنكي آمن ومشفّر 100% عبر مصرف الراجحي ومؤسسة النقد (ساما)
                 </p>
               </div>
             </>
