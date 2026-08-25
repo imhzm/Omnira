@@ -109,6 +109,7 @@ export type PaymentPatch = Partial<
     | 'customerPhone'
     | 'customerEmail'
     | 'reference'
+    | 'trackId'
     | 'status'
     | 'gatewayStatus'
     | 'paymentId'
