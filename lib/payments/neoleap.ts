@@ -196,10 +196,16 @@ export async function createHostedCheckout(input: HostedCheckoutInput): Promise<
     const result = String(first?.result ?? '');
     if (status === '1' && result.includes(':')) {
       const idx = result.indexOf(':');
+      const paymentId = result.slice(0, idx);
+      let paymentUrl = result.slice(idx + 1);
+      if (paymentId && !paymentUrl.includes('PaymentID=')) {
+        const sep = paymentUrl.includes('?') ? '&' : '?';
+        paymentUrl = `${paymentUrl}${sep}PaymentID=${paymentId}`;
+      }
       return {
         ok: true,
-        paymentId: result.slice(0, idx),
-        paymentUrl: result.slice(idx + 1),
+        paymentId,
+        paymentUrl,
         rawStatus: status,
       };
     }
@@ -209,7 +215,15 @@ export async function createHostedCheckout(input: HostedCheckoutInput): Promise<
   } catch {
     // بعض بيئات الاختبار ترجع نصًا مباشرًا "paymentId:url"
     const m = text.trim().match(/^([^:\s]+):(https?:\/\/.+)$/i);
-    if (m) return { ok: true, paymentId: m[1], paymentUrl: m[2] };
+    if (m) {
+      const paymentId = m[1];
+      let paymentUrl = m[2];
+      if (paymentId && !paymentUrl.includes('PaymentID=')) {
+        const sep = paymentUrl.includes('?') ? '&' : '?';
+        paymentUrl = `${paymentUrl}${sep}PaymentID=${paymentId}`;
+      }
+      return { ok: true, paymentId, paymentUrl };
+    }
     return { ok: false, error: 'invalid_gateway_response', rawStatus: `${res.status} ${text.slice(0, 200)}` };
   }
 }
