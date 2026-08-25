@@ -107,7 +107,6 @@ export default function PayClient({ payment }: { payment: PublicPayment }) {
               </div>
 
               <div className="space-y-2.5">
-              <div className="space-y-2.5">
                 {/* زر أبل باي */}
                 <button
                   onClick={startPayment}
