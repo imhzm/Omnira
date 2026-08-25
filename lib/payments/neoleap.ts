@@ -1,7 +1,8 @@
 import crypto from 'crypto';
 
 /**
- * طبقة بوابة الدفع NeoLeap — بروتوكول Tranportal (Hosted Checkout).
+ * طبقة بوابة الدفع — بروتوكول Tranportal (Hosted Checkout).
+ * يدعم NeoLeap و Al Rajhi Bank (securepayments.alrajhibank.com.sa).
  *
  * آلية العمل:
  *  1) نبني "trandata": JSON مصفوفة واحدة تحوي بيانات المعاملة (المبلغ،
@@ -9,12 +10,13 @@ import crypto from 'crypto';
  *     AES-CBC (PKCS7) بمفتاح البوابة، ثم HEX كبير.
  *  2) نرسل POST بصيغة [{ id, trandata, responseURL, errorURL }] فترجّع
  *     البوابة [{ status:'1', result:'<paymentId>:<paymentUrl>' }].
- *  3) نحوّل العميل إلى paymentUrl (صفحة الدفع المؤمّنة لدى NeoLeap).
+ *  3) نحوّل العميل إلى paymentUrl (صفحة الدفع المؤمّنة).
  *  4) بعد الدفع تعيد البوابة العميل إلى responseURL/errorURL مع حقل
  *     trandata مُشفَّر — نفك تشفيره ونتحقق من النتيجة وtrackId.
  *
- * اشتقاق المفاتيح (مواصفة البوابات السعودية Tranportal):
- *  - resourceKey = 32 حرف hex  → key = IV = نفس الـ16 بايت (aes-128-cbc)
+ * اشتقاق المفاتيح:
+ *  - إذا وُجد NEOLEAP_IV → AES-256-CBC بـ IV ثابت (بروتوكول الراجحي: PGKEYENCDECIVSPC)
+ *  - resourceKey = 32 حرف hex → key = IV = نفس الـ16 بايت (aes-128-cbc)
  *  - resourceKey = نص 16/24/32 حرف → key = النص، IV = أول 16 بايت منه
  */
 
@@ -64,7 +66,15 @@ interface DerivedKey {
 }
 
 function derive(resKey: string): DerivedKey {
-  // 32 حرف hex = مفتاح 16 بايت → key = IV (الشائع في بيئات الاختبار)
+  // بروتوكول الراجحي: IV ثابت (PGKEYENCDECIVSPC) + مفتاح 32 بايت → AES-256-CBC
+  const customIv = process.env.NEOLEAP_IV;
+  if (customIv) {
+    const raw = Buffer.from(resKey, 'utf8');
+    const iv = Buffer.from(customIv, 'utf8');
+    if (iv.length !== 16) throw new Error('NEOLEAP_IV must be exactly 16 characters');
+    return { alg: `aes-${raw.length * 8}-cbc`, key: raw, iv };
+  }
+  // fallback: 32 حرف hex = مفتاح 16 بايت → key = IV (الشائع في بيئات الاختبار)
   if (/^[0-9a-fA-F]{32}$/.test(resKey)) {
     const key = Buffer.from(resKey, 'hex');
     return { alg: 'aes-128-cbc', key, iv: key };
