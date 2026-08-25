@@ -66,22 +66,23 @@ interface DerivedKey {
 }
 
 function derive(resKey: string): DerivedKey {
-  // بروتوكول الراجحي: IV ثابت (PGKEYENCDECIVSPC) + مفتاح 32 بايت → AES-256-CBC
-  const customIv = process.env.NEOLEAP_IV;
-  if (customIv) {
-    const raw = Buffer.from(resKey, 'utf8');
+  // بروتوكول الراجحي / NeoLeap: مفتاح 32 بايت نصي + IV ثابت (PGKEYENCDECIVSPC) → AES-256-CBC
+  const customIv = process.env.NEOLEAP_IV || 'PGKEYENCDECIVSPC';
+  const raw = Buffer.from(resKey, 'utf8');
+  if (raw.length === 32) {
     const iv = Buffer.from(customIv, 'utf8');
-    if (iv.length !== 16) throw new Error('NEOLEAP_IV must be exactly 16 characters');
+    return { alg: 'aes-256-cbc', key: raw, iv };
+  }
+  if (process.env.NEOLEAP_IV) {
+    const iv = Buffer.from(process.env.NEOLEAP_IV, 'utf8');
     return { alg: `aes-${raw.length * 8}-cbc`, key: raw, iv };
   }
-  // fallback: 32 حرف hex = مفتاح 16 بايت → key = IV (الشائع في بيئات الاختبار)
+  // fallback: 32 حرف hex = مفتاح 16 بايت → key = IV (بيئات الاختبار القديمة)
   if (/^[0-9a-fA-F]{32}$/.test(resKey)) {
     const key = Buffer.from(resKey, 'hex');
     return { alg: 'aes-128-cbc', key, iv: key };
   }
-  const raw = Buffer.from(resKey, 'utf8');
-  if (raw.length === 16 || raw.length === 24 || raw.length === 32) {
-    // IV دائمًا 16 بايت (حجم بلوك AES) — أول 16 بايت من المفتاح
+  if (raw.length === 16 || raw.length === 24) {
     return { alg: `aes-${raw.length * 8}-cbc`, key: raw, iv: raw.subarray(0, 16) };
   }
   throw new Error('unsupported_resource_key');
@@ -173,9 +174,11 @@ export async function createHostedCheckout(input: HostedCheckoutInput): Promise<
     },
   ];
 
+  const targetUrl = process.env.NEOLEAP_HOSTED_URL || NEOLEAP_HOSTED_URL;
+
   let res: Response;
   try {
-    res = await fetch(NEOLEAP_HOSTED_URL, {
+    res = await fetch(targetUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
       body: JSON.stringify(body),
@@ -200,7 +203,9 @@ export async function createHostedCheckout(input: HostedCheckoutInput): Promise<
         rawStatus: status,
       };
     }
-    return { ok: false, error: 'gateway_rejected', rawStatus: status || text.slice(0, 300) };
+    const errText = first?.errorText || first?.error || status || text.slice(0, 300);
+    console.error('[neoleap:hosted] Gateway rejected:', text);
+    return { ok: false, error: 'gateway_rejected', rawStatus: errText };
   } catch {
     // بعض بيئات الاختبار ترجع نصًا مباشرًا "paymentId:url"
     const m = text.trim().match(/^([^:\s]+):(https?:\/\/.+)$/i);
