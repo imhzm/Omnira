@@ -82,7 +82,7 @@ export default function PayClient({ payment }: { payment: PublicPayment }) {
                 {payment.paidAt && <Row label="تاريخ الدفع" value={new Date(payment.paidAt).toLocaleString('ar-EG')} />}
               </div>
               <p className="mt-5 flex items-center justify-center gap-1.5 text-xs text-white/35">
-                <ShieldCheck className="h-3.5 w-3.5" /> تمت المعاملة عبر بوابة NeoLeap المؤمّنة
+                <ShieldCheck className="h-3.5 w-3.5" /> تمت المعاملة عبر بوابة دفع معتمدة ومؤمّنة
               </p>
             </div>
           ) : payment.status === 'cancelled' ? (
@@ -119,12 +119,12 @@ export default function PayClient({ payment }: { payment: PublicPayment }) {
 
               <div className="mt-6 space-y-2 border-t border-white/5 pt-5 text-center">
                 <p className="flex items-center justify-center gap-1.5 text-xs text-white/40">
-                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> الدفع عبر بوابة NeoLeap — تشفير كامل لبيانات البطاقة
+                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" /> بوابة دفع معتمدة ومؤمّنة بتشفير بنكي كامل
                 </p>
                 <p className="text-[11px] leading-relaxed text-white/30">
-                  لن تشارك بيانات بطاقتك مع موقعنا إطلاقًا — العملية تتم على صفحة البنك المؤمّنة
+                  لن تشارك بيانات بطاقتك مع موقعنا إطلاقًا — المعاملة تتم على صفحة مصرف الراجحي المؤمّنة
                   <br />
-                  مدفوعات آمنة · mada / Visa / Mastercard / Apple Pay
+                  مدفوعات آمنة ومشفّرة · mada / Visa / Mastercard / Apple Pay
                 </p>
               </div>
             </>
