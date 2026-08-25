@@ -18,9 +18,12 @@ import crypto from 'crypto';
  *  - resourceKey = نص 16/24/32 حرف → key = النص، IV = أول 16 بايت منه
  */
 
+/** روابط البوابة — قابلة للتجاوز من البيئة (NeoLeap / Al Rajhi يستخدمان نفس البروتوكول) */
 export const NEOLEAP_HOSTED_URL =
+  process.env.NEOLEAP_HOSTED_URL ||
   'https://securepayments.neoleap.com.sa/pg/payment/hosted.htm';
 export const NEOLEAP_TRANPORTAL_URL =
+  process.env.NEOLEAP_TRANPORTAL_URL ||
   'https://securepayments.neoleap.com.sa/pg/payment/tranportal.htm';
 
 /** عملة الريال السعودي في بروتوكول البوابات */
