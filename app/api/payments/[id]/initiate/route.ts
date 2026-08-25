@@ -1,3 +1,4 @@
+import crypto from 'crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { getPaymentLink, updatePaymentLink } from '@/lib/payments/store';
 import { isAuthed, isSameOrigin } from '@/lib/leads/auth';
@@ -37,10 +38,12 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     return NextResponse.json({ ok: false, error: 'already_paid' }, { status: 409 });
   }
 
+  // توليد معرّف معاملة جديد لكل محاولة حتى لا ترفض البوابة الـ trackId المكرر
+  const currentTrackId = `OMN-${Date.now()}-${crypto.randomBytes(2).toString('hex').toUpperCase()}`;
   const origin = baseUrl(req);
   const result = await createHostedCheckout({
     amountSar: link.amount,
-    trackId: link.trackId,
+    trackId: currentTrackId,
     responseUrl: `${origin}/api/payments/${link.id}/callback`,
     errorUrl: `${origin}/api/payments/${link.id}/callback?error=1`,
     lang: 'ar',
@@ -53,7 +56,6 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
     await updatePaymentLink(link.id, {
       status: link.status === 'pending' ? 'pending' : link.status,
       gatewayStatus: `init_failed: ${result.rawStatus || result.error || '?'}`,
-      paymentId: undefined,
     });
     return NextResponse.json(
       { ok: false, error: 'gateway_error', detail: result.error || result.rawStatus },
@@ -62,6 +64,7 @@ export async function POST(req: NextRequest, { params }: { params: { id: string 
   }
 
   await updatePaymentLink(link.id, {
+    trackId: currentTrackId,
     paymentId: result.paymentId,
     gatewayStatus: 'initiated',
     paymentUrlSnapshot: result.paymentUrl,

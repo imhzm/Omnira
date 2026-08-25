@@ -60,8 +60,9 @@ async function handle(req: NextRequest, { params }: { params: { id: string } }, 
 
   const result = parseCallbackTrandata(trandataHex);
 
-  // تحقق أمني: trackId المُرجَع يجب أن يطابق رابطنا
-  if (!result.success || result.trackId !== link.trackId) {
+  // تحقق أمني: trackId المُرجَع يجب أن يطابق رابطنا أو udf1 يطابق معرّف الرابط
+  const isMatch = result.success && (result.trackId === link.trackId || result.udf1 === link.id);
+  if (!isMatch) {
     await updatePaymentLink(link.id, {
       gatewayStatus: `callback_mismatch_or_failed: ${result.rawResult || '?'}`,
     });
