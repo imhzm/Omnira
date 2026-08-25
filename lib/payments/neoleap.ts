@@ -237,6 +237,8 @@ export interface CallbackResult {
   auth?: string;
   ref?: string;
   amount?: string;
+  udf1?: string;
+  udf2?: string;
   rawResult?: string;
 }
 
@@ -269,6 +271,8 @@ export function parseCallbackTrandata(trandataHex: string): CallbackResult {
       auth: rec.auth,
       ref: rec.ref,
       amount: rec.amt,
+      udf1: rec.udf1,
+      udf2: rec.udf2,
       rawResult,
     };
   } catch (e) {
