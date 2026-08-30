@@ -111,9 +111,16 @@ const Footer = () => {
             <Link href="/privacy" className="transition-colors duration-300 hover:text-white">سياسة الخصوصية</Link>
             <Link href="/terms" className="transition-colors duration-300 hover:text-white">الشروط والأحكام</Link>
           </div>
-          <p className="flex items-center gap-1.5">
-            صُمّم بواسطة
-            <a href="https://www.skywaveads.com" target="_blank" rel="noopener noreferrer" className="text-white/60 transition-colors duration-300 hover:text-gold-primary">
+          <p className="flex items-center gap-1.5 text-white/70">
+            <span>تم التصميم بكل</span>
+            <span className="text-red-500 font-normal">❤️</span>
+            <span>بواسطة</span>
+            <a
+              href="https://www.skywaveads.com"
+              target="_blank"
+              rel="follow"
+              className="text-white/80 underline underline-offset-4 transition-colors duration-300 hover:text-gold-primary font-medium"
+            >
               Sky Wave
             </a>
           </p>
