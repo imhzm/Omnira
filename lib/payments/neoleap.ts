@@ -155,7 +155,7 @@ export async function createHostedCheckout(input: HostedCheckoutInput): Promise<
       trackId: input.trackId,
       responseURL: input.responseUrl,
       errorURL: input.errorUrl,
-      langid: input.lang ?? 'ar',
+      langid: (input.lang || 'ar').toUpperCase() === 'EN' ? 'USA' : 'ARA',
       udf1: input.udf1 ?? '',
       udf2: input.udf2 ?? '',
       udf3: input.udf3 ?? '',
