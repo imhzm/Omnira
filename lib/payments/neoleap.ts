@@ -39,10 +39,27 @@ export interface NeoleapCredentials {
   resourceKey: string;
 }
 
+function decodeSecret(direct?: string, b64?: string): string {
+  if (b64) {
+    try {
+      return Buffer.from(b64, 'base64').toString('utf8');
+    } catch {
+      /* ignore */
+    }
+  }
+  return direct || '';
+}
+
 function creds(): NeoleapCredentials {
   const tranportalId = process.env.NEOLEAP_TRANPORTAL_ID || '';
-  const password = process.env.NEOLEAP_PASSWORD || '';
-  const resourceKey = process.env.NEOLEAP_RESOURCE_KEY || '';
+  const password = decodeSecret(
+    process.env.NEOLEAP_PASSWORD || process.env.NEOLEAP_TRANPORTAL_PASSWORD,
+    process.env.NEOLEAP_PASSWORD_B64 || process.env.NEOLEAP_TRANPORTAL_PASSWORD_B64,
+  );
+  const resourceKey = decodeSecret(
+    process.env.NEOLEAP_RESOURCE_KEY,
+    process.env.NEOLEAP_RESOURCE_KEY_B64,
+  );
   if (!tranportalId || !password || !resourceKey) {
     throw new Error('neoleap_not_configured');
   }
@@ -52,8 +69,11 @@ function creds(): NeoleapCredentials {
 export function isNeoleapConfigured(): boolean {
   return Boolean(
     process.env.NEOLEAP_TRANPORTAL_ID &&
-      process.env.NEOLEAP_PASSWORD &&
-      process.env.NEOLEAP_RESOURCE_KEY,
+      (process.env.NEOLEAP_PASSWORD ||
+        process.env.NEOLEAP_PASSWORD_B64 ||
+        process.env.NEOLEAP_TRANPORTAL_PASSWORD ||
+        process.env.NEOLEAP_TRANPORTAL_PASSWORD_B64) &&
+      (process.env.NEOLEAP_RESOURCE_KEY || process.env.NEOLEAP_RESOURCE_KEY_B64),
   );
 }
 
