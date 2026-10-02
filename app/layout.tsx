@@ -7,7 +7,6 @@ import "./performance.css";
 import "./presentation.css";
 import { localBusinessSchema, organizationSchema } from "@/lib/schemas";
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import IntroLoader from "@/components/ui/IntroLoader";
 
 const WhatsAppButton = dynamic(() => import("@/components/layout/WhatsAppButton"), { ssr: false });
 const ScrollToTop = dynamic(() => import("@/components/ui/ScrollToTop"), { ssr: false });
@@ -151,7 +150,6 @@ export default function RootLayout({
         <script src="/circular-favicon.js" async defer />
       </head>
       <body className={`${arabicFont.variable} antialiased`}>
-        <IntroLoader />
         <ScrollProgress />
         {children}
         <WhatsAppButton />
