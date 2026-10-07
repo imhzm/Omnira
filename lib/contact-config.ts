@@ -14,7 +14,6 @@ export const contactConfig = {
   },
   social: {
     facebook: 'https://www.facebook.com/omniravalet/',
-    twitter: 'https://x.com/elorepariss',
     tiktok: 'https://www.tiktok.com/@omniravalet',
     youtube: 'https://www.youtube.com/@Omniravalet',
   },

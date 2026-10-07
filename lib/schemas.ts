@@ -146,7 +146,6 @@ export const localBusinessSchema = {
   // روابط التواصل الاجتماعي
   sameAs: [
     'https://www.facebook.com/omniravalet/',
-    'https://x.com/elorepariss',
     'https://www.tiktok.com/@omniravalet',
     'https://www.youtube.com/@Omniravalet'
   ],
@@ -196,7 +195,6 @@ export const organizationSchema = {
 
   sameAs: [
     'https://www.facebook.com/omniravalet/',
-    'https://x.com/elorepariss',
     'https://www.tiktok.com/@omniravalet',
     'https://www.youtube.com/@Omniravalet'
   ]

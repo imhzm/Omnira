@@ -53,8 +53,6 @@ export default function SEOHead({
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@elorepariss" />
-      <meta name="twitter:creator" content="@elorepariss" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />

@@ -65,30 +65,32 @@ const Header = () => {
   ];
 
   const servicesMenu = [
-    { name: 'فاليه باركينج', href: '/services/valet-parking' },
-    { name: 'إدارة المواقف', href: '/services/parking-management' },
-    { name: 'تقنيات متقدمة', href: '/services/advanced-technology' },
-    { name: 'خدمات VIP', href: '/services/vip' },
+    { name: 'فاليه باركينج فاخر', href: '/services/valet-parking', desc: 'خدمة صف السيارات المتكاملة للفنادق والوجهات' },
+    { name: 'إدارة وتشغيل المواقف', href: '/services/parking-management', desc: 'حلول تشغيل وتأجير وأنظمة مواقف ذكية' },
+    { name: 'التقنيات المتقدمة', href: '/services/advanced-technology', desc: 'أنظمة الفاليه الرقمية وقراءة اللوحات' },
+    { name: 'المنظمون المحترفون', href: '/services/professional-organizers', desc: 'كوادر مؤهلة لإدارة وتنظيم حركة المركبات' },
+    { name: 'خدمات كبار الشخصيات', href: '/services/vip', desc: 'بروتوكول وصول خاص ومسارات مخصصة' },
+    { name: 'إدارة مواقف الفعاليات', href: '/services/events', desc: 'تشغيل مواقف المؤتمرات والاحتفالات' },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled || isMobileMenuOpen
-          ? 'bg-[#0A0A0C]/80 backdrop-blur-xl border-b border-white/10'
+          ? 'bg-[#090A0C]/90 backdrop-blur-xl border-b border-white/[0.08]'
           : 'bg-transparent'
       }`}
     >
       <div className="container-custom relative">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16 lg:h-[76px]">
           {/* Logo */}
-          <Link href="/" className="group flex items-center h-full py-3" aria-label="أومنيرا فاليه">
+          <Link href="/" className="group flex items-center h-full py-2.5" aria-label="أومنيرا فاليه">
             <Image
               src="/logo.png"
               alt="Omnira Valet"
               width={300}
               height={84}
-              className="object-contain w-auto h-11 md:h-14 drop-shadow-[0_2px_10px_rgba(201,162,74,0.35)] transition-transform duration-500 group-hover:scale-[1.04]"
+              className="object-contain w-auto h-10 md:h-12 drop-shadow-[0_2px_10px_rgba(201,162,74,0.35)] transition-transform duration-300 group-hover:scale-[1.03]"
               priority
             />
           </Link>
@@ -108,59 +110,65 @@ const Header = () => {
                 >
                   <Link
                     href={item.href}
-                    className={`group relative flex items-center gap-1 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-300 ${
-                      isActive ? 'text-white' : 'text-white/60 hover:text-white'
+                    className={`group relative flex items-center gap-1.5 px-4 py-2 text-sm font-medium tracking-wide transition-colors duration-200 ${
+                      isActive ? 'text-gold-primary' : 'text-white/65 hover:text-white'
                     }`}
                   >
                     <span>{item.name}</span>
                     {item.hasSubmenu && (
-                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-300 group-hover:rotate-180" />
+                      <ChevronDown className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-180" />
                     )}
                     {/* thin gold underline */}
                     <span
-                      className={`pointer-events-none absolute -bottom-0.5 right-4 left-4 h-px bg-gold-primary transition-transform duration-300 origin-right ${
+                      className={`pointer-events-none absolute -bottom-0.5 right-4 left-4 h-0.5 bg-gold-primary transition-transform duration-200 origin-right ${
                         isActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                       }`}
                     />
                   </Link>
 
-                  {/* Services Mega Menu — pt-3 acts as a hover bridge (NO margin gap, it kills the menu) */}
+                  {/* Services Mega Menu */}
                   {item.hasSubmenu && showServicesMenu && (
                     <div
-                      className="absolute top-full right-1/2 z-[100] w-72 translate-x-1/2 pt-3"
+                      className="absolute top-full right-1/2 z-[100] w-[420px] translate-x-1/2 pt-3"
                       onMouseEnter={openMenu}
                       onMouseLeave={scheduleClose}
                     >
-                    <div className="bg-[#0E0E11]/98 backdrop-blur-xl shadow-2xl rounded-2xl border border-white/10 p-5 animate-slideDown">
-                      <div className="mb-3 pb-3 border-b border-white/10">
-                        <h3 className="text-[11px] font-medium tracking-[0.25em] text-gold-primary/70">
-                          خدماتنا
-                        </h3>
-                      </div>
-                      <div className="space-y-1">
-                        {servicesMenu.map((service, idx) => (
+                      <div className="bg-[#0E0E12]/95 backdrop-blur-2xl shadow-2xl rounded-2xl border border-white/[0.1] p-5">
+                        <div className="flex items-center justify-between mb-3 pb-3 border-b border-white/[0.08]">
+                          <span className="text-[11px] font-medium tracking-[0.2em] text-gold-primary">
+                            باقة خدمات أومنيرا
+                          </span>
                           <Link
-                            key={service.href}
-                            href={service.href}
-                            className="flex items-center justify-between gap-3 px-3 py-2.5 rounded-xl transition-colors duration-300 group hover:bg-white/[0.04] animate-fadeInUp"
+                            href="/services"
+                            className="text-xs text-white/50 hover:text-gold-primary transition-colors duration-200"
                             onClick={() => setShowServicesMenu(false)}
-                            style={{ animationDelay: `${idx * 60}ms`, opacity: 0 }}
                           >
-                            <span className="text-sm font-medium text-white/65 group-hover:text-white transition-colors duration-300">
-                              {service.name}
-                            </span>
-                            <svg
-                              className="w-4 h-4 text-gold-primary opacity-0 translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                              stroke="currentColor"
-                            >
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-                            </svg>
+                            عرض الدليل الكامل ←
                           </Link>
-                        ))}
+                        </div>
+                        <div className="grid grid-cols-1 gap-1.5">
+                          {servicesMenu.map((service) => (
+                            <Link
+                              key={service.href}
+                              href={service.href}
+                              className="group flex items-start justify-between gap-3 p-2.5 rounded-xl transition-all duration-200 hover:bg-white/[0.05]"
+                              onClick={() => setShowServicesMenu(false)}
+                            >
+                              <div>
+                                <span className="block text-sm font-medium text-white/80 group-hover:text-gold-primary transition-colors duration-200">
+                                  {service.name}
+                                </span>
+                                <span className="block text-xs text-white/45 mt-0.5 line-clamp-1">
+                                  {service.desc}
+                                </span>
+                              </div>
+                              <span className="text-gold-primary opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 text-sm mt-1">
+                                ←
+                              </span>
+                            </Link>
+                          ))}
+                        </div>
                       </div>
-                    </div>
                     </div>
                   )}
                 </div>
@@ -172,15 +180,15 @@ const Header = () => {
           <div className="hidden lg:flex items-center gap-3">
             <a
               href="tel:+966551962033"
-              className="p-2.5 text-white/55 hover:text-gold-primary transition-colors duration-300"
-              aria-label="اتصل بنا"
+              className="min-h-[44px] min-w-[44px] flex items-center justify-center rounded-full text-white/60 hover:text-gold-primary hover:bg-white/[0.04] transition-colors duration-200"
+              aria-label="اتصل بنا: 966551962033"
             >
               <Phone className="w-5 h-5" />
             </a>
-            <Magnetic strength={0.4}>
+            <Magnetic strength={0.3}>
               <button
                 onClick={() => openQuote({ source: 'header' })}
-                className="group inline-flex items-center gap-2 rounded-full bg-gold-primary px-7 py-2.5 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
+                className="group inline-flex items-center gap-2 rounded-full bg-gold-primary px-6 py-2.5 text-sm font-medium text-[#0A0A0C] transition-all duration-300 hover:bg-gold-light hover:shadow-[0_4px_20px_rgba(205,170,82,0.25)]"
               >
                 <span>احجز الآن</span>
                 <span className="transition-transform duration-300 group-hover:-translate-x-0.5">←</span>
@@ -191,8 +199,9 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white"
-            aria-label="القائمة"
+            className="lg:hidden min-h-[44px] min-w-[44px] flex items-center justify-center rounded-lg p-2 text-white hover:bg-white/[0.06] transition-colors"
+            aria-label={isMobileMenuOpen ? 'إغلاق القائمة' : 'فتح القائمة الرئيسية'}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>

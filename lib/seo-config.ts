@@ -6,7 +6,6 @@ export const siteConfig = {
   ogImage: 'https://omniravalet.com/og-image.jpg',
   links: {
     facebook: 'https://www.facebook.com/omniravalet/',
-    twitter: 'https://x.com/elorepariss',
     tiktok: 'https://www.tiktok.com/@omniravalet',
     youtube: 'https://www.youtube.com/@Omniravalet',
   },
@@ -95,7 +94,6 @@ export const jsonLdOrganization = {
   ],
   sameAs: [
     siteConfig.links.facebook,
-    siteConfig.links.twitter,
     siteConfig.links.tiktok,
     siteConfig.links.youtube,
   ],
