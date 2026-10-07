@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     title: 'خدمات أومنيرا فاليه - 8 حلول متميزة لصف السيارات',
     description: 'خدمات احترافية متكاملة لإدارة وصف السيارات في السعودية',
     images: [getOGImage('services').url],
-    creator: '@elorepariss',
   },
   robots: {
     index: true,

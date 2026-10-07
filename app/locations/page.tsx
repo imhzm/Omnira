@@ -53,7 +53,6 @@ export const metadata: Metadata = {
     title: 'المدن التي نخدمها | Omnira Valet',
     description: '150+ مدينة سعودية - خدمات صف السيارات والفاليه في جميع أنحاء المملكة',
     images: [getOGImage('locations').url],
-    creator: '@elorepariss',
   },
   robots: {
     index: true,

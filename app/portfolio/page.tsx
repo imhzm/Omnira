@@ -20,6 +20,11 @@ export const metadata: Metadata = {
     locale: 'ar_SA',
     type: 'website',
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'أعمالنا | Omnira Valet',
+    description: 'مختارات من مشاريع أومنيرا فاليه في صف السيارات وإدارة المواقف عبر المملكة.',
+  },
   robots: { index: true, follow: true },
 };
 

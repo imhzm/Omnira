@@ -49,7 +49,6 @@ export const metadata: Metadata = {
     title: 'الأسعار والباقات | أومنيرا فاليه',
     description: 'باقات مرنة للفاليه وصف السيارات - أسعار تنافسية وجودة عالية. احصل على عرض سعر الآن!',
     images: [getOGImage('pricing').url],
-    creator: '@elorepariss',
   },
   robots: {
     index: true,
