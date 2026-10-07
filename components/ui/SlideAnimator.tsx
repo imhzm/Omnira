@@ -38,12 +38,12 @@ export default function SlideAnimator() {
         try {
           el.animate(
             [
-              { opacity: 0, transform: 'translateY(70px) scale(0.965)', filter: 'blur(7px)' },
-              { opacity: 1, transform: 'translateY(0) scale(1)', filter: 'blur(0px)' },
+              { opacity: 0.5, transform: 'translateY(24px) scale(0.985)' },
+              { opacity: 1, transform: 'translateY(0) scale(1)' },
             ],
             {
-              duration: 950,
-              delay: Math.min(i * 130, 1000),
+              duration: 550,
+              delay: Math.min(i * 60, 300),
               easing: 'cubic-bezier(0.16, 1, 0.3, 1)',
               fill: 'backwards',
             }
@@ -63,7 +63,7 @@ export default function SlideAnimator() {
             reveal(e.target as HTMLElement);
           }
         }),
-      { threshold: 0.18 }
+      { threshold: 0.08 }
     );
 
     const seen = new Set<Element>();

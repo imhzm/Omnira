@@ -20,7 +20,7 @@ export default function WhatsAppButton() {
 
   return (
     <motion.div
-      className="fixed bottom-8 left-8 z-50"
+      className="fixed bottom-6 left-6 md:bottom-8 md:left-8 z-40 [padding-bottom:env(safe-area-inset-bottom)]"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay: 0.8, type: 'spring', stiffness: 260, damping: 22 }}
@@ -37,14 +37,14 @@ export default function WhatsAppButton() {
           >
             <button
               onClick={handleWhatsAppClick}
-              className="flex w-[190px] items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#20bd5a]"
+              className="flex w-[190px] items-center gap-3 rounded-full bg-[#25D366] px-5 py-3 text-sm font-medium text-white transition-colors duration-300 hover:bg-[#20bd5a] shadow-lg shadow-black/20"
             >
               <MessageCircle className="h-5 w-5" />
               <span>محادثة واتساب</span>
             </button>
             <button
               onClick={handleCallClick}
-              className="flex w-[190px] items-center gap-3 rounded-full bg-gold-primary px-5 py-3 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light"
+              className="flex w-[190px] items-center gap-3 rounded-full bg-gold-primary px-5 py-3 text-sm font-medium text-[#0A0A0C] transition-colors duration-300 hover:bg-gold-light shadow-lg shadow-black/20"
             >
               <Phone className="h-5 w-5" />
               <span>اتصال مباشر</span>
@@ -56,8 +56,9 @@ export default function WhatsAppButton() {
       {/* Toggle Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="تواصل معنا"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-[#25D366]/25 transition-colors duration-300 hover:bg-[#20bd5a]"
+        aria-label="تواصل معنا عبر واتساب أو الهاتف"
+        aria-expanded={isOpen}
+        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-white shadow-xl shadow-[#25D366]/30 transition-transform duration-300 hover:scale-105 hover:bg-[#20bd5a]"
       >
         <AnimatePresence mode="wait" initial={false}>
           {isOpen ? (

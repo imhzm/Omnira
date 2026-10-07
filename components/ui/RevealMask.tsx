@@ -1,8 +1,8 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
-// Reveals its content with a cinematic clip-wipe (top -> bottom) as it scrolls into view.
+// Refined reveal: gentle rise and opacity transition that never hides content behind a 100% clip-void
 export default function RevealMask({
   children,
   className,
@@ -10,13 +10,19 @@ export default function RevealMask({
   children: React.ReactNode;
   className?: string;
 }) {
+  const shouldReduceMotion = useReducedMotion();
+
+  if (shouldReduceMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
       className={className}
-      initial={{ clipPath: 'inset(0% 0% 100% 0%)' }}
-      whileInView={{ clipPath: 'inset(0% 0% 0% 0%)' }}
-      viewport={{ once: true, margin: '-70px' }}
-      transition={{ duration: 1.1, ease: [0.22, 0.61, 0.36, 1] }}
+      initial={{ opacity: 0.85, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: '-20px' }}
+      transition={{ duration: 0.55, ease: [0.22, 0.61, 0.36, 1] }}
     >
       {children}
     </motion.div>

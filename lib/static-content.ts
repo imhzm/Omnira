@@ -220,7 +220,6 @@ export const companySchema = {
   "logo": "https://omniravalet.com/logo.png",
   "sameAs": [
     "https://www.facebook.com/omniravalet/",
-    "https://x.com/elorepariss",
     "https://www.tiktok.com/@omniravalet",
     "https://www.youtube.com/@Omniravalet"
   ],
