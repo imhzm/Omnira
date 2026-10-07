@@ -43,15 +43,23 @@ export default function WebGLFog({ className = '' }: { className?: string }) {
     const gl = canvas.getContext('webgl', { alpha: true, premultipliedAlpha: false, antialias: false });
     if (!gl) return;
 
+    let vs: WebGLShader | null = null;
+    let fs: WebGLShader | null = null;
     const compile = (type: number, src: string) => {
-      const s = gl.createShader(type)!;
+      const s = gl.createShader(type);
+      if (!s) return null;
       gl.shaderSource(s, src);
       gl.compileShader(s);
       return s;
     };
-    const prog = gl.createProgram()!;
-    gl.attachShader(prog, compile(gl.VERTEX_SHADER, VERT));
-    gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, FRAG));
+    vs = compile(gl.VERTEX_SHADER, VERT);
+    fs = compile(gl.FRAGMENT_SHADER, FRAG);
+    if (!vs || !fs) return;
+
+    const prog = gl.createProgram();
+    if (!prog) return;
+    gl.attachShader(prog, vs);
+    gl.attachShader(prog, fs);
     gl.linkProgram(prog);
     if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
     gl.useProgram(prog);
@@ -75,19 +83,57 @@ export default function WebGLFog({ className = '' }: { className?: string }) {
     resize();
 
     let raf = 0;
+    let isVisible = true;
+    let isDocumentVisible = !document.hidden;
     const start = performance.now();
+
     const loop = () => {
-      gl.uniform2f(uRes, canvas.width, canvas.height);
-      gl.uniform1f(uTime, (performance.now() - start) / 1000);
-      gl.drawArrays(gl.TRIANGLES, 0, 3);
+      if (isVisible && isDocumentVisible) {
+        gl.uniform2f(uRes, canvas.width, canvas.height);
+        gl.uniform1f(uTime, (performance.now() - start) / 1000);
+        gl.drawArrays(gl.TRIANGLES, 0, 3);
+      }
       raf = requestAnimationFrame(loop);
     };
-    loop();
+    raf = requestAnimationFrame(loop);
+
+    // Pause when document is hidden (background tab)
+    const onVisibilityChange = () => {
+      isDocumentVisible = !document.hidden;
+    };
+    document.addEventListener('visibilitychange', onVisibilityChange);
+
+    // Pause when canvas scrolls out of view
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          isVisible = entry.isIntersecting;
+        }
+      },
+      { threshold: 0 }
+    );
+    observer.observe(canvas);
 
     window.addEventListener('resize', resize);
     return () => {
       cancelAnimationFrame(raf);
       window.removeEventListener('resize', resize);
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      observer.disconnect();
+
+      // Clean up WebGL resources
+      if (buf) gl.deleteBuffer(buf);
+      if (prog) {
+        if (vs) {
+          gl.detachShader(prog, vs);
+          gl.deleteShader(vs);
+        }
+        if (fs) {
+          gl.detachShader(prog, fs);
+          gl.deleteShader(fs);
+        }
+        gl.deleteProgram(prog);
+      }
     };
   }, []);
 

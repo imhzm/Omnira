@@ -50,7 +50,6 @@ export const metadata: Metadata = {
     title: 'من نحن - أومنيرا فاليه | شركة سعودية رائدة في صف السيارات',
     description: 'قصة نجاح سعودية في خدمات الفاليه باركينج وإدارة المواقف',
     images: [getOGImage('about').url],
-    creator: '@elorepariss',
   },
   robots: {
     index: true,

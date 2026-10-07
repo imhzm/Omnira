@@ -44,52 +44,8 @@ export default function SmoothScroll() {
     };
     rafId = requestAnimationFrame(raf);
 
-    // ---- block snap: settle onto the nearest full-screen section ----
-    let snapTimer: ReturnType<typeof setTimeout> | undefined;
-    let snapping = false;
-
-    const blocks = () =>
-      (Array.from(document.querySelectorAll('main section')) as HTMLElement[]).filter(
-        (s) =>
-          !s.parentElement?.closest('section') &&
-          s.offsetHeight > 200 &&
-          s.offsetHeight < window.innerHeight * 1.6
-      );
-
-    const onScroll = () => {
-      if (window.innerWidth < 1024 || snapping) return;
-      clearTimeout(snapTimer);
-      snapTimer = setTimeout(() => {
-        const y = window.scrollY;
-        const vh = window.innerHeight;
-        let target: number | null = null;
-        let bestDist = Infinity;
-        for (const s of blocks()) {
-          const top = s.getBoundingClientRect().top + y;
-          const d = Math.abs(top - y);
-          if (d < bestDist) {
-            bestDist = d;
-            target = top;
-          }
-        }
-        if (target !== null && bestDist > 6 && bestDist < vh * 0.85) {
-          snapping = true;
-          lenis.scrollTo(target, {
-            duration: 0.9,
-            easing: (t: number) => 1 - Math.pow(1 - t, 3),
-            onComplete: () => {
-              snapping = false;
-            },
-          });
-        }
-      }, 150);
-    };
-    lenis.on('scroll', onScroll);
-
     return () => {
       cancelAnimationFrame(rafId);
-      clearTimeout(snapTimer);
-      lenis.off('scroll', onScroll);
       lenis.destroy();
       delete window.__lenis;
     };
